@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "jsx": "preserve",
+    "lib": ["esnext", "dom"],
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "paths": {
+      "@/*": ["./*"],
+      "~/*": ["./client/*"]
+    },
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "ESNext",
+    "types": ["node", "vite/client"],
+    "useDefineForClassFields": true
+  },
+  "include": ["**/*.ts", "src/**/*.tsx"]
+}

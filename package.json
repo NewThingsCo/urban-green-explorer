@@ -1,0 +1,143 @@
+{
+  "dependencies": {
+    "vite": "^2.6.14",
+    "vue": "^3.2.16"
+  },
+  "description": "Exploring Contentful integration with Vue",
+  "devDependencies": {
+    "@types/node": "^16.11.7",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@vitejs/plugin-vue": "^1.9.4",
+    "@vitejs/plugin-vue-jsx": "^1.2.0",
+    "eslint": "^8.2.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-plugin-markdown": "^2.2.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "prettier": "^2.4.1",
+    "typescript": "^4.4.4",
+    "vue-tsc": "^0.29.5"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "extends": [
+      "plugin:@typescript-eslint/recommended",
+      "plugin:import/recommended",
+      "plugin:import/typescript",
+      "plugin:json/recommended",
+      "plugin:markdown/recommended",
+      "plugin:vue/vue3-recommended"
+    ],
+    "globals": {
+      "window": true
+    },
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "json",
+      "markdown",
+      "prettier"
+    ],
+    "root": true,
+    "rules": {
+      "import/extensions": "off",
+      "import/newline-after-import": [
+        "error",
+        {
+          "count": 1
+        }
+      ],
+      "import/no-named-as-default": "off",
+      "import/order": [
+        "error",
+        {
+          "groups": [
+            "type",
+            "external",
+            "builtin",
+            "parent",
+            "object",
+            "sibling"
+          ],
+          "pathGroups": [
+            {
+              "group": "type",
+              "pattern": "~/types/**"
+            },
+            {
+              "group": "type",
+              "pattern": "**/types"
+            },
+            {
+              "group": "builtin",
+              "pattern": "~/**"
+            }
+          ]
+        }
+      ],
+      "no-console": "off",
+      "semi": "off",
+      "vue/multi-word-component-names": "off",
+      "yoda": [
+        "error",
+        "always"
+      ]
+    },
+    "settings": {
+      "import/parsers": {
+        "@typescript-eslint/parser": [
+          ".ts",
+          ".tsx"
+        ]
+      },
+      "import/resolver": {
+        "alias": {
+          "map": [
+            [
+              "@",
+              "./"
+            ],
+            [
+              "~",
+              "./src"
+            ]
+          ]
+        },
+        "node": {
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".ts",
+            ".tsx"
+          ]
+        }
+      }
+    }
+  },
+  "name": "contentful-vue",
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "useTabs": false
+  },
+  "scripts": {
+    "build": "vue-tsc --noEmit && vite build",
+    "dev": "vite",
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "eslint --fix --ignore-path .gitignore .",
+    "prettier": "prettier --ignore-path .gitignore --write .",
+    "serve": "vite preview"
+  },
+  "version": "0.0.0"
+}
