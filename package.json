@@ -2,6 +2,7 @@
   "dependencies": {
     "vue": "^3.2.16"
   },
+  "description": "Exploring Contentful integration with Vue",
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.9.4",
     "prettier": "^2.4.1",
@@ -9,7 +10,7 @@
     "vite": "^2.6.14",
     "vue-tsc": "^0.29.5"
   },
-  "name": "my-vue-app",
+  "name": "contentful-vue",
   "prettier": {
     "semi": true,
     "singleQuote": true,
