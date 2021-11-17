@@ -1,7 +1,17 @@
+import vueJsx from '@vitejs/plugin-vue-jsx';
 import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  esbuild: {
+    jsxFactory: 'h',
+    jsxFragment: 'Fragment',
+  },
+  plugins: [
+    vueJsx({
+      mergeProps: true,
+      optimize: true,
+      transformOn: true,
+    }),
+  ],
 });
