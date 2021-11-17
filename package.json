@@ -4,6 +4,7 @@
   },
   "description": "Exploring Contentful integration with Vue",
   "devDependencies": {
+    "@types/node": "^16.11.7",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@vitejs/plugin-vue": "^1.9.4",
     "@vitejs/plugin-vue-jsx": "^1.2.0",
