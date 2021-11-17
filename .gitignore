@@ -6,3 +6,4 @@ dist-ssr
 
 # Exceptions
 !.gitignore
+!.vscode
