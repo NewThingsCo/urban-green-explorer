@@ -4,14 +4,22 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.9.4",
+    "prettier": "^2.4.1",
     "typescript": "^4.4.4",
     "vite": "^2.6.14",
     "vue-tsc": "^0.29.5"
   },
   "name": "my-vue-app",
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "useTabs": false
+  },
   "scripts": {
     "build": "vue-tsc --noEmit && vite build",
     "dev": "vite",
+    "prettier": "prettier --ignore-path .gitignore --write .",
     "serve": "vite preview"
   },
   "version": "0.0.0"
