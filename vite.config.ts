@@ -14,4 +14,7 @@ export default defineConfig({
       transformOn: true,
     }),
   ],
+  server: {
+    port: 8080,
+  },
 });
