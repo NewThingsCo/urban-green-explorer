@@ -1,4 +1,9 @@
 {
+  "author": "New Things Co <info@newthings.co> (https://www.newthings.co/)",
+  "contributors": [
+    "Niko Pettersen <niko.pettersen@newthings.co> (https://www.newthings.co)",
+    "Perttu Ristimella <perttu.ristimella@newthings.co> (https://www.newthings.co)"
+  ],
   "dependencies": {
     "vite": "^2.6.14",
     "vue": "^3.2.16"
