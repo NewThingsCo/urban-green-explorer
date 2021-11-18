@@ -80,10 +80,16 @@ When the build is complete, you should be able to find `contentful-vue` listed i
 
 Click run and choose a port if needed. Default is `5000`.
 
+## License
+
+[![MIT][mit-badge]][license]
+
 [client-badge]: https://github.com/NewThingsCo/contentful-vue/workflows/Client/badge.svg
 [client-logs]: https://github.com/NewThingsCo/contentful-vue/actions/workflows/client.yml
 [docker]: https://www.docker.com/
 [git]: https://git-scm.com
+[license]: ./LICENSE.md
+[mit-badge]: https://img.shields.io/badge/license-MIT-green.svg
 [node]: https://nodejs.org/en
 [nvm]: https://github.com/nvm-sh/nvm
 [volar]: https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar

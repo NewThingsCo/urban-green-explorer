@@ -37,12 +37,12 @@
     "globals": {
       "window": true
     },
+    "parser": "@typescript-eslint/parser",
     "parserOptions": {
       "ecmaFeatures": {
         "jsx": true
       }
     },
-    "parser": "@typescript-eslint/parser",
     "plugins": [
       "json",
       "markdown",
@@ -124,6 +124,7 @@
       }
     }
   },
+  "license": "MIT",
   "name": "contentful-vue",
   "prettier": {
     "semi": true,
