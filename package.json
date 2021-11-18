@@ -5,6 +5,7 @@
     "Perttu Ristimella <perttu.ristimella@newthings.co> (https://www.newthings.co)"
   ],
   "dependencies": {
+    "pinia": "^2.0.3",
     "vite": "^2.6.14",
     "vue": "^3.2.16"
   },
