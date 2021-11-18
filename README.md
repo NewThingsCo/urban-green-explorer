@@ -17,6 +17,11 @@
 
 - [VSCode][vscode] + [Volar][volar]
 
+## Stack
+
+- [ESLint][eslint] with [Prettier][prettier] and [TypeScript support][eslint-ts]
+- [Vite][vite] with [Vue 3][vue]
+
 ## Installation
 
 ```sh
@@ -44,7 +49,7 @@ $ npm run dev
 ```sh
 $ npm run lint
 
-# With auto-fix
+# Fix files automatically
 $ npm run lint:fix
 ```
 
@@ -56,13 +61,13 @@ Fix all files with:
 $ npm run prettier
 ```
 
-If using [Visual Studio Code][vscode], the editor should format the files you edit automatically.
+If using [Visual Studio Code][vscode], the editor should fix and format the files you edit automatically on save.
 
 ## Build for production
 
 ```sh
 $ nvm use
-$ npm run build
+$ npm run build # Files will be built to the /dist folder
 $ npm run serve
 ```
 
@@ -92,13 +97,18 @@ Click run and choose a port if needed. Default is `5000`.
 [client-badge]: https://github.com/NewThingsCo/contentful-vue/workflows/Client/badge.svg
 [client-logs]: https://github.com/NewThingsCo/contentful-vue/actions/workflows/client.yml
 [docker]: https://www.docker.com/
+[eslint-ts]: https://github.com/typescript-eslint/typescript-eslint
+[eslint]: https://eslint.org/
 [git]: https://git-scm.com
 [license]: ./LICENSE.md
-[vue-jsx-next]: https://github.com/vuejs/jsx-next
 [mit-badge]: https://img.shields.io/badge/license-MIT-green.svg
 [node]: https://nodejs.org/en
 [nvm]: https://github.com/nvm-sh/nvm
+[prettier]: https://prettier.io/
+[vite-docs]: https://vitejs.dev/guide/
+[vite]: https://vitejs.dev/
 [volar]: https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar
 [vscode]: https://code.visualstudio.com/
-[vue-docs]: https://vuejs.org/v2/guide/
-[vite-docs]: https://vitejs.dev/guide/
+[vue-docs]: https://v3.vuejs.org/guide/introduction.html
+[vue-jsx-next]: https://github.com/vuejs/jsx-next
+[vue]: https://v3.vuejs.org/
