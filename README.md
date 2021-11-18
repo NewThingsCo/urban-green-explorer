@@ -2,15 +2,22 @@
 
 > Exploring Contentful integration with Vue 3
 
-## Recommended IDE Setup
-
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
-
 ## Status
 
-![Client - GitHub Actions](https://github.com/NewThingsCo/contentful-vue/workflows/Client/badge.svg)
+[![Client - GitHub Actions][client-badge]][client-logs]
 
-## Setup
+## Requirements
+
+- [Docker][docker] (optional)
+- [Git][git]
+- [Node Version Manager][nvm]
+- [Node.js][node]
+
+## Recommended IDE Setup
+
+- [VSCode][vscode] + [Volar][volar]
+
+## Installation
 
 ```sh
 # Clone the repository
@@ -43,11 +50,13 @@ $ npm run lint:fix
 
 ### Prettier
 
+Fix all files with:
+
 ```
 $ npm run prettier
 ```
 
-If using [Visual Studio Code][vscode], the editor should fix these errors automatically.
+If using [Visual Studio Code][vscode], the editor should format the files you edit automatically.
 
 ## Build for production
 
@@ -57,4 +66,25 @@ $ npm run build
 $ npm run serve
 ```
 
+[vscode]: https://code.visualstudio.com/
+
+## Local Docker container
+
+Build a [Docker][docker] container that includes the production version:
+
+```sh
+$ npm run build:docker
+```
+
+When the build is complete, you should be able to find `contentful-vue` listed in your local Docker images.
+
+Click run and choose a port if needed. Default is `5000`.
+
+[client-badge]: https://github.com/NewThingsCo/contentful-vue/workflows/Client/badge.svg
+[client-logs]: https://github.com/NewThingsCo/contentful-vue/actions/workflows/client.yml
+[docker]: https://www.docker.com/
+[git]: https://git-scm.com
+[node]: https://nodejs.org/en
+[nvm]: https://github.com/nvm-sh/nvm
+[volar]: https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar
 [vscode]: https://code.visualstudio.com/

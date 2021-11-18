@@ -133,6 +133,7 @@
   },
   "scripts": {
     "build": "vue-tsc --noEmit && vite build",
+    "build:docker": "docker build . -t contentful-vue",
     "dev": "vite",
     "lint": "eslint --ignore-path .gitignore .",
     "lint:fix": "eslint --fix --ignore-path .gitignore .",
