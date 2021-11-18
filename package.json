@@ -13,11 +13,13 @@
   "devDependencies": {
     "@types/node": "^16.11.8",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
     "@vitejs/plugin-vue": "^1.9.4",
     "@vitejs/plugin-vue-jsx": "^1.2.0",
     "eslint": "^8.2.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-markdown": "^2.2.1",
@@ -36,6 +38,7 @@
       "node": true
     },
     "extends": [
+      "eslint:recommended",
       "plugin:@typescript-eslint/recommended",
       "plugin:import/recommended",
       "plugin:import/typescript",
@@ -129,7 +132,8 @@
             ".ts",
             ".tsx"
           ]
-        }
+        },
+        "typescript": {}
       }
     }
   },
