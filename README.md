@@ -2,6 +2,16 @@
 
 > Exploring Contentful integration with Vue 3
 
+<figure style="margin: 0 0 -1rem; position: relative; max-width: 50rem;">
+
+![Contentful with Vue.js image by Contentful.com][cover-image]
+
+<figcaption style="opacity: 0.5; text-align: right;">
+	<sup><small>Cover image by © Contentful</small></sup>
+</figcaption>
+
+</figure>
+
 ## Status
 
 [![Client - GitHub Actions][client-badge]][client-logs]
@@ -96,6 +106,7 @@ Click run and choose a port if needed. Default is `5000`.
 
 [client-badge]: https://github.com/NewThingsCo/contentful-vue/workflows/Client/badge.svg
 [client-logs]: https://github.com/NewThingsCo/contentful-vue/actions/workflows/client.yml
+[cover-image]: ./docs/cover-image.webp
 [docker]: https://www.docker.com/
 [eslint-ts]: https://github.com/typescript-eslint/typescript-eslint
 [eslint]: https://eslint.org/
