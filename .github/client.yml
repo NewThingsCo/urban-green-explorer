@@ -1,16 +1,10 @@
 name: Client
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+on: push
 
 jobs:
   build:
-    name: Build and deploy application
+    name: Build and test application
     runs-on: ${{ matrix.os }}
 
     strategy:
