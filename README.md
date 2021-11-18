@@ -80,6 +80,11 @@ When the build is complete, you should be able to find `contentful-vue` listed i
 
 Click run and choose a port if needed. Default is `5000`.
 
+## Additional documentation
+
+- [Vite documentation][vite-docs]
+- [Vue documentation][vue-docs] ([JSX][vue-jsx-next])
+
 ## License
 
 [![MIT][mit-badge]][license]
@@ -89,8 +94,11 @@ Click run and choose a port if needed. Default is `5000`.
 [docker]: https://www.docker.com/
 [git]: https://git-scm.com
 [license]: ./LICENSE.md
+[vue-jsx-next]: https://github.com/vuejs/jsx-next
 [mit-badge]: https://img.shields.io/badge/license-MIT-green.svg
 [node]: https://nodejs.org/en
 [nvm]: https://github.com/nvm-sh/nvm
 [volar]: https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar
 [vscode]: https://code.visualstudio.com/
+[vue-docs]: https://vuejs.org/v2/guide/
+[vite-docs]: https://vitejs.dev/guide/
