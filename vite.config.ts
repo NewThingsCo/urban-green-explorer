@@ -3,6 +3,7 @@ import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/account/',
   esbuild: {
     jsxFactory: 'h',
     jsxFragment: 'Fragment',
@@ -17,5 +18,4 @@ export default defineConfig({
   server: {
     port: 8080,
   },
-  base: '/account/',
 });

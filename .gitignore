@@ -1,11 +1,14 @@
 .*
-node_modules
+*.bak
+*.local
+~*
 dist
 dist-ssr
-*.local
+node_modules
 
 # Exceptions
 !.dockerignore
 !.github
 !.gitignore
+!.nvmrc
 !.vscode
