@@ -30,6 +30,7 @@
 ## Stack
 
 - [ESLint][eslint] with [Prettier][prettier] and [TypeScript support][eslint-ts]
+- [Pinia][pinia]
 - [Vite][vite] with [Vue 3][vue]
 
 ## Installation
@@ -115,6 +116,7 @@ Click run and choose a port if needed. Default is `5000`.
 [mit-badge]: https://img.shields.io/badge/license-MIT-green.svg
 [node]: https://nodejs.org/en
 [nvm]: https://github.com/nvm-sh/nvm
+[pinia]: https://pinia.esm.dev/
 [prettier]: https://prettier.io/
 [vite-docs]: https://vitejs.dev/guide/
 [vite]: https://vitejs.dev/
