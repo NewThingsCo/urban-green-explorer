@@ -1,15 +1,41 @@
+code {
+  background-color: #eee;
+  padding: 0.2em 0.4em;
+  border-radius: 0.2em;
+}
+
 a {
   color: #42b983;
 }
 
-label {
-  margin: 0 0.5em;
-  font-weight: bold;
+.count:not(.small) {
+  font-size: 1.6em;
+  font-weight: 400;
 }
 
-code {
-  background-color: #eee;
-  padding: 2px 4px;
-  border-radius: 4px;
-  color: #304455;
+.count dd,
+.count dt {
+  display: inline;
+}
+
+.count dd {
+  margin: 0 0 0 0.3em;
+}
+
+.count .value {
+  font-weight: 600;
+}
+
+.count.small {
+  display: inline-block;
+}
+
+.count.small:nth-child(2) {
+  margin-left: 0.5em;
+}
+
+.count.small + .count.small::before {
+  content: '|';
+  display: inline-block;
+  width: 2.5em;
 }
