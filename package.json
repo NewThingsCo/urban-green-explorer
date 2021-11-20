@@ -5,13 +5,14 @@
     "Perttu Ristimella <perttu.ristimella@newthings.co> (https://www.newthings.co)"
   ],
   "dependencies": {
-    "pinia": "^2.0.3",
+    "pinia": "^2.0.4",
     "vite": "^2.6.14",
     "vue": "^3.2.16"
   },
   "description": "Exploring Contentful integration with Vue",
   "devDependencies": {
-    "@types/node": "^16.11.8",
+    "@playwright/test": "^1.16.3",
+    "@types/node": "^16.11.9",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "@vitejs/plugin-vue": "^1.9.4",
