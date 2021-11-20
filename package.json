@@ -152,6 +152,7 @@
     "dev": "vite",
     "lint": "eslint --ignore-path .gitignore .",
     "lint:fix": "eslint --fix --ignore-path .gitignore .",
+    "postinstall": "scripts/postinstall.sh",
     "prettier": "prettier --ignore-path .gitignore --write .",
     "serve": "vite preview"
   },
