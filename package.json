@@ -154,10 +154,11 @@
     "lint:fix": "eslint --fix --ignore-path .gitignore .",
     "postinstall": "scripts/postinstall.sh",
     "prettier": "prettier --ignore-path .gitignore --write .",
-    "serve": "vite preview",
+    "start": "vite preview --port 8080",
     "test": "npm run test:e2e",
     "test:e2e": "npx playwright test --config=tests/e2e/playwright.config.ts",
-    "test:update": "npx playwright test --update-snapshots"
+    "test:e2e:record": "npx playwright test --config=tests/e2e/playwright.record.config.ts",
+    "test:e2e:update": "npx playwright test --config=tests/e2e/playwright.config.ts --update-snapshots"
   },
   "version": "0.0.0"
 }
