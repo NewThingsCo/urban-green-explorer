@@ -4,10 +4,14 @@ const config: PlaywrightTestConfig = {
   reporter: 'list',
   projects: [
     {
-      expect: {
-        toMatchSnapshot: { threshold: 0.2 },
-      },
-      name: 'Client',
+      name: 'Chromium',
+      testDir: './',
+      use: { browserName: 'chromium' },
+    },
+    {
+      name: 'Firefox',
+      testDir: './',
+      use: { browserName: 'firefox' },
     },
   ],
   use: {
