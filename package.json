@@ -156,9 +156,8 @@
     "prettier": "prettier --ignore-path .gitignore --write .",
     "start": "vite preview --port 8080",
     "test": "npm run test:e2e",
-    "test:e2e": "npx playwright test --config=tests/e2e/playwright.config.ts",
-    "test:e2e:record": "npx playwright test --config=tests/e2e/playwright.record.config.ts",
-    "test:e2e:update": "npx playwright test --config=tests/e2e/playwright.config.ts --update-snapshots"
+    "test:e2e": "playwright test --config=tests/e2e/playwright.config.ts",
+    "test:e2e:record": "playwright test --config=tests/e2e/playwright.record.config.ts"
   },
   "version": "0.0.0"
 }

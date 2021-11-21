@@ -4,7 +4,7 @@ on: push
 
 jobs:
   build:
-    name: Build and test application
+    name: Build and test client
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -14,7 +14,7 @@ jobs:
 
     steps:
       # https://github.com/actions/checkout
-      - name: Checkout respository
+      - name: Checkout repository
         uses: actions/checkout@v2
 
       # https://github.com/actions/setup-node
@@ -38,3 +38,11 @@ jobs:
 
       - name: Run linters
         run: npm run lint
+
+      - name: Build client
+        run: npm run build
+        env:
+          NODE_ENV: production
+
+      - name: Run tests
+        run: npm test

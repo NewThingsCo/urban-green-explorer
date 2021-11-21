@@ -5,7 +5,8 @@ const config: PlaywrightTestConfig = {
   ...baseConfig,
   use: {
     ...baseConfig.use,
-    video: 'retain-on-failure',
+    screenshot: 'on',
+    video: 'on',
   },
 };
 

@@ -2,8 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('App', () => {
   test.beforeEach(async ({ baseURL, page }) => {
-    console.log('Going to', baseURL + '/');
-    await page.goto(baseURL + '/');
+    await page.goto(baseURL + '/account');
   });
 
   /** Counter */
@@ -25,11 +24,5 @@ test.describe('App', () => {
   test('has the correct title', async ({ page }) => {
     const $title = page.locator('h1');
     await expect($title).toHaveText('Hello Vue 3 + TypeScript + Vite');
-  });
-
-  /** Snapshot */
-  test('matches snapshot', async ({ page }) => {
-    const screenshot = await page.screenshot();
-    expect(screenshot).toMatchSnapshot('app.png');
   });
 });
