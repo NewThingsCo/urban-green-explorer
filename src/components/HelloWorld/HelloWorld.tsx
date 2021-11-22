@@ -1,24 +1,15 @@
 import type { PropType, VNode } from 'vue';
 import { defineComponent } from 'vue';
-import { storeToRefs } from 'pinia';
 import * as styles from './HelloWorld.css';
-import { useCounterStore } from '@/stores/counter';
+import Counter from '@/components/Counter';
 
 export default defineComponent({
   name: 'HelloWorld',
   props: {
     msg: {
-      default: '',
       required: true,
       type: String as PropType<string>,
     },
-  },
-  setup() {
-    const counterStore = useCounterStore();
-    const { count, nextNumber, prevNumber } = storeToRefs(counterStore);
-    const dec = counterStore.decrement;
-    const inc = counterStore.increment;
-    return { count, dec, inc, nextNumber, prevNumber };
   },
   render(): VNode {
     return (
@@ -54,36 +45,7 @@ export default defineComponent({
             Vue 3 Docs
           </a>
         </p>
-        <form>
-          <dl class="count">
-            <dt>Count is</dt>
-            <dd>
-              <span class="current-count value">{this.count}</span> <sup>*</sup>
-            </dd>
-          </dl>
-          <p>
-            <button name="decrement" type="button" onClick={this.dec}>
-              Decrement ➖
-            </button>
-            &nbsp;&nbsp;&nbsp;
-            <button name="increment" type="button" onClick={this.inc}>
-              Increment ➕
-            </button>
-          </p>
-          <p>
-            <small>
-              <sup>*</sup>
-              <dl class="count small">
-                <dt>Next number will be:</dt>
-                <dd class="value">{this.nextNumber}</dd>
-              </dl>
-              <dl class="count small">
-                <dt>Previous number was:</dt>
-                <dd class="value">{this.prevNumber}</dd>
-              </dl>
-            </small>
-          </p>
-        </form>
+        <Counter />
         <p>
           Edit
           <code>components/HelloWorld.tsx</code> to test hot module replacement.
