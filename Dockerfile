@@ -16,6 +16,6 @@ COPY --from=dist /usr/project/dist ./dist
 COPY package*.json ./
 RUN npm ci --only=production
 
-EXPOSE 5000
+EXPOSE 8080
 
 CMD [ "npm", "run", "serve"]

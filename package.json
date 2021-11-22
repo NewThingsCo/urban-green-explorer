@@ -5,18 +5,19 @@
     "Perttu Ristimella <perttu.ristimella@newthings.co> (https://www.newthings.co)"
   ],
   "dependencies": {
-    "pinia": "^2.0.3",
+    "pinia": "^2.0.4",
     "vite": "^2.6.14",
     "vue": "^3.2.16"
   },
   "description": "Exploring Contentful integration with Vue",
   "devDependencies": {
-    "@types/node": "^16.11.8",
+    "@playwright/test": "^1.16.3",
+    "@types/node": "^16.11.9",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "@vitejs/plugin-vue": "^1.9.4",
     "@vitejs/plugin-vue-jsx": "^1.2.0",
-    "eslint": "^8.2.0",
+    "eslint": "^8.3.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-import-resolver-typescript": "^2.5.0",
@@ -27,7 +28,7 @@
     "eslint-plugin-vue": "^8.1.1",
     "prettier": "^2.4.1",
     "typescript": "^4.5.2",
-    "vue-tsc": "^0.29.5"
+    "vue-tsc": "^0.29.6"
   },
   "engines": {
     "node": "16.x"
@@ -151,8 +152,12 @@
     "dev": "vite",
     "lint": "eslint --ignore-path .gitignore .",
     "lint:fix": "eslint --fix --ignore-path .gitignore .",
+    "postinstall": "scripts/postinstall.sh",
     "prettier": "prettier --ignore-path .gitignore --write .",
-    "serve": "vite preview"
+    "start": "vite preview --port 8080",
+    "test": "npm run test:e2e",
+    "test:e2e": "playwright test --config=tests/e2e/playwright.config.ts",
+    "test:e2e:record": "playwright test --config=tests/e2e/playwright.record.config.ts"
   },
   "version": "0.0.0"
 }

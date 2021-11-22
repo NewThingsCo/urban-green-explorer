@@ -58,15 +58,15 @@ export default defineComponent({
           <dl class="count">
             <dt>Count is</dt>
             <dd>
-              <span class="value">{this.count}</span> <sup>*</sup>
+              <span class="current-count value">{this.count}</span> <sup>*</sup>
             </dd>
           </dl>
           <p>
-            <button type="button" onClick={this.dec}>
+            <button name="decrement" type="button" onClick={this.dec}>
               Decrement ➖
             </button>
             &nbsp;&nbsp;&nbsp;
-            <button type="button" onClick={this.inc}>
+            <button name="increment" type="button" onClick={this.inc}>
               Increment ➕
             </button>
           </p>
