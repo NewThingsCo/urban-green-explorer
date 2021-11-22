@@ -193,7 +193,8 @@
     "transform": {
       ".+\\.(css|jpg|png|svg|ttf|woff|woff2)(\\?inline)?$": "jest-transform-stub",
       ".+\\.(ts|tsx)?$": "ts-jest"
-    }
+    },
+    "verbose": true
   },
   "license": "MIT",
   "name": "contentful-vue",

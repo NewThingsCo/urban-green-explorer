@@ -8,7 +8,7 @@ export default defineComponent({
   render() {
     return (
       <>
-        <img alt="Vue logo" src={Logo} />
+        <img alt="Vue logo" class="logo" src={Logo} />
         <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
       </>
     );

@@ -45,16 +45,16 @@ interface CounterStoreState {
  * }
  * ```
  */
-export const useCounterStore = defineStore('counter', {
+const useCounterStore = defineStore('counter', {
   actions: {
     /** Decreases the counter value. */
-    decrement(event: MouseEvent) {
-      event.preventDefault();
+    decrement(event?: MouseEvent) {
+      event?.preventDefault();
       this.count--;
     },
     /** Increments the counter value. */
-    increment(event: MouseEvent) {
-      event.preventDefault();
+    increment(event?: MouseEvent) {
+      event?.preventDefault();
       this.count++;
     },
   },
@@ -72,3 +72,5 @@ export const useCounterStore = defineStore('counter', {
 if (import.meta.hot) {
   import.meta.hot.accept(acceptHMRUpdate(useCounterStore, import.meta.hot));
 }
+
+export { useCounterStore };

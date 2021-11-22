@@ -22,11 +22,11 @@ export default defineComponent({
           </dd>
         </dl>
         <p>
-          <button name="decrement" type="button" onClick={this.dec}>
+          <button name="decrement" onClick={this.dec} type="button">
             Decrement ➖
           </button>
           &nbsp;&nbsp;&nbsp;
-          <button name="increment" type="button" onClick={this.inc}>
+          <button name="increment" onClick={this.inc} type="button">
             Increment ➕
           </button>
         </p>
