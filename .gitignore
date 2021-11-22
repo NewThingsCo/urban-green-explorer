@@ -2,6 +2,7 @@
 *.bak
 *.local
 ~*
+coverage
 dist
 dist-ssr
 node_modules
