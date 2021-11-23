@@ -1,5 +1,18 @@
 {
   "author": "New Things Co <info@newthings.co> (https://www.newthings.co/)",
+  "babel": {
+    "plugins": [
+      "@vue/babel-plugin-jsx"
+    ],
+    "presets": [
+      [
+        "babel-preset-vite",
+        {
+          "env": false
+        }
+      ]
+    ]
+  },
   "contributors": [
     "Niko Pettersen <niko.pettersen@newthings.co> (https://www.newthings.co)",
     "Perttu Ristimella <perttu.ristimella@newthings.co> (https://www.newthings.co)"
@@ -11,12 +24,16 @@
   },
   "description": "Exploring Contentful integration with Vue",
   "devDependencies": {
+    "@pinia/testing": "^0.0.6",
     "@playwright/test": "^1.16.3",
+    "@types/jest": "^27.0.3",
     "@types/node": "^16.11.9",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
-    "@vitejs/plugin-vue": "^1.9.4",
-    "@vitejs/plugin-vue-jsx": "^1.2.0",
+    "@vitejs/plugin-vue-jsx": "^1.3.0",
+    "@vue/babel-plugin-jsx": "^1.1.1",
+    "@vue/test-utils": "^2.0.0-rc.16",
+    "babel-preset-vite": "^1.0.4",
     "eslint": "^8.3.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-alias": "^1.1.2",
@@ -26,8 +43,13 @@
     "eslint-plugin-markdown": "^2.2.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.1.1",
+    "jest": "^27.3.1",
+    "jest-environment-jsdom": "^27.3.1",
+    "jest-transform-stub": "^2.0.0",
     "prettier": "^2.4.1",
+    "ts-jest": "^27.0.7",
     "typescript": "^4.5.2",
+    "vite-jest": "^0.0.4",
     "vue-tsc": "^0.29.6"
   },
   "engines": {
@@ -40,6 +62,7 @@
     },
     "extends": [
       "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
       "plugin:@typescript-eslint/recommended",
       "plugin:import/recommended",
       "plugin:import/typescript",
@@ -138,6 +161,40 @@
       }
     }
   },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "<rootDir>/src/**/*.tsx"
+    ],
+    "globals": {
+      "ts-jest": {
+        "babelConfig": true,
+        "tsconfig": "tsconfig.json",
+        "useESM": true
+      }
+    },
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts",
+      "tsx"
+    ],
+    "moduleNameMapper": {
+      "^.+/(.*\\.jpg|png|svg)\\?inline$": "<rootDir>/assets/$1",
+      "^@/(.*)$": "<rootDir>/src/$1",
+      "^~/(.*)$": "<rootDir>/$1"
+    },
+    "preset": "vite-jest",
+    "testEnvironment": "jest-environment-jsdom",
+    "testMatch": [
+      "<rootDir>/src/**/*.test.ts?(x)"
+    ],
+    "transform": {
+      ".+\\.(css|jpg|png|svg|ttf|woff|woff2)(\\?inline)?$": "jest-transform-stub",
+      ".+\\.(ts|tsx)?$": "ts-jest"
+    },
+    "verbose": true
+  },
   "license": "MIT",
   "name": "contentful-vue",
   "prettier": {
@@ -155,9 +212,10 @@
     "postinstall": "scripts/postinstall.sh",
     "prettier": "prettier --ignore-path .gitignore --write .",
     "start": "vite preview --port 8080",
-    "test": "npm run test:e2e",
+    "test": "npm run test:unit && npm run test:e2e",
     "test:e2e": "playwright test --config=tests/e2e/playwright.config.ts",
-    "test:e2e:record": "playwright test --config=tests/e2e/playwright.record.config.ts"
+    "test:e2e:record": "playwright test --config=tests/e2e/playwright.record.config.ts",
+    "test:unit": "node --experimental-vm-modules --no-warnings node_modules/jest/bin/jest.js --detectOpenHandles"
   },
   "version": "0.0.0"
 }
