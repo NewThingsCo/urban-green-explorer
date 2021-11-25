@@ -214,6 +214,7 @@
     "trailingComma": "es5",
     "useTabs": false
   },
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NewThingsCo/contentful-vue"
