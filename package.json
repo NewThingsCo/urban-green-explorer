@@ -13,6 +13,9 @@
       ]
     ]
   },
+  "bugs": {
+    "url": "https://github.com/NewThingsCo/contentful-vue/issues"
+  },
   "contributors": [
     "Niko Pettersen <niko.pettersen@newthings.co> (https://www.newthings.co)",
     "Perttu Ristimella <perttu.ristimella@newthings.co> (https://www.newthings.co)"
@@ -27,7 +30,7 @@
     "@pinia/testing": "^0.0.6",
     "@playwright/test": "^1.16.3",
     "@types/jest": "^27.0.3",
-    "@types/node": "^16.11.9",
+    "@types/node": "^16.11.10",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "@vitejs/plugin-vue-jsx": "^1.3.0",
@@ -46,7 +49,7 @@
     "jest": "^27.3.1",
     "jest-environment-jsdom": "^27.3.1",
     "jest-transform-stub": "^2.0.0",
-    "prettier": "^2.4.1",
+    "prettier": "^2.5.0",
     "ts-jest": "^27.0.7",
     "typescript": "^4.5.2",
     "vite-jest": "^0.0.4",
@@ -161,6 +164,7 @@
       }
     }
   },
+  "homepage": "https://github.com/NewThingsCo/contentful-vue/#readme",
   "jest": {
     "collectCoverage": true,
     "collectCoverageFrom": [
@@ -195,6 +199,13 @@
     },
     "verbose": true
   },
+  "keywords": [
+    "contentful",
+    "integration",
+    "typescript",
+    "vite",
+    "vue"
+  ],
   "license": "MIT",
   "name": "contentful-vue",
   "prettier": {
@@ -202,6 +213,10 @@
     "singleQuote": true,
     "trailingComma": "es5",
     "useTabs": false
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NewThingsCo/contentful-vue"
   },
   "scripts": {
     "build": "vue-tsc --noEmit && vite build",
