@@ -2,26 +2,26 @@
 
 > Exploring Contentful integration with Vue 3
 
+[![Client - GitHub Actions][client-badge]][client-logs] ![Current version][current-version]
+
 <figure style="margin: 0 0 -1rem; position: relative; max-width: 50rem;">
 
 ![Contentful with Vue.js image by Contentful.com][cover-image]
 
 <figcaption style="opacity: 0.5; text-align: right;">
-	<sup><small>Cover image by © Contentful</small></sup>
+
+<sup><small>Image source: [Contentful blog][contentful-blog]</small></sup>
+
 </figcaption>
 
 </figure>
-
-## Status
-
-[![Client - GitHub Actions][client-badge]][client-logs]
 
 ## Requirements
 
 - [Docker][docker] (optional)
 - [Git][git]
 - [Node Version Manager][nvm]
-- [Node.js][node]
+- [Node.js][node] (v16)
 
 ## Recommended IDE Setup
 
@@ -107,13 +107,16 @@ Click run and choose a port if needed. Default is `5000`.
 
 [client-badge]: https://github.com/NewThingsCo/contentful-vue/workflows/Client/badge.svg
 [client-logs]: https://github.com/NewThingsCo/contentful-vue/actions/workflows/client.yml
+[contentful-blog]: https://www.contentful.com/blog/2021/08/26/build-using-vue-and-contentful/
 [cover-image]: ./docs/cover-image.webp
+[current-version]: https://img.shields.io/badge/dynamic/json?color=informational&label=Version&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2FNewThingsCo%2Fcontentful-vue%2Fmain%2Fpackage.json
 [docker]: https://www.docker.com/
 [eslint-ts]: https://github.com/typescript-eslint/typescript-eslint
 [eslint]: https://eslint.org/
 [git]: https://git-scm.com
 [license]: ./LICENSE.md
 [mit-badge]: https://img.shields.io/badge/license-MIT-green.svg
+[node-version]: https://img.shields.io/badge/Node-v16-brightgreen.svg
 [node]: https://nodejs.org/en
 [nvm]: https://github.com/nvm-sh/nvm
 [pinia]: https://pinia.esm.dev/
