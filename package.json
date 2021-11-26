@@ -13,6 +13,10 @@
       ]
     ]
   },
+  "browserslist": [
+    "defaults",
+    "not IE 11"
+  ],
   "bugs": {
     "url": "https://github.com/NewThingsCo/contentful-vue/issues"
   },
