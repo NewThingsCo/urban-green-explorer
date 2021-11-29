@@ -133,6 +133,7 @@
       "no-console": "off",
       "semi": "off",
       "vue/multi-word-component-names": "off",
+      "vue/order-in-components": "error",
       "yoda": [
         "error",
         "always"
