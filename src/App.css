@@ -3,6 +3,13 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.cover-image {
+  @apply m-auto mb-6;
+  @apply max-h-1/3;
+  @apply min-w-full;
+  @apply object-cover;
+}
+
 .main {
   @apply container;
   @apply mx-auto;
