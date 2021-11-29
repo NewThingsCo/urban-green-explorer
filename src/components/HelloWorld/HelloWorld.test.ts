@@ -9,13 +9,13 @@ describe('HelloWorld', () => {
     setActivePinia(createPinia());
   });
   it('should display the correct text in the main heading', () => {
-    const msg = 'Hello from Jest';
+    const title = 'Hello from Jest';
     const wrapper = mount(HelloWorld, {
       global: {
         plugins: [createTestingPinia()],
       },
-      props: { msg },
+      props: { title },
     });
-    expect(wrapper.find('h1').text()).toEqual(msg);
+    expect(wrapper.find('.title').text()).toEqual(title);
   });
 });

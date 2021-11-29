@@ -12,7 +12,7 @@ export default defineComponent({
           <img alt="Cover image" class="cover-image" src={CoverImage} />
         </figure>
         <main class="main">
-          <HelloWorld msg="Contentful integration with Vue 3" />
+          <HelloWorld title="Contentful integration with Vue 3" />
         </main>
       </>
     );
