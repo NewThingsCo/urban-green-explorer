@@ -1,41 +1,4 @@
-code {
-  background-color: #eee;
-  padding: 0.2em 0.4em;
-  border-radius: 0.2em;
-}
-
-a {
-  color: #42b983;
-}
-
-.count:not(.small) {
-  font-size: 1.6em;
-  font-weight: 400;
-}
-
-.count dd,
-.count dt {
-  display: inline;
-}
-
-.count dd {
-  margin: 0 0 0 0.3em;
-}
-
-.count .value {
-  font-weight: 600;
-}
-
-.count.small {
-  display: inline-block;
-}
-
-.count.small:nth-child(2) {
-  margin-left: 0.5em;
-}
-
-.count.small + .count.small::before {
-  content: '|';
-  display: inline-block;
-  width: 2.5em;
+.title {
+  @apply heading-1;
+  @apply mb-6;
 }

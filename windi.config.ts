@@ -4,17 +4,15 @@ import AspectRatio from 'windicss/plugin/aspect-ratio';
 import Filters from 'windicss/plugin/filters';
 import Forms from 'windicss/plugin/forms';
 import LineClamp from 'windicss/plugin/line-clamp';
-import Typography from 'windicss/plugin/typography';
 
 export default defineConfig({
   darkMode: 'class',
-  plugins: [AspectRatio, Forms, Filters, LineClamp, Typography],
+  extract: {
+    include: ['index.html', 'src/**/*.{html,css,tsx}'],
+  },
+  plugins: [AspectRatio, Forms, Filters, LineClamp],
   shortcuts: {
-    button:
-      'bg-green-500 hover:bg-green-700 font-semibold py-4 px-8 rounded-lg text-light-100 text-opacity-90',
-    code: 'bg-gray-200 py-0.5 px-2 rounded-md text-gray-600',
-    figure: 'm-0 p-0 text-center w-full',
-    list: 'flex list-none p-0 w-full',
+    'heading-1': 'font-bold opacity-80 text-size-3xl',
   },
   theme: {
     extend: {
