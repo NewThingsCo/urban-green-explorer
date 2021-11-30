@@ -1,0 +1,11 @@
+.button {
+  @apply bg-green-500;
+  @apply focus:shadow-lg focus:shadow-gray-500;
+  @apply font-semibold;
+  @apply hover:bg-green-700 focus:bg-green-700;
+  @apply py-3 px-4;
+  @apply rounded-lg;
+  @apply shadow;
+  @apply text-light-100;
+  @apply text-opacity-90;
+}

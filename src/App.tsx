@@ -1,6 +1,6 @@
 import { defineComponent } from 'vue';
 import './App.css';
-import Logo from './assets/logo.png';
+import CoverImage from './assets/cover-image.webp';
 import HelloWorld from './components/HelloWorld';
 
 export default defineComponent({
@@ -8,8 +8,12 @@ export default defineComponent({
   render() {
     return (
       <>
-        <img alt="Vue logo" class="logo" src={Logo} />
-        <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+        <figure>
+          <img alt="Cover image" class="cover-image" src={CoverImage} />
+        </figure>
+        <main class="main">
+          <HelloWorld title="Contentful integration with Vue 3" />
+        </main>
       </>
     );
   },

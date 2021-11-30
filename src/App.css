@@ -1,8 +1,30 @@
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.cover-image {
+  @apply m-auto mb-6;
+  @apply max-h-1/3;
+  @apply min-w-full;
+  @apply object-cover;
+}
+
+.main {
+  @apply container;
+  @apply mx-auto;
+  @apply p-2;
+  @apply text-center;
+
+  code {
+    @apply bg-gray-100;
+    @apply mx-0.75;
+    @apply py-0.5 px-2;
+    @apply rounded-md;
+    @apply text-gray-600;
+  }
+
+  a {
+    @apply text-green-500;
+  }
 }

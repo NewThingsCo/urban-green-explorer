@@ -25,13 +25,17 @@
 
 ## Recommended IDE Setup
 
-- [VSCode][vscode] + [Volar][volar]
+- [VSCode][vscode] with these extensions:
+  - [Volar][vscode-volar]
+  - [Windi CSS][vscode-windi-css]
 
 ## Stack
 
 - [ESLint][eslint] with [Prettier][prettier] and [TypeScript support][eslint-ts]
 - [Pinia][pinia]
+- [PostCSS][postcss]
 - [Vite][vite] with [Vue 3][vue]
+- [Windi CSS][windi-css] (compatible with [Tailwind CSS][tailwind-css])
 
 ## Installation
 
@@ -98,8 +102,11 @@ Click run and choose a port if needed. Default is `5000`.
 
 ## Additional documentation
 
+- [PostCSS documentatioin][postcss-docs]
+  - [Preset Env][postcss-preset-env]
 - [Vite documentation][vite-docs]
 - [Vue documentation][vue-docs] ([JSX][vue-jsx-next])
+- [Windi CSS documentation][windi-css-docs]
 
 ## License
 
@@ -120,11 +127,18 @@ Click run and choose a port if needed. Default is `5000`.
 [node]: https://nodejs.org/en
 [nvm]: https://github.com/nvm-sh/nvm
 [pinia]: https://pinia.esm.dev/
+[postcss]: https://postcss.org/
+[postcss-docs]: https://github.com/postcss/postcss
+[postcss-preset-env]: https://preset-env.cssdb.org/
 [prettier]: https://prettier.io/
 [vite-docs]: https://vitejs.dev/guide/
 [vite]: https://vitejs.dev/
-[volar]: https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar
+[vscode-volar]: https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar
+[vscode-windi-css]: https://marketplace.visualstudio.com/items?itemName=voorjaar.windicss-intellisense
 [vscode]: https://code.visualstudio.com/
 [vue-docs]: https://v3.vuejs.org/guide/introduction.html
 [vue-jsx-next]: https://github.com/vuejs/jsx-next
 [vue]: https://v3.vuejs.org/
+[tailwind-css]: https://tailwindcss.com/
+[windi-css-docs]: https://windicss.org/guide/
+[windi-css]: https://windicss.org/

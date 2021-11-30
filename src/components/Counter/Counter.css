@@ -1,0 +1,35 @@
+.counter {
+  @apply mt-6 mb-6;
+}
+
+.count:not(.small) {
+  @apply font-400;
+  @apply text-2xl;
+}
+
+.count dd,
+.count dt {
+  @apply inline;
+}
+
+.count dd {
+  @apply ml-2;
+}
+
+.count .value {
+  @apply font-600;
+}
+
+.count.small,
+.count.small::before {
+  @apply inline-block;
+}
+
+.count.small:nth-child(2) {
+  @apply mr-0.5;
+}
+
+.count.small + .count.small::before {
+  @apply w-8;
+  content: '|';
+}

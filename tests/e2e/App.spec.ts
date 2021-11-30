@@ -22,7 +22,8 @@ test.describe('App', () => {
 
   /** Title */
   test('has the correct title', async ({ page }) => {
-    const $title = page.locator('h1');
-    await expect($title).toHaveText('Hello Vue 3 + TypeScript + Vite');
+    const title = 'Contentful integration with Vue 3';
+    const $title = page.locator('.title');
+    await expect($title).toHaveText(title);
   });
 });

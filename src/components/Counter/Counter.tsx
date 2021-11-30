@@ -2,6 +2,8 @@ import type { VNode } from 'vue';
 import { defineComponent } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useCounterStore } from '@/stores/counter';
+import Button from '@/components/Button';
+import './Counter.css';
 
 export default defineComponent({
   name: 'Counter',
@@ -14,23 +16,23 @@ export default defineComponent({
   },
   render(): VNode {
     return (
-      <form>
+      <form class="counter">
         <dl class="count">
           <dt>Count is</dt>
           <dd>
             <span class="current-count value">{this.count}</span> <sup>*</sup>
           </dd>
         </dl>
-        <p>
-          <button name="decrement" onClick={this.dec} type="button">
-            Decrement ➖
-          </button>
+        <p class="mt-6">
+          <Button name="decrement" onClick={this.dec} type="button">
+            <span class="mr-1">Decrement</span> ➖
+          </Button>
           &nbsp;&nbsp;&nbsp;
-          <button name="increment" onClick={this.inc} type="button">
-            Increment ➕
-          </button>
+          <Button name="increment" onClick={this.inc} type="button">
+            <span class="mr-1">Increment</span> ➕
+          </Button>
         </p>
-        <p>
+        <p class="mt-3">
           <small>
             <sup>*</sup>
             <dl class="count small">

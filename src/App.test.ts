@@ -14,6 +14,6 @@ describe('App', () => {
         plugins: [createTestingPinia()],
       },
     });
-    expect(wrapper.find('.logo').isVisible()).toBe(true);
+    expect(wrapper.find('.cover-image').isVisible()).toBe(true);
   });
 });

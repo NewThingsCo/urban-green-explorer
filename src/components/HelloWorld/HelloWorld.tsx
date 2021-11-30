@@ -6,7 +6,7 @@ import Counter from '@/components/Counter';
 export default defineComponent({
   name: 'HelloWorld',
   props: {
-    msg: {
+    title: {
       required: true,
       type: String as PropType<string>,
     },
@@ -14,7 +14,7 @@ export default defineComponent({
   render(): VNode {
     return (
       <div class={styles}>
-        <h1>{this.msg}</h1>
+        <h1 class="title">{this.title}</h1>
         <p>
           Recommended IDE setup:
           <a href="https://code.visualstudio.com/" target="_blank">
