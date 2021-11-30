@@ -1,9 +1,15 @@
-import vueJsx from '@vitejs/plugin-vue-jsx';
+import VueJsx from '@vitejs/plugin-vue-jsx';
 import { defineConfig } from 'vite';
 import WindiCSS from 'vite-plugin-windicss';
+import StylelintPlugin from 'vite-plugin-stylelint';
+import ESLintPlugin from 'vite-plugin-eslint';
 import path from 'path';
 
-// https://vitejs.dev/config/
+/**
+ * Configuration for Vite
+ *
+ * {@link https://vitejs.dev/config/}
+ */
 export default defineConfig({
   base: '/account/',
   esbuild: {
@@ -11,7 +17,16 @@ export default defineConfig({
     jsxFragment: 'Fragment',
   },
   plugins: [
-    vueJsx({
+    ESLintPlugin({
+      cache: true,
+      fix: true,
+      include: ['src/**/*.ts'],
+    }),
+    StylelintPlugin({
+      cache: true,
+      fix: true,
+    }),
+    VueJsx({
       mergeProps: true,
       optimize: true,
       transformOn: true,
