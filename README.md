@@ -26,6 +26,10 @@
 ## Recommended IDE Setup
 
 - [VSCode][vscode] with these extensions:
+  - [ESLint][vscode-eslint]
+  - [Prettier][vscode-prettier]
+  - [Stylelint][vscode-stylelint]
+  - [Volar][volar]
   - [Volar][vscode-volar]
   - [Windi CSS][vscode-windi-css]
 
@@ -34,6 +38,7 @@
 - [ESLint][eslint] with [Prettier][prettier] and [TypeScript support][eslint-ts]
 - [Pinia][pinia]
 - [PostCSS][postcss]
+- [Stylelint][stylelint]
 - [Vite][vite] with [Vue 3][vue]
 - [Windi CSS][windi-css] (compatible with [Tailwind CSS][tailwind-css])
 
@@ -127,18 +132,22 @@ Click run and choose a port if needed. Default is `5000`.
 [node]: https://nodejs.org/en
 [nvm]: https://github.com/nvm-sh/nvm
 [pinia]: https://pinia.esm.dev/
-[postcss]: https://postcss.org/
 [postcss-docs]: https://github.com/postcss/postcss
 [postcss-preset-env]: https://preset-env.cssdb.org/
+[postcss]: https://postcss.org/
 [prettier]: https://prettier.io/
+[stylelint]: https://stylelint.io/
+[tailwind-css]: https://tailwindcss.com/
 [vite-docs]: https://vitejs.dev/guide/
 [vite]: https://vitejs.dev/
+[vscode-eslint]: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+[vscode-prettier]: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+[vscode-stylelint]: https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint
 [vscode-volar]: https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar
 [vscode-windi-css]: https://marketplace.visualstudio.com/items?itemName=voorjaar.windicss-intellisense
 [vscode]: https://code.visualstudio.com/
 [vue-docs]: https://v3.vuejs.org/guide/introduction.html
 [vue-jsx-next]: https://github.com/vuejs/jsx-next
 [vue]: https://v3.vuejs.org/
-[tailwind-css]: https://tailwindcss.com/
 [windi-css-docs]: https://windicss.org/guide/
 [windi-css]: https://windicss.org/

@@ -34,9 +34,9 @@
     "@pinia/testing": "^0.0.6",
     "@playwright/test": "^1.16.3",
     "@types/jest": "^27.0.3",
-    "@types/node": "^16.11.10",
-    "@typescript-eslint/eslint-plugin": "^5.4.0",
-    "@typescript-eslint/parser": "^5.4.0",
+    "@types/node": "^16.11.11",
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
     "@vitejs/plugin-vue-jsx": "^1.3.0",
     "@vue/babel-plugin-jsx": "^1.1.1",
     "@vue/test-utils": "^2.0.0-rc.16",
@@ -50,18 +50,23 @@
     "eslint-plugin-markdown": "^2.2.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.1.1",
-    "jest": "^27.3.1",
-    "jest-environment-jsdom": "^27.3.1",
+    "jest": "^27.4.1",
+    "jest-environment-jsdom": "^27.4.1",
     "jest-transform-stub": "^2.0.0",
     "postcss": "^8.4.4",
     "postcss-preset-env": "^7.0.1",
     "postcss-windicss": "^1.0.0",
     "prettier": "^2.5.0",
+    "stylelint": "^14.1.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^24.0.0",
     "ts-jest": "^27.0.7",
     "typescript": "^4.5.2",
     "vite-jest": "^0.0.4",
+    "vite-plugin-eslint": "^1.3.0",
+    "vite-plugin-stylelint": "^1.0.4",
     "vite-plugin-windicss": "^1.5.3",
-    "vue-tsc": "^0.29.7",
+    "vue-tsc": "^0.29.8",
     "windicss": "^3.2.1"
   },
   "engines": {
@@ -244,8 +249,11 @@
     "build": "vue-tsc --noEmit && vite build",
     "build:docker": "docker build . -t contentful-vue",
     "dev": "vite",
-    "lint": "eslint --ignore-path .gitignore .",
-    "lint:fix": "eslint --fix --ignore-path .gitignore .",
+    "lint": "npm run lint:client && npm run lint:styles",
+    "lint:client": "eslint --ignore-path .gitignore .",
+    "lint:fix:client": "eslint --fix --ignore-path .gitignore .",
+    "lint:fix:styles": "stylelint --fix **/*.css",
+    "lint:styles": "stylelint **/*.css",
     "postinstall": "scripts/postinstall.sh",
     "prettier": "prettier --ignore-path .gitignore --write .",
     "start": "vite preview --port 8080",
@@ -253,6 +261,23 @@
     "test:e2e": "playwright test --config=tests/e2e/playwright.config.ts",
     "test:e2e:record": "playwright test --config=tests/e2e/playwright.record.config.ts",
     "test:unit": "node --experimental-vm-modules --no-warnings node_modules/jest/bin/jest.js --detectOpenHandles"
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-prettier",
+      "stylelint-config-standard"
+    ],
+    "rules": {
+      "declaration-colon-newline-after": null,
+      "function-name-case": null,
+      "function-parentheses-space-inside": null,
+      "max-nesting-depth": 3,
+      "no-invalid-position-at-import-rule": null,
+      "selector-max-compound-selectors": null,
+      "selector-max-id": null,
+      "selector-no-qualifying-type": null,
+      "string-quotes": "single"
+    }
   },
   "version": "0.0.0"
 }
