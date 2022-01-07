@@ -1,10 +1,10 @@
 /* eslint-disable import/no-unresolved */
-import { createApp } from 'vue';
-import { createPinia } from 'pinia';
-import App from './App';
 import 'virtual:windi-devtools';
 import 'virtual:windi.css';
+import { createApp } from 'vue';
+import App from './App';
+import { i18n, pinia } from './utils';
 
-const pinia = createPinia();
+createApp(App).use(i18n).use(pinia).mount('#app');
 
-createApp(App).use(pinia).mount('#app');
+export { i18n };

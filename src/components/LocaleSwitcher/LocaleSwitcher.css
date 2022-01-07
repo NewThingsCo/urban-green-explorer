@@ -1,0 +1,12 @@
+[name='locale-switcher'] {
+  @apply flex mb-4 justify-center;
+
+  [type='radio'] {
+    position: absolute;
+    left: -999em;
+
+    &:checked + .label {
+      @apply font-bold;
+    }
+  }
+}

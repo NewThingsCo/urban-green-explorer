@@ -26,6 +26,9 @@ export default defineConfig({
         sans: ['Maison Neue', 'sans-serif'],
         serif: ['Merriweather', 'serif'],
       },
+      maxHeight: {
+        '1/3': '33.3vh',
+      },
       screens: {
         sm: '640px',
         md: '768px',

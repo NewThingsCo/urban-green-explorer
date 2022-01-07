@@ -1,19 +1,17 @@
 import { defineComponent } from 'vue';
 import './App.css';
-import CoverImage from './assets/cover-image.webp';
-import HelloWorld from './components/HelloWorld';
+import MainFooter from './components/MainFooter';
+import MainHeader from './components/MainHeader';
+import MainHome from './components/MainHome';
 
 export default defineComponent({
   name: 'App',
   render() {
     return (
       <>
-        <figure>
-          <img alt="Cover image" class="cover-image" src={CoverImage} />
-        </figure>
-        <main class="main">
-          <HelloWorld title="Contentful integration with Vue 3" />
-        </main>
+        <MainHeader />
+        <MainHome />
+        <MainFooter />
       </>
     );
   },
