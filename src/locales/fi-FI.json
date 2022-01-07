@@ -1,0 +1,35 @@
+{
+  "countIsLabel": "Luku on",
+  "counter": "Laskin",
+  "coverImage": "Kansikuva",
+  "currencies": "Valuutat",
+  "dateTimes": "Ajat ja päivämäärät",
+  "decrementLabel": "Vähennä",
+  "editComponent": {
+    "href": "./components/MainFooter/MainFooter.tsx",
+    "label": "components/MainFooter/MainFooter.tsx",
+    "text": "Muokkaa {0} testataksesi moduulien päivitystä lennossa."
+  },
+  "incrementLabel": "Lisää",
+  "language": "Suomi",
+  "localeSwitcher": "Kielivalinta",
+  "moreInfo": {
+    "href": "https://github.com/NewThingsCo/contentful-vue/blob/main/README.md",
+    "label": "README.md",
+    "text": "Lukaise {0} läpi jos haluat lisätietoja."
+  },
+  "nextNumberLabel": "Seuraava luku on:",
+  "numberStatusNegative": "Vähennä tai lisää lukua | Olet vähentänyt kerran | Olet vähentänyt useamman kerran",
+  "numberStatusPositive": "Vähennä tai lisää lukua | Olet lisännyt kerran | Olet lisännyt useamman kerran",
+  "prevNumberLabel": "Edellinen luku oli:",
+  "title": "Contentful Vue (fi)",
+  "today": "Tänään",
+  "viteDocs": {
+    "href": "https://vitejs.dev/",
+    "label": "Vite -ohjeet"
+  },
+  "vueDocs": {
+    "href": "https://v3.vuejs.org/",
+    "label": "Vue 3 -ohjeet"
+  }
+}

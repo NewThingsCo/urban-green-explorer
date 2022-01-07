@@ -1,0 +1,4 @@
+.main-header {
+  @apply mx-auto;
+  @apply text-center;
+}

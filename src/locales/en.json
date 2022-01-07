@@ -1,0 +1,35 @@
+{
+  "countIsLabel": "Count is",
+  "counter": "Counter",
+  "coverImage": "Cover image",
+  "currencies": "Currencies",
+  "dateTimes": "Dates and times",
+  "decrementLabel": "Decrement",
+  "editComponent": {
+    "href": "./components/MainFooter/MainFooter.tsx",
+    "label": "components/MainFooter/MainFooter.tsx",
+    "text": "Edit {0} to test hot module replacement."
+  },
+  "incrementLabel": "Increment",
+  "language": "English",
+  "localeSwitcher": "Language menu",
+  "moreInfo": {
+    "href": "https://github.com/NewThingsCo/contentful-vue/blob/main/README.md",
+    "label": "README.md",
+    "text": "See {link} for more information."
+  },
+  "nextNumberLabel": "Next number is:",
+  "numberStatusNegative": "Decrement or increment the number | You've decremented once | You've decremented several times",
+  "numberStatusPositive": "Decrement or increment the number | You've incremented once | You've incremented several times",
+  "prevNumberLabel": "Prev number was:",
+  "title": "Contentful Vue (en)",
+  "today": "Today",
+  "viteDocs": {
+    "href": "https://vitejs.dev/",
+    "label": "Vite Docs"
+  },
+  "vueDocs": {
+    "href": "https://v3.vuejs.org/",
+    "label": "Vue 3 Docs"
+  }
+}

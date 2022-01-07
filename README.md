@@ -29,7 +29,6 @@
   - [ESLint][vscode-eslint]
   - [Prettier][vscode-prettier]
   - [Stylelint][vscode-stylelint]
-  - [Volar][volar]
   - [Volar][vscode-volar]
   - [Windi CSS][vscode-windi-css]
 
@@ -39,7 +38,8 @@
 - [Pinia][pinia]
 - [PostCSS][postcss]
 - [Stylelint][stylelint]
-- [Vite][vite] with [Vue 3][vue]
+- [Vite][vite] with [Vue 3][vue] and the following extensions:
+  - [Vue i18n][vue-i18n]
 - [Windi CSS][windi-css] (compatible with [Tailwind CSS][tailwind-css])
 
 ## Installation
@@ -111,6 +111,7 @@ Click run and choose a port if needed. Default is `5000`.
   - [Preset Env][postcss-preset-env]
 - [Vite documentation][vite-docs]
 - [Vue documentation][vue-docs] ([JSX][vue-jsx-next])
+  - [i18n documentation][vue-i18n-docs]
 - [Windi CSS documentation][windi-css-docs]
 
 ## License
@@ -147,6 +148,8 @@ Click run and choose a port if needed. Default is `5000`.
 [vscode-windi-css]: https://marketplace.visualstudio.com/items?itemName=voorjaar.windicss-intellisense
 [vscode]: https://code.visualstudio.com/
 [vue-docs]: https://v3.vuejs.org/guide/introduction.html
+[vue-i18n-docs]: https://vue-i18n.intlify.dev/introduction.html
+[vue-i18n]: https://vue-i18n.intlify.dev/
 [vue-jsx-next]: https://github.com/vuejs/jsx-next
 [vue]: https://v3.vuejs.org/
 [windi-css-docs]: https://windicss.org/guide/

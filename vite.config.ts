@@ -3,6 +3,7 @@ import { defineConfig } from 'vite';
 import WindiCSS from 'vite-plugin-windicss';
 import StylelintPlugin from 'vite-plugin-stylelint';
 import ESLintPlugin from 'vite-plugin-eslint';
+import VueI18n from '@intlify/vite-plugin-vue-i18n';
 import path from 'path';
 
 /**
@@ -20,11 +21,14 @@ export default defineConfig({
     ESLintPlugin({
       cache: true,
       fix: true,
-      include: ['src/**/*.ts'],
+      include: ['src/**/*.ts', 'src/**/*.tsx'],
     }),
     StylelintPlugin({
       cache: true,
       fix: true,
+    }),
+    VueI18n({
+      include: path.resolve(__dirname, './src/locales/**'),
     }),
     VueJsx({
       mergeProps: true,

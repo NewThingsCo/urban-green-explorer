@@ -1,3 +1,5 @@
-import Button from './Button';
+import Component from './Button';
 
-export default Button;
+export * from './Button.d';
+
+export default Component;

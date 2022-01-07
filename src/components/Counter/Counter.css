@@ -31,5 +31,14 @@
 
 .count.small + .count.small::before {
   @apply w-8;
+
   content: '|';
+}
+
+.counter-buttons {
+  @apply mt-6;
+
+  .button {
+    @apply mx-1.5;
+  }
 }

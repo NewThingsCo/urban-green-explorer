@@ -19,8 +19,13 @@
     "sourceMap": true,
     "strict": true,
     "target": "ESNext",
-    "types": ["@types/jest", "node", "vite/client"],
+    "types": [
+      "@intlify/vite-plugin-vue-i18n/client",
+      "@types/jest",
+      "node",
+      "vite/client"
+    ],
     "useDefineForClassFields": true
   },
-  "include": ["**/*.ts", "src/**/*.tsx"]
+  "include": ["**/*.ts", "**/*.d.ts", "src/**/*.tsx"]
 }
