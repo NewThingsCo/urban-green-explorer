@@ -17,7 +17,8 @@ const LocaleSwitcher = defineComponent({
       const localeCode = (event.target as HTMLInputElement)
         ?.value as LocaleCode;
       this.$i18n.locale = localeCode;
-      localStorage?.setItem('localeCode', localeCode);
+      if (window.localStorage)
+        window.localStorage.setItem('localeCode', localeCode);
       document.querySelector('html')?.setAttribute('lang', localeCode);
     },
   },

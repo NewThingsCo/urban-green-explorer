@@ -51,7 +51,10 @@ const DEFAULT_LOCALE: Locale = {
 };
 
 const DEFAULT_LOCALE_CODE: LocaleCode =
-  (localStorage?.getItem('localeCode') as LocaleCode) || DEFAULT_LOCALE.code;
+  'undefined' !== typeof window
+    ? (window.localStorage?.getItem('localeCode') as LocaleCode) ||
+      DEFAULT_LOCALE.code
+    : DEFAULT_LOCALE.code;
 
 const I18N_MESSAGES: I18nOptions['messages'] & { [name: string]: typeof en } = {
   'en-US': en,
