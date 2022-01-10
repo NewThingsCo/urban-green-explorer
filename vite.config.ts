@@ -12,7 +12,7 @@ import path from 'path';
  * {@link https://vitejs.dev/config/}
  */
 export default defineConfig({
-  base: '/account/',
+  base: '/',
   esbuild: {
     jsxFactory: 'h',
     jsxFragment: 'Fragment',
