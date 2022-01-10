@@ -1,0 +1,12 @@
+.navigation {
+  @apply my-3;
+  @apply text-center;
+
+  .router-link + .router-link {
+    @apply ml-4;
+  }
+
+  .router-link-active {
+    @apply text-current;
+  }
+}
