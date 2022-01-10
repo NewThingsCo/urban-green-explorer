@@ -2,8 +2,8 @@ import { createTestingPinia } from '@pinia/testing';
 import { mount } from '@vue/test-utils';
 import { createPinia, setActivePinia } from 'pinia';
 import MainFooter from './MainFooter';
-import { i18n } from '@/utils';
 import { I18N_DEFAULT_MESSAGES } from '@/constants';
+import { i18n } from '@/utils';
 
 const wrapper = mount(MainFooter, {
   global: {

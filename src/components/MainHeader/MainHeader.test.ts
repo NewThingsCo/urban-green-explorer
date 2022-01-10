@@ -2,11 +2,12 @@ import { createTestingPinia } from '@pinia/testing';
 import { mount } from '@vue/test-utils';
 import { createPinia, setActivePinia } from 'pinia';
 import MainHeader from './MainHeader';
+import { router } from '@/router';
 import { i18n } from '@/utils';
 
 const wrapper = mount(MainHeader, {
   global: {
-    plugins: [createTestingPinia(), i18n],
+    plugins: [createTestingPinia(), i18n, router],
   },
 });
 
@@ -18,6 +19,6 @@ describe('MainHeader', () => {
     expect(wrapper.exists()).toBeTruthy();
   });
   it('has the correct amount of children', () => {
-    expect(wrapper.find('.main-header').element.childNodes.length).toEqual(2);
+    expect(wrapper.find('.main-header').element.childNodes.length).toEqual(3);
   });
 });
