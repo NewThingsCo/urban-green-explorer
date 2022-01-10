@@ -1,8 +1,13 @@
 {
-  "countIsLabel": "Count is",
+  "about": {
+    "title": "About (en)"
+  },
   "counter": "Counter",
+  "countIsLabel": "Count is",
   "coverImage": "Cover image",
   "currencies": "Currencies",
+  "currency": "Currency",
+  "currencyWithoutCents": "Currency without cents",
   "dateTimes": "Dates and times",
   "decrementLabel": "Decrement",
   "editComponent": {
@@ -13,6 +18,7 @@
   "incrementLabel": "Increment",
   "language": "English",
   "localeSwitcher": "Language menu",
+  "long": "Long",
   "moreInfo": {
     "href": "https://github.com/NewThingsCo/contentful-vue/blob/main/README.md",
     "label": "README.md",
@@ -22,6 +28,7 @@
   "numberStatusNegative": "Decrement or increment the number | You've decremented once | You've decremented several times",
   "numberStatusPositive": "Decrement or increment the number | You've incremented once | You've incremented several times",
   "prevNumberLabel": "Prev number was:",
+  "short": "Short",
   "title": "Contentful Vue (en)",
   "today": "Today",
   "viteDocs": {

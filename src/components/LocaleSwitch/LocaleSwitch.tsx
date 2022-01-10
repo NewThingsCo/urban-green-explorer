@@ -4,14 +4,6 @@ import { defineComponent } from 'vue';
 import { DEFAULT_LOCALE_CODE } from '@/constants';
 import { defaultEventHandler, isLocale } from '@/utils';
 import './LocaleSwitch.css';
-import { LocaleSwitchProps } from '.';
-
-export const asdf: LocaleSwitchProps = {
-  checked: false,
-  handleChange: defaultEventHandler,
-  label: '',
-  value: 'en-US',
-};
 
 export default defineComponent({
   name: 'LocaleSwitch',

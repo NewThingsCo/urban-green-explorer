@@ -1,4 +1,4 @@
-.main-home {
+.main {
   @apply container;
   @apply leading-relaxed;
   @apply mx-auto;
@@ -8,9 +8,9 @@
     @apply mt-3;
 
     .link + .link {
+      @apply border-solid border-l-1 border-light-900;
       @apply ml-3;
       @apply pl-3;
-      @apply border-solid border-l-1 border-light-900;
     }
   }
 

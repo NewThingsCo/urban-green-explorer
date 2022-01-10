@@ -5,13 +5,13 @@ import { shallowMount } from '@vue/test-utils';
 import { createPinia, setActivePinia } from 'pinia';
 import LocaleSwitch from './LocaleSwitch';
 import { LocaleSwitchProps } from '.';
-import { i18n } from '@/utils';
 import { LOCALES } from '@/constants';
+import { i18n } from '@/utils';
 
 const mockCallback = jest.fn();
 const props: LocaleSwitchProps = {
   checked: false,
-  // @ts-ignore
+  // @ts-ignore Only used to test the amount of calls to this function
   handleChange: mockCallback,
   label: 'Unit test',
   value: LOCALES[0].code,

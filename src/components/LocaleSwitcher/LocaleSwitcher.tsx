@@ -1,10 +1,11 @@
 import type { LocaleCode } from '@/types';
-import { VNode, defineComponent } from 'vue';
+import type { VNode } from 'vue';
+import { defineComponent } from 'vue';
 import './LocaleSwitcher.css';
 import LocaleSwitch from '../LocaleSwitch';
 import { LOCALES } from '@/constants';
 
-const LocaleSwitcher = defineComponent({
+export default defineComponent({
   name: 'LocaleSwitcher',
   mounted() {
     document?.documentElement?.setAttribute('lang', this.$i18n.locale);
@@ -37,5 +38,3 @@ const LocaleSwitcher = defineComponent({
     );
   },
 });
-
-export default LocaleSwitcher;

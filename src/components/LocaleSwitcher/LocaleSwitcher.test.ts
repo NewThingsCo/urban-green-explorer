@@ -5,8 +5,8 @@ import { createTestingPinia } from '@pinia/testing';
 import { mount } from '@vue/test-utils';
 import { createPinia, setActivePinia } from 'pinia';
 import LocaleSwitcher from './LocaleSwitcher';
-import { i18n } from '@/utils';
 import { LOCALES } from '@/constants';
+import { i18n } from '@/utils';
 
 const mockCallback = jest.fn();
 

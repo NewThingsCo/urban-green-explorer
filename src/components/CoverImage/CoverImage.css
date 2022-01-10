@@ -1,5 +1,9 @@
 .cover-image {
-  @apply mt-0;
-  @apply mb-6;
-  @apply mx-auto;
+  @apply m-auto mb-6;
+
+  img {
+    @apply max-h-1/3;
+    @apply min-w-full;
+    @apply object-cover;
+  }
 }

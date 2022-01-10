@@ -3,7 +3,7 @@ import { I18N_DEFAULT_MESSAGES, I18N_MESSAGES } from '../../src/constants';
 
 test.describe('App', () => {
   test.beforeEach(async ({ baseURL, page }) => {
-    await page.goto(baseURL + '/account', { waitUntil: 'load' });
+    await page.goto(baseURL + '/', { waitUntil: 'load' });
   });
 
   /** Counter */

@@ -18,7 +18,7 @@ export default defineComponent({
   render(): VNode {
     return (
       <figure class="cover-image">
-        <img alt={this.alt} class="cover-image" src={this.src} />
+        <img alt={this.alt} src={this.src} />
       </figure>
     );
   },
