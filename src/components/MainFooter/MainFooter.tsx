@@ -6,8 +6,8 @@ export default defineComponent({
   name: 'MainFooter',
   render(): VNode {
     return (
-      <footer class="p-5 main-footer">
-        <hr class="mb-6" />
+      <footer class="main-footer">
+        <hr class="my-6" />
         <i18n-t
           class="text"
           keypath="editComponent.text"
