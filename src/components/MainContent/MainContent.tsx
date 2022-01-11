@@ -7,6 +7,7 @@ export default defineComponent({
   name: 'MainContent',
   setup() {
     const classes = ['main'];
+    // Add current route name to container class i.e. main-route-name
     const { currentRoute } = useRouter();
     if (currentRoute.value.name) {
       classes.push(`main-${currentRoute.value.name.toString().toLowerCase()}`);

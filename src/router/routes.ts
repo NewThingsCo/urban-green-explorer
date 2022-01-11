@@ -3,12 +3,12 @@ import type { RouteRecordRaw } from 'vue-router';
 const routes: RouteRecordRaw[] = [
   {
     component: async () => await import('@/pages/IndexPage'),
-    name: 'Home',
+    name: 'home',
     path: '/',
   },
   {
     component: async () => await import('@/pages/AboutPage'),
-    name: 'About',
+    name: 'about',
     path: '/about',
   },
 ];
