@@ -11,8 +11,8 @@
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "paths": {
-      "@/*": ["./src/*"],
-      "~/*": ["./*"]
+      "@/*": ["./*"],
+      "~/*": ["./src/*"]
     },
     "resolveJsonModule": true,
     "skipLibCheck": true,
@@ -23,7 +23,9 @@
       "@intlify/vite-plugin-vue-i18n/client",
       "@types/jest",
       "node",
-      "vite/client"
+      "vite/client",
+      "vite-plugin-pages/client",
+      "vite-ssg"
     ],
     "useDefineForClassFields": true
   },

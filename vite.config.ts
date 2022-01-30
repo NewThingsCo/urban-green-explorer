@@ -4,6 +4,7 @@ import WindiCSS from 'vite-plugin-windicss';
 import StylelintPlugin from 'vite-plugin-stylelint';
 import ESLintPlugin from 'vite-plugin-eslint';
 import VueI18n from '@intlify/vite-plugin-vue-i18n';
+import Pages from 'vite-plugin-pages';
 import path from 'path';
 
 /**
@@ -22,6 +23,11 @@ export default defineConfig({
       cache: true,
       fix: true,
       include: ['src/**/*.ts', 'src/**/*.tsx'],
+    }),
+    Pages({
+      dirs: 'src/pages',
+      extensions: ['tsx'],
+      resolver: 'vue',
     }),
     StylelintPlugin({
       cache: true,
@@ -44,11 +50,18 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
-      '~': path.resolve(__dirname, './'),
+      '@': path.resolve(__dirname, './'),
+      '~': path.resolve(__dirname, './src'),
     },
   },
   server: {
     port: 8080,
+  },
+  ssgOptions: {
+    dirStyle: 'nested',
+    entry: 'src/main.ts',
+    format: 'esm',
+    formatting: 'prettify',
+    script: 'async',
   },
 });
