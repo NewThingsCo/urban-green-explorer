@@ -15,6 +15,7 @@ export default defineComponent({
           tag="p"
         >
           <a
+            class="link"
             href={this.$t('editComponent.href')}
             target="_blank"
             rel="external"

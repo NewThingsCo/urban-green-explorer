@@ -1,8 +1,8 @@
 import type { PropType, VNode } from 'vue';
-import type { LocaleCode } from '@/types';
+import type { LocaleCode } from '~/types';
 import { defineComponent } from 'vue';
-import { DEFAULT_LOCALE_CODE } from '@/constants';
-import { defaultEventHandler, isLocale } from '@/utils';
+import { DEFAULT_LOCALE_CODE } from '~/constants';
+import { defaultEventHandler, isLocale } from '~/utils';
 import './LocaleSwitch.css';
 
 export default defineComponent({

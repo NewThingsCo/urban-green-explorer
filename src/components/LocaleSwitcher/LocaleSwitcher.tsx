@@ -1,9 +1,9 @@
-import type { LocaleCode } from '@/types';
 import type { VNode } from 'vue';
+import type { LocaleCode } from '~/types';
 import { defineComponent } from 'vue';
-import './LocaleSwitcher.css';
+import { HAS_LOCAL_STORAGE, LOCALES } from '~/constants';
 import LocaleSwitch from '../LocaleSwitch';
-import { LOCALES } from '@/constants';
+import './LocaleSwitcher.css';
 
 export default defineComponent({
   name: 'LocaleSwitcher',
@@ -18,8 +18,9 @@ export default defineComponent({
       const localeCode = (event.target as HTMLInputElement)
         ?.value as LocaleCode;
       this.$i18n.locale = localeCode;
-      if (window.localStorage)
+      if (HAS_LOCAL_STORAGE) {
         window.localStorage.setItem('localeCode', localeCode);
+      }
       document.querySelector('html')?.setAttribute('lang', localeCode);
     },
   },

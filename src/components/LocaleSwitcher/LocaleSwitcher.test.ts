@@ -1,12 +1,12 @@
-import type { LocaleCode } from '@/types';
 import type { DOMWrapper } from '@vue/test-utils';
+import type { LocaleCode } from '~/types';
 import { jest } from '@jest/globals';
 import { createTestingPinia } from '@pinia/testing';
 import { mount } from '@vue/test-utils';
 import { createPinia, setActivePinia } from 'pinia';
+import { LOCALES } from '~/constants';
+import { i18n } from '~/utils';
 import LocaleSwitcher from './LocaleSwitcher';
-import { LOCALES } from '@/constants';
-import { i18n } from '@/utils';
 
 const mockCallback = jest.fn();
 

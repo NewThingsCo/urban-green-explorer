@@ -3,10 +3,10 @@ import { jest } from '@jest/globals';
 import { createTestingPinia } from '@pinia/testing';
 import { shallowMount } from '@vue/test-utils';
 import { createPinia, setActivePinia } from 'pinia';
+import { LOCALES } from '~/constants';
+import { i18n } from '~/utils';
 import LocaleSwitch from './LocaleSwitch';
 import { LocaleSwitchProps } from '.';
-import { LOCALES } from '@/constants';
-import { i18n } from '@/utils';
 
 const mockCallback = jest.fn();
 const props: LocaleSwitchProps = {

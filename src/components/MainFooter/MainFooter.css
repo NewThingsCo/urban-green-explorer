@@ -1,5 +1,5 @@
 .main-footer {
   @apply mx-auto;
-  @apply pb-6;
-  @apply @text-center;
+  @apply px-6 pb-6;
+  @apply text-center;
 }

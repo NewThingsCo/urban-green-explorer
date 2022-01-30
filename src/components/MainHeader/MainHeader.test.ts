@@ -1,9 +1,9 @@
 import { createTestingPinia } from '@pinia/testing';
 import { mount } from '@vue/test-utils';
 import { createPinia, setActivePinia } from 'pinia';
+import { router } from '~/router';
+import { i18n } from '~/utils';
 import MainHeader from './MainHeader';
-import { router } from '@/router';
-import { i18n } from '@/utils';
 
 const wrapper = mount(MainHeader, {
   global: {

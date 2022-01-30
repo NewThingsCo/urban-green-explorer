@@ -1,14 +1,28 @@
+import { useHead } from '@vueuse/head';
 import { defineComponent } from 'vue';
-import Counter from '@/components/Counter';
-import MainContent from '@/components/MainContent';
-import MainFooter from '@/components/MainFooter';
-import MainHeader from '@/components/MainHeader';
+import { useI18n } from 'vue-i18n';
+import Counter from '~/components/Counter';
+import MainContent from '~/components/MainContent';
+import MainFooter from '~/components/MainFooter';
+import MainHeader from '~/components/MainHeader';
 
 export default defineComponent({
   name: 'IndexPage',
+  setup() {
+    const { t } = useI18n();
+    useHead({
+      title: t('index.title'),
+      meta: [
+        {
+          name: 'description',
+          content: t('index.title'),
+        },
+      ],
+    });
+  },
   render() {
     return (
-      <>
+      <div>
         <MainHeader />
         <MainContent>
           <h1 class="title page-title">{this.$t('title')}</h1>
@@ -56,7 +70,7 @@ export default defineComponent({
           </div>
         </MainContent>
         <MainFooter />
-      </>
+      </div>
     );
   },
 });

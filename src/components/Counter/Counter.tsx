@@ -1,8 +1,8 @@
 import type { VNode } from 'vue';
 import { storeToRefs } from 'pinia';
 import { computed, defineComponent } from 'vue';
-import { useCounterStore } from '@/stores/counter';
-import Button from '@/components/Button';
+import { useCounterStore } from '~/stores/counter';
+import Button from '~/components/Button';
 import './Counter.css';
 
 export default defineComponent({
@@ -51,7 +51,7 @@ export default defineComponent({
           </Button>
         </p>
         <aside class="my-6 counter-stats">
-          <p>
+          <p class="count-text">
             {this.isPositiveCount
               ? this.$t('numberStatusPositive', this.count)
               : this.$t('numberStatusNegative', this.count)}

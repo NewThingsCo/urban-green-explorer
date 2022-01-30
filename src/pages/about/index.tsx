@@ -1,10 +1,24 @@
+import { useHead } from '@vueuse/head';
 import { defineComponent } from 'vue';
-import MainContent from '@/components/MainContent';
-import MainFooter from '@/components/MainFooter';
-import MainHeader from '@/components/MainHeader';
+import { useI18n } from 'vue-i18n';
+import MainContent from '~/components/MainContent';
+import MainFooter from '~/components/MainFooter';
+import MainHeader from '~/components/MainHeader';
 
 export default defineComponent({
   name: 'AboutPage',
+  setup() {
+    const { t } = useI18n();
+    useHead({
+      title: t('about.title'),
+      meta: [
+        {
+          name: 'description',
+          content: t('about.title'),
+        },
+      ],
+    });
+  },
   render() {
     return (
       <>

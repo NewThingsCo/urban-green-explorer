@@ -4,6 +4,6 @@ import './App.css';
 export default defineComponent({
   name: 'App',
   render() {
-    return <router-view></router-view>;
+    return <router-view />;
   },
 });

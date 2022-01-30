@@ -1,6 +1,6 @@
 import type { ButtonHTMLAttributes, PropType, VNode } from 'vue';
 import { defineComponent } from 'vue';
-import { defaultEventHandler } from '@/utils';
+import { defaultEventHandler } from '~/utils';
 import './Button.css';
 
 export default defineComponent({

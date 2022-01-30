@@ -1,4 +1,5 @@
-import { LOCALE_CODES } from '@/constants';
+import type { RouteRecordRaw } from 'vue-router';
+import { LOCALE_CODES } from '~/constants';
 
 type LocaleCodes = typeof LOCALE_CODES;
 
@@ -9,4 +10,6 @@ type Locale = {
   name: readonly string;
 };
 
-export { Locale, Locales, LocaleCode };
+type Routes = RouteRecordRaw[];
+
+export { Locale, Locales, LocaleCode, Routes };

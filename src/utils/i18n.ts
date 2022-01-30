@@ -1,4 +1,5 @@
-import { createI18n, I18nOptions } from 'vue-i18n';
+import type { I18nOptions } from 'vue-i18n/';
+import { createI18n } from 'vue-i18n';
 import {
   DATE_TIME_FORMATS,
   DEFAULT_LOCALE_CODE,

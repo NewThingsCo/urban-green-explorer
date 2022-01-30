@@ -1,14 +1,15 @@
 import { createTestingPinia } from '@pinia/testing';
 import { mount } from '@vue/test-utils';
+import { createHead } from '@vueuse/head';
 import { createPinia, setActivePinia } from 'pinia';
-import IndexPage from './IndexPage';
-import { I18N_DEFAULT_MESSAGES } from '@/constants';
-import { router } from '@/router';
-import { i18n } from '@/utils';
+import { I18N_DEFAULT_MESSAGES } from '~/constants';
+import { router } from '~/router';
+import { i18n } from '~/utils';
+import IndexPage from '.';
 
 const wrapper = mount(IndexPage, {
   global: {
-    plugins: [createTestingPinia(), i18n, router],
+    plugins: [createTestingPinia(), i18n, createHead(), router],
   },
 });
 

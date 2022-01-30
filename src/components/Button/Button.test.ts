@@ -17,7 +17,9 @@ const ChildComponent = {
   template: `<div class="child">${testContent}</div>`,
 };
 
-const wrapper = mount(Button, {
+const wrapper = mount(Button);
+
+const wrapperWithChildrenAndProps = mount(Button, {
   props,
   slots: {
     default: ChildComponent,
@@ -25,17 +27,38 @@ const wrapper = mount(Button, {
 });
 
 describe('Button', () => {
-  it('renders the component', () => {
-    expect(wrapper.exists()).toBeTruthy();
+  describe('with children and props', () => {
+    it('renders the component', () => {
+      expect(wrapperWithChildrenAndProps.exists()).toBeTruthy();
+    });
+    it('renders children', () => {
+      expect(
+        Object.keys(wrapperWithChildrenAndProps.vm.$slots).length
+      ).toBeTruthy();
+      expect(
+        wrapperWithChildrenAndProps.vm.$slots?.default &&
+          wrapperWithChildrenAndProps.vm.$slots?.default()
+      ).toBeTruthy();
+      expect(
+        wrapperWithChildrenAndProps.findAllComponents(ChildComponent).length
+      ).toBe(1);
+    });
+    it('child contains text', () => {
+      expect(wrapperWithChildrenAndProps.find('.child').text()).toMatch(
+        testContent
+      );
+    });
   });
-  it('renders children', () => {
-    expect(Object.keys(wrapper.vm.$slots).length).toBeTruthy();
-    expect(
-      wrapper.vm.$slots?.default && wrapper.vm.$slots?.default()
-    ).toBeTruthy();
-    expect(wrapper.findAllComponents(ChildComponent).length).toBe(1);
-  });
-  it('child contains text', () => {
-    expect(wrapper.find('.child').text()).toMatch(testContent);
+  describe('without children', () => {
+    it('renders the component', () => {
+      expect(wrapper.exists()).toBeTruthy();
+    });
+    it("doesn't render children", () => {
+      expect(Object.keys(wrapper.vm.$slots).length).toBeFalsy();
+      expect(
+        wrapper.vm.$slots?.default && wrapper.vm.$slots?.default()
+      ).toBeFalsy();
+      expect(wrapper.findAllComponents('*').length).toBe(0);
+    });
   });
 });

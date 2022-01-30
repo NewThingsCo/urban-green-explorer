@@ -1,4 +1,4 @@
-import { LocaleCode } from '@/types';
+import { LocaleCode } from '~/types';
 
 interface LocaleSwitchProps {
   checked: boolean;

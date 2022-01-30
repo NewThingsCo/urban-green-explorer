@@ -1,16 +1,17 @@
+import { jest } from '@jest/globals';
 import { createTestingPinia } from '@pinia/testing';
 import { mount } from '@vue/test-utils';
+import { createHead } from '@vueuse/head';
 import { createPinia, setActivePinia } from 'pinia';
-import { jest } from '@jest/globals';
+import { router } from '~/router';
+import { i18n } from '~/utils';
 import App from './App';
-import { router } from '@/router';
-import { i18n } from '@/utils';
 
 jest.retryTimes(2);
 
 const wrapper = mount(App, {
   global: {
-    plugins: [createTestingPinia(), i18n, router],
+    plugins: [createHead(), createTestingPinia(), i18n, router],
   },
 });
 

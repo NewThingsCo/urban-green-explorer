@@ -1,4 +1,4 @@
-import type { Locale, LocaleCode } from '@/types';
+import type { Locale, LocaleCode } from '~/types';
 import type {
   FallbackLocale,
   I18nOptions,
@@ -7,6 +7,7 @@ import type {
 } from 'vue-i18n';
 import en from '../locales/en.json';
 import fi_FI from '../locales/fi-FI.json';
+import { HAS_LOCAL_STORAGE } from './has';
 
 const DATE_TIME_FORMATS: IntlDateTimeFormats = {
   'en-US': {
@@ -50,11 +51,10 @@ const DEFAULT_LOCALE: Locale = {
   name: 'English',
 };
 
-const DEFAULT_LOCALE_CODE: LocaleCode =
-  'undefined' !== typeof window
-    ? (window.localStorage?.getItem('localeCode') as LocaleCode) ||
-      DEFAULT_LOCALE.code
-    : DEFAULT_LOCALE.code;
+const DEFAULT_LOCALE_CODE: LocaleCode = HAS_LOCAL_STORAGE
+  ? (window.localStorage.getItem('localeCode') as LocaleCode) ||
+    DEFAULT_LOCALE.code
+  : DEFAULT_LOCALE.code;
 
 const I18N_MESSAGES: I18nOptions['messages'] & { [name: string]: typeof en } = {
   'en-US': en,
