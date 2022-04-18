@@ -20,7 +20,7 @@
   "localeSwitcher": "Kielivalinta",
   "long": "Pitkä",
   "moreInfo": {
-    "href": "https://github.com/NewThingsCo/contentful-vue/blob/main/README.md",
+    "href": "https://github.com/NewThingsCo/urban-green-explorer/blob/main/README.md",
     "label": "README.md",
     "text": "Lukaise {0} läpi jos haluat lisätietoja."
   },
@@ -29,7 +29,7 @@
   "numberStatusPositive": "Vähennä tai lisää lukua | Olet lisännyt kerran | Olet lisännyt useamman kerran",
   "prevNumberLabel": "Edellinen luku oli:",
   "short": "Lyhyt",
-  "title": "Contentful Vue (fi)",
+  "title": "Urban Green Explorer (fi)",
   "today": "Tänään",
   "viteDocs": {
     "href": "https://vitejs.dev/",
