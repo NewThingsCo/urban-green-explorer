@@ -2,5 +2,6 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": true,
     "source.organizeImports": false
-  }
+  },
+  "i18n-ally.localesPaths": ["src/locales"]
 }
