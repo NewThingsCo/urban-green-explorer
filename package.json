@@ -18,11 +18,10 @@
     "not IE 11"
   ],
   "bugs": {
-    "url": "https://github.com/NewThingsCo/contentful-vue/issues"
+    "url": "https://github.com/NewThingsCo/urban-green-explorer/issues"
   },
   "contributors": [
-    "Niko Pettersen <niko.pettersen@newthings.co> (https://www.newthings.co)",
-    "Perttu Ristimella <perttu.ristimella@newthings.co> (https://www.newthings.co)"
+    "Niko Pettersen <niko.pettersen@newthings.co> (https://www.newthings.co)"
   ],
   "dependencies": {
     "pinia": "^2.0.13",
@@ -30,7 +29,7 @@
     "vue": "^3.2.33",
     "vue-router": "^4.0.14"
   },
-  "description": "Exploring Contentful integration with Vue",
+  "description": "Urban Green Explorer app for exploring the city of Helsinki.",
   "devDependencies": {
     "@intlify/vite-plugin-vue-i18n": "^3.4.0",
     "@pinia/testing": "^0.0.11",
@@ -182,7 +181,7 @@
       }
     }
   },
-  "homepage": "https://github.com/NewThingsCo/contentful-vue/#readme",
+  "homepage": "https://bgreen-project.eu/helsinki/",
   "jest": {
     "collectCoverage": true,
     "collectCoverageFrom": [
@@ -218,14 +217,19 @@
     "verbose": true
   },
   "keywords": [
-    "contentful",
-    "integration",
+    "city",
+    "exploration",
+    "explorer",
+    "green",
+    "map",
+    "planning",
     "typescript",
+    "urban",
     "vite",
     "vue"
   ],
   "license": "MIT",
-  "name": "contentful-vue",
+  "name": "@newthingsco/urban-green-explorer",
   "overrides": {
     "eslint": "8.13.0"
   },
@@ -249,11 +253,11 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NewThingsCo/contentful-vue"
+    "url": "git+https://github.com/NewThingsCo/urban-green-explorer"
   },
   "scripts": {
     "build": "vue-tsc --noEmit && vite build",
-    "build:docker": "docker build . -t contentful-vue",
+    "build:docker": "docker build . -t urban-green-explorer",
     "dev": "vite",
     "lint": "npm run lint:client && npm run lint:styles",
     "lint:client": "eslint --ignore-path .gitignore .",
