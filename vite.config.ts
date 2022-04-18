@@ -26,6 +26,7 @@ export default defineConfig({
     StylelintPlugin({
       cache: true,
       fix: true,
+      include: ['src/**/*.css'],
     }),
     VueI18n({
       include: path.resolve(__dirname, './src/locales/**'),
@@ -36,6 +37,7 @@ export default defineConfig({
       transformOn: true,
     }),
     WindiCSS({
+      config: path.resolve(__dirname, 'windi.config.js'),
       scan: {
         dirs: ['.'],
         fileExtensions: ['css', 'html', 'ts', 'tsx'],
