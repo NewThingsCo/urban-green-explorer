@@ -1,4 +1,3 @@
-import colors from 'windicss/colors';
 import { defineConfig } from 'windicss/helpers';
 import AspectRatio from 'windicss/plugin/aspect-ratio';
 import Filters from 'windicss/plugin/filters';
@@ -16,12 +15,6 @@ export default defineConfig({
   },
   theme: {
     extend: {
-      colors: {
-        blue: colors.sky,
-        gray: colors.coolGray,
-        pink: colors.fuchsia,
-        red: colors.rose,
-      },
       fontFamily: {
         sans: ['Maison Neue', 'sans-serif'],
         serif: ['Merriweather', 'serif'],
