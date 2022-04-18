@@ -1,36 +1,8 @@
-# Contentful Vue
+# Urban Green Explorer
 
-> Exploring Contentful integration with Vue 3
+> Exploring the city of Helsinki.
 
-[![Client - GitHub Actions][client-badge]][client-logs] ![Current version][current-version]
-
-<figure style="margin: 0 0 -1rem; position: relative; max-width: 50rem;">
-
-![Contentful with Vue.js image by Contentful.com][cover-image]
-
-<figcaption style="opacity: 0.5; text-align: right;">
-
-<sup><small>Image source: [Contentful blog][contentful-blog]</small></sup>
-
-</figcaption>
-
-</figure>
-
-## Requirements
-
-- [Docker][docker] (optional)
-- [Git][git]
-- [Node Version Manager][nvm]
-- [Node.js][node] (v16)
-
-## Recommended IDE Setup
-
-- [VSCode][vscode] with these extensions:
-  - [ESLint][vscode-eslint]
-  - [Prettier][vscode-prettier]
-  - [Stylelint][vscode-stylelint]
-  - [Volar][vscode-volar]
-  - [Windi CSS][vscode-windi-css]
+[![Client - GitHub Actions][client-badge]][client-logs]
 
 ## Stack
 
@@ -42,16 +14,33 @@
   - [Vue i18n][vue-i18n]
 - [Windi CSS][windi-css] (compatible with [Tailwind CSS][tailwind-css])
 
+## Requirements
+
+- [Docker][docker] (optional)
+- [Git][git]
+- [Node Version Manager][nvm]
+- [Node.js][node] (v16)
+
+## Recommended IDE Setup
+
+[Visual Studio Code][vscode] with these extensions:
+
+- [ESLint][vscode-eslint]
+- [i18n Ally][vscode-i18n-ally]
+- [Prettier][vscode-prettier]
+- [Stylelint][vscode-stylelint]
+- [Volar][vscode-volar]
+- [Windi CSS][vscode-windi-css]
+
 ## Installation
 
 ```sh
 # Clone the repository
-$ git clone git@github.com:NewThingsCo/contentful-vue.git
-$ cd contentful-vue
+$ git clone git@github.com:NewThingsCo/urban-green-explorer.git
+$ cd urban-green-explorer
 
-# Setup Node Version Manager
+# Install the correct Node version
 $ nvm install
-$ nvm use
 
 # Install dependencies
 $ npm install
@@ -66,16 +55,21 @@ $ npm run dev
 
 ### Lint files
 
+Check for errors:
+
 ```sh
 $ npm run lint
+```
 
-# Fix files automatically
+Fix files automatically:
+
+```sh
 $ npm run lint:fix
 ```
 
 ### Prettier
 
-Fix all files with:
+Fix files automatically:
 
 ```
 $ npm run prettier
@@ -86,7 +80,7 @@ If using [Visual Studio Code][vscode], the editor should fix and format the file
 ## Build for production
 
 ```sh
-$ nvm use
+$ nvm install
 $ npm run build # Files will be built to the /dist folder
 $ npm run serve
 ```
@@ -110,8 +104,9 @@ Click run and choose a port if needed. Default is `5000`.
 - [PostCSS documentatioin][postcss-docs]
   - [Preset Env][postcss-preset-env]
 - [Vite documentation][vite-docs]
-- [Vue documentation][vue-docs] ([JSX][vue-jsx-next])
+- [Vue documentation][vue-docs]
   - [i18n documentation][vue-i18n-docs]
+  - [JSX syntax][vue-jsx-next]
 - [Windi CSS documentation][windi-css-docs]
 
 ## License
@@ -120,9 +115,6 @@ Click run and choose a port if needed. Default is `5000`.
 
 [client-badge]: https://github.com/NewThingsCo/contentful-vue/workflows/Client/badge.svg
 [client-logs]: https://github.com/NewThingsCo/contentful-vue/actions/workflows/client.yml
-[contentful-blog]: https://www.contentful.com/blog/2021/08/26/build-using-vue-and-contentful/
-[cover-image]: ./docs/cover-image.webp
-[current-version]: https://img.shields.io/badge/dynamic/json?color=informational&label=Version&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2FNewThingsCo%2Fcontentful-vue%2Fmain%2Fpackage.json
 [docker]: https://www.docker.com/
 [eslint-ts]: https://github.com/typescript-eslint/typescript-eslint
 [eslint]: https://eslint.org/
@@ -142,6 +134,7 @@ Click run and choose a port if needed. Default is `5000`.
 [vite-docs]: https://vitejs.dev/guide/
 [vite]: https://vitejs.dev/
 [vscode-eslint]: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+[vscode-i18n-ally]: https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally
 [vscode-prettier]: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
 [vscode-stylelint]: https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint
 [vscode-volar]: https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar
