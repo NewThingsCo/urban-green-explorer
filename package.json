@@ -20,6 +20,45 @@
   "bugs": {
     "url": "https://github.com/NewThingsCo/urban-green-explorer/issues"
   },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "subject-case": [
+        2,
+        "always",
+        "sentence-case"
+      ],
+      "type-case": [
+        2,
+        "always",
+        "sentence-case"
+      ],
+      "type-enum": [
+        2,
+        "always",
+        [
+          "Assets",
+          "Build",
+          "Chore",
+          "Components",
+          "Content",
+          "Deps",
+          "Docs",
+          "Feat",
+          "Fix",
+          "Pages",
+          "Plugins",
+          "Refactor",
+          "Release",
+          "Style",
+          "Tests",
+          "Types"
+        ]
+      ]
+    }
+  },
   "contributors": [
     "Niko Pettersen <niko.pettersen@newthings.co> (https://www.newthings.co)"
   ],
@@ -32,6 +71,8 @@
   },
   "description": "Urban Green Explorer app for exploring the city of Helsinki.",
   "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
     "@intlify/vite-plugin-vue-i18n": "^3.4.0",
     "@pinia/testing": "^0.0.11",
     "@playwright/test": "^1.21.0",
@@ -44,6 +85,7 @@
     "@vue/babel-plugin-jsx": "^1.1.1",
     "@vue/test-utils": "^2.0.0-rc.20",
     "babel-preset-vite": "^1.0.4",
+    "commitlint": "^16.2.3",
     "eslint": "8.13.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-alias": "^1.1.2",
@@ -53,6 +95,7 @@
     "eslint-plugin-markdown": "^2.2.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.6.0",
+    "husky": "^7.0.4",
     "jest": "^27.5.1",
     "jest-environment-jsdom": "^27.5.1",
     "jest-transform-stub": "^2.0.0",
@@ -272,7 +315,8 @@
     "test": "npm run test:unit && npm run test:e2e",
     "test:e2e": "playwright test --config=tests/e2e/playwright.config.ts",
     "test:e2e:record": "playwright test --config=tests/e2e/playwright.record.config.ts",
-    "test:unit": "node --experimental-vm-modules --no-warnings node_modules/jest/bin/jest.js --detectOpenHandles"
+    "test:unit": "node --experimental-vm-modules --no-warnings node_modules/jest/bin/jest.js --detectOpenHandles",
+    "prepare": "husky install"
   },
   "stylelint": {
     "extends": [
