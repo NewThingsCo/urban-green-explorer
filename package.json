@@ -24,6 +24,7 @@
     "Niko Pettersen <niko.pettersen@newthings.co> (https://www.newthings.co)"
   ],
   "dependencies": {
+    "leaflet": "^1.8.0",
     "pinia": "^2.0.13",
     "vite": "^2.9.5",
     "vue": "^3.2.33",
@@ -35,6 +36,7 @@
     "@pinia/testing": "^0.0.11",
     "@playwright/test": "^1.21.0",
     "@types/jest": "^27.4.1",
+    "@types/leaflet": "^1.7.9",
     "@types/node": "^17.0.25",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",

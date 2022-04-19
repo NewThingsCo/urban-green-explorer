@@ -1,9 +1,4 @@
 .main {
-  @apply container;
-  @apply leading-relaxed;
-  @apply mx-auto;
-  @apply text-center;
-
   .links {
     @apply mt-3;
 
@@ -18,4 +13,11 @@
     @apply heading-1;
     @apply mb-6;
   }
+}
+
+.main-wrapper {
+  @apply container;
+  @apply leading-relaxed;
+  @apply mx-auto;
+  @apply text-center;
 }

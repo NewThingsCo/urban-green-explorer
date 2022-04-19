@@ -1,0 +1,3 @@
+.map {
+  @apply w-1/2 h-1/2 m-auto left-0 right-0 bottom-0 top-100 absolute z-10;
+}

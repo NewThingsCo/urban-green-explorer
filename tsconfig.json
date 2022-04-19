@@ -21,9 +21,11 @@
     "target": "ESNext",
     "types": [
       "@intlify/vite-plugin-vue-i18n/client",
-      "@types/jest",
+      "jest",
+      "leaflet",
       "node",
-      "vite/client"
+      "vite/client",
+      "./src/types"
     ],
     "useDefineForClassFields": true
   },

@@ -9,7 +9,7 @@ export default defineComponent({
     return (
       <>
         <MainHeader />
-        <MainContent>
+        <MainContent class="main-wrapper">
           <h1 class="title page-title">{this.$t('about.title')}</h1>
           {/**
            * Two ways of creating links:
