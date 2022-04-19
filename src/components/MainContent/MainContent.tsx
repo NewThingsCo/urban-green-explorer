@@ -5,6 +5,12 @@ import './MainContent.css';
 
 export default defineComponent({
   name: 'MainContent',
+  props: {
+    id: {
+      default: undefined,
+      type: String,
+    },
+  },
   setup() {
     const classes = ['main'];
     // Add current route name to container class i.e. main-route-name
@@ -16,7 +22,7 @@ export default defineComponent({
   },
   render(): VNode {
     return (
-      <main class={this.classes.join(' ')}>
+      <main class={this.classes.join(' ')} id={this.id}>
         {this.$slots.default ? this.$slots.default() : null}
       </main>
     );
