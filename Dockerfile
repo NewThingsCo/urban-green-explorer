@@ -18,4 +18,4 @@ RUN npm ci --only=production
 
 EXPOSE 8080
 
-CMD [ "npm", "run", "serve"]
+CMD [ "npm", "start", "-- --port=8080"]
