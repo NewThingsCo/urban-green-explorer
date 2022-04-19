@@ -13,5 +13,6 @@ test-results
 !.editorconfig
 !.github
 !.gitignore
+!.gitkeep
 !.nvmrc
 !.vscode
