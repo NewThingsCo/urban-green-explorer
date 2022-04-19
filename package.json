@@ -60,7 +60,8 @@
     }
   },
   "contributors": [
-    "Niko Pettersen <niko.pettersen@newthings.co> (https://www.newthings.co)"
+    "Niko Pettersen <niko.pettersen@newthings.co> (https://www.newthings.co)",
+    "Sarah Robertz <sarah.robertz@newthings.co> (https://www.newthings.co)"
   ],
   "dependencies": {
     "leaflet": "^1.8.0",
