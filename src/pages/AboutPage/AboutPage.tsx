@@ -2,6 +2,7 @@ import { defineComponent } from 'vue';
 import AppFooter from '@/components/AppFooter';
 import AppHeader from '@/components/AppHeader';
 import AppMain from '@/components/AppMain';
+import NewThingsCo from '@/assets/logos/NewThingsCo.svg?component';
 
 export default defineComponent({
   name: 'AboutPage',
@@ -29,6 +30,17 @@ export default defineComponent({
               {this.$t('vueDocs.label')}
             </a>
           </p>
+          <h2 class="mt-5 title">Partners</h2>
+          <aside>
+            <a
+              class="logo"
+              href="https://newthings.co"
+              rel="external"
+              title="New Things Company"
+            >
+              <NewThingsCo />
+            </a>
+          </aside>
         </AppMain>
         <AppFooter />
       </>

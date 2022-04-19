@@ -1,6 +1,7 @@
 import VueJsx from '@vitejs/plugin-vue-jsx';
 import { defineConfig } from 'vite';
 import WindiCSS from 'vite-plugin-windicss';
+import SVGLoader from 'vite-svg-loader';
 import StylelintPlugin from 'vite-plugin-stylelint';
 import ESLintPlugin from 'vite-plugin-eslint';
 import VueI18n from '@intlify/vite-plugin-vue-i18n';
@@ -28,6 +29,7 @@ export default defineConfig({
       fix: true,
       include: ['src/**/*.css'],
     }),
+    SVGLoader(),
     VueI18n({
       include: path.resolve(__dirname, './src/locales/**'),
     }),

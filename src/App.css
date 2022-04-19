@@ -1,4 +1,6 @@
 :root {
+  --logo-width: 5rem;
+
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
@@ -13,4 +15,10 @@ code {
 
 a {
   @apply text-green-500;
+}
+
+.logo {
+  @apply inline-block;
+  @apply text-current;
+  @apply w-[var(--logo-width)];
 }
