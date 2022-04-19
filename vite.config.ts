@@ -37,7 +37,7 @@ export default defineConfig({
       transformOn: true,
     }),
     WindiCSS({
-      config: path.resolve(__dirname, 'windi.config.js'),
+      config: path.resolve(__dirname, 'windi.config.ts'),
       scan: {
         dirs: ['.'],
         fileExtensions: ['css', 'html', 'ts', 'tsx'],
