@@ -1,13 +1,13 @@
-import { RouterLinkStub, mount } from '@vue/test-utils';
 import { createTestingPinia } from '@pinia/testing';
+import { mount, RouterLinkStub } from '@vue/test-utils';
 import { createPinia, setActivePinia } from 'pinia';
-import Navigation from './';
-import { routes } from '@/router';
 import { i18n } from '@/utils';
+import { router, routes } from '@/router';
+import Navigation from './';
 
 const wrapper = mount(Navigation, {
   global: {
-    plugins: [createTestingPinia(), i18n],
+    plugins: [createTestingPinia(), i18n, router],
     stubs: {
       RouterLink: RouterLinkStub,
     },
@@ -22,6 +22,6 @@ describe('Navigation', () => {
     expect(wrapper.exists()).toBeTruthy();
   });
   it('should have the correct amount of switches', () => {
-    expect(wrapper.findAll('.router-link').length).toEqual(routes.length);
+    expect(wrapper.findAll('a').length).toEqual(routes.length);
   });
 });

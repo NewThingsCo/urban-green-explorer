@@ -40,7 +40,7 @@ describe(Component.name, () => {
   it('should be empty if not given a child component', () => {
     expect(wrapper.findAll('*').length).toEqual(1);
     expect(wrapper.findAll('*').at(0)?.element.outerHTML).toMatch(
-      '<main class="main"><!----></main>'
+      '<main class="app-main"><!----></main>'
     );
   });
   it('should contain elements when given a child component', () => {

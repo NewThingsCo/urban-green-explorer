@@ -22,26 +22,23 @@ describe('App', () => {
     expect(wrapper.exists()).toBeTruthy();
   });
   it('should have a footer', () => {
-    expect(wrapper.find('.main-footer').exists()).toBeTruthy();
+    expect(wrapper.find('.app-footer').exists()).toBeTruthy();
   });
   it('should have a header', () => {
-    expect(wrapper.find('.main-header').exists()).toBeTruthy();
-  });
-  it('should have a cover image', () => {
-    expect(wrapper.find('.cover-image').exists()).toBeTruthy();
+    expect(wrapper.find('.app-header').exists()).toBeTruthy();
   });
   it('should have a locale switcher', () => {
     expect(wrapper.find('[name="locale-switcher"]').exists()).toBeTruthy();
   });
   it('should have a main area', () => {
-    expect(wrapper.find('.main-home').exists()).toBeTruthy();
+    expect(wrapper.find('.app-main').exists()).toBeTruthy();
   });
   it('should have a navigation', () => {
     expect(wrapper.find('.navigation').exists()).toBeTruthy();
   });
   it('main area should not be empty', () => {
-    expect(
-      wrapper.find('.main-home').element.childElementCount
-    ).toBeGreaterThan(1);
+    expect(wrapper.find('.app-main').element.childElementCount).toBeGreaterThan(
+      1
+    );
   });
 });
