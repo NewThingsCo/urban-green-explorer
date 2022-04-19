@@ -15,7 +15,7 @@ const config: PlaywrightTestConfig = {
     },
   ],
   use: {
-    baseURL: process.env.PLAYWRIGHT_TEST_BASE_URL || 'http://localhost:4000',
+    baseURL: 'https://localhost:4000',
     bypassCSP: false,
     headless: true,
     ignoreHTTPSErrors: true,
@@ -24,7 +24,7 @@ const config: PlaywrightTestConfig = {
     viewport: { width: 1280, height: 720 },
   },
   webServer: {
-    command: 'npm start',
+    command: 'npm start -- --port=4000',
     port: 4000,
     reuseExistingServer: false,
   },
