@@ -8,6 +8,5 @@ if env | grep -q SKIP_HUSKY=true; then
   echo "Skipping ${bold}pre-push${normal} hook …"
 else
   npm run lint
-  npm run build
   npm test
 fi
