@@ -1,12 +1,12 @@
 import type { VNode } from 'vue';
 import { defineComponent } from 'vue';
-import './MainFooter.css';
+import './AppFooter.css';
 
 export default defineComponent({
-  name: 'MainFooter',
+  name: 'AppFooter',
   render(): VNode {
     return (
-      <footer class="main-footer">
+      <footer class="app-footer">
         <hr class="my-6" />
         <i18n-t
           class="text"

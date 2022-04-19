@@ -11,8 +11,8 @@
   "dateTimes": "Dates and times",
   "decrementLabel": "Decrement",
   "editComponent": {
-    "href": "./components/MainFooter/MainFooter.tsx",
-    "label": "components/MainFooter/MainFooter.tsx",
+    "href": "./components/AppFooter/AppFooter.tsx",
+    "label": "components/AppFooter/AppFooter.tsx",
     "text": "Edit {0} to test hot module replacement."
   },
   "incrementLabel": "Increment",

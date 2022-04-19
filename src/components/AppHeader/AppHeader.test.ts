@@ -1,17 +1,17 @@
 import { createTestingPinia } from '@pinia/testing';
 import { mount } from '@vue/test-utils';
 import { createPinia, setActivePinia } from 'pinia';
-import MainHeader from './MainHeader';
+import Component from './AppHeader';
 import { router } from '@/router';
 import { i18n } from '@/utils';
 
-const wrapper = mount(MainHeader, {
+const wrapper = mount(Component, {
   global: {
     plugins: [createTestingPinia(), i18n, router],
   },
 });
 
-describe('MainHeader', () => {
+describe(Component.name, () => {
   beforeEach(() => {
     setActivePinia(createPinia());
   });

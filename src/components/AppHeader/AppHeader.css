@@ -1,0 +1,16 @@
+.app-header {
+  @apply items-center;
+  @apply flex;
+  @apply mx-auto;
+  @apply text-center;
+  @apply justify-between;
+  @apply px-5;
+  @apply w-full;
+
+  .title {
+    @apply antialiased;
+    @apply font-black;
+    @apply text-xl;
+    @apply my-4;
+  }
+}

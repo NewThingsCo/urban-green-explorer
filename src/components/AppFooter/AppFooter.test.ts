@@ -1,17 +1,17 @@
 import { createTestingPinia } from '@pinia/testing';
 import { mount } from '@vue/test-utils';
 import { createPinia, setActivePinia } from 'pinia';
-import MainFooter from './MainFooter';
+import Component from './AppFooter';
 import { I18N_DEFAULT_MESSAGES } from '@/constants';
 import { i18n } from '@/utils';
 
-const wrapper = mount(MainFooter, {
+const wrapper = mount(Component, {
   global: {
     plugins: [createTestingPinia(), i18n],
   },
 });
 
-describe('MainFooter', () => {
+describe(Component.name, () => {
   beforeEach(() => {
     setActivePinia(createPinia());
   });
