@@ -55,7 +55,23 @@ export default defineComponent({
             </dl>
           </div>
         </AppContent>
-        <AppFooter />
+        <AppFooter>
+          <hr class="my-6" />
+          <i18n-t
+            class="text"
+            keypath="editComponent.text"
+            scope="global"
+            tag="p"
+          >
+            <a
+              href={this.$t('editComponent.href')}
+              target="_blank"
+              rel="external"
+            >
+              <code>{this.$t('editComponent.label')}</code>
+            </a>
+          </i18n-t>
+        </AppFooter>
       </>
     );
   },

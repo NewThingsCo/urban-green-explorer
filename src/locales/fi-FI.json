@@ -15,6 +15,7 @@
     "label": "components/AppFooter/AppFooter.tsx",
     "text": "Muokkaa {0} testataksesi moduulien päivitystä lennossa."
   },
+  "homePath": "/",
   "incrementLabel": "Lisää",
   "language": "Suomi",
   "localeSwitcher": "Kielivalinta",

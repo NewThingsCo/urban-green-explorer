@@ -15,6 +15,7 @@
     "label": "components/AppFooter/AppFooter.tsx",
     "text": "Edit {0} to test hot module replacement."
   },
+  "homePath": "/",
   "incrementLabel": "Increment",
   "language": "English",
   "localeSwitcher": "Language menu",
