@@ -320,7 +320,6 @@
     "lint:fix:styles": "stylelint --fix src/**/*.css",
     "lint:styles": "stylelint src/**/*.css",
     "postinstall": "scripts/postinstall.sh",
-    "pre-commit": "pretty-quick --staged && lint-staged --concurrent true",
     "prepare": "husky install",
     "prettier": "prettier --ignore-path .gitignore --write .",
     "start": "vite preview --port 8080",
