@@ -89,6 +89,14 @@ $ git commit -m "Feat: New feature"
 
 [Husky][husky] will run a [pre-commit](./.husky/pre-commit) hook to ensure the commits follow the same pattern.
 
+#### Skip Git hooks
+
+Add the following env to skip Git hooks:
+
+```shell
+$ SKIP_HUSKY=true git push
+```
+
 ### Lint files
 
 Check for errors:
