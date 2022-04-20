@@ -1,7 +1,7 @@
 import { createTestingPinia } from '@pinia/testing';
 import { mount } from '@vue/test-utils';
 import { createPinia, setActivePinia } from 'pinia';
-import MainContent from './MainContent';
+import Component from './AppMain';
 import { router } from '@/router';
 import { i18n } from '@/utils';
 
@@ -12,13 +12,13 @@ const ChildComponent = {
   template: `<div class="child">${testContent}</div>`,
 };
 
-const wrapper = mount(MainContent, {
+const wrapper = mount(Component, {
   global: {
     plugins: [createTestingPinia(), i18n, router],
   },
 });
 
-const wrapperWithChild = mount(MainContent, {
+const wrapperWithChild = mount(Component, {
   global: {
     plugins: [createTestingPinia(), i18n, router],
   },
@@ -27,7 +27,7 @@ const wrapperWithChild = mount(MainContent, {
   },
 });
 
-describe('MainContent', () => {
+describe(Component.name, () => {
   beforeEach(() => {
     setActivePinia(createPinia());
   });
@@ -40,7 +40,7 @@ describe('MainContent', () => {
   it('should be empty if not given a child component', () => {
     expect(wrapper.findAll('*').length).toEqual(1);
     expect(wrapper.findAll('*').at(0)?.element.outerHTML).toMatch(
-      '<main class="main"><!----></main>'
+      '<main class="app-main"><!----></main>'
     );
   });
   it('should contain elements when given a child component', () => {

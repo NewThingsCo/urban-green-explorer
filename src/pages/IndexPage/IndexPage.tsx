@@ -1,16 +1,16 @@
 import { defineComponent } from 'vue';
 import Counter from '@/components/Counter';
-import MainContent from '@/components/MainContent';
-import MainFooter from '@/components/MainFooter';
-import MainHeader from '@/components/MainHeader';
+import AppFooter from '@/components/AppFooter';
+import AppHeader from '@/components/AppHeader';
+import AppMain from '@/components/AppMain';
 
 export default defineComponent({
   name: 'IndexPage',
   render() {
     return (
       <>
-        <MainHeader />
-        <MainContent class="main-wrapper">
+        <AppHeader />
+        <AppMain class="main-wrapper">
           <h1 class="title page-title">{this.$t('title')}</h1>
           {/**
            * Two ways of creating links:
@@ -54,8 +54,24 @@ export default defineComponent({
               <dd>{this.$d(new Date(), 'long')}</dd>
             </dl>
           </div>
-        </MainContent>
-        <MainFooter />
+        </AppMain>
+        <AppFooter>
+          <hr class="my-6" />
+          <i18n-t
+            class="text"
+            keypath="editComponent.text"
+            scope="global"
+            tag="p"
+          >
+            <a
+              href={this.$t('editComponent.href')}
+              target="_blank"
+              rel="external"
+            >
+              <code>{this.$t('editComponent.label')}</code>
+            </a>
+          </i18n-t>
+        </AppFooter>
       </>
     );
   },

@@ -1,17 +1,20 @@
 import { createTestingPinia } from '@pinia/testing';
-import { mount } from '@vue/test-utils';
+import { mount, RouterLinkStub } from '@vue/test-utils';
 import { createPinia, setActivePinia } from 'pinia';
-import MainHeader from './MainHeader';
-import { router } from '@/router';
+import Component from './AppFooter';
 import { i18n } from '@/utils';
+import { router } from '@/router';
 
-const wrapper = mount(MainHeader, {
+const wrapper = mount(Component, {
   global: {
     plugins: [createTestingPinia(), i18n, router],
+    stubs: {
+      RouterLink: RouterLinkStub,
+    },
   },
 });
 
-describe('MainHeader', () => {
+describe(Component.name, () => {
   beforeEach(() => {
     setActivePinia(createPinia());
   });
@@ -19,6 +22,6 @@ describe('MainHeader', () => {
     expect(wrapper.exists()).toBeTruthy();
   });
   it('has the correct amount of children', () => {
-    expect(wrapper.find('.main-header').element.childNodes.length).toEqual(3);
+    expect(wrapper.find('.app-footer').element.childNodes.length).toEqual(2);
   });
 });

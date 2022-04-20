@@ -1,10 +1,10 @@
 import type { VNode } from 'vue';
 import { defineComponent } from 'vue';
 import { useRouter } from 'vue-router';
-import './MainContent.css';
+import './AppMain.css';
 
 export default defineComponent({
-  name: 'MainContent',
+  name: 'AppMain',
   props: {
     id: {
       default: undefined,
@@ -12,7 +12,7 @@ export default defineComponent({
     },
   },
   setup() {
-    const classes = ['main'];
+    const classes = ['app-main'];
     // Add current route name to container class i.e. main-route-name
     const { currentRoute } = useRouter();
     if (currentRoute.value.name) {

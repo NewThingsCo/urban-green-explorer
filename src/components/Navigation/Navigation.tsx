@@ -1,6 +1,7 @@
 import type { VNode } from 'vue';
 import { defineComponent } from 'vue';
 import './Navigation.css';
+import { RouterLink } from 'vue-router';
 import { routes } from '@/router';
 
 export default defineComponent({
@@ -9,9 +10,9 @@ export default defineComponent({
     return (
       <nav class="navigation">
         {routes.map((route) => (
-          <router-link class="router-link" to={route.path}>
+          <RouterLink class="router-link" to={route.path}>
             {route.name}
-          </router-link>
+          </RouterLink>
         ))}
       </nav>
     );

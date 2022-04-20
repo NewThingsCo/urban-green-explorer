@@ -1,15 +1,15 @@
 import { defineComponent } from 'vue';
-import MainContent from '@/components/MainContent';
-import MainFooter from '@/components/MainFooter';
-import MainHeader from '@/components/MainHeader';
+import AppFooter from '@/components/AppFooter';
+import AppHeader from '@/components/AppHeader';
+import AppMain from '@/components/AppMain';
 
 export default defineComponent({
   name: 'AboutPage',
   render() {
     return (
       <>
-        <MainHeader />
-        <MainContent class="main-wrapper">
+        <AppHeader />
+        <AppMain class="main-wrapper">
           <h1 class="title page-title">{this.$t('about.title')}</h1>
           {/**
            * Two ways of creating links:
@@ -29,8 +29,8 @@ export default defineComponent({
               {this.$t('vueDocs.label')}
             </a>
           </p>
-        </MainContent>
-        <MainFooter />
+        </AppMain>
+        <AppFooter />
       </>
     );
   },
