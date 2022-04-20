@@ -1,8 +1,8 @@
 import { defineComponent } from 'vue';
 import Counter from '@/components/Counter';
-import AppContent from '@/components/AppContent';
 import AppFooter from '@/components/AppFooter';
 import AppHeader from '@/components/AppHeader';
+import AppMain from '@/components/AppMain';
 
 export default defineComponent({
   name: 'IndexPage',
@@ -10,7 +10,7 @@ export default defineComponent({
     return (
       <>
         <AppHeader />
-        <AppContent class="main-wrapper">
+        <AppMain class="main-wrapper">
           <h1 class="title page-title">{this.$t('title')}</h1>
           {/**
            * Two ways of creating links:
@@ -54,7 +54,7 @@ export default defineComponent({
               <dd>{this.$d(new Date(), 'long')}</dd>
             </dl>
           </div>
-        </AppContent>
+        </AppMain>
         <AppFooter>
           <hr class="my-6" />
           <i18n-t

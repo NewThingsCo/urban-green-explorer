@@ -1,10 +1,10 @@
 import type { VNode } from 'vue';
 import { defineComponent } from 'vue';
 import { useRouter } from 'vue-router';
-import './AppContent.css';
+import './AppMain.css';
 
 export default defineComponent({
-  name: 'AppContent',
+  name: 'AppMain',
   props: {
     id: {
       default: undefined,

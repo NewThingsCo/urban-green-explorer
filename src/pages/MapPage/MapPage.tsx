@@ -1,8 +1,8 @@
 import type { VNode } from 'vue';
 import { defineComponent } from 'vue';
-import AppContent from '@/components/AppContent';
 import AppFooter from '@/components/AppFooter';
 import AppHeader from '@/components/AppHeader';
+import AppMain from '@/components/AppMain';
 import './MapPage.css';
 
 export default defineComponent({
@@ -27,7 +27,7 @@ export default defineComponent({
     return (
       <>
         <AppHeader />
-        <AppContent class="map" id="map" ref="map" />
+        <AppMain class="map" id="map" ref="map" />
         <AppFooter />
       </>
     );
