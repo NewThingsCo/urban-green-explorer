@@ -1,8 +1,10 @@
 import VueJsx from '@vitejs/plugin-vue-jsx';
 import { defineConfig } from 'vite';
 import WindiCSS from 'vite-plugin-windicss';
-import StylelintPlugin from 'vite-plugin-stylelint';
 import ESLintPlugin from 'vite-plugin-eslint';
+import MKCert from 'vite-plugin-mkcert';
+import StylelintPlugin from 'vite-plugin-stylelint';
+import SVGLoader from 'vite-svg-loader';
 import VueI18n from '@intlify/vite-plugin-vue-i18n';
 import path from 'path';
 
@@ -23,11 +25,13 @@ export default defineConfig({
       fix: true,
       include: ['src/**/*.ts', 'src/**/*.tsx'],
     }),
+    MKCert(),
     StylelintPlugin({
       cache: true,
       fix: true,
       include: ['src/**/*.css'],
     }),
+    SVGLoader(),
     VueI18n({
       include: path.resolve(__dirname, './src/locales/**'),
     }),
@@ -51,6 +55,7 @@ export default defineConfig({
     },
   },
   server: {
-    port: 8080,
+    https: true,
+    port: parseInt(process.env.PORT || '8080'),
   },
 });

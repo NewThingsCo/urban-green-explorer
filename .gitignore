@@ -14,5 +14,6 @@ test-results
 !.github
 !.gitignore
 !.gitkeep
+!.husky
 !.nvmrc
 !.vscode

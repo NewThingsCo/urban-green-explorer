@@ -1,0 +1,12 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+if env | grep -q SKIP_HUSKY=true; then
+  echo "Skipping ${bold}pre-commit${normal} hook …"
+else
+  npx --no-install pretty-quick --staged
+  npx --no-install lint-staged --concurrent true
+fi
