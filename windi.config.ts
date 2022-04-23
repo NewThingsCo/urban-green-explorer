@@ -3,13 +3,14 @@ import AspectRatio from 'windicss/plugin/aspect-ratio';
 import Filters from 'windicss/plugin/filters';
 import Forms from 'windicss/plugin/forms';
 import LineClamp from 'windicss/plugin/line-clamp';
+import DaisyUI from 'daisyui';
 
 export default defineConfig({
   darkMode: 'class',
   extract: {
     include: ['index.html', 'src/**/*.{html,css,tsx}'],
   },
-  plugins: [AspectRatio, Forms, Filters, LineClamp],
+  plugins: [AspectRatio, Forms, Filters, LineClamp, DaisyUI],
   shortcuts: {
     'heading-1': 'font-bold opacity-80 text-size-3xl',
   },
