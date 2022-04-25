@@ -8,9 +8,7 @@ export default defineComponent({
   render(): VNode {
     return (
       <header class="app-header">
-        <h1 class="title">
-          <a href={this.$t('homePath')}>Urban Green Explorer</a>
-        </h1>
+        <h1 class="title">Urban Green Explorer</h1>
         <LocaleSwitcher />
       </header>
     );

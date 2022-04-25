@@ -6,11 +6,14 @@
   @apply justify-between;
   @apply px-5;
   @apply w-full;
+  @apply bg-white;
+  @apply fixed;
 
   .title {
     @apply antialiased;
     @apply font-black;
     @apply text-xl;
     @apply my-4;
+    @apply text-black;
   }
 }

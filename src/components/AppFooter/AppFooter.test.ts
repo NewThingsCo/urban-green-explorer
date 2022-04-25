@@ -22,6 +22,6 @@ describe(Component.name, () => {
     expect(wrapper.exists()).toBeTruthy();
   });
   it('has the correct amount of children', () => {
-    expect(wrapper.find('.app-footer').element.childNodes.length).toEqual(2);
+    expect(wrapper.find('.app-footer').element.childNodes.length).toEqual(1);
   });
 });
