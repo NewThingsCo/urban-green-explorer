@@ -8,6 +8,7 @@
   @apply w-full;
   @apply bg-white;
   @apply fixed;
+  @apply border-b-1 border-black;
 
   .title {
     @apply antialiased;
