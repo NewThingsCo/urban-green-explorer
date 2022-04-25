@@ -1,9 +1,8 @@
 .app-footer {
   @apply mx-auto;
-  @apply fixed;
   @apply px-10;
   @apply w-full;
   @apply bg-white;
-  @apply left-0;
+  @apply absolute;
   @apply bottom-0;
 }
