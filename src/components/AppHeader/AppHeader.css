@@ -6,15 +6,17 @@
   @apply justify-between;
   @apply px-5;
   @apply w-full;
-  @apply bg-white;
   @apply fixed;
   @apply border-b-1 border-black;
 
   .title {
     @apply antialiased;
-    @apply font-black;
-    @apply text-xl;
     @apply my-4;
-    @apply text-black;
+
+    a {
+      @apply font-semibold;
+      @apply text-black;
+      @apply text-xl;
+    }
   }
 }
