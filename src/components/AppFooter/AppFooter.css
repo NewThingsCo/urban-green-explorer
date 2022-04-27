@@ -2,7 +2,5 @@
   @apply mx-auto;
   @apply px-10;
   @apply w-full;
-  @apply bg-white;
   @apply absolute;
-  @apply bottom-0;
 }
