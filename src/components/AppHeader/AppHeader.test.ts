@@ -1,12 +1,16 @@
 import { createTestingPinia } from '@pinia/testing';
-import { mount } from '@vue/test-utils';
+import { mount, RouterLinkStub } from '@vue/test-utils';
 import { createPinia, setActivePinia } from 'pinia';
 import Component from './AppHeader';
+import { router } from '@/router';
 import { i18n } from '@/utils';
 
 const wrapper = mount(Component, {
   global: {
-    plugins: [createTestingPinia(), i18n],
+    plugins: [createTestingPinia(), i18n, router],
+    stubs: {
+      RouterLink: RouterLinkStub,
+    },
   },
 });
 
