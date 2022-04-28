@@ -1,13 +1,15 @@
 .app-header {
-  @apply items-center;
-  @apply flex;
-  @apply mx-auto;
-  @apply text-center;
-  @apply justify-between;
-  @apply px-5;
-  @apply w-full;
-  @apply fixed;
+  @apply bg-white;
   @apply border-b-1 border-black;
+  @apply fixed;
+  @apply flex;
+  @apply items-center;
+  @apply justify-between;
+  @apply mx-auto;
+  @apply px-5;
+  @apply text-center;
+  @apply w-full;
+  @apply z-index-10;
 
   .title {
     @apply antialiased;

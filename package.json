@@ -64,7 +64,6 @@
     "Sarah Robertz <sarah.robertz@newthings.co> (https://www.newthings.co)"
   ],
   "dependencies": {
-    "@heroicons/vue": "^1.0.6",
     "daisyui": "^2.14.1",
     "leaflet": "^1.8.0",
     "pinia": "^2.0.13",
