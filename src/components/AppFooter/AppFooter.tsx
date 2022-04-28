@@ -8,6 +8,7 @@ export default defineComponent({
   render(): VNode {
     return (
       <footer class="app-footer">
+        {this.$slots.default ? this.$slots.default() : null}
         <Navigation />
       </footer>
     );

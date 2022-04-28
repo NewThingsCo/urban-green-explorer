@@ -19,6 +19,7 @@
   @apply container;
   @apply leading-relaxed;
   @apply mx-auto;
+  @apply mb-20;
+  @apply py-20;
   @apply text-center;
-  @apply pt-20;
 }
