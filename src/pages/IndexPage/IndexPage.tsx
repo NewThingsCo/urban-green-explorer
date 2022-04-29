@@ -58,7 +58,6 @@ export default defineComponent({
           </div>
         </AppMain>
         <AppFooter>
-          <hr class="my-6" />
           <i18n-t
             class="text"
             keypath="editComponent.text"
