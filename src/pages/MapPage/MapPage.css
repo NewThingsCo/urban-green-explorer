@@ -1,3 +1,11 @@
 .map {
-  @apply w-full h-full m-auto left-0 right-0 bottom-0 top-50 absolute z-10;
+  @apply absolute;
+  @apply bottom-0;
+  @apply h-full;
+  @apply m-auto;
+  @apply left-0;
+  @apply right-0;
+  @apply top-50;
+  @apply w-full;
+  @apply z-10;
 }

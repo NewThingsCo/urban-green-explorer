@@ -9,7 +9,7 @@ export default defineComponent({
   name: 'MapPage',
   mounted() {
     try {
-      const map = this.$leaflet?.map('map').setView([60.1789, 24.9748], 15);
+      const map = this.$leaflet?.map('map').setView([60.1807, 24.9761], 16.5);
       this.$leaflet?.control
         .locate({
           position: 'topleft',
@@ -20,7 +20,7 @@ export default defineComponent({
         ?.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           attribution:
             'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
-          maxZoom: 25,
+          maxZoom: 30,
           tileSize: 512,
           zoomOffset: -1,
         })
