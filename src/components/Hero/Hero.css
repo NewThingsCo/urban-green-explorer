@@ -1,0 +1,33 @@
+.hero {
+  @apply hero;
+  @apply min-h-screen;
+
+  .hero-overlay {
+    @apply hero-overlay;
+    @apply bg-opacity-60;
+  }
+
+  .content {
+    @apply text-center;
+    @apply text-white;
+    @apply hero-content;
+    @apply text-neutral-content;
+
+    .title {
+      @apply mb-5;
+      @apply text-5xl;
+      @apply font-bold;
+    }
+
+    p {
+      @apply mb-5;
+    }
+
+    .button {
+      @apply btn;
+      @apply bg-green-500;
+      @apply text-white;
+      @apply border-none;
+    }
+  }
+}
