@@ -12,6 +12,11 @@ const routes: RouteRecordRaw[] = [
     path: '/about',
   },
   {
+    component: async () => await import('../pages/LocationsPage'),
+    name: 'locations',
+    path: '/locations',
+  },
+  {
     component: async () => await import('../pages/MapPage'),
     name: 'map',
     path: '/map',

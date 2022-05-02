@@ -2,6 +2,15 @@
   "about": {
     "title": "About (en)"
   },
+  "locationsTitle": "Locations",
+  "showMap": "Show on map",
+  "locations": {
+    "parkly": "Start at Parkly",
+    "aurora": "Aurora Block",
+    "loviseholm": "Loviseholm Park",
+    "greenurbanmapping": "Green Urban Mapping",
+    "tram": "Green Tramp Stop"
+  },
   "countIsLabel": "Count is",
   "counter": "Counter",
   "coverImage": "Cover image",
