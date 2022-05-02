@@ -20,7 +20,7 @@ describe(Component.name, () => {
     expect(wrapper.exists()).toBeTruthy();
   });
   it('should have the correct amount of children', () => {
-    expect(wrapper.element.childElementCount).toEqual(3);
+    expect(wrapper.element.childElementCount).toEqual(4);
   });
   it('should have a few links', () => {
     expect(wrapper.findAll('.links a').length).toBeGreaterThan(1);

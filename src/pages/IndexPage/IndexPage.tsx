@@ -3,6 +3,7 @@ import Counter from '@/components/Counter';
 import AppFooter from '@/components/AppFooter';
 import AppHeader from '@/components/AppHeader';
 import AppMain from '@/components/AppMain';
+import Hero from '@/components/Hero';
 
 export default defineComponent({
   name: 'IndexPage',
@@ -10,6 +11,7 @@ export default defineComponent({
     return (
       <>
         <AppHeader />
+        <Hero />
         <AppMain class="main-wrapper">
           <h1 class="title page-title">{this.$t('title')}</h1>
           {/**
