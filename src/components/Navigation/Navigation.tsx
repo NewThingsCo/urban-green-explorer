@@ -14,23 +14,32 @@ export default defineComponent({
     return (
       <nav class="navigation">
         {routes.map((route) => (
-          <RouterLink class="router-link" to={route.path}>
+          <>
             {'home' === route.name && (
-              <div class="icon">
-                <HomeIcon />
-              </div>
+              <RouterLink class="router-link" to={route.path}>
+                <div class="icon">
+                  <HomeIcon />
+                </div>
+                <span class="label">{route.name}</span>
+              </RouterLink>
             )}
             {'about' === route.name && (
-              <div class="icon">
-                <InfoIcon />
-              </div>
+              <RouterLink class="router-link" to={route.path}>
+                <div class="icon">
+                  <InfoIcon />
+                </div>
+                <span class="label">{route.name}</span>
+              </RouterLink>
             )}
             {'map' === route.name && (
-              <div class="icon">
-                <MapMarkedAltIcon />
-              </div>
+              <RouterLink class="router-link" to={route.path}>
+                <div class="icon">
+                  <MapMarkedAltIcon />
+                </div>
+                <span class="label">{route.name}</span>
+              </RouterLink>
             )}
-          </RouterLink>
+          </>
         ))}
       </nav>
     );

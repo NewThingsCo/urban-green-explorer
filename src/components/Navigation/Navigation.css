@@ -6,15 +6,19 @@
   @apply justify-center;
 
   .router-link + .router-link {
-    @apply ml-4;
+    @apply mx-4;
   }
 
   .router-link-active {
     @apply text-current;
+    @apply border-bottom-2;
+    @apply border-black;
   }
 }
 
 .icon {
   @apply w-7 h-7;
   @apply text-black;
+  @apply flex;
+  @apply inline-flex;
 }
