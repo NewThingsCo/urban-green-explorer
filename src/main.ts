@@ -2,6 +2,7 @@
 import 'virtual:windi-devtools';
 import 'virtual:windi.css';
 import 'leaflet/dist/leaflet.css';
+import './assets/styles/leaflet.css';
 import { createApp } from 'vue';
 import { router } from './router';
 import App from './App';
