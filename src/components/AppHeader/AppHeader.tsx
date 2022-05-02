@@ -1,5 +1,6 @@
 import type { VNode } from 'vue';
 import { defineComponent } from 'vue';
+import { RouterLink } from 'vue-router';
 import LocaleSwitcher from '../LocaleSwitcher';
 import './AppHeader.css';
 
@@ -9,7 +10,7 @@ export default defineComponent({
     return (
       <header class="app-header">
         <h1 class="title">
-          <a href={this.$t('homePath')}>Urban Green Explorer</a>
+          <RouterLink to={{ name: 'home' }}>Urban Green Explorer</RouterLink>
         </h1>
         <LocaleSwitcher />
       </header>

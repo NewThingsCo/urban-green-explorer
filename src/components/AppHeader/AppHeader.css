@@ -1,16 +1,24 @@
 .app-header {
-  @apply items-center;
+  @apply bg-white;
+  @apply border-b-1 border-black;
+  @apply fixed;
   @apply flex;
-  @apply mx-auto;
-  @apply text-center;
+  @apply items-center;
   @apply justify-between;
+  @apply mx-auto;
   @apply px-5;
+  @apply text-center;
   @apply w-full;
+  @apply z-index-10;
 
   .title {
     @apply antialiased;
-    @apply font-black;
-    @apply text-xl;
     @apply my-4;
+
+    a {
+      @apply font-semibold;
+      @apply text-black;
+      @apply text-xl;
+    }
   }
 }

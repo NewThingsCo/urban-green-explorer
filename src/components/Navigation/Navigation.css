@@ -1,6 +1,9 @@
 .navigation {
   @apply my-3;
   @apply text-center;
+  @apply flex;
+  @apply flex-row;
+  @apply justify-center;
 
   .router-link + .router-link {
     @apply ml-4;
@@ -9,4 +12,9 @@
   .router-link-active {
     @apply text-current;
   }
+}
+
+.icon {
+  @apply w-7 h-7;
+  @apply text-black;
 }

@@ -1,5 +1,13 @@
 .app-footer {
+  @apply bg-white;
+  @apply border-gray-200;
+  @apply border-top-1;
+  @apply border;
+  @apply bottom-0;
+  @apply fixed;
   @apply mx-auto;
-  @apply pb-6;
+  @apply pt-10;
+  @apply px-10;
   @apply text-center;
+  @apply w-full;
 }
