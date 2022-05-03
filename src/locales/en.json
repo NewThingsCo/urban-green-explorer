@@ -3,7 +3,7 @@
     "title": "About (en)"
   },
   "locationsTitle": "Locations",
-  "showMap": "Show on map",
+  "showOnMap": "Show on map",
   "locations": {
     "parkly": "Start at Parkly",
     "aurora": "Aurora Block",

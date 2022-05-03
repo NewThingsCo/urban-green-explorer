@@ -14,7 +14,7 @@ export default defineComponent({
     return (
       <>
         <AppHeader />
-        <AppMain class="main-wrapper">
+        <AppMain class="main-wrapper main-locations">
           <h1 class="title">{this.$t('locationsTitle')}</h1>
           <p>
             Here you'll find a list of locations to visit during your tour of
@@ -30,7 +30,7 @@ export default defineComponent({
                   </h3>
                   <label>{this.$t(location.label)}</label>
                   <RouterLink to={location.url} class="show-map">
-                    {this.$t('showMap')}
+                    {this.$t('showOnMap')}
                   </RouterLink>
                 </div>
                 <div class="icon">

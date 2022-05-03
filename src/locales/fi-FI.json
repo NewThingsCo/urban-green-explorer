@@ -2,8 +2,8 @@
   "about": {
     "title": "About (fi)"
   },
-  "locationsTitle": "Locations",
-  "showMap": "Näytä kartalla",
+  "locationsTitle": "Kohteet",
+  "showOnMap": "Näytä kartalla",
   "locations": {
     "parkly": "Aloitus Parklylla",
     "aurora": "Aurorakortteli",
