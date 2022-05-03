@@ -9,7 +9,7 @@
   @apply px-5;
   @apply text-center;
   @apply w-full;
-  @apply z-index-10;
+  @apply z-index-20;
 
   .title {
     @apply antialiased;

@@ -1,6 +1,7 @@
 import type { VNode } from 'vue';
 import { defineComponent } from 'vue';
 import AppHeader from '@/components/AppHeader';
+import AppFooter from '@/components/AppFooter';
 import AppMain from '@/components/AppMain';
 import './MapPage.css';
 import 'leaflet.locatecontrol';
@@ -34,6 +35,7 @@ export default defineComponent({
       <>
         <AppHeader />
         <AppMain class="map" id="map" ref="map" />
+        <AppFooter />
       </>
     );
   },
