@@ -2,6 +2,15 @@
   "about": {
     "title": "About (fi)"
   },
+  "locationsTitle": "Kohteet",
+  "showOnMap": "Näytä kartalla",
+  "locations": {
+    "parkly": "Aloitus Parklylla",
+    "aurora": "Aurorakortteli",
+    "loviseholm": "Loviseholmin puisto",
+    "greenurbanmapping": "Kaupunkivehreän kartoitus",
+    "tram": "Vehreä raitiopysäkki"
+  },
   "countIsLabel": "Luku on",
   "counter": "Laskin",
   "coverImage": "Kansikuva",
