@@ -2,7 +2,6 @@ import { createTestingPinia } from '@pinia/testing';
 import { mount } from '@vue/test-utils';
 import { createPinia, setActivePinia } from 'pinia';
 import Component from './LocationsPage';
-import { I18N_DEFAULT_MESSAGES } from '@/constants';
 import { router } from '@/router';
 import { i18n } from '@/utils';
 

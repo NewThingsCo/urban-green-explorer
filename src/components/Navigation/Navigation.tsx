@@ -2,10 +2,11 @@ import type { VNode } from 'vue';
 import { defineComponent } from 'vue';
 import './Navigation.css';
 import { RouterLink } from 'vue-router';
-import InfoIcon from '../../assets/icons/info-circle.svg';
-import HomeIcon from '../../assets/icons/home.svg';
-import MapMarkedAltIcon from '../../assets/icons/map-marked-alt.svg';
-import ListIcon from '../../assets/icons/list-ul.svg';
+import { resourceLimits } from 'worker_threads';
+import InfoIcon from '../../assets/icons/info-circle.svg?component';
+import HomeIcon from '../../assets/icons/home.svg?component';
+import MapMarkedAltIcon from '../../assets/icons/map-marked-alt.svg?component';
+import ListIcon from '../../assets/icons/list-ul.svg?component';
 
 import { routes } from '@/router';
 
@@ -16,38 +17,40 @@ export default defineComponent({
       <nav class="navigation">
         {routes.map((route) => (
           <>
-            {'home' === route.name && (
-              <RouterLink class="router-link" to={route.path}>
-                <div class="icon">
-                  <HomeIcon />
-                </div>
-                <span class="label">{route.name}</span>
-              </RouterLink>
-            )}
-            {'locations' === route.name && (
-              <RouterLink class="router-link" to={route.path}>
-                <div class="icon">
-                  <ListIcon />
-                </div>
-                <span class="label">{route.name}</span>
-              </RouterLink>
-            )}
-            {'about' === route.name && (
-              <RouterLink class="router-link" to={route.path}>
-                <div class="icon">
-                  <InfoIcon />
-                </div>
-                <span class="label">{route.name}</span>
-              </RouterLink>
-            )}
-            {'map' === route.name && (
-              <RouterLink class="router-link" to={route.path}>
-                <div class="icon">
-                  <MapMarkedAltIcon />
-                </div>
-                <span class="label">{route.name}</span>
-              </RouterLink>
-            )}
+            {(() => {
+              switch (route.name) {
+                case 'home':
+                  return (
+                    <RouterLink class="router-link" to={route.path}>
+                      <HomeIcon class="icon" />
+                      <span class="label">{route.name}</span>
+                    </RouterLink>
+                  );
+                case 'locations':
+                  return (
+                    <RouterLink class="router-link" to={route.path}>
+                      <ListIcon class="icon" />
+                      <span class="label">{route.name}</span>
+                    </RouterLink>
+                  );
+                case 'about':
+                  return (
+                    <RouterLink class="router-link" to={route.path}>
+                      <InfoIcon class="icon" />
+                      <span class="label">{route.name}</span>
+                    </RouterLink>
+                  );
+                case 'map':
+                  return (
+                    <RouterLink class="router-link" to={route.path}>
+                      <MapMarkedAltIcon class="icon" />
+                      <span class="label">{route.name}</span>
+                    </RouterLink>
+                  );
+                default:
+                  return null;
+              }
+            })()}
           </>
         ))}
       </nav>
