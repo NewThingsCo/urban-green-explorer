@@ -29,13 +29,13 @@ export default defineComponent({
                     {location.id}. {this.$t(location.title)}
                   </h3>
                   <label>{this.$t(location.label)}</label>
-                  <RouterLink to={location.url} class="show-map">
+                  <RouterLink to={{ name: 'map' }} class="show-map">
                     {this.$t('showOnMap')}
                   </RouterLink>
                 </div>
-                <div class="icon">
+                <RouterLink to={{ name: 'map' }} class="icon">
                   <MapMarkerAlt />
-                </div>
+                </RouterLink>
               </li>
             ))}
           </ul>
