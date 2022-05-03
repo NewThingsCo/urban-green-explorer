@@ -1,12 +1,14 @@
+import VueI18n from '@intlify/vite-plugin-vue-i18n';
 import VueJsx from '@vitejs/plugin-vue-jsx';
 import { defineConfig } from 'vite';
-import WindiCSS from 'vite-plugin-windicss';
 import ESLintPlugin from 'vite-plugin-eslint';
 import MKCert from 'vite-plugin-mkcert';
+import { VitePWA } from 'vite-plugin-pwa';
 import StylelintPlugin from 'vite-plugin-stylelint';
+import WindiCSS from 'vite-plugin-windicss';
 import SVGLoader from 'vite-svg-loader';
-import VueI18n from '@intlify/vite-plugin-vue-i18n';
 import path from 'path';
+import { vitePWAOptions } from './config';
 
 /**
  * Configuration for Vite
@@ -57,6 +59,7 @@ export default defineConfig({
         ],
       },
     }),
+    VitePWA(vitePWAOptions),
     VueI18n({
       include: path.resolve(__dirname, './src/locales/**'),
     }),
