@@ -5,6 +5,7 @@ import { RouterLink } from 'vue-router';
 import InfoIcon from '../../assets/icons/info-circle.svg';
 import HomeIcon from '../../assets/icons/home.svg';
 import MapMarkedAltIcon from '../../assets/icons/map-marked-alt.svg';
+import ListIcon from '../../assets/icons/list-ul.svg';
 
 import { routes } from '@/router';
 
@@ -22,6 +23,11 @@ export default defineComponent({
                 </div>
                 <span class="label">{route.name}</span>
               </RouterLink>
+            )}
+            {'locations' === route.name && (
+              <div class="icon">
+                <ListIcon />
+              </div>
             )}
             {'about' === route.name && (
               <RouterLink class="router-link" to={route.path}>

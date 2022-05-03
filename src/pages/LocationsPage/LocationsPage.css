@@ -1,0 +1,45 @@
+.main-locations {
+  .title {
+    @apply text-black;
+  }
+
+  p {
+    @apply my-5;
+  }
+
+  .list {
+    @apply bg-white;
+    @apply border-black;
+    @apply border;
+    @apply my-1;
+    @apply p-2;
+    @apply w-1/2;
+    @apply flex;
+    @apply flex-row;
+
+    .icon {
+      @apply flex;
+      @apply h-10;
+      @apply mt-3;
+      @apply text-black;
+      @apply w-10;
+    }
+
+    h3 {
+      @apply font-semibold;
+      @apply text-xl;
+    }
+
+    label {
+      @apply text-sm;
+      @apply text-gray-500;
+    }
+
+    .show-map {
+      @apply cursor-pointer;
+      @apply mt-2;
+      @apply text-blue-800;
+      @apply text-sm;
+    }
+  }
+}
