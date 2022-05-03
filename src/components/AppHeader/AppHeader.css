@@ -6,10 +6,10 @@
   @apply items-center;
   @apply justify-between;
   @apply mx-auto;
-  @apply px-5;
+  @apply p-5;
   @apply text-center;
   @apply w-full;
-  @apply z-index-10;
+  @apply z-index-20;
 
   .title {
     @apply antialiased;

@@ -10,4 +10,5 @@
   @apply px-10;
   @apply text-center;
   @apply w-full;
+  @apply z-index-10;
 }
