@@ -25,9 +25,12 @@ export default defineComponent({
               </RouterLink>
             )}
             {'locations' === route.name && (
-              <div class="icon">
-                <ListIcon />
-              </div>
+              <RouterLink class="router-link" to={route.path}>
+                <div class="icon">
+                  <ListIcon />
+                </div>
+                <span class="label">{route.name}</span>
+              </RouterLink>
             )}
             {'about' === route.name && (
               <RouterLink class="router-link" to={route.path}>
