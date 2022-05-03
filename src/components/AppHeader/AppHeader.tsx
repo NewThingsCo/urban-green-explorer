@@ -3,6 +3,7 @@ import { defineComponent } from 'vue';
 import { RouterLink } from 'vue-router';
 import LocaleSwitcher from '../LocaleSwitcher';
 import './AppHeader.css';
+import { routes } from '@/router';
 
 export default defineComponent({
   name: 'AppHeader',

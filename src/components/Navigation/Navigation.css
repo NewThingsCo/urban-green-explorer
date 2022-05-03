@@ -19,7 +19,6 @@
 .icon {
   @apply h-7;
   @apply text-black;
-  @apply flex;
   @apply inline-flex;
   @apply w-7;
 }
