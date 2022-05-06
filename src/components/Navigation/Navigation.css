@@ -1,24 +1,27 @@
 .navigation {
+  @apply capitalize;
   @apply flex-row;
   @apply flex;
-  @apply justify-center;
+  @apply justify-between;
+  @apply md:justify-center;
   @apply my-3;
   @apply text-center;
 
   .router-link + .router-link {
-    @apply mx-3;
+    @apply mx-6;
   }
 
   .router-link-active {
-    @apply text-current;
+    @apply border-blue-900;
     @apply border-bottom-2;
-    @apply border-black;
+    @apply mx-6;
+    @apply text-blue-900;
   }
-}
 
-.icon {
-  @apply h-7;
-  @apply text-black;
-  @apply inline-flex;
-  @apply w-7;
+  .icon {
+    @apply h-7;
+    @apply inline-flex;
+    @apply w-7;
+    @apply fill-current;
+  }
 }
