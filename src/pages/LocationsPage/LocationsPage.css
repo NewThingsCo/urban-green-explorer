@@ -1,4 +1,6 @@
 .main-locations {
+  @apply py-30;
+
   .title {
     @apply text-black;
   }
