@@ -10,7 +10,7 @@ export default defineComponent({
   name: 'MapPage',
   mounted() {
     try {
-      const map = this.$leaflet?.map('map').setView([60.1807, 24.9761], 16.5);
+      const map = this.$leaflet?.map('map').setView([60.1805, 24.9769], 16.5);
       this.$leaflet?.control
         .locate({
           position: 'topleft',
