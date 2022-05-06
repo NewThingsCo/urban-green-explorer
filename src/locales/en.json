@@ -1,4 +1,9 @@
 {
+  "introduction": {
+    "helloThere": "Hello there",
+    "getStarted": "Get started",
+    "bodyText": "Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi."
+  },
   "about": {
     "title": "About (en)"
   },
