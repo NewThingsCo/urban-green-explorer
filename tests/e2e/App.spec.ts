@@ -7,7 +7,7 @@ test.describe('App', () => {
   });
 
   /** Counter */
-  test('counter works as expected', async ({ page }) => {
+  /* test('counter works as expected', async ({ page }) => {
     const $dec = page.locator('[name="decrement"]');
     const $inc = page.locator('[name="increment"]');
     await expect(page.locator('.counter-value')).toHaveText('0');
@@ -19,7 +19,7 @@ test.describe('App', () => {
     await expect(page.locator('.counter-value')).toHaveText('1');
     await $dec.click();
     await expect(page.locator('.counter-value')).toHaveText('0');
-  });
+  });*/
 
   /** Title */
   test('has the correct title', async ({ page }) => {
