@@ -19,6 +19,7 @@ See [Projects][roadmap] on GitHub.
   <summary>See all extensions</summary>
 
   - [Local SSL support][vite-plugin-mkcert]
+  - [Vite Plugin PWA][vite-plugin-pwa]
   - [Vite SVG loader][vite-svg-loader]
   - [Vue i18n][vue-i18n]
   - [Vue Router][vue-router]
@@ -191,6 +192,7 @@ Click run and choose a port if needed. Default is `8080`.
 [typescript]: https://www.typescriptlang.org/
 [vite-docs]: https://vitejs.dev/guide/
 [vite-plugin-mkcert]: https://www.npmjs.com/package/vite-plugin-mkcert
+[vite-plugin-pwa]: https://vite-plugin-pwa.netlify.app/
 [vite-svg-loader]: https://www.npmjs.com/package/vite-svg-loader
 [vite]: https://vitejs.dev/
 [vscode-eslint]: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
