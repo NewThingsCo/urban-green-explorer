@@ -14,7 +14,7 @@ export default defineComponent({
         <Hero />
         <AppMain class="main-wrapper index-wrapper">
           <div class="logos">
-            {/* TODO: Fix logos & padding in main-wrapper */}
+            {/* TODO: Fix logos */}
             <img
               class="w-40 h-20"
               src="https://bgreen-project.eu/wp-content/uploads/2021/05/sei-logo.png"
@@ -40,24 +40,9 @@ export default defineComponent({
               src="https://bgreen-project.eu/wp-content/uploads/2021/05/Interreg_Central_Baltic.jpg"
             />
           </div>
-          <h1 class="title page-title">{this.$t('title')}</h1>
+          <span class="text-sm text-gray-400">© 2022 B.Green project</span>
         </AppMain>
-        <AppFooter>
-          {/* <i18n-t
-            class="text"
-            keypath="editComponent.text"
-            scope="global"
-            tag="p"
-          >
-            <a
-              href={this.$t('editComponent.href')}
-              target="_blank"
-              rel="external"
-            >
-              <code>{this.$t('editComponent.label')}</code>
-            </a>
-    </i18n-t> */}
-        </AppFooter>
+        <AppFooter />
       </>
     );
   },

@@ -1,8 +1,9 @@
 .index-wrapper {
   @apply flex;
+  @apply flex-col;
   @apply justify-center;
-  @apply md:py-10;
-  @apply py-4;
+  @apply md:py-15;
+  @apply py-10;
 
   .logos {
     @apply content-center;
