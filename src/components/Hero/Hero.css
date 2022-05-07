@@ -1,6 +1,7 @@
 .hero {
   @apply hero;
-  @apply min-h-150;
+  @apply min-h-130;
+  @apply md:min-h-150;
 
   .hero-overlay {
     @apply hero-overlay;
