@@ -13,11 +13,12 @@
     @apply bg-white;
     @apply border-black;
     @apply border;
+    @apply flex-row;
+    @apply flex;
+    @apply md:w-1/2;
     @apply my-1;
     @apply p-2;
-    @apply w-1/2;
-    @apply flex;
-    @apply flex-row;
+    @apply w-3/4;
 
     .icon {
       @apply flex;
