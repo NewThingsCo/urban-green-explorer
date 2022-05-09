@@ -16,8 +16,5 @@
 }
 
 .main-wrapper {
-  @apply container;
-  @apply leading-relaxed;
-  @apply mx-auto;
   @apply text-center;
 }
