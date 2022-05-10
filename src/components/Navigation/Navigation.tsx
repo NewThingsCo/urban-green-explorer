@@ -19,31 +19,29 @@ export default defineComponent({
             case 'home':
               return (
                 <RouterLink class="router-link" to={route.path}>
-                  <div class="flex flex-col">
-                    <HomeIcon class="icon" />
-                    <div class="label"> {route.name}</div>
-                  </div>
+                  <HomeIcon class="icon" />
+                  <span class="label"> {route.name}</span>
                 </RouterLink>
               );
             case 'list':
               return (
                 <RouterLink class="router-link" to={route.path}>
                   <ListIcon class="icon" />
-                  <div class="label">{route.name}</div>
+                  <span class="label">{route.name}</span>
                 </RouterLink>
               );
             case 'info':
               return (
                 <RouterLink class="router-link" to={route.path}>
                   <InfoIcon class="icon" />
-                  <div class="label">{route.name}</div>
+                  <span class="label">{route.name}</span>
                 </RouterLink>
               );
             case 'map':
               return (
                 <RouterLink class="router-link" to={route.path}>
                   <MapMarkedAltIcon class="icon" />
-                  <div class="label">{route.name}</div>
+                  <span class="label">{route.name}</span>
                 </RouterLink>
               );
             default:
