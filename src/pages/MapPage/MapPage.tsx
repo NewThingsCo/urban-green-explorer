@@ -11,9 +11,9 @@ import 'leaflet.locatecontrol';
 export default defineComponent({
   name: 'MapPage',
   mounted() {
+    if (!this.$leaflet) return;
     try {
-      if (!this.$leaflet) return;
-      const map = this.$leaflet?.map('map').setView([60.1807, 24.9761], 16.5);
+      const map = this.$leaflet.map('map').setView([60.1807, 24.9761], 16.5);
       this.$leaflet.control
         .locate({
           position: 'topleft',
@@ -39,7 +39,7 @@ export default defineComponent({
 
       locations.map((location) => {
         this.$leaflet
-          ?.marker([location.coordinates[0], location.coordinates[1]], {
+          .marker([location.coordinates[0], location.coordinates[1]], {
             icon: markerIcon,
           })
           .addTo(map);
