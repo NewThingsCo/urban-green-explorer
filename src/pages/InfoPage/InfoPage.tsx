@@ -5,7 +5,7 @@ import AppMain from '@/components/AppMain';
 import NewThingsCo from '@/assets/logos/NewThingsCo.svg?component';
 
 export default defineComponent({
-  name: 'AboutPage',
+  name: 'InfoPage',
   render() {
     return (
       <>
