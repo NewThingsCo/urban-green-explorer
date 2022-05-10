@@ -1,0 +1,18 @@
+.location-wrapper {
+  @apply m-10;
+  @apply p-20;
+
+  .label {
+    @apply text-left;
+    @apply text-sm;
+    @apply text-gray-400;
+    @apply py-2;
+  }
+
+  .map-container {
+    @apply flex;
+    @apply justify-between;
+    @apply mt-7;
+    @apply md:w-1/2;
+  }
+}
