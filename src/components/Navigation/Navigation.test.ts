@@ -22,6 +22,6 @@ describe('Navigation', () => {
     expect(wrapper.exists()).toBeTruthy();
   });
   it('should have the correct amount of switches', () => {
-    expect(wrapper.findAll('a').length).toEqual(routes.length);
+    expect(wrapper.findAll('a').length).toEqual(4);
   });
 });
