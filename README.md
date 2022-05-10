@@ -2,7 +2,7 @@
 
 > Exploring the city of Helsinki.
 
-[![Client - GitHub Actions][client-badge]][client-logs]
+[![Client - GitHub Actions][client-badge]][client-logs] [![Netlify Status][netlify-image]][netlify-deploys]
 
 ## Roadmap
 
@@ -173,6 +173,8 @@ Click run and choose a port if needed. Default is `8080`.
 [license]: ./LICENSE.md
 [lint-staged]: https://www.npmjs.com/package/lint-staged
 [mit-badge]: https://img.shields.io/badge/license-MIT-green.svg
+[netlify-deploys]: https://app.netlify.com/sites/urban-green-explorer/deploys
+[netlify-image]: https://api.netlify.com/api/v1/badges/3fd28fd5-6bb4-4bd8-a3eb-1aeb35e04bd3/deploy-status
 [node-version]: https://img.shields.io/badge/Node-v16-brightgreen.svg
 [node]: https://nodejs.org/en
 [nvm]: https://github.com/nvm-sh/nvm
