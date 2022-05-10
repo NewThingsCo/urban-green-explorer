@@ -18,6 +18,7 @@ export default defineComponent({
     };
   },
   mounted() {
+    if (!this.$leaflet) return;
     try {
       const map = this.$leaflet.map('map').setView([60.1807, 24.9761], 16.5);
       this.$leaflet.control

@@ -16,11 +16,6 @@ export default defineComponent({
         <AppHeader />
         <AppMain class="main-wrapper main-locations">
           <h1 class="title">{this.$t('locationsTitle')}</h1>
-          <p>
-            Here you'll find a list of locations to visit during your tour of
-            Sompasaari.
-          </p>
-
           <ul class="text-left items-center flex flex-col">
             {locations.map((location) => (
               <li class="list">

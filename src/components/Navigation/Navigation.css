@@ -1,24 +1,34 @@
 .navigation {
+  @apply capitalize;
   @apply flex-row;
   @apply flex;
-  @apply justify-center;
-  @apply my-3;
+  @apply justify-between;
+  @apply lg:w-1/4;
+  @apply items-center;
+  @apply h-1/2;
+  @apply m-auto;
   @apply text-center;
 
-  .router-link + .router-link {
-    @apply mx-3;
+  .router-link {
+    @apply flex-col;
+    @apply flex;
+    @apply py-1;
+    @apply border-transparent;
+    @apply border-bottom-2;
+    @apply text-center;
   }
 
   .router-link-active {
-    @apply text-current;
+    @apply border-blue-900;
     @apply border-bottom-2;
-    @apply border-black;
+    @apply text-blue-900;
+    @apply h-1/2;
+    @apply text-center;
   }
-}
 
-.icon {
-  @apply h-7;
-  @apply text-black;
-  @apply inline-flex;
-  @apply w-7;
+  .icon {
+    @apply fill-current;
+    @apply h-10;
+    @apply w-10;
+  }
 }

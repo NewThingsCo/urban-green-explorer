@@ -7,14 +7,9 @@ const routes: RouteRecordRaw[] = [
     path: '/',
   },
   {
-    component: async () => await import('../pages/AboutPage'),
-    name: 'about',
-    path: '/about',
-  },
-  {
     component: async () => await import('../pages/LocationsPage'),
-    name: 'locations',
-    path: '/locations',
+    name: 'list',
+    path: '/list',
   },
   {
     component: async () => await import('../pages/MapPage'),
@@ -46,6 +41,11 @@ const routes: RouteRecordRaw[] = [
     component: async () => await import('../pages/LocationPage/GreenTramStop'),
     name: 'greentrampstop',
     path: '/location/greentramstop',
+  },
+  {
+    component: async () => await import('../pages/InfoPage'),
+    name: 'info',
+    path: '/info',
   },
 ];
 
