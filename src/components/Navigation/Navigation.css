@@ -8,17 +8,19 @@
   @apply h-1/2;
   @apply m-auto;
 
-  .router-link + .router-link {
-    @apply py-4;
+  .router-link {
     @apply flex-col;
     @apply flex;
+    @apply py-1;
+    @apply border-transparent;
+    @apply border-bottom-2;
   }
 
   .router-link-active {
-    @apply py-4;
     @apply border-blue-900;
     @apply border-bottom-2;
     @apply text-blue-900;
+    @apply h-1/2;
   }
 
   .icon {
