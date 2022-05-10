@@ -14,7 +14,7 @@ export default defineComponent({
         <AppMain class="main-wrapper">
           <Hero />
           <div class="index-wrapper">
-            <div class="logos index-wrapper">
+            <div class="logos">
               {/* TODO: Fix logos */}
               <img
                 class="w-40 h-20"

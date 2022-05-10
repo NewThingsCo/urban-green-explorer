@@ -29,8 +29,10 @@ export default defineComponent({
             case 'list':
               return (
                 <RouterLink class="router-link" to={route.path}>
-                  <ListIcon class="icon" />
-                  {route.name}
+                  <div class="flex flex-col">
+                    <ListIcon class="icon" />
+                    {route.name}
+                  </div>
                 </RouterLink>
               );
             case 'info':
@@ -43,10 +45,8 @@ export default defineComponent({
             case 'map':
               return (
                 <RouterLink class="router-link" to={route.path}>
-                  <div class="flex flex-col">
-                    <MapMarkedAltIcon class="icon" />
-                    {route.name}
-                  </div>
+                  <MapMarkedAltIcon class="icon" />
+                  {route.name}
                 </RouterLink>
               );
             default:

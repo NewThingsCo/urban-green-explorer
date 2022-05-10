@@ -3,7 +3,7 @@
   @apply flex-row;
   @apply flex;
   @apply justify-between;
-  @apply md:w-1/2;
+  @apply md:w-1/4;
   @apply items-center;
   @apply h-1/2;
   @apply m-auto;
@@ -15,10 +15,10 @@
   }
 
   .router-link-active {
+    @apply py-4;
     @apply border-blue-900;
     @apply border-bottom-2;
     @apply text-blue-900;
-    @apply py-4;
   }
 
   .icon {
