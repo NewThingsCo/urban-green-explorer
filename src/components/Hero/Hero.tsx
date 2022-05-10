@@ -13,13 +13,9 @@ export default defineComponent({
         <div class="hero-overlay"></div>
         <div class="content">
           <div class="max-w-md">
-            <h1 class="title">Hello there</h1>
-            <p>
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
-            </p>
-            <button class="button">Get Started</button>
+            <h1 class="title">{this.$t('introduction.helloThere')}</h1>
+            <p>{this.$t('introduction.bodyText')}</p>
+            <button class="button">{this.$t('introduction.getStarted')}</button>
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ import { RouterLink } from 'vue-router';
 import InfoIcon from '../../assets/icons/info-circle.svg?component';
 import HomeIcon from '../../assets/icons/home.svg?component';
 import MapMarkedAltIcon from '../../assets/icons/map-marked-alt.svg?component';
-import ListIcon from '../../assets/icons/list-ul.svg?component';
+import ListIcon from '../../assets/icons/list.svg?component';
 
 import { routes } from '@/router';
 
@@ -20,28 +20,28 @@ export default defineComponent({
               return (
                 <RouterLink class="router-link" to={route.path}>
                   <HomeIcon class="icon" />
-                  <span class="label">{route.name}</span>
+                  <span class="py-2"> {route.name}</span>
                 </RouterLink>
               );
-            case 'locations':
+            case 'list':
               return (
                 <RouterLink class="router-link" to={route.path}>
                   <ListIcon class="icon" />
-                  <span class="label">{route.name}</span>
+                  <span class="py-2">{route.name}</span>
                 </RouterLink>
               );
-            case 'about':
+            case 'info':
               return (
                 <RouterLink class="router-link" to={route.path}>
                   <InfoIcon class="icon" />
-                  <span class="label">{route.name}</span>
+                  <span class="py-2">{route.name}</span>
                 </RouterLink>
               );
             case 'map':
               return (
                 <RouterLink class="router-link" to={route.path}>
                   <MapMarkedAltIcon class="icon" />
-                  <span class="label">{route.name}</span>
+                  <span class="py-2">{route.name}</span>
                 </RouterLink>
               );
             default:
