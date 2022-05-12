@@ -1,42 +1,18 @@
 {
-  "introduction": {
-    "helloThere": "Hello there",
-    "getStarted": "Get started",
-    "bodyText": "Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi."
-  },
   "about": {
     "title": "About (en)"
   },
-  "locationsTitle": "Locations",
-  "showOnMap": "Show on map",
-  "moreInfo": "More info",
   "categories": "Categories",
-  "locations": {
-    "parkly": {
-      "title": "Start at Parkly",
-      "category": "Meeting point",
-      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu."
+  "checkInButton": "Check-in",
+  "checkInLabel": {
+    "complete": "All locations complete",
+    "disabled": "Device is too far from the location",
+    "enabled": "Device is close enough to the location",
+    "unavailable": {
+      "label": "Enable Geolocation",
+      "text": "Geolocation API is disabled. {0} to activate check-ins."
     },
-    "aurora": {
-      "title": "Aurora Block",
-      "category": "Block",
-      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu."
-    },
-    "loviseholm": {
-      "title": "Loviseholm Park",
-      "category": "Park",
-      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu."
-    },
-    "greenUrbanMapping": {
-      "title": "Green Urban Mapping",
-      "category": "Block",
-      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu."
-    },
-    "tram": {
-      "title": "Green Tramp Stop",
-      "category": "Tram stop",
-      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu."
-    }
+    "visited": "Location has already been visited"
   },
   "countIsLabel": "Count is",
   "counter": "Counter",
@@ -53,14 +29,49 @@
   },
   "homePath": "/",
   "incrementLabel": "Increment",
+  "introduction": {
+    "bodyText": "Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.",
+    "getStarted": "Get started",
+    "helloThere": "Hello there"
+  },
   "language": "English",
   "localeSwitcher": "Language menu",
+  "locations": {
+    "aurora": {
+      "category": "Block",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
+      "title": "Aurora Block"
+    },
+    "greenUrbanMapping": {
+      "category": "Block",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
+      "title": "Green Urban Mapping"
+    },
+    "loviseholm": {
+      "category": "Park",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
+      "title": "Loviseholm Park"
+    },
+    "parkly": {
+      "category": "Meeting point",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
+      "title": "Start at Parkly"
+    },
+    "tram": {
+      "category": "Tram stop",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
+      "title": "Green Tramp Stop"
+    }
+  },
+  "locationsTitle": "Locations",
   "long": "Long",
+  "moreInfo": "More info",
   "nextNumberLabel": "Next number is:",
   "numberStatusNegative": "Decrement or increment the number | You've decremented once | You've decremented several times",
   "numberStatusPositive": "Decrement or increment the number | You've incremented once | You've incremented several times",
   "prevNumberLabel": "Prev number was:",
   "short": "Short",
+  "showOnMap": "Show on map",
   "title": "Urban Green Explorer (en)",
   "today": "Today",
   "viteDocs": {

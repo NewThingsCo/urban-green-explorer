@@ -1,4 +1,5 @@
 import { LOCALE_CODES } from '@/constants';
+import en from '@/locales/en.json';
 
 type LocaleCodes = typeof LOCALE_CODES;
 
@@ -9,4 +10,6 @@ type Locale = {
   name: readonly string;
 };
 
-export { Locale, Locales, LocaleCode };
+type Translations = typeof en;
+
+export { Locale, Locales, LocaleCode, Translations };
