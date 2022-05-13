@@ -1,0 +1,23 @@
+.alert {
+  @apply flex-row;
+  @apply m-auto;
+  @apply justify-center;
+  @apply max-w-20rem;
+  @apply shadow-lg;
+
+  .label {
+    @apply m-0 !important;
+    @apply p-0;
+  }
+
+  &-wrapper {
+    @apply flex;
+
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 5vh;
+    z-index: 20000000;
+    width: 100%;
+  }
+}
