@@ -11,7 +11,7 @@
   "showOnMap": "Näytä kartalla",
   "locations": {
     "parkly": {
-      "parkly": "Aloitus Parklylla",
+      "title": "Aloitus Parklylla",
       "category": "Kohtaamispaikka",
       "description": "Parkly kehittää julkisiin tiloihin modulaarisia ja skaalattavia ratkaisuja kaupunkikalusteilla, joissa on helppo nauttia urbaanista ympäristöstä ja kohdata muita kaupunkilaisia. Urbaani luonto ja kaupungin vehreys tuottavat tutkitusti lisää hyvinvointia ja tyytyväisyyttä. Parklyn vihermoduulien pölyttäjäystävälliset kukat, hiiltä sitovat puut ja syötävät kasvit lisäävät kaupunkiluonnon monimuotoisuutta ja mahdollistavat moniaistilliset kokemukset julkisissa tiloissa. //Tähän tulee myös meriveden lämpö Uiras-anturista."
     },
