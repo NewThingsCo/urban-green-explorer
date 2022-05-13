@@ -4,17 +4,34 @@
     "getStarted": "Get started",
     "bodyText": "Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi."
   },
-  "about": {
-    "title": "About (en)"
-  },
   "locationsTitle": "Locations",
   "showOnMap": "Show on map",
   "locations": {
-    "parkly": "Start at Parkly",
-    "aurora": "Aurora Block",
-    "loviseholm": "Loviseholm Park",
-    "greenurbanmapping": "Green Urban Mapping",
-    "tram": "Green Tramp Stop"
+    "parkly": {
+      "title": "Start at Parkly",
+      "category": "Meeting point",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu."
+    },
+    "aurora": {
+      "title": "Aurora Block",
+      "category": "Block",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu."
+    },
+    "loviseholm": {
+      "title": "Loviseholm Park",
+      "category": "Park",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu."
+    },
+    "greenurbanmapping": {
+      "title": "Green Urban Mapping",
+      "category": "Block",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu."
+    },
+    "tram": {
+      "title": "Green Tramp Stop",
+      "category": "Tram stop",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu."
+    }
   },
   "countIsLabel": "Count is",
   "counter": "Counter",

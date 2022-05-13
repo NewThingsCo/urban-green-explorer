@@ -14,25 +14,23 @@ export default defineComponent({
       <>
         <AppHeader />
         <AppMain class="main-wrapper location-wrapper">
-          <h1 class="pt-10 title text-left">{this.$t('locations.aurora')}</h1>
+          <h1 class="pt-10 title text-left">
+            {this.$t('locations.aurora.title')}
+          </h1>
           <div class="py-40 h-1/2 bg-gray-400" />
-          <label class="label">Kortteli</label>
-          <p class="text-left">
-            Kierros alkaa Aurora-korttelin kulmalta, Parkly-ulkokalusteiden
-            luota. Palvelun käyttämisen aloitukseen voi käyttää Parklyn
-            ilmoitustaululla olevaa QR-koodia.
-          </p>
+          <label class="label">{this.$t('locations.aurora.category')}</label>
+          <p class="text-left">{this.$t('locations.aurora.description')}</p>
           <div class="map-container">
-            <div>
+            <div class="flex items-center">
               <MapMarkedAlt class="icon" />
               <RouterLink
-                to={{ name: 'map', params: { id: 'aurorablock' } }}
+                to={{ name: 'map', params: { id: 'aurora-block' } }}
                 class="mx-2 show-map"
               >
                 {this.$t('showOnMap')}
               </RouterLink>
             </div>
-            <RouterLink to={{ name: 'map', params: { id: 'aurorablock' } }}>
+            <RouterLink to={{ name: 'map', params: { id: 'aurora-block' } }}>
               <MapMarkerAlt class="icon" />
             </RouterLink>
           </div>

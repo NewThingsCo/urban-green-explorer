@@ -15,27 +15,27 @@ export default defineComponent({
         <AppHeader />
         <AppMain class="main-wrapper location-wrapper">
           <h1 class="pt-10 title text-left">
-            {this.$t('locations.greenurbanmapping')}
+            {this.$t('locations.greenurbanmapping.title')}
           </h1>
           <div class="py-40 h-1/2 bg-gray-400" />
-          <label class="label">Kortteli</label>
+          <label class="label">
+            {this.$t('locations.greenurbanmapping.category')}
+          </label>
           <p class="text-left">
-            Kierros alkaa Aurora-korttelin kulmalta, Parkly-ulkokalusteiden
-            luota. Palvelun käyttämisen aloitukseen voi käyttää Parklyn
-            ilmoitustaululla olevaa QR-koodia.
+            {this.$t('locations.greenurbanmapping.description')}
           </p>
           <div class="map-container">
-            <div>
+            <div class="flex items-center w-1/2">
               <MapMarkedAlt class="icon" />
               <RouterLink
-                to={{ name: 'map', params: { id: 'greenurbanmapping' } }}
+                to={{ name: 'map', params: { id: 'green-urban-mapping' } }}
                 class="mx-2 show-map"
               >
                 {this.$t('showOnMap')}
               </RouterLink>
             </div>
             <RouterLink
-              to={{ name: 'map', params: { id: 'greenurbanmapping' } }}
+              to={{ name: 'map', params: { id: 'green-urban-mapping' } }}
             >
               <MapMarkerAlt class="icon" />
             </RouterLink>
