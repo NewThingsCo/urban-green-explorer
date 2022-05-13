@@ -2,6 +2,7 @@
   @apply my-6;
 
   .label {
+    @apply flex flex-col;
     @apply justify-center;
     @apply m-3;
     @apply opacity-85;

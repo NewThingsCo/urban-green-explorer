@@ -8,6 +8,7 @@
     "complete": "All locations complete",
     "disabled": "Device is too far from the location",
     "enabled": "Device is close enough to the location",
+    "locating": "Locating …",
     "unavailable": {
       "label": "Enable Geolocation",
       "text": "Geolocation API is disabled. {0} to activate check-ins."
@@ -22,11 +23,7 @@
   "currencyWithoutCents": "Currency without cents",
   "dateTimes": "Dates and times",
   "decrementLabel": "Decrement",
-  "editComponent": {
-    "href": "./components/AppFooter/AppFooter.tsx",
-    "label": "components/AppFooter/AppFooter.tsx",
-    "text": "Edit {0} to test hot module replacement."
-  },
+  "enableGeolocation": "Enable location from your browser",
   "homePath": "/",
   "incrementLabel": "Increment",
   "introduction": {

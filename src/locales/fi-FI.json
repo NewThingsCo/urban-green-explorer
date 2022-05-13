@@ -5,14 +5,15 @@
   "categories": "Kategoriat",
   "checkInButton": "Avaa kohde",
   "checkInLabel": {
-    "complete": "All locations complete",
-    "disabled": "Device is too far from the location",
-    "enabled": "Device is close enough to the location",
+    "complete": "Kaikki kohteet käyty läpi! Kiitos kun osallistuit.",
+    "disabled": "Laite on liian kaukana sijainnista",
+    "enabled": "Laite on riittävän lähellä sijaintia",
+    "locating": "Paikannetaan …",
     "unavailable": {
-      "label": "Enable Geolocation",
-      "text": "Geolocation API is disabled. {0} to activate check-ins."
+      "label": "Ottaa geolokaatio käyttöön",
+      "text": "Kohteiden avaaminen ei onnistu. {0}"
     },
-    "visited": "Location has already been visited"
+    "visited": "Sijainti avattu {0}"
   },
   "countIsLabel": "Luku on",
   "counter": "Laskin",
@@ -22,11 +23,7 @@
   "currencyWithoutCents": "Valuutta ilman senttejä",
   "dateTimes": "Ajat ja päivämäärät",
   "decrementLabel": "Vähennä",
-  "editComponent": {
-    "href": "./components/AppFooter/AppFooter.tsx",
-    "label": "components/AppFooter/AppFooter.tsx",
-    "text": "Muokkaa {0} testataksesi moduulien päivitystä lennossa."
-  },
+  "enableGeolocation": "Ota sijainti käyttöön selaimesta",
   "homePath": "/",
   "incrementLabel": "Lisää",
   "introduction": {
