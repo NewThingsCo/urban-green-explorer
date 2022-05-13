@@ -15,7 +15,7 @@ describe(Component.name, () => {
   it('has a check-in button', () => {
     expect(wrapper.find('.btn').text()).toBeTruthy();
   });
-  it('has no label at start', () => {
-    expect(wrapper.find('.label').text()).toBeFalsy();
+  it('has a label', () => {
+    expect(wrapper.find('.label').text()).toBeTruthy();
   });
 });
