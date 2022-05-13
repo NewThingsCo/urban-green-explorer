@@ -64,7 +64,7 @@ export default defineComponent({
               locations[0].coordinates[1],
             ])
             .setContent(
-              '<div class="flex flex-col"><div>Location name</div> <a class="text-center" href="https://localhost:8080/location/parkly">More info</a></div>'
+              '<div class="flex flex-col"><div>Location name</div> <a class="text-center" href="/location/parkly">More info</a></div>'
             )
             .openOn(map);
           break;
@@ -76,7 +76,7 @@ export default defineComponent({
               locations[1].coordinates[1],
             ])
             .setContent(
-              '<div class="flex flex-col"><div>Location name</div> <a class="text-center" href="https://localhost:8080/location/parkly">More info</a></div>'
+              '<div class="flex flex-col"><div>Location name</div> <a class="text-center" href="/location/aurora-block">More info</a></div>'
             )
             .openOn(map);
           break;
@@ -88,7 +88,7 @@ export default defineComponent({
               locations[2].coordinates[1],
             ])
             .setContent(
-              '<div class="flex flex-col"><div>Location name</div> <a class="text-center" href="https://localhost:8080/location/parkly">More info</a></div>'
+              '<div class="flex flex-col"><div>Location name</div> <a class="text-center" href="/location/loviseholm-park">More info</a></div>'
             )
             .openOn(map);
           break;
@@ -100,7 +100,7 @@ export default defineComponent({
               locations[3].coordinates[1],
             ])
             .setContent(
-              '<div class="flex flex-col"><div>Location name</div> <a class="text-center" href="https://localhost:8080/location/parkly">More info</a></div>'
+              '<div class="flex flex-col"><div>Location name</div> <a class="text-center" href="/location/green-urban-mapping">More info</a></div>'
             )
             .openOn(map);
           break;
@@ -112,7 +112,7 @@ export default defineComponent({
               locations[4].coordinates[1],
             ])
             .setContent(
-              '<div class="flex flex-col"><div>Location name</div> <a class="text-center" href="https://localhost:8080/location/parkly">More info</a></div>'
+              '<div class="flex flex-col"><div>Location name</div> <a class="text-center" href="/location/green-tram-stop">More info</a></div>'
             )
             .openOn(map);
           break;
