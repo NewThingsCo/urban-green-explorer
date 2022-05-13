@@ -24,23 +24,23 @@ const routes: RouteRecordRaw[] = [
   {
     component: async () => await import('../pages/LocationPage/AuroraBlock'),
     name: 'aurorablock',
-    path: '/location/aurorablock',
+    path: '/location/aurora-block',
   },
   {
     component: async () => await import('../pages/LocationPage/LoviseholmPark'),
     name: 'loviseholmpark',
-    path: '/location/loviseholmpark',
+    path: '/location/loviseholm-park',
   },
   {
     component: async () =>
       await import('../pages/LocationPage/GreenUrbanMapping'),
-    name: 'greenurbanmapping',
-    path: '/location/greenurbanmapping',
+    name: 'green-urban-mapping',
+    path: '/location/green-urban-mapping',
   },
   {
     component: async () => await import('../pages/LocationPage/GreenTramStop'),
-    name: 'greentrampstop',
-    path: '/location/greentramstop',
+    name: 'green-tram-stop',
+    path: '/location/green-tram-stop',
   },
   {
     component: async () => await import('../pages/InfoPage'),
