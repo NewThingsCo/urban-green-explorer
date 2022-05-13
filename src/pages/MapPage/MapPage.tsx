@@ -55,46 +55,69 @@ export default defineComponent({
       });
 
       // POPUPS
-      if ('parkly' === this.id) {
-        this.$leaflet
-          .popup()
-          .setLatLng([locations[0].coordinates[0], locations[0].coordinates[1]])
-          .setContent(
-            '<div class="flex flex-col"><div>Location name</div> <a class="text-center" href="https://localhost:8080/location/parkly">More info</a></div>'
-          )
-          .openOn(map);
-      } else if ('aurorablock' === this.id) {
-        this.$leaflet
-          .popup()
-          .setLatLng([locations[1].coordinates[0], locations[1].coordinates[1]])
-          .setContent(
-            '<div class="flex flex-col"><div>Location name</div> <a class="text-center" href="https://localhost:8080/location/aurorablock">More info</a></div>'
-          )
-          .openOn(map);
-      } else if ('loviseholmpark' === this.id) {
-        this.$leaflet
-          .popup()
-          .setLatLng([locations[2].coordinates[0], locations[2].coordinates[1]])
-          .setContent(
-            '<div class="flex flex-col"><div>Location name</div> <a class="text-center" href="https://localhost:8080/location/loviseholmpark">More info</a></div>'
-          )
-          .openOn(map);
-      } else if ('urbangreenmapping' === this.id) {
-        this.$leaflet
-          .popup()
-          .setLatLng([locations[3].coordinates[0], locations[3].coordinates[1]])
-          .setContent(
-            '<div class="flex flex-col"><div>Location name</div> <a class="text-center" href="https://localhost:8080/location/urbangreenmapping">More info</a></div>'
-          )
-          .openOn(map);
-      } else if ('urbangreentram' === this.id) {
-        this.$leaflet
-          .popup()
-          .setLatLng([locations[4].coordinates[0], locations[4].coordinates[1]])
-          .setContent(
-            '<div class="flex flex-col"><div>Location name</div> <a class="text-center" href="https://localhost:8080/location/urbangreenmapping">More info</a></div>'
-          )
-          .openOn(map);
+      switch (this.id) {
+        case 'parkly':
+          this.$leaflet
+            .popup()
+            .setLatLng([
+              locations[0].coordinates[0],
+              locations[0].coordinates[1],
+            ])
+            .setContent(
+              '<div class="flex flex-col"><div>Location name</div> <a class="text-center" href="https://localhost:8080/location/parkly">More info</a></div>'
+            )
+            .openOn(map);
+          break;
+        case 'aurora-block':
+          this.$leaflet
+            .popup()
+            .setLatLng([
+              locations[1].coordinates[0],
+              locations[1].coordinates[1],
+            ])
+            .setContent(
+              '<div class="flex flex-col"><div>Location name</div> <a class="text-center" href="https://localhost:8080/location/parkly">More info</a></div>'
+            )
+            .openOn(map);
+          break;
+        case 'loviseholm-park':
+          this.$leaflet
+            .popup()
+            .setLatLng([
+              locations[2].coordinates[0],
+              locations[2].coordinates[1],
+            ])
+            .setContent(
+              '<div class="flex flex-col"><div>Location name</div> <a class="text-center" href="https://localhost:8080/location/parkly">More info</a></div>'
+            )
+            .openOn(map);
+          break;
+        case 'green-urban-mapping':
+          this.$leaflet
+            .popup()
+            .setLatLng([
+              locations[3].coordinates[0],
+              locations[3].coordinates[1],
+            ])
+            .setContent(
+              '<div class="flex flex-col"><div>Location name</div> <a class="text-center" href="https://localhost:8080/location/parkly">More info</a></div>'
+            )
+            .openOn(map);
+          break;
+        case 'green-tram-stop':
+          this.$leaflet
+            .popup()
+            .setLatLng([
+              locations[4].coordinates[0],
+              locations[4].coordinates[1],
+            ])
+            .setContent(
+              '<div class="flex flex-col"><div>Location name</div> <a class="text-center" href="https://localhost:8080/location/parkly">More info</a></div>'
+            )
+            .openOn(map);
+          break;
+        default:
+          console.warn('Unhandled popup case:', this.id);
       }
     } catch (error) {
       console.error(error);
