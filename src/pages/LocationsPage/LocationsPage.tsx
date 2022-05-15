@@ -19,6 +19,10 @@ export default defineComponent({
           <ul class="text-left items-center flex flex-col">
             {locations.map((location) => (
               <li class="list">
+                <a
+                  href={'location/' + location.params}
+                  class="bg-gray-300 cursor-pointer mr-3 p-10"
+                />
                 <div class="flex flex-col w-full">
                   <h3>
                     {location.id}. {this.$t(location.title)}
