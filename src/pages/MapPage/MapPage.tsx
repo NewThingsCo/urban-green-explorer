@@ -1,7 +1,6 @@
 import type { VNode } from 'vue';
 import { defineComponent, computed } from 'vue';
 import { useRoute } from 'vue-router';
-import MapMarkerAltIcon from '../../assets/icons/map-marker-alt.svg?raw';
 import { locations } from '../../content/locations';
 import AppHeader from '@/components/AppHeader';
 import AppFooter from '@/components/AppFooter';
@@ -40,17 +39,23 @@ export default defineComponent({
 
       // MARKERS
       const markerIcon = this.$leaflet.divIcon({
-        html: MapMarkerAltIcon,
+        html: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"/></svg>
+`,
         className: '',
         iconSize: [24, 40],
         iconAnchor: [12, 40],
       });
 
+      // POPUP ON MARKER CLICK
       locations.map((location) => {
         this.$leaflet
           .marker([location.coordinates[0], location.coordinates[1]], {
             icon: markerIcon,
           })
+          // TODO: Fix path/content
+          .bindPopup(
+            '<div class="flex flex-col"><div>Location name</div> <a class="text-center" href="/location/parkly">More info</a></div>'
+          )
           .addTo(map);
       });
 
