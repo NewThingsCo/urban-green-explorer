@@ -19,7 +19,7 @@ export default defineComponent({
       id,
     };
   },
-  onBeforeMount() {
+  beforeUnmount() {
     Array.from(window.document.querySelectorAll('.router-link')).forEach(
       ($link: Element): void => {
         $link.removeEventListener('click', handleMapLink);
