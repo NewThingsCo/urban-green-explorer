@@ -24,9 +24,9 @@ export default defineComponent({
                   href={`/location/${location.params}`}
                 />
                 <div class="flex flex-col w-full">
-                  <h3>
+                  <h2>
                     {location.id}. {this.$t(location.title)}
-                  </h3>
+                  </h2>
                   <label>{this.$t(location.category)}</label>
                   <RouterLink
                     to={{ name: 'map', params: { id: location.params } }}
