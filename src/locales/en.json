@@ -10,6 +10,7 @@
   "locationsTitle": "Locations",
   "showOnMap": "Show on map",
   "moreInfo": "More info",
+  "categories": "Categories",
   "locations": {
     "parkly": {
       "title": "Start at Parkly",

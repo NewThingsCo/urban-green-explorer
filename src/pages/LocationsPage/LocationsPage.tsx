@@ -27,7 +27,15 @@ export default defineComponent({
                   <h2>
                     {location.id}. {this.$t(location.title)}
                   </h2>
-                  <label>{this.$t(location.category)}</label>
+                  <ul
+                    aria-label={this.$t('categories')}
+                    class="list-none"
+                    role="list"
+                  >
+                    <li class="category" role="listitem">
+                      {this.$t(location.category)}
+                    </li>
+                  </ul>
                   <RouterLink
                     to={{ name: 'map', params: { id: location.params } }}
                     class="show-map"

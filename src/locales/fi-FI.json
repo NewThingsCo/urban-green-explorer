@@ -10,6 +10,7 @@
   "locationsTitle": "Kohteet",
   "showOnMap": "Näytä kartalla",
   "moreInfo": "Lisätietoja",
+  "categories": "Kategoriat",
   "locations": {
     "parkly": {
       "title": "Aloitus Parklylla",
