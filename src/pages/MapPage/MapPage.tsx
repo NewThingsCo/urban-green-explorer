@@ -87,7 +87,11 @@ export default defineComponent({
               locations[0].coordinates[1],
             ])
             .setContent(
-              '<div class="flex flex-col"><div>Location name</div> <a class="text-center" href="/location/parkly">More info</a></div>'
+              `<div class="flex flex-col items-center"><h2 class="text-sm">${t(
+                locations[0].title
+              )}</h2><a class="router-link" href="/location/${
+                locations[0].params
+              }"}>${t('moreInfo')}</a></div>`
             )
             .openOn(map);
           break;
@@ -99,7 +103,11 @@ export default defineComponent({
               locations[1].coordinates[1],
             ])
             .setContent(
-              '<div class="flex flex-col"><div>Location name</div> <a class="text-center" href="/location/aurora-block">More info</a></div>'
+              `<div class="flex flex-col items-center"><h2 class="text-sm">${t(
+                locations[1].title
+              )}</h2><a class="router-link" href="/location/${
+                locations[1].params
+              }"}>${t('moreInfo')}</a></div>`
             )
             .openOn(map);
           break;
@@ -111,7 +119,11 @@ export default defineComponent({
               locations[2].coordinates[1],
             ])
             .setContent(
-              '<div class="flex flex-col"><div>Location name</div> <a class="text-center" href="/location/loviseholm-park">More info</a></div>'
+              `<div class="flex flex-col items-center"><h2 class="text-sm">${t(
+                locations[2].title
+              )}</h2><a class="router-link" href="/location/${
+                locations[2].params
+              }"}>${t('moreInfo')}</a></div>`
             )
             .openOn(map);
           break;
@@ -123,7 +135,11 @@ export default defineComponent({
               locations[3].coordinates[1],
             ])
             .setContent(
-              '<div class="flex flex-col"><div>Location name</div> <a class="text-center" href="/location/green-urban-mapping">More info</a></div>'
+              `<div class="flex flex-col items-center"><h2 class="text-sm">${t(
+                locations[3].title
+              )}</h2><a class="router-link" href="/location/${
+                locations[3].params
+              }"}>${t('moreInfo')}</a></div>`
             )
             .openOn(map);
           break;
@@ -135,7 +151,11 @@ export default defineComponent({
               locations[4].coordinates[1],
             ])
             .setContent(
-              '<div class="flex flex-col"><div>Location name</div> <a class="text-center" href="/location/green-tram-stop">More info</a></div>'
+              `<div class="flex flex-col items-center"><h2 class="text-sm">${t(
+                locations[4].title
+              )}</h2><a class="router-link" href="/location/${
+                locations[4].params
+              }"}>${t('moreInfo')}</a></div>`
             )
             .openOn(map);
           break;
