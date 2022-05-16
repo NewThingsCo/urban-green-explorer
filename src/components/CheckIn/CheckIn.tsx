@@ -1,13 +1,16 @@
 import type { Translations } from '@/types';
-import { computed, defineComponent, onMounted, ref, VNode, watch } from 'vue';
+import type { VNode } from 'vue';
+import { computed, defineComponent, onMounted, ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { RouterLink } from 'vue-router';
 import Button from '@/components/Button';
+import LocateIcon from '@/assets/icons/locate.svg?component';
 import './CheckIn.css';
 
 export default defineComponent({
   name: 'CheckIn',
   setup() {
-    const { t } = useI18n();
+    const { d, t } = useI18n();
 
     /** Adds an additional description to the button. */
     const ariaDescribedby = computed(() =>
@@ -42,21 +45,15 @@ export default defineComponent({
      */
     const hidden = ref(true);
 
-    /**
-     * Handles submit event from check-in form.
-     */
-    function handleGeolocation(event?: Event): void {
-      event?.preventDefault();
-      console.info('Geolocation requested.');
-      locateDevice();
-    }
+    /** @todo Get this from the page params. */
+    const locationId = 'aurora';
 
     /**
      * Handles errors related to the Geolocation API.
      * @todo Show alert.
      */
     function handleGeolocationError(): void {
-      console.error('Geolocation API offline.');
+      console.info('Geolocation API is offline.');
       checkInLabelI18nKey.value = 'unavailable';
     }
 
@@ -74,7 +71,10 @@ export default defineComponent({
         'See location on the map:',
         `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`
       );
-      checkInLabelI18nKey.value = closeEnough ? 'enabled' : 'enabled';
+      // Add slight delay to have time to see the animation
+      setTimeout(() => {
+        checkInLabelI18nKey.value = closeEnough ? 'enabled' : 'disabled';
+      }, 1000);
     }
 
     /**
@@ -86,10 +86,68 @@ export default defineComponent({
       console.debug('Check-in event:', event);
     }
 
+    /** Cached render of the complete label. */
+    const labelComplete: VNode = (
+      <i18n-t keypath="checkInLabel.complete.label" scope="global">
+        <em class="block">
+          <time datetime={new Date().toString()}>{d(new Date(), 'long')}</time>
+        </em>
+        <strong>{t('checkInLabel.complete.helpText')}</strong>
+      </i18n-t>
+    );
+
+    /** Cached render of the location is disabled label. */
+    const labelDisabled: VNode = (
+      <i18n-t keypath="checkInLabel.disabled.label" scope="global">
+        <RouterLink to={{ name: 'map', params: { id: locationId } }}>
+          {t('checkInLabel.disabled.linkText')}
+        </RouterLink>
+      </i18n-t>
+    );
+
+    /** Cached render of the location is enabled label. */
+    const labelEnabled: VNode = (
+      <i18n-t keypath="checkInLabel.enabled.label" scope="global">
+        <strong class="block">{t('checkInLabel.enabled.helpText')}</strong>
+      </i18n-t>
+    );
+
+    /** Cached render of the locating label. */
+    const labelLocating: VNode = (
+      <i18n-t keypath="checkInLabel.locating.label" scope="global">
+        <LocateIcon class="icon" />
+      </i18n-t>
+    );
+
+    /** Cached render of the Geolocation API is unavailable label. */
+    const labelUnavailable: VNode = (
+      <i18n-t
+        class="block"
+        keypath="checkInLabel.unavailable.label"
+        scope="global"
+      >
+        <strong>{t('checkInLabel.unavailable.helpText')}</strong>
+      </i18n-t>
+    );
+
+    /** Cached render of the visited label. */
+    const labelVisited: VNode = (
+      <i18n-t keypath="checkInLabel.visited.label" scope="global">
+        <em class="block">
+          <time datetime={new Date().toString()}>{d(new Date(), 'long')}</time>
+        </em>
+        <RouterLink to={{ name: 'map', params: { id: 'aurora' } }}>
+          {t('checkInLabel.visited.linkText')}
+        </RouterLink>
+      </i18n-t>
+    );
+
     /** Attempts to locate a device using the Geolocation API. */
     function locateDevice(): void {
+      checkInLabelI18nKey.value = 'locating';
       if (!navigator.geolocation) {
         console.info('Geolocation is not supported by this browser.');
+        checkInLabelI18nKey.value = 'unavailable';
       } else {
         console.info('🧭 Locating …');
         navigator.geolocation.getCurrentPosition(
@@ -105,44 +163,34 @@ export default defineComponent({
       hidden.value = true;
     }
 
-    /** Cached render of the Geolocation API is unavailable label. */
-    const unavailableLabel: VNode = (
-      <i18n-t keypath="checkInLabel.unavailable.text" scope="global">
-        <Button
-          class="btn-xs btn-link"
-          onClick={handleGeolocation}
-          type="button"
-        >
-          {t('checkInLabel.unavailable.label')}
-        </Button>
-      </i18n-t>
-    );
-
     /** Handles check-in state. */
     function handleCheckInState(key: typeof checkInLabelI18nKey.value): void {
       restoreDefaultValues();
       switch (key) {
         case 'complete':
-          checkInLabel.value = t(`checkInLabel.complete`);
+          checkInLabel.value = labelComplete;
           hidden.value = true;
           break;
         case 'disabled':
-          checkInLabel.value = t(`checkInLabel.disabled`);
+          checkInLabel.value = labelDisabled;
           hidden.value = false;
           break;
         case 'enabled':
-          checkInLabel.value = t(`checkInLabel.enabled`);
+          checkInLabel.value = labelEnabled;
           disabled.value = false;
           hidden.value = false;
           break;
         case 'locating':
-          checkInLabel.value = t(`checkInLabel.locating`);
+          checkInLabel.value = labelLocating;
           disabled.value = true;
-          hidden.value = false;
           break;
         case 'unavailable':
-          checkInLabel.value = unavailableLabel;
+          checkInLabel.value = labelUnavailable;
           disabled.value = true;
+          hidden.value = true;
+          break;
+        case 'visited':
+          checkInLabel.value = labelVisited;
           hidden.value = true;
           break;
         default:
@@ -153,7 +201,6 @@ export default defineComponent({
     }
 
     onMounted(() => {
-      checkInLabelI18nKey.value = 'locating';
       locateDevice();
     });
 
@@ -186,8 +233,8 @@ export default defineComponent({
         <p class="label" id="check-in-label">
           {this.checkInLabel || <>&nbsp;</>}
         </p>
-        <fieldset class="debug">
-          <legend class="my-6 mx-auto">Toggle check-in states</legend>
+        <fieldset class="debug mb-6 text-sm">
+          <legend class="my-3 mx-auto">Toggle check-in states</legend>
           <select
             class="select select-primary w-full max-w-xs"
             v-model={this.checkInLabelI18nKey}

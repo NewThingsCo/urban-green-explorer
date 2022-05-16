@@ -1,10 +1,20 @@
 .check-in {
-  @apply my-6;
+  @apply mx-auto;
+  @apply max-w-28rem;
 
   .label {
-    @apply flex flex-col;
+    @apply flex-col;
     @apply justify-center;
-    @apply m-3;
-    @apply opacity-85;
+    @apply text-sm;
+  }
+
+  .icon {
+    @apply block;
+    @apply mx-auto;
+    @apply h-12 w-12;
+
+    + .label {
+      margin-top: -0.8rem;
+    }
   }
 }

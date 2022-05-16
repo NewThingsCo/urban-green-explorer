@@ -5,15 +5,29 @@
   "categories": "Kategoriat",
   "checkInButton": "Avaa kohde",
   "checkInLabel": {
-    "complete": "Kaikki kohteet käyty läpi! Kiitos kun osallistuit.",
-    "disabled": "Laite on liian kaukana sijainnista",
-    "enabled": "Laite on riittävän lähellä sijaintia",
-    "locating": "Paikannetaan …",
-    "unavailable": {
-      "label": "Ottaa geolokaatio käyttöön",
-      "text": "Kohteiden avaaminen ei onnistu. {0}"
+    "complete": {
+      "helpText": "Kaikki kohteet käyty läpi. Kiitos kun osallistuit!",
+      "label": "Kohde avattu {0}{1}"
     },
-    "visited": "Sijainti avattu {0}"
+    "disabled": {
+      "label": "Saat lisätietoja kohteesta kun olet tarpeeksi lähellä. {0}",
+      "linkText": "Näytä kohde kartalla"
+    },
+    "enabled": {
+      "helpText": "Napsauta painikkeesta saadaksesi lisää sisältöä",
+      "label": "Olet nyt tarpeeksi lähellä! {0}"
+    },
+    "locating": {
+      "label": "{0} Paikannetaan …"
+    },
+    "unavailable": {
+      "helpText": "Ota lokaatio käyttöön selaimen asetuksista",
+      "label": "{0} niin saat lisätietoja kohteesta kun olet tarpeeksi lähellä."
+    },
+    "visited": {
+      "label": "Kohde avattu {0}{1}",
+      "linkText": "Näytä seuraava kohde"
+    }
   },
   "countIsLabel": "Luku on",
   "counter": "Laskin",

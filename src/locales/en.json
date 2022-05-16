@@ -5,15 +5,29 @@
   "categories": "Categories",
   "checkInButton": "Check-in",
   "checkInLabel": {
-    "complete": "All locations complete",
-    "disabled": "Device is too far from the location",
-    "enabled": "Device is close enough to the location",
-    "locating": "Locating …",
-    "unavailable": {
-      "label": "Enable Geolocation",
-      "text": "Geolocation API is disabled. {0} to activate check-ins."
+    "complete": {
+      "helpText": "All locations have been visited. Thanks for participating!",
+      "label": "Location unlocked on {0}{1}"
     },
-    "visited": "Location has already been visited"
+    "disabled": {
+      "label": "Unlock more details about this location by getting closer to the target. {0}",
+      "linkText": "See location on the map"
+    },
+    "enabled": {
+      "helpText": "Tap the button to unlock more content",
+      "label": "You're now close enough! {0}"
+    },
+    "locating": {
+      "label": "{0} Locating …"
+    },
+    "unavailable": {
+      "helpText": "Turn on the location setting from your browser",
+      "label": "{0} to unlock more content."
+    },
+    "visited": {
+      "label": "Location unlocked on {0}{1}",
+      "linkText": "See next location"
+    }
   },
   "countIsLabel": "Count is",
   "counter": "Counter",
