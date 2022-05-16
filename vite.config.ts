@@ -31,7 +31,32 @@ export default defineConfig({
       fix: true,
       include: ['src/**/*.css'],
     }),
-    SVGLoader(),
+    SVGLoader({
+      svgoConfig: {
+        plugins: [
+          {
+            name: 'preset-default',
+            params: {
+              overrides: {
+                cleanupAttrs: false,
+                cleanupIDs: false,
+                inlineStyles: false,
+                removeUnknownsAndDefaults: false,
+                removeUselessDefs: false,
+                removeUselessStrokeAndFill: false,
+                sortDefsChildren: false,
+              },
+            },
+          },
+          {
+            name: 'sortAttrs',
+            params: {
+              xmlnsOrder: 'alphabetical',
+            },
+          },
+        ],
+      },
+    }),
     VueI18n({
       include: path.resolve(__dirname, './src/locales/**'),
     }),
