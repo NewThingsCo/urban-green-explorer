@@ -13,7 +13,7 @@ export default defineComponent({
   mounted() {
     if (!this.$leaflet) return;
     try {
-      const map = this.$leaflet.map('map').setView([60.1807, 24.9761], 16.5);
+      const map = this.$leaflet.map('map').setView([60.1807, 24.9773], 16.5);
       this.$leaflet.control
         .locate({
           position: 'topleft',
@@ -21,12 +21,13 @@ export default defineComponent({
         })
         .addTo(map);
       this.$leaflet
-        .tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        .tileLayer('https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png', {
           attribution:
             'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
           maxZoom: 30,
           tileSize: 512,
           zoomOffset: -1,
+          detectRetina: true,
         })
         .addTo(map);
 
