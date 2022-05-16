@@ -1,12 +1,28 @@
-import type { VNode } from 'vue';
+import type { PropType, VNode } from 'vue';
 import { defineComponent } from 'vue';
 import { RouterLink } from 'vue-router';
 import LocaleSwitcher from '../LocaleSwitcher';
+import { defaultEventHandler } from '@/utils';
 import './AppHeader.css';
 import BGReenLogo from '@/assets/logos/BGreen.png?url';
 
 export default defineComponent({
   name: 'AppHeader',
+  props: {
+    onClick: {
+      default: defaultEventHandler,
+      type: Function as PropType<(event?: Event) => void>,
+    },
+  },
+  setup() {
+    const goBack = () => {
+      console.log('GO BACK');
+      router.go(-1);
+    };
+    return {
+      goBack,
+    };
+  },
   render(): VNode {
     return (
       <header class="app-header">
