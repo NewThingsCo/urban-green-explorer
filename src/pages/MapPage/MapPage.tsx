@@ -1,7 +1,6 @@
 import type { VNode } from 'vue';
 import { defineComponent, computed } from 'vue';
 import { useRoute } from 'vue-router';
-import { useI18n } from 'vue-i18n';
 import MapMarkerAltIcon from '../../assets/icons/map-marker-alt.svg?raw';
 import { locations } from '../../content/locations';
 import { handleMapLink } from './handleMapLink';
@@ -61,18 +60,17 @@ export default defineComponent({
       });
 
       // POPUP ON MARKER CLICK
-      const { t } = useI18n();
       locations.map((location) => {
         this.$leaflet
           .marker([location.coordinates[0], location.coordinates[1]], {
             icon: markerIcon,
           })
           .bindPopup(
-            `<div class="flex flex-col items-center"><h2 class="text-sm">${t(
+            `<div class="flex flex-col items-center"><h2 class="text-sm">${this.$t(
               location.title
             )}</h2><a class="router-link" href="/location/${
               location.params
-            }"}>${t('moreInfo')}</a></div>`
+            }"}>${this.$t('moreInfo')}</a></div>`
           )
           .addTo(map);
       });
@@ -87,11 +85,11 @@ export default defineComponent({
               locations[0].coordinates[1],
             ])
             .setContent(
-              `<div class="flex flex-col items-center"><h2 class="text-sm">${t(
+              `<div class="flex flex-col items-center"><h2 class="text-sm">${this.$t(
                 locations[0].title
               )}</h2><a class="router-link" href="/location/${
                 locations[0].params
-              }"}>${t('moreInfo')}</a></div>`
+              }"}>${this.$t('moreInfo')}</a></div>`
             )
             .openOn(map);
           break;
@@ -103,11 +101,11 @@ export default defineComponent({
               locations[1].coordinates[1],
             ])
             .setContent(
-              `<div class="flex flex-col items-center"><h2 class="text-sm">${t(
+              `<div class="flex flex-col items-center"><h2 class="text-sm">${this.$t(
                 locations[1].title
               )}</h2><a class="router-link" href="/location/${
                 locations[1].params
-              }"}>${t('moreInfo')}</a></div>`
+              }"}>${this.$t('moreInfo')}</a></div>`
             )
             .openOn(map);
           break;
@@ -119,11 +117,11 @@ export default defineComponent({
               locations[2].coordinates[1],
             ])
             .setContent(
-              `<div class="flex flex-col items-center"><h2 class="text-sm">${t(
+              `<div class="flex flex-col items-center"><h2 class="text-sm">${this.$t(
                 locations[2].title
               )}</h2><a class="router-link" href="/location/${
                 locations[2].params
-              }"}>${t('moreInfo')}</a></div>`
+              }"}>${this.$t('moreInfo')}</a></div>`
             )
             .openOn(map);
           break;
@@ -135,11 +133,11 @@ export default defineComponent({
               locations[3].coordinates[1],
             ])
             .setContent(
-              `<div class="flex flex-col items-center"><h2 class="text-sm">${t(
+              `<div class="flex flex-col items-center"><h2 class="text-sm">${this.$t(
                 locations[3].title
               )}</h2><a class="router-link" href="/location/${
                 locations[3].params
-              }"}>${t('moreInfo')}</a></div>`
+              }"}>${this.$t('moreInfo')}</a></div>`
             )
             .openOn(map);
           break;
@@ -151,11 +149,11 @@ export default defineComponent({
               locations[4].coordinates[1],
             ])
             .setContent(
-              `<div class="flex flex-col items-center"><h2 class="text-sm">${t(
+              `<div class="flex flex-col items-center"><h2 class="text-sm">${this.$t(
                 locations[4].title
               )}</h2><a class="router-link" href="/location/${
                 locations[4].params
-              }"}>${t('moreInfo')}</a></div>`
+              }"}>${this.$t('moreInfo')}</a></div>`
             )
             .openOn(map);
           break;
