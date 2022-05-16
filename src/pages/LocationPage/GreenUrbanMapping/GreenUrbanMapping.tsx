@@ -15,14 +15,14 @@ export default defineComponent({
         <AppHeader />
         <AppMain class="main-wrapper location-wrapper">
           <h1 class="pt-10 title text-left">
-            {this.$t('locations.greenurbanmapping.title')}
+            {this.$t('locations.greenUrbanMapping.title')}
           </h1>
           <div class="py-40 h-1/2 bg-gray-400" />
           <label class="label">
-            {this.$t('locations.greenurbanmapping.category')}
+            {this.$t('locations.greenUrbanMapping.category')}
           </label>
           <p class="text-left">
-            {this.$t('locations.greenurbanmapping.description')}
+            {this.$t('locations.greenUrbanMapping.description')}
           </p>
           <div class="map-container">
             <div class="flex items-center w-1/2">

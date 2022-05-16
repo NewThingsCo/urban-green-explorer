@@ -25,10 +25,10 @@ export const locations = [
   },
   {
     id: '4',
-    title: 'locations.greenurbanmapping.title',
+    title: 'locations.greenUrbanMapping.title',
     coordinates: [60.1819, 24.9783],
-    category: 'locations.greenurbanmapping.category',
-    description: 'locations.greenurbanmapping.description',
+    category: 'locations.greenUrbanMapping.category',
+    description: 'locations.greenUrbanMapping.description',
     params: 'green-urban-mapping',
   },
   {
