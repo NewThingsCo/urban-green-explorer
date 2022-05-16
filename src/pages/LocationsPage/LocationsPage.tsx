@@ -20,7 +20,7 @@ export default defineComponent({
             {locations.map((location) => (
               <li class="list">
                 <a
-                  href={'location/' + location.params}
+                  href={'location/' + location.id}
                   class="bg-gray-300 cursor-pointer mr-3 p-10"
                 />
                 <div class="flex flex-col w-full">

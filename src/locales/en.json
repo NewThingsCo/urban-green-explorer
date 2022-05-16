@@ -9,6 +9,7 @@
   },
   "locationsTitle": "Locations",
   "showOnMap": "Show on map",
+  "moreInfo": "More info",
   "locations": {
     "parkly": {
       "title": "Start at Parkly",
@@ -54,11 +55,6 @@
   "language": "English",
   "localeSwitcher": "Language menu",
   "long": "Long",
-  "moreInfo": {
-    "href": "https://github.com/NewThingsCo/urban-green-explorer/blob/main/README.md",
-    "label": "README.md",
-    "text": "See {0} for more information."
-  },
   "nextNumberLabel": "Next number is:",
   "numberStatusNegative": "Decrement or increment the number | You've decremented once | You've decremented several times",
   "numberStatusPositive": "Decrement or increment the number | You've incremented once | You've incremented several times",

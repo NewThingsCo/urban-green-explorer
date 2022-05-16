@@ -1,7 +1,9 @@
 import type { VNode } from 'vue';
 import { defineComponent, computed } from 'vue';
 import { useRoute } from 'vue-router';
+import { useI18n } from 'vue-i18n';
 import { locations } from '../../content/locations';
+import { handleMapLink } from './handleMapLink';
 import AppHeader from '@/components/AppHeader';
 import AppFooter from '@/components/AppFooter';
 import AppMain from '@/components/AppMain';
@@ -17,9 +19,21 @@ export default defineComponent({
       id,
     };
   },
+  onBeforeMount() {
+    Array.from(window.document.querySelectorAll('.router-link')).forEach(
+      ($link: Element): void => {
+        $link.removeEventListener('click', handleMapLink);
+      }
+    );
+  },
   mounted() {
     if (!this.$leaflet) return;
     try {
+      Array.from(window.document.querySelectorAll('.router-link')).forEach(
+        ($link: Element): void => {
+          $link.addEventListener('click', handleMapLink);
+        }
+      );
       const map = this.$leaflet.map('map').setView([60.1807, 24.9761], 16.5);
       this.$leaflet.control
         .locate({
@@ -47,14 +61,18 @@ export default defineComponent({
       });
 
       // POPUP ON MARKER CLICK
+      const { t } = useI18n();
       locations.map((location) => {
         this.$leaflet
           .marker([location.coordinates[0], location.coordinates[1]], {
             icon: markerIcon,
           })
-          // TODO: Fix path/content
           .bindPopup(
-            '<div class="flex flex-col"><div>Location name</div> <a class="text-center" href="/location/parkly">More info</a></div>'
+            `<div class="flex flex-col items-center"><h2 class="text-sm">${t(
+              location.title
+            )}</h2><a class="router-link" href="/location/${
+              location.params
+            }"}>${t('moreInfo')}</a></div>`
           )
           .addTo(map);
       });

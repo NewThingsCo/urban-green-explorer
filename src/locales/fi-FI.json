@@ -9,6 +9,7 @@
   },
   "locationsTitle": "Kohteet",
   "showOnMap": "Näytä kartalla",
+  "moreInfo": "Lisätietoja",
   "locations": {
     "parkly": {
       "title": "Aloitus Parklylla",
@@ -54,11 +55,6 @@
   "language": "Suomi",
   "localeSwitcher": "Kielivalinta",
   "long": "Pitkä",
-  "moreInfo": {
-    "href": "https://github.com/NewThingsCo/urban-green-explorer/blob/main/README.md",
-    "label": "README.md",
-    "text": "Lukaise {0} läpi jos haluat lisätietoja."
-  },
   "nextNumberLabel": "Seuraava luku on:",
   "numberStatusNegative": "Vähennä tai lisää lukua | Olet vähentänyt kerran | Olet vähentänyt useamman kerran",
   "numberStatusPositive": "Vähennä tai lisää lukua | Olet lisännyt kerran | Olet lisännyt useamman kerran",
