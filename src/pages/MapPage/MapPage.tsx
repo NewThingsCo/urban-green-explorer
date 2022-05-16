@@ -29,11 +29,6 @@ export default defineComponent({
   mounted() {
     if (!this.$leaflet) return;
     try {
-      Array.from(window.document.querySelectorAll('.router-link')).forEach(
-        ($link: Element): void => {
-          $link.addEventListener('click', handleMapLink);
-        }
-      );
       const map = this.$leaflet.map('map').setView([60.1807, 24.9761], 16.5);
       this.$leaflet.control
         .locate({
