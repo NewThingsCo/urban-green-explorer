@@ -1,6 +1,13 @@
 import type { Translations } from '@/types';
-import type { VNode } from 'vue';
-import { computed, defineComponent, onMounted, ref, watch } from 'vue';
+import {
+  onBeforeUnmount,
+  VNode,
+  computed,
+  defineComponent,
+  onMounted,
+  ref,
+  watch,
+} from 'vue';
 import { useI18n } from 'vue-i18n';
 import { RouterLink } from 'vue-router';
 import Button from '@/components/Button';
@@ -31,17 +38,17 @@ export default defineComponent({
      * Check-in label text or element.
      * @default null
      */
-    const checkInLabel = ref<VNode | string | null>(null);
+    const checkInLabel = ref<null | string | VNode>(null);
 
     /**
      * Disables the button if set to `true`.
-     * @default false
+     * @default true
      */
     const disabled = ref(true);
 
     /**
      * Hides the button if set to `true`.
-     * @default false
+     * @default true
      */
     const hidden = ref(true);
 
@@ -49,27 +56,62 @@ export default defineComponent({
     const locationId = 'aurora';
 
     /**
-     * Handles errors related to the Geolocation API.
-     * @todo Show alert.
+     * Keeps track of the watch event ID from the Geolocation API.
+     * @link https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/watchPosition#return_value
      */
-    function handleGeolocationError(): void {
-      console.info('Geolocation API is offline.');
-      checkInLabelI18nKey.value = 'unavailable';
+    const geolocationWatchId = ref<null | number>(null);
+
+    /**
+     * Watch options for the Geolocation API.
+     * @link https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/watchPosition#options
+     */
+    const geolocationWatchPositionOptions: PositionOptions = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+    };
+
+    /** Restarts the Geolocation API watch service. */
+    function restartGeolocationWatch(): void {
+      clearGeolocationWatch(geolocationWatchId.value);
+      startGeolocationWatch();
+    }
+
+    /**
+     * Handles errors related to the Geolocation API.
+     * @link https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/watchPosition#error
+     */
+    function handleGeolocationError(error: GeolocationPositionError): void {
+      switch (error.code) {
+        case error.PERMISSION_DENIED:
+          console.info('User denied permission to use the Geolocation API.');
+          clearGeolocationWatch(geolocationWatchId.value);
+          checkInLabelI18nKey.value = 'unavailable';
+          break;
+        case error.TIMEOUT:
+          console.log('The Geolocation API timed out.');
+          restartGeolocationWatch();
+          break;
+        case error.POSITION_UNAVAILABLE:
+        default:
+          console.error('The Geolocation API is unavailable.');
+          checkInLabelI18nKey.value = 'unavailable';
+      }
     }
 
     /**
      * Handles the success event from the Geolocation API.
-     * @todo Verify distance from target.
+     * @link https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/watchPosition#success
      */
     function handleGeolocationSuccess(position: GeolocationPosition): void {
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
+      /** @todo Add function call to verify distance from target. */
       const closeEnough = false;
-      console.info('✅ Location found.');
-      console.debug(`↕ Latitude: ${latitude} ° ፨ ↔ Longitude: ${longitude} °`);
-      console.log(
-        'See location on the map:',
-        `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`
+      console.debug(
+        `🌍 Location received: ↕ Latitude: ${latitude} ° ፨ ↔ Longitude: ${longitude} °`
+      );
+      console.debug(
+        `🗺 See location on the map: https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`
       );
       // Add slight delay to have time to see the animation
       setTimeout(() => {
@@ -142,18 +184,24 @@ export default defineComponent({
       </i18n-t>
     );
 
-    /** Attempts to locate a device using the Geolocation API. */
-    function locateDevice(): void {
+    /**
+     * Starts tracking device location if Geolocation API is present.
+     * Disables check-ins if API is unavailable.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/watchPosition
+     */
+    function startGeolocationWatch(): void {
       checkInLabelI18nKey.value = 'locating';
-      if (!navigator.geolocation) {
+      if (navigator.geolocation) {
+        console.log('🧭 Attempting to locate device …');
+        geolocationWatchId.value = navigator.geolocation.watchPosition(
+          handleGeolocationSuccess,
+          handleGeolocationError,
+          geolocationWatchPositionOptions
+        );
+      } else {
         console.info('Geolocation is not supported by this browser.');
         checkInLabelI18nKey.value = 'unavailable';
-      } else {
-        console.info('🧭 Locating …');
-        navigator.geolocation.getCurrentPosition(
-          handleGeolocationSuccess,
-          handleGeolocationError
-        );
       }
     }
 
@@ -163,13 +211,21 @@ export default defineComponent({
       hidden.value = true;
     }
 
-    /** Handles check-in state. */
+    /**
+     * Clears the Geolocation watch event if present.
+     * @link https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/clearWatch
+     */
+    function clearGeolocationWatch(eventId: null | number): void {
+      if (!navigator.geolocation || null === eventId) return;
+      navigator.geolocation.clearWatch(eventId);
+    }
+
+    /** Handles check-in states. */
     function handleCheckInState(key: typeof checkInLabelI18nKey.value): void {
       restoreDefaultValues();
       switch (key) {
         case 'complete':
           checkInLabel.value = labelComplete;
-          hidden.value = true;
           break;
         case 'disabled':
           checkInLabel.value = labelDisabled;
@@ -182,16 +238,12 @@ export default defineComponent({
           break;
         case 'locating':
           checkInLabel.value = labelLocating;
-          disabled.value = true;
           break;
         case 'unavailable':
           checkInLabel.value = labelUnavailable;
-          disabled.value = true;
-          hidden.value = true;
           break;
         case 'visited':
           checkInLabel.value = labelVisited;
-          hidden.value = true;
           break;
         default:
           checkInLabel.value =
@@ -200,8 +252,12 @@ export default defineComponent({
       }
     }
 
+    onBeforeUnmount(() => {
+      clearGeolocationWatch(geolocationWatchId.value);
+    });
+
     onMounted(() => {
-      locateDevice();
+      startGeolocationWatch();
     });
 
     /**
