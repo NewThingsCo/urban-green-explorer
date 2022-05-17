@@ -337,24 +337,6 @@ export default defineComponent({
         <p class="label" id="check-in-label">
           {this.checkInLabel || <>&nbsp;</>}
         </p>
-        <fieldset class="debug mb-6 text-sm">
-          <legend class="my-3 mx-auto">Toggle check-in states</legend>
-          <select
-            class="select select-primary w-full max-w-xs"
-            v-model={this.checkInLabelI18nKey}
-          >
-            <option disabled selected>
-              Select check-in state
-            </option>
-            <option value={null}>None</option>
-            <option value="complete">Complete</option>
-            <option value="disabled">Disabled</option>
-            <option value="enabled">Enabled</option>
-            <option value="locating">Locating</option>
-            <option value="unavailable">Unavailable</option>
-            <option value="visited">Visited</option>
-          </select>
-        </fieldset>
       </form>
     );
   },
