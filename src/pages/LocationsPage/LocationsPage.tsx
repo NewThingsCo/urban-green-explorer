@@ -1,11 +1,11 @@
 import type { VNode } from 'vue';
 import { defineComponent } from 'vue';
 import { RouterLink } from 'vue-router';
-import { locations } from '../../content/locations';
-import MapMarkerAlt from '../../assets/icons/map-marker-alt.svg?component';
+import MapMarkerAlt from '@/assets/icons/map-marker-alt.svg?component';
+import AppFooter from '@/components/AppFooter';
 import AppHeader from '@/components/AppHeader';
 import AppMain from '@/components/AppMain';
-import AppFooter from '@/components/AppFooter';
+import { locations } from '@/content/locations';
 import './LocationsPage.css';
 
 export default defineComponent({

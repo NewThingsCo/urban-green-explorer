@@ -1,15 +1,17 @@
+import type { VNode } from 'vue';
 import { defineComponent } from 'vue';
 import { RouterLink } from 'vue-router';
-import MapMarkerAlt from '../../../assets/icons/map-marker-alt.svg?component';
-import MapMarkedAlt from '../../../assets/icons/map-marked-alt.svg?component';
+import MapMarkedAlt from '@/assets/icons/map-marked-alt.svg?component';
+import MapMarkerAlt from '@/assets/icons/map-marker-alt.svg?component';
 import AppFooter from '@/components/AppFooter';
 import AppHeader from '@/components/AppHeader';
 import AppMain from '@/components/AppMain';
+import CheckIn from '@/components/CheckIn';
 import '../Location.css';
 
 export default defineComponent({
   name: 'Parkly',
-  render() {
+  render(): VNode {
     return (
       <>
         <AppHeader />
@@ -35,7 +37,9 @@ export default defineComponent({
             </RouterLink>
           </div>
         </AppMain>
-        <AppFooter />
+        <AppFooter>
+          <CheckIn />
+        </AppFooter>
       </>
     );
   },
