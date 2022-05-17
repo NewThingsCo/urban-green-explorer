@@ -15,10 +15,10 @@ export default defineComponent({
     },
   },
   setup() {
-    const goBack = () => {
+    function goBack(): void {
       console.log('GO BACK');
       router.go(-1);
-    };
+    }
     return {
       goBack,
     };
