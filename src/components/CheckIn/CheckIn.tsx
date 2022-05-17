@@ -239,7 +239,6 @@ export default defineComponent({
      * @link https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/watchPosition
      */
     function startGeolocationWatch(): void {
-      checkInLabelI18nKey.value = 'locating';
       if (navigator.geolocation) {
         console.log('🧭 Attempting to locate device …');
         geolocationWatchId.value = navigator.geolocation.watchPosition(
@@ -305,6 +304,7 @@ export default defineComponent({
     });
 
     onMounted(() => {
+      checkInLabelI18nKey.value = 'locating';
       startGeolocationWatch();
     });
 
