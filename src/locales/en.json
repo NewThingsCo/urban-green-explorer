@@ -9,12 +9,34 @@
   },
   "locationsTitle": "Locations",
   "showOnMap": "Show on map",
+  "moreInfo": "More info",
+  "categories": "Categories",
   "locations": {
-    "parkly": "Start at Parkly",
-    "aurora": "Aurora Block",
-    "loviseholm": "Loviseholm Park",
-    "greenurbanmapping": "Green Urban Mapping",
-    "tram": "Green Tramp Stop"
+    "parkly": {
+      "title": "Start at Parkly",
+      "category": "Meeting point",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu."
+    },
+    "aurora": {
+      "title": "Aurora Block",
+      "category": "Block",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu."
+    },
+    "loviseholm": {
+      "title": "Loviseholm Park",
+      "category": "Park",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu."
+    },
+    "greenUrbanMapping": {
+      "title": "Green Urban Mapping",
+      "category": "Block",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu."
+    },
+    "tram": {
+      "title": "Green Tramp Stop",
+      "category": "Tram stop",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu."
+    }
   },
   "countIsLabel": "Count is",
   "counter": "Counter",
@@ -34,11 +56,6 @@
   "language": "English",
   "localeSwitcher": "Language menu",
   "long": "Long",
-  "moreInfo": {
-    "href": "https://github.com/NewThingsCo/urban-green-explorer/blob/main/README.md",
-    "label": "README.md",
-    "text": "See {0} for more information."
-  },
   "nextNumberLabel": "Next number is:",
   "numberStatusNegative": "Decrement or increment the number | You've decremented once | You've decremented several times",
   "numberStatusPositive": "Decrement or increment the number | You've incremented once | You've incremented several times",

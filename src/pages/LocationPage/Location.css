@@ -1,0 +1,26 @@
+.location-wrapper {
+  @apply p-20;
+
+  .label {
+    @apply text-left;
+    @apply text-sm;
+    @apply text-gray-400;
+    @apply py-2;
+  }
+
+  .icon {
+    @apply w-10;
+    @apply h-10;
+  }
+
+  .map-container {
+    @apply flex;
+    @apply justify-between;
+    @apply mt-7;
+    @apply py-2;
+    @apply md:w-1/4;
+    @apply items-center;
+    @apply border-bottom-2;
+    @apply border-color-gray;
+  }
+}

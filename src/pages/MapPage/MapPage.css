@@ -9,3 +9,7 @@
   @apply w-full;
   @apply z-10;
 }
+
+.leaflet-popup {
+  @apply mb-14.5;
+}

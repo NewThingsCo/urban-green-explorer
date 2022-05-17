@@ -19,16 +19,33 @@ export default defineComponent({
           <ul class="text-left items-center flex flex-col">
             {locations.map((location) => (
               <li class="list">
+                <a
+                  class="bg-gray-300 cursor-pointer mr-3 p-10"
+                  href={`/location/${location.params}`}
+                />
                 <div class="flex flex-col w-full">
-                  <h3>
+                  <h2>
                     {location.id}. {this.$t(location.title)}
-                  </h3>
-                  <label>{this.$t(location.label)}</label>
-                  <RouterLink to={{ name: 'map' }} class="show-map">
+                  </h2>
+                  <ul
+                    aria-label={this.$t('categories')}
+                    class="list-none"
+                    role="list"
+                  >
+                    <li class="category" role="listitem">
+                      {this.$t(location.category)}
+                    </li>
+                  </ul>
+                  <RouterLink
+                    to={{ name: 'map', params: { id: location.params } }}
+                    class="show-map"
+                  >
                     {this.$t('showOnMap')}
                   </RouterLink>
                 </div>
-                <RouterLink to={{ name: 'map' }}>
+                <RouterLink
+                  to={{ name: 'map', params: { id: location.params } }}
+                >
                   <MapMarkerAlt class="icon" />
                 </RouterLink>
               </li>
