@@ -2,8 +2,8 @@ import { createTestingPinia } from '@pinia/testing';
 import { mount } from '@vue/test-utils';
 import { createPinia, setActivePinia } from 'pinia';
 import Component from './LocationsPage';
-import { router } from '@/router';
 import { i18n } from '@/utils';
+import { router } from '@/router';
 
 const wrapper = mount(Component, {
   global: {

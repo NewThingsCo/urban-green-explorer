@@ -1,13 +1,12 @@
 import type { VNode } from 'vue';
 import { defineComponent } from 'vue';
-import './Navigation.css';
 import { RouterLink } from 'vue-router';
-import InfoIcon from '../../assets/icons/info-circle.svg?component';
-import HomeIcon from '../../assets/icons/home.svg?component';
-import MapMarkedAltIcon from '../../assets/icons/map-marked-alt.svg?component';
-import ListIcon from '../../assets/icons/list.svg?component';
-
+import HomeIcon from '@/assets/icons/home.svg?component';
+import InfoIcon from '@/assets/icons/info-circle.svg?component';
+import ListIcon from '@/assets/icons/list.svg?component';
+import MapMarkedAltIcon from '@/assets/icons/map-marked-alt.svg?component';
 import { routes } from '@/router';
+import './Navigation.css';
 
 export default defineComponent({
   name: 'Navigation',

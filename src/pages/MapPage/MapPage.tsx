@@ -1,9 +1,9 @@
 import type { VNode } from 'vue';
 import { defineComponent, computed } from 'vue';
 import { useRoute } from 'vue-router';
-import MapMarkerAltIcon from '../../assets/icons/map-marker-alt.svg?raw';
-import { locations } from '../../content/locations';
 import { handleMapLink } from './handleMapLink';
+import MapMarkerAltIcon from '@/assets/icons/map-marker-alt.svg?raw';
+import { locations } from '@/content/locations';
 import AppHeader from '@/components/AppHeader';
 import AppFooter from '@/components/AppFooter';
 import AppMain from '@/components/AppMain';

@@ -1,9 +1,9 @@
 import { createTestingPinia } from '@pinia/testing';
 import { mount, RouterLinkStub } from '@vue/test-utils';
 import { createPinia, setActivePinia } from 'pinia';
+import Navigation from './Navigation';
 import { i18n } from '@/utils';
 import { router } from '@/router';
-import Navigation from './';
 
 const wrapper = mount(Navigation, {
   global: {

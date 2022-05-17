@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import Component from '../CheckIn';
+import Component from './CheckIn';
 import { router } from '@/router';
 import { i18n } from '@/utils';
 

@@ -2,9 +2,9 @@ import { createTestingPinia } from '@pinia/testing';
 import { mount } from '@vue/test-utils';
 import { createPinia, setActivePinia } from 'pinia';
 import Component from './InfoPage';
-import { I18N_DEFAULT_MESSAGES } from '@/constants';
-import { router } from '@/router';
 import { i18n } from '@/utils';
+import { router } from '@/router';
+import { I18N_DEFAULT_MESSAGES } from '@/constants';
 
 const wrapper = mount(Component, {
   global: {

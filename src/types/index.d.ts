@@ -1,4 +1,4 @@
-import { locations } from '../content/locations';
+import { locations } from '@/content/locations';
 import { LOCALE_CODES } from '@/constants';
 import en from '@/locales/en.json';
 

@@ -6,7 +6,7 @@ import {
   I18N_MESSAGES,
   LOCALE_CODES,
   NUMBER_FORMATS,
-} from '../constants';
+} from '@/constants';
 
 const i18nOptions: I18nOptions = {
   datetimeFormats: DATE_TIME_FORMATS,

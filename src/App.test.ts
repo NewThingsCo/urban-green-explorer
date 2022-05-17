@@ -1,10 +1,10 @@
+import { jest } from '@jest/globals';
 import { createTestingPinia } from '@pinia/testing';
 import { mount } from '@vue/test-utils';
 import { createPinia, setActivePinia } from 'pinia';
-import { jest } from '@jest/globals';
 import App from './App';
-import { router } from '@/router';
 import { i18n } from '@/utils';
+import { router } from '@/router';
 
 jest.retryTimes(2);
 

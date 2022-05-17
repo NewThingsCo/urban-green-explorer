@@ -1,7 +1,7 @@
+import { jest } from '@jest/globals';
 import { createTestingPinia } from '@pinia/testing';
 import { mount } from '@vue/test-utils';
 import { createPinia, setActivePinia } from 'pinia';
-import { jest } from '@jest/globals';
 import Component from './MapPage';
 import { i18n } from '@/utils';
 import { router } from '@/router';
