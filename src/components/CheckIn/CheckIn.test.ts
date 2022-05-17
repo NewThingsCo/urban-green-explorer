@@ -1,10 +1,11 @@
 import { mount } from '@vue/test-utils';
 import Component from '../CheckIn';
+import { router } from '@/router';
 import { i18n } from '@/utils';
 
 const wrapper = mount(Component, {
   global: {
-    plugins: [i18n],
+    plugins: [i18n, router],
   },
 });
 
