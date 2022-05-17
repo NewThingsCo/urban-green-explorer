@@ -9,7 +9,7 @@ import {
   watch,
 } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { RouterLink } from 'vue-router';
+import { RouterLink, useRouter } from 'vue-router';
 import Button from '@/components/Button';
 import LocateIcon from '@/assets/icons/locate.svg?component';
 import './CheckIn.css';
@@ -18,6 +18,7 @@ export default defineComponent({
   name: 'CheckIn',
   setup() {
     const { d, t } = useI18n();
+    const router = useRouter();
 
     /** Adds an additional description to the button. */
     const ariaDescribedby = computed(() =>
@@ -52,8 +53,8 @@ export default defineComponent({
      */
     const hidden = ref(true);
 
-    /** @todo Get this from the page params. */
-    const locationId = 'aurora';
+    /** ID of the current location. */
+    const locationId = router.currentRoute.value.name;
 
     /**
      * Keeps track of the watch event ID from the Geolocation API.
