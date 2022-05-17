@@ -23,7 +23,7 @@ export default defineComponent({
 
     /** Adds an additional description to the button. */
     const ariaDescribedby = computed(() =>
-      Boolean(!hidden.value) && Boolean(checkInLabelI18nKey.value)
+      Boolean(!isButtonHidden.value) && Boolean(checkInLabelI18nKey.value)
         ? 'check-in-label'
         : undefined
     );
@@ -46,13 +46,13 @@ export default defineComponent({
      * Disables the button if set to `true`.
      * @default true
      */
-    const disabled = ref(true);
+    const isButtonDisabled = ref(true);
 
     /**
      * Hides the button if set to `true`.
      * @default true
      */
-    const hidden = ref(true);
+    const isButtonHidden = ref(true);
 
     /** ID of the current location. */
     const locationId = router.currentRoute.value.name?.toString() || '';
@@ -89,7 +89,7 @@ export default defineComponent({
       latitude2: number,
       longitude2: number
     ): number {
-      const EarthRadius = 6371; // Radius of the Earth in km
+      const earthRadius = 6371; // Radius of the Earth in km
       const latitude = ((latitude2 - latitude1) * Math.PI) / 180;
       const longitude = ((longitude2 - longitude1) * Math.PI) / 180;
       const a =
@@ -101,7 +101,7 @@ export default defineComponent({
           2;
       return (
         Math.round(
-          (EarthRadius * 2 * Math.asin(Math.sqrt(a)) + Number.EPSILON) * 100
+          (earthRadius * 2 * Math.asin(Math.sqrt(a)) + Number.EPSILON) * 100
         ) / 100
       );
     }
@@ -176,7 +176,7 @@ export default defineComponent({
       console.debug('Check-in event:', event);
     }
 
-    /** Cached render of the complete label. */
+    /** Cached render of the `complete` label. */
     const labelComplete: VNode = (
       <i18n-t keypath="checkInLabel.complete.label" scope="global">
         <em class="block">
@@ -186,7 +186,7 @@ export default defineComponent({
       </i18n-t>
     );
 
-    /** Cached render of the location is disabled label. */
+    /** Cached render of the `disabled` label. */
     const labelDisabled: VNode = (
       <i18n-t keypath="checkInLabel.disabled.label" scope="global">
         <RouterLink to={{ name: 'map', params: { id: locationId } }}>
@@ -195,14 +195,14 @@ export default defineComponent({
       </i18n-t>
     );
 
-    /** Cached render of the location is enabled label. */
+    /** Cached render of the `enabled` label. */
     const labelEnabled: VNode = (
       <i18n-t keypath="checkInLabel.enabled.label" scope="global">
         <strong class="block">{t('checkInLabel.enabled.helpText')}</strong>
       </i18n-t>
     );
 
-    /** Cached render of the locating label. */
+    /** Cached render of the `locating` label. */
     const labelLocating: VNode = (
       <i18n-t keypath="checkInLabel.locating.label" scope="global">
         <LocateIcon class="icon" />
@@ -220,7 +220,7 @@ export default defineComponent({
       </i18n-t>
     );
 
-    /** Cached render of the visited label. */
+    /** Cached render of the `visited` label. */
     const labelVisited: VNode = (
       <i18n-t keypath="checkInLabel.visited.label" scope="global">
         <em class="block">
@@ -255,8 +255,8 @@ export default defineComponent({
 
     /** Restores default values. */
     function restoreDefaultValues(): void {
-      disabled.value = true;
-      hidden.value = true;
+      isButtonDisabled.value = true;
+      isButtonHidden.value = true;
     }
 
     /**
@@ -277,12 +277,12 @@ export default defineComponent({
           break;
         case 'disabled':
           checkInLabel.value = labelDisabled;
-          hidden.value = false;
+          isButtonHidden.value = false;
           break;
         case 'enabled':
           checkInLabel.value = labelEnabled;
-          disabled.value = false;
-          hidden.value = false;
+          isButtonDisabled.value = false;
+          isButtonHidden.value = false;
           break;
         case 'locating':
           checkInLabel.value = labelLocating;
@@ -315,11 +315,11 @@ export default defineComponent({
 
     return {
       ariaDescribedby,
-      checkInLabelI18nKey,
       checkInLabel,
-      disabled,
+      checkInLabelI18nKey,
       handleSubmit,
-      hidden,
+      isButtonDisabled,
+      isButtonHidden,
     };
   },
   render(): VNode {
@@ -328,8 +328,8 @@ export default defineComponent({
         <Button
           aria-describedby={this.ariaDescribedby}
           class="btn-primary"
-          disabled={this.disabled}
-          hidden={this.hidden}
+          disabled={this.isButtonDisabled}
+          hidden={this.isButtonHidden}
           type="submit"
         >
           {this.$t('checkInButton')}
