@@ -1,4 +1,5 @@
 .check-in {
+  @apply mb-4;
   @apply mx-auto;
   @apply max-w-28rem;
 
