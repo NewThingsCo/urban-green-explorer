@@ -1,15 +1,16 @@
-import type { Translations } from '@/types';
+import type { Location, Translations } from '@/types';
+import type { VNode } from 'vue';
 import {
-  onBeforeUnmount,
-  VNode,
   computed,
   defineComponent,
+  onBeforeUnmount,
   onMounted,
   ref,
   watch,
 } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { RouterLink, useRouter } from 'vue-router';
+import { locations } from '@/content/locations';
 import Button from '@/components/Button';
 import LocateIcon from '@/assets/icons/locate.svg?component';
 import './CheckIn.css';
@@ -54,7 +55,12 @@ export default defineComponent({
     const hidden = ref(true);
 
     /** ID of the current location. */
-    const locationId = router.currentRoute.value.name;
+    const locationId = router.currentRoute.value.name?.toString() || '';
+
+    /** Current location. */
+    const location = locations.find(
+      (location) => location.params === locationId
+    ) as Location;
 
     /**
      * Keeps track of the watch event ID from the Geolocation API.
@@ -70,6 +76,35 @@ export default defineComponent({
       enableHighAccuracy: true,
       timeout: 5000,
     };
+
+    /**
+     * Measures the distance between two points.
+     *
+     * @link https://stackoverflow.com/a/21623256
+     * @returns Distance in km rounded to two decimals.
+     */
+    function measureDistance(
+      latitude1: number,
+      longitude1: number,
+      latitude2: number,
+      longitude2: number
+    ): number {
+      const EarthRadius = 6371; // Radius of the Earth in km
+      const latitude = ((latitude2 - latitude1) * Math.PI) / 180;
+      const longitude = ((longitude2 - longitude1) * Math.PI) / 180;
+      const a =
+        0.5 -
+        Math.cos(latitude) / 2 +
+        (Math.cos((latitude1 * Math.PI) / 180) *
+          Math.cos((latitude2 * Math.PI) / 180) *
+          (1 - Math.cos(longitude))) /
+          2;
+      return (
+        Math.round(
+          (EarthRadius * 2 * Math.asin(Math.sqrt(a)) + Number.EPSILON) * 100
+        ) / 100
+      );
+    }
 
     /** Restarts the Geolocation API watch service. */
     function restartGeolocationWatch(): void {
@@ -104,15 +139,27 @@ export default defineComponent({
      * @link https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/watchPosition#success
      */
     function handleGeolocationSuccess(position: GeolocationPosition): void {
-      const latitude = position.coords.latitude;
-      const longitude = position.coords.longitude;
-      /** @todo Add function call to verify distance from target. */
-      const closeEnough = false;
+      const deviceLatitude = position.coords.latitude;
+      const deviceLongitude = position.coords.longitude;
+      const distanceFromLocation = measureDistance(
+        deviceLatitude,
+        deviceLongitude,
+        location.coordinates[0],
+        location.coordinates[1]
+      );
+      const closeEnough = distanceFromLocation < location.minDistance;
       console.debug(
-        `🌍 Location received: ↕ Latitude: ${latitude} ° ፨ ↔ Longitude: ${longitude} °`
+        `🌍 Location received: ↕ Latitude: ${deviceLatitude} ° ፨ ↔ Longitude: ${deviceLongitude} °`
       );
       console.debug(
-        `🗺 See location on the map: https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`
+        `🗺 See location on the map: https://www.openstreetmap.org/#map=18/${deviceLatitude}/${deviceLongitude}`
+      );
+      console.info('Device is', closeEnough ? 'close enough' : 'too far.');
+      console.debug(
+        'Distance from location (km):',
+        distanceFromLocation,
+        '፨ Minimum distance required (km):',
+        location.minDistance
       );
       // Add slight delay to have time to see the animation
       setTimeout(() => {
