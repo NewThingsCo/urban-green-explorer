@@ -29,17 +29,13 @@
       "linkText": "Näytä seuraava kohde"
     }
   },
-  "countIsLabel": "Luku on",
-  "counter": "Laskin",
   "coverImage": "Kansikuva",
   "currencies": "Valuutat",
   "currency": "Valuutta",
   "currencyWithoutCents": "Valuutta ilman senttejä",
   "dateTimes": "Ajat ja päivämäärät",
-  "decrementLabel": "Vähennä",
   "enableGeolocation": "Ota sijainti käyttöön selaimesta",
   "homePath": "/",
-  "incrementLabel": "Lisää",
   "introduction": {
     "bodyText": "Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.",
     "getStarted": "Aloita",
@@ -77,10 +73,6 @@
   "locationsTitle": "Kohteet",
   "long": "Pitkä",
   "moreInfo": "Lisätietoja",
-  "nextNumberLabel": "Seuraava luku on:",
-  "numberStatusNegative": "Vähennä tai lisää lukua | Olet vähentänyt kerran | Olet vähentänyt useamman kerran",
-  "numberStatusPositive": "Vähennä tai lisää lukua | Olet lisännyt kerran | Olet lisännyt useamman kerran",
-  "prevNumberLabel": "Edellinen luku oli:",
   "short": "Lyhyt",
   "showOnMap": "Näytä kartalla",
   "title": "Urban Green Explorer (fi)",
