@@ -2,6 +2,11 @@ import { locations } from '@/content/locations';
 import { LOCALE_CODES } from '@/constants';
 import en from '@/locales/en.json';
 
+interface CheckIn {
+  locationId: string;
+  visited: Date;
+}
+
 type LocaleCodes = typeof LOCALE_CODES;
 
 type LocaleCode = LocaleCodes[number];
@@ -17,4 +22,4 @@ type Location = Locations[number];
 
 type Translations = typeof en;
 
-export { Locale, Locales, LocaleCode, Location, Translations };
+export { CheckIn, Locale, Locales, LocaleCode, Location, Translations };
