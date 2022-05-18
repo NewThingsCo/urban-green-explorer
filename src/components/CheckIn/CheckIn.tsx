@@ -1,5 +1,5 @@
-import type { Location, Translations } from '@/types';
-import type { VNode } from 'vue';
+import type { CheckIn, Location, Translations } from '@/types';
+import type { Ref, VNode } from 'vue';
 import {
   computed,
   defineComponent,
@@ -57,6 +57,11 @@ export default defineComponent({
     /** ID of the current location. */
     const locationId = router.currentRoute.value.name?.toString() || '';
 
+    /** Existing check-in for the current location.*/
+    const existingCheckIn: Ref<CheckIn | null> = ref(
+      getCheckIn(locationId) || null
+    );
+
     /** Current location. */
     const location = locations.find(
       (location) => location.params === locationId
@@ -78,38 +83,92 @@ export default defineComponent({
     };
 
     /**
-     * Measures the distance between two points.
-     *
-     * @link https://stackoverflow.com/a/21623256
-     * @returns Distance in km rounded to two decimals.
+     * Clears the Geolocation watch event if present.
+     * @link https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/clearWatch
      */
-    function measureDistance(
-      latitude1: number,
-      longitude1: number,
-      latitude2: number,
-      longitude2: number
-    ): number {
-      const earthRadius = 6371; // Radius of the Earth in km
-      const latitude = ((latitude2 - latitude1) * Math.PI) / 180;
-      const longitude = ((longitude2 - longitude1) * Math.PI) / 180;
-      const a =
-        0.5 -
-        Math.cos(latitude) / 2 +
-        (Math.cos((latitude1 * Math.PI) / 180) *
-          Math.cos((latitude2 * Math.PI) / 180) *
-          (1 - Math.cos(longitude))) /
-          2;
-      return (
-        Math.round(
-          (earthRadius * 2 * Math.asin(Math.sqrt(a)) + Number.EPSILON) * 100
-        ) / 100
-      );
+    function clearGeolocationWatch(eventId: null | number): void {
+      if (!navigator.geolocation || null === eventId) return;
+      console.log('Stopping Geolocation watch service.');
+      navigator.geolocation.clearWatch(eventId);
     }
 
-    /** Restarts the Geolocation API watch service. */
-    function restartGeolocationWatch(): void {
-      clearGeolocationWatch(geolocationWatchId.value);
-      startGeolocationWatch();
+    /** Gets a single check-ins from Local Storage. */
+    function getCheckIn(id: Location['id']): CheckIn | void {
+      try {
+        const checkIn = getCheckIns().find(
+          (checkIn) => checkIn.locationId === id
+        );
+        console.debug(
+          checkIn ? 'Found existing check-in to' : 'No check-in found for',
+          'this location:',
+          checkIn || locationId
+        );
+        return checkIn;
+      } catch (error) {
+        console.warn('Unable to get check-ins.');
+        console.error(error);
+        return;
+      }
+    }
+
+    /** Gets check-ins from Local Storage. */
+    function getCheckIns(): CheckIn[] {
+      const checkIns = (
+        JSON.parse(
+          window.localStorage.getItem('check-ins') || '[]'
+        ) as CheckIn[]
+      )
+        // Format dates
+        .map((checkIn) => ({ ...checkIn, visited: new Date(checkIn.visited) }));
+      console.debug('Existing check-ins:', checkIns);
+      return checkIns;
+    }
+
+    /**
+     * Handles check-in events.
+     * @todo Determine if this is the last location.
+     */
+    function handleCheckIn(event: Event): void {
+      event.preventDefault();
+      const visited = new Date();
+      const checkIn: CheckIn = { locationId, visited };
+      const lastCheckIn = false;
+      console.info('User checked-in to', locationId, 'at', visited);
+      saveCheckIn(checkIn);
+      existingCheckIn.value = checkIn;
+      checkInLabelI18nKey.value = lastCheckIn ? 'complete' : 'visited';
+    }
+
+    /** Handles check-in states. */
+    function handleCheckInState(key: typeof checkInLabelI18nKey.value): void {
+      restoreDefaultValues();
+      switch (key) {
+        case 'complete':
+          checkInLabel.value = labelComplete;
+          break;
+        case 'disabled':
+          checkInLabel.value = labelDisabled;
+          isButtonHidden.value = false;
+          break;
+        case 'enabled':
+          checkInLabel.value = labelEnabled;
+          isButtonDisabled.value = false;
+          isButtonHidden.value = false;
+          break;
+        case 'locating':
+          checkInLabel.value = labelLocating;
+          break;
+        case 'unavailable':
+          checkInLabel.value = labelUnavailable;
+          break;
+        case 'visited':
+          checkInLabel.value = labelVisited;
+          break;
+        default:
+          checkInLabel.value =
+            checkInLabelI18nKey.value &&
+            t(`checkInLabel.${checkInLabelI18nKey.value}`);
+      }
     }
 
     /**
@@ -125,7 +184,11 @@ export default defineComponent({
           break;
         case error.TIMEOUT:
           console.log('The Geolocation API timed out.');
-          restartGeolocationWatch();
+          if (existingCheckIn.value) {
+            clearGeolocationWatch(geolocationWatchId.value);
+          } else {
+            restartGeolocationWatch();
+          }
           break;
         case error.POSITION_UNAVAILABLE:
         default:
@@ -165,15 +228,6 @@ export default defineComponent({
       setTimeout(() => {
         checkInLabelI18nKey.value = closeEnough ? 'enabled' : 'disabled';
       }, 1000);
-    }
-
-    /**
-     * Handles submit event from check-in form.
-     * @todo Implement logic.
-     */
-    function handleSubmit(event: Event): void {
-      event.preventDefault();
-      console.debug('Check-in event:', event);
     }
 
     /** Cached render of the `complete` label. */
@@ -224,13 +278,51 @@ export default defineComponent({
     const labelVisited: VNode = (
       <i18n-t keypath="checkInLabel.visited.label" scope="global">
         <em class="block">
-          <time datetime={new Date().toString()}>{d(new Date(), 'long')}</time>
+          <time
+            datetime={new Date(existingCheckIn.value?.visited || '').toString()}
+          >
+            {d(new Date(existingCheckIn.value?.visited || ''), 'long')}
+          </time>
         </em>
-        <RouterLink to={{ name: 'map', params: { id: 'aurora' } }}>
+        <RouterLink
+          to={{
+            name: 'map',
+            params: { id: existingCheckIn.value?.locationId },
+          }}
+        >
           {t('checkInLabel.visited.linkText')}
         </RouterLink>
       </i18n-t>
     );
+
+    /**
+     * Measures the distance between two points.
+     *
+     * @link https://stackoverflow.com/a/21623256
+     * @returns Distance in km rounded to two decimals.
+     */
+    function measureDistance(
+      latitude1: number,
+      longitude1: number,
+      latitude2: number,
+      longitude2: number
+    ): number {
+      const earthRadius = 6371; // Radius of the Earth in km
+      const latitude = ((latitude2 - latitude1) * Math.PI) / 180;
+      const longitude = ((longitude2 - longitude1) * Math.PI) / 180;
+      const a =
+        0.5 -
+        Math.cos(latitude) / 2 +
+        (Math.cos((latitude1 * Math.PI) / 180) *
+          Math.cos((latitude2 * Math.PI) / 180) *
+          (1 - Math.cos(longitude))) /
+          2;
+      return (
+        Math.round(
+          (earthRadius * 2 * Math.asin(Math.sqrt(a)) + Number.EPSILON) * 100
+        ) / 100
+      );
+    }
 
     /**
      * Starts tracking device location if Geolocation API is present.
@@ -258,44 +350,22 @@ export default defineComponent({
       isButtonHidden.value = true;
     }
 
-    /**
-     * Clears the Geolocation watch event if present.
-     * @link https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/clearWatch
-     */
-    function clearGeolocationWatch(eventId: null | number): void {
-      if (!navigator.geolocation || null === eventId) return;
-      navigator.geolocation.clearWatch(eventId);
+    /** Restarts the Geolocation API watch service. */
+    function restartGeolocationWatch(): void {
+      clearGeolocationWatch(geolocationWatchId.value);
+      startGeolocationWatch();
     }
 
-    /** Handles check-in states. */
-    function handleCheckInState(key: typeof checkInLabelI18nKey.value): void {
-      restoreDefaultValues();
-      switch (key) {
-        case 'complete':
-          checkInLabel.value = labelComplete;
-          break;
-        case 'disabled':
-          checkInLabel.value = labelDisabled;
-          isButtonHidden.value = false;
-          break;
-        case 'enabled':
-          checkInLabel.value = labelEnabled;
-          isButtonDisabled.value = false;
-          isButtonHidden.value = false;
-          break;
-        case 'locating':
-          checkInLabel.value = labelLocating;
-          break;
-        case 'unavailable':
-          checkInLabel.value = labelUnavailable;
-          break;
-        case 'visited':
-          checkInLabel.value = labelVisited;
-          break;
-        default:
-          checkInLabel.value =
-            checkInLabelI18nKey.value &&
-            t(`checkInLabel.${checkInLabelI18nKey.value}`);
+    /** Saves check-ins to Local Storage. */
+    function saveCheckIn(checkIn: CheckIn): void {
+      try {
+        const checkIns = getCheckIns();
+        checkIns.push(checkIn);
+        console.debug('Saving check-in:', checkIn);
+        window.localStorage.setItem('check-ins', JSON.stringify(checkIns));
+      } catch (error) {
+        console.warn('Unable to save check-in.');
+        console.error(error);
       }
     }
 
@@ -304,8 +374,12 @@ export default defineComponent({
     });
 
     onMounted(() => {
-      checkInLabelI18nKey.value = 'locating';
-      startGeolocationWatch();
+      if (existingCheckIn.value) {
+        checkInLabelI18nKey.value = 'visited';
+      } else {
+        checkInLabelI18nKey.value = 'locating';
+        startGeolocationWatch();
+      }
     });
 
     /**
@@ -317,14 +391,14 @@ export default defineComponent({
       ariaDescribedby,
       checkInLabel,
       checkInLabelI18nKey,
-      handleSubmit,
+      handleCheckIn,
       isButtonDisabled,
       isButtonHidden,
     };
   },
   render(): VNode {
     return (
-      <form class="check-in" onSubmit={this.handleSubmit}>
+      <form class="check-in" onSubmit={this.handleCheckIn}>
         <Button
           aria-describedby={this.ariaDescribedby}
           class="btn-primary"
