@@ -67,6 +67,15 @@ export default defineComponent({
       (location) => location.params === locationId
     ) as Location;
 
+    /** Location index used to determine next location. */
+    const locationIndex = locations.findIndex(
+      (location) => location.params === locationId
+    );
+
+    /** Contains the next location if available. */
+    const nextLocation = locations[locationIndex + 1];
+    console.debug('Next location:', nextLocation);
+
     /**
      * Keeps track of the watch event ID from the Geolocation API.
      * @link https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/watchPosition#return_value
@@ -82,6 +91,9 @@ export default defineComponent({
       timeout: 5000,
     };
 
+    /** Returns true if this is the last location. */
+    const isLastLocation = !nextLocation;
+
     /**
      * Clears the Geolocation watch event if present.
      * @link https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/clearWatch
@@ -93,7 +105,8 @@ export default defineComponent({
     }
 
     /** Gets a single check-ins from Local Storage. */
-    function getCheckIn(id: Location['id']): CheckIn | void {
+    function getCheckIn(id?: Location['id']): CheckIn | void {
+      if (!id) return;
       try {
         const checkIn = getCheckIns().find(
           (checkIn) => checkIn.locationId === id
@@ -126,17 +139,15 @@ export default defineComponent({
 
     /**
      * Handles check-in events.
-     * @todo Determine if this is the last location.
      */
     function handleCheckIn(event: Event): void {
       event.preventDefault();
       const visited = new Date();
       const checkIn: CheckIn = { locationId, visited };
-      const lastCheckIn = false;
       console.info('User checked-in to', locationId, 'at', visited);
       saveCheckIn(checkIn);
       existingCheckIn.value = checkIn;
-      checkInLabelI18nKey.value = lastCheckIn ? 'complete' : 'visited';
+      checkInLabelI18nKey.value = isLastLocation ? 'complete' : 'visited';
     }
 
     /** Handles check-in states. */
@@ -234,7 +245,11 @@ export default defineComponent({
     const labelComplete: VNode = (
       <i18n-t keypath="checkInLabel.complete.label" scope="global">
         <em class="block">
-          <time datetime={new Date().toString()}>{d(new Date(), 'long')}</time>
+          <time
+            datetime={new Date(existingCheckIn.value?.visited || '').toString()}
+          >
+            {d(new Date(existingCheckIn.value?.visited || ''), 'long')}
+          </time>
         </em>
         <strong>{t('checkInLabel.complete.helpText')}</strong>
       </i18n-t>
@@ -287,7 +302,7 @@ export default defineComponent({
         <RouterLink
           to={{
             name: 'map',
-            params: { id: existingCheckIn.value?.locationId },
+            params: { id: nextLocation?.params || '' },
           }}
         >
           {t('checkInLabel.visited.linkText')}
@@ -375,7 +390,7 @@ export default defineComponent({
 
     onMounted(() => {
       if (existingCheckIn.value) {
-        checkInLabelI18nKey.value = 'visited';
+        checkInLabelI18nKey.value = isLastLocation ? 'complete' : 'visited';
       } else {
         checkInLabelI18nKey.value = 'locating';
         startGeolocationWatch();
