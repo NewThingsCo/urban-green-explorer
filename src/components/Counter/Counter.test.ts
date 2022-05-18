@@ -2,7 +2,7 @@ import { jest } from '@jest/globals';
 import { createTestingPinia } from '@pinia/testing';
 import { mount } from '@vue/test-utils';
 import { createPinia, setActivePinia } from 'pinia';
-import Counter from '../Counter';
+import Counter from './Counter';
 import { i18n } from '@/utils';
 
 const mockCallback = jest.fn();

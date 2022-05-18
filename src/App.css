@@ -17,6 +17,10 @@ a {
   @apply text-green-500;
 }
 
+[hidden] {
+  @apply hidden !important;
+}
+
 .logo {
   @apply inline-block;
   @apply text-current;

@@ -1,0 +1,21 @@
+.check-in {
+  @apply mb-4;
+  @apply mx-auto;
+  @apply max-w-28rem;
+
+  .label {
+    @apply flex-col;
+    @apply justify-center;
+    @apply text-sm;
+  }
+
+  .icon {
+    @apply block;
+    @apply mx-auto;
+    @apply h-12 w-12;
+
+    + .label {
+      margin-top: -0.8rem;
+    }
+  }
+}

@@ -1,7 +1,6 @@
 import type { ButtonHTMLAttributes, PropType, VNode } from 'vue';
 import { defineComponent } from 'vue';
 import { defaultEventHandler } from '@/utils';
-import './Button.css';
 
 export default defineComponent({
   name: 'Button',
@@ -11,6 +10,10 @@ export default defineComponent({
       type: Boolean,
     },
     disabled: {
+      default: false,
+      type: Boolean,
+    },
+    hidden: {
       default: false,
       type: Boolean,
     },
@@ -31,8 +34,9 @@ export default defineComponent({
     return (
       <button
         autofocus={this.autofocus}
-        class="button"
+        class="btn"
         disabled={this.disabled}
+        hidden={this.hidden}
         name={this.name}
         onClick={this.onClick}
         type={this.type}

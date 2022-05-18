@@ -3,5 +3,6 @@
     "source.fixAll": true,
     "source.organizeImports": false
   },
-  "i18n-ally.localesPaths": ["src/locales"]
+  "i18n-ally.localesPaths": ["src/locales"],
+  "i18n-ally.keystyle": "nested"
 }

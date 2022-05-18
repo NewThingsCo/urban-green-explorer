@@ -28,7 +28,7 @@ const routes: RouteRecordRaw[] = [
   },
   {
     component: async () => await import('../pages/LocationPage/LoviseholmPark'),
-    name: 'loviseholmpark',
+    name: 'loviseholm-park',
     path: '/location/loviseholm-park',
   },
   {

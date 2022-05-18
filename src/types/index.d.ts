@@ -1,4 +1,11 @@
+import { locations } from '@/content/locations';
 import { LOCALE_CODES } from '@/constants';
+import en from '@/locales/en.json';
+
+interface CheckIn {
+  locationId: string;
+  visited: Date;
+}
 
 type LocaleCodes = typeof LOCALE_CODES;
 
@@ -9,4 +16,10 @@ type Locale = {
   name: readonly string;
 };
 
-export { Locale, Locales, LocaleCode };
+type Locations = typeof locations;
+
+type Location = Locations[number];
+
+type Translations = typeof en;
+
+export { CheckIn, Locale, Locales, LocaleCode, Location, Translations };
