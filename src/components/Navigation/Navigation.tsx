@@ -22,7 +22,7 @@ export default defineComponent({
                   <span class="py-2"> {route.name}</span>
                 </RouterLink>
               );
-            case 'list':
+            case 'locations':
               return (
                 <RouterLink class="router-link" to={route.path}>
                   <ListIcon class="icon" />
