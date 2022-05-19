@@ -1,8 +1,12 @@
 .main-locations {
-  @apply py-30;
+  @apply pt-6;
+  @apply pb-20;
+  @apply px-5;
 
   .title {
     @apply text-black;
+    @apply text-left;
+    @apply md:text-center;
   }
 
   p {
@@ -15,10 +19,10 @@
     @apply border;
     @apply flex-row;
     @apply flex;
-    @apply md:w-1/2;
+    @apply w-full;
+    @apply lg:w-1/3;
     @apply my-1;
     @apply p-2;
-    @apply w-3/4;
 
     .icon {
       @apply flex;

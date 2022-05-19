@@ -1,5 +1,9 @@
 .location-wrapper {
-  @apply p-20;
+  @apply max-h-[150vh];
+  @apply sm:h-[calc(110vh+8rem)];
+  @apply h-[calc(200vh+8rem)];
+  @apply px-10;
+  @apply pb-60;
 
   .label {
     @apply text-left;
@@ -11,16 +15,23 @@
   .icon {
     @apply w-10;
     @apply h-10;
+    @apply text-black;
   }
 
   .map-container {
-    @apply flex;
-    @apply justify-between;
-    @apply mt-7;
-    @apply py-2;
-    @apply md:w-1/4;
-    @apply items-center;
+    @apply pt-10;
+    @apply pb-7;
     @apply border-bottom-2;
     @apply border-color-gray;
+    @apply w-1/2;
+    @apply md:w-1/3;
+    @apply text-left;
+    @apply flex;
+    @apply items-center;
+    @apply justify-between;
+
+    .show-map {
+      @apply text-black;
+    }
   }
 }

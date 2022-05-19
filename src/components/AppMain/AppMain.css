@@ -1,4 +1,8 @@
 .app-main {
+  @apply h-screen;
+  @apply overflow-auto;
+  @apply h-1/2;
+
   .links {
     @apply mt-3;
 
