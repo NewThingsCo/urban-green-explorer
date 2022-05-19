@@ -17,6 +17,9 @@
     @apply flex flex-col;
     @apply border-transparent;
     @apply border-bottom-2;
+    @apply md:mx-20;
+    @apply max-w-[8vh];
+    @apply w-full;
   }
 
   .router-link-active {
