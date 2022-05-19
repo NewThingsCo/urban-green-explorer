@@ -1,9 +1,9 @@
 .location-wrapper {
   @apply max-h-[150vh];
-  @apply sm:h-[calc(110vh+8rem)];
+  @apply sm:h-[calc(100vh+8rem)];
   @apply h-[calc(200vh+8rem)];
   @apply px-10;
-  @apply pb-60;
+  @apply py-20;
 
   .label {
     @apply text-left;
