@@ -29,24 +29,22 @@ export default defineComponent({
             <p class="description">
               {this.$t('locations.loviseholm.description')}
             </p>
-            <li class="list">
-              <div class="map-container">
-                <div class="flex items-center">
-                  <MapMarkedAlt class="icon" />
-                  <RouterLink
-                    to={{ name: 'map', params: { id: 'loviseholm-park' } }}
-                    class="mx-2 show-map"
-                  >
-                    {this.$t('showOnMap')}
-                  </RouterLink>
-                </div>
+            <div class="map-container">
+              <div class="flex items-center">
+                <MapMarkedAlt class="icon" />
                 <RouterLink
                   to={{ name: 'map', params: { id: 'loviseholm-park' } }}
+                  class="mx-2 show-map"
                 >
-                  <ChevronRight class="w-5" />
+                  {this.$t('showOnMap')}
                 </RouterLink>
               </div>
-            </li>
+              <RouterLink
+                to={{ name: 'map', params: { id: 'loviseholm-park' } }}
+              >
+                <ChevronRight class="w-5" />
+              </RouterLink>
+            </div>
           </div>
         </AppMain>
         <AppFooter>

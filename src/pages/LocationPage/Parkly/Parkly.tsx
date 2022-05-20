@@ -22,22 +22,20 @@ export default defineComponent({
           <div class="px-4">
             <label class="label"> {this.$t('locations.parkly.category')}</label>
             <p class="description">{this.$t('locations.parkly.description')}</p>
-            <li class="list">
-              <div class="map-container">
-                <div class="flex items-center">
-                  <MapMarkedAlt class="icon" />
-                  <RouterLink
-                    to={{ name: 'map', params: { id: 'parkly' } }}
-                    class="mx-2 show-map"
-                  >
-                    {this.$t('showOnMap')}
-                  </RouterLink>
-                </div>
-                <RouterLink to={{ name: 'map', params: { id: 'parkly' } }}>
-                  <ChevronRight class="w-5" />
+            <div class="map-container">
+              <div class="flex items-center">
+                <MapMarkedAlt class="icon" />
+                <RouterLink
+                  to={{ name: 'map', params: { id: 'parkly' } }}
+                  class="mx-2 show-map"
+                >
+                  {this.$t('showOnMap')}
                 </RouterLink>
               </div>
-            </li>
+              <RouterLink to={{ name: 'map', params: { id: 'parkly' } }}>
+                <ChevronRight class="w-5" />
+              </RouterLink>
+            </div>
           </div>
         </AppMain>
         <AppFooter>

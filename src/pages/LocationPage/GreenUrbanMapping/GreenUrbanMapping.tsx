@@ -25,24 +25,22 @@ export default defineComponent({
             <p class="description">
               {this.$t('locations.greenUrbanMapping.description')}
             </p>
-            <li class="list">
-              <div class="map-container">
-                <div class="flex items-center w-1/2">
-                  <MapMarkedAlt class="icon" />
-                  <RouterLink
-                    to={{ name: 'map', params: { id: 'green-urban-mapping' } }}
-                    class="mx-2 show-map"
-                  >
-                    {this.$t('showOnMap')}
-                  </RouterLink>
-                </div>
+            <div class="map-container">
+              <div class="flex items-center w-1/2">
+                <MapMarkedAlt class="icon" />
                 <RouterLink
                   to={{ name: 'map', params: { id: 'green-urban-mapping' } }}
+                  class="mx-2 show-map"
                 >
-                  <ChevronRight class="w-5" />
+                  {this.$t('showOnMap')}
                 </RouterLink>
               </div>
-            </li>
+              <RouterLink
+                to={{ name: 'map', params: { id: 'green-urban-mapping' } }}
+              >
+                <ChevronRight class="w-5" />
+              </RouterLink>
+            </div>
           </div>
         </AppMain>
         <AppFooter>
