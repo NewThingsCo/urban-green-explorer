@@ -14,15 +14,6 @@ export default defineComponent({
       type: Function as PropType<(event?: Event) => void>,
     },
   },
-  setup() {
-    function goBack(): void {
-      console.log('GO BACK');
-      router.go(-1);
-    }
-    return {
-      goBack,
-    };
-  },
   render(): VNode {
     return (
       <header class="app-header">
