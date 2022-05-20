@@ -18,7 +18,7 @@ export default defineComponent({
         <AppHeader />
         <AppMain class="main-wrapper pb-80">
           <div class="location-wrapper">
-            <h1 class="pt-10 title text-left text-black">
+            <h1 class="pt-10 px-4 title text-left text-black">
               {this.$t('locations.tram.title')}
             </h1>
             <img src={TramImage} class="object-cover h-100 w-full" />

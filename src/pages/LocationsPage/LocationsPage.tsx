@@ -68,7 +68,7 @@ export default defineComponent({
                     })()}
                   </a>
                   <div class="flex flex-col w-full">
-                    <h2>
+                    <h2 class="text-black">
                       {location.id}. {this.$t(location.title)}
                     </h2>
                     <ul

@@ -16,7 +16,7 @@ export default defineComponent({
       <>
         <AppHeader />
         <AppMain class="main-wrapper pb-80">
-          <h1 class="pt-10 title text-left text-black">
+          <h1 class="pt-10 px-4 title text-left text-black">
             {this.$t('locations.greenUrbanMapping.title')}
           </h1>
           <div class="py-40 h-1/2 bg-gray-400" />

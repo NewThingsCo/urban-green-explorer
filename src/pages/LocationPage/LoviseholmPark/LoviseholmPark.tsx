@@ -17,7 +17,7 @@ export default defineComponent({
       <>
         <AppHeader />
         <AppMain class="main-wrapper pb-80">
-          <h1 class="pt-10 title text-left text-black">
+          <h1 class="pt-10  px-4 title text-left text-black">
             {this.$t('locations.loviseholm.title')}
           </h1>
           <img src={LoviseholmImage} class="object-cover h-100 w-full" />
