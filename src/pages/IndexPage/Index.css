@@ -1,8 +1,9 @@
 .index-wrapper {
   @apply flex;
   @apply flex-col;
-  @apply justify-center;
   @apply p-5;
+  @apply md:h-[35vh];
+  @apply h-[50vh];
 
   .logos {
     @apply content-center;

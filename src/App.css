@@ -13,6 +13,11 @@ code {
   @apply text-gray-600;
 }
 
+body {
+  @apply h-full;
+  @apply w-full;
+}
+
 a {
   @apply text-green-500;
 }
