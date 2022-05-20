@@ -17,19 +17,11 @@ export default defineComponent({
       <>
         <AppHeader />
         <AppMain class="main-wrapper main-location">
-          <h1 class="pt-10 px-4 title text-left text-black">
-            {this.$t('locations.aurora.title')}
-          </h1>
-          <img
-            src={AuroraImage}
-            alt={this.$t('locations.aurora.title')}
-            class="object-cover h-100 w-full"
-          />
+          <h1 class="title">{this.$t('locations.aurora.title')}</h1>
+          <img src={AuroraImage} alt={this.$t('locations.aurora.title')} />
           <div class="px-4">
             <label class="label">{this.$t('locations.aurora.category')}</label>
-            <p class="text-left text-black">
-              {this.$t('locations.aurora.description')}
-            </p>
+            <p class="description">{this.$t('locations.aurora.description')}</p>
             <li class="list">
               <div class="map-container">
                 <div class="flex items-center">

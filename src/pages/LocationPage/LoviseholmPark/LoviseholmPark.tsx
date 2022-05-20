@@ -17,19 +17,16 @@ export default defineComponent({
       <>
         <AppHeader />
         <AppMain class="main-wrapper main-location">
-          <h1 class="pt-10  px-4 title text-left text-black">
-            {this.$t('locations.loviseholm.title')}
-          </h1>
+          <h1 class="title">{this.$t('locations.loviseholm.title')}</h1>
           <img
             src={LoviseholmImage}
             alt={this.$t('locations.loviseholm.title')}
-            class="object-cover h-100 w-full"
           />
           <div class="px-4">
             <label class="label">
               {this.$t('locations.loviseholm.category')}
             </label>
-            <p class="text-left text-black">
+            <p class="description">
               {this.$t('locations.loviseholm.description')}
             </p>
             <li class="list">

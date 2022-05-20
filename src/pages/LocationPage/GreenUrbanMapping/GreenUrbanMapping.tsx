@@ -16,15 +16,13 @@ export default defineComponent({
       <>
         <AppHeader />
         <AppMain class="main-wrapper main-location">
-          <h1 class="pt-10 px-4 title text-left text-black">
-            {this.$t('locations.greenUrbanMapping.title')}
-          </h1>
+          <h1 class="title">{this.$t('locations.greenUrbanMapping.title')}</h1>
           <div class="py-40 h-1/2 bg-gray-400" />
           <div class="px-4">
             <label class="label">
               {this.$t('locations.greenUrbanMapping.category')}
             </label>
-            <p class="text-left text-black">
+            <p class="description">
               {this.$t('locations.greenUrbanMapping.description')}
             </p>
             <li class="list">

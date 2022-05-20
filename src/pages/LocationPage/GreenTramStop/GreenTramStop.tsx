@@ -18,19 +18,11 @@ export default defineComponent({
         <AppHeader />
         <AppMain class="main-wrapper main-location">
           <div class="location-wrapper">
-            <h1 class="pt-10 px-4 title text-left text-black">
-              {this.$t('locations.tram.title')}
-            </h1>
-            <img
-              src={TramImage}
-              alt={this.$t('locations.tram.title')}
-              class="object-cover h-100 w-full"
-            />
+            <h1 class="title">{this.$t('locations.tram.title')}</h1>
+            <img src={TramImage} alt={this.$t('locations.tram.title')} />
             <div class="px-4">
               <label class="label">{this.$t('locations.tram.category')}</label>
-              <p class="text-left text-black">
-                {this.$t('locations.tram.description')}
-              </p>
+              <p class="description">{this.$t('locations.tram.description')}</p>
               <li class="list">
                 <div class="map-container">
                   <div class="flex items-center">
