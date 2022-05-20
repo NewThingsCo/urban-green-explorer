@@ -16,7 +16,7 @@ export default defineComponent({
     return (
       <>
         <AppHeader />
-        <AppMain class="main-wrapper pb-80">
+        <AppMain class="main-wrapper main-location">
           <h1 class="pt-10  px-4 title text-left text-black">
             {this.$t('locations.loviseholm.title')}
           </h1>
@@ -32,22 +32,24 @@ export default defineComponent({
             <p class="text-left text-black">
               {this.$t('locations.loviseholm.description')}
             </p>
-            <div class="map-container">
-              <div class="flex items-center">
-                <MapMarkedAlt class="icon" />
+            <li class="list">
+              <div class="map-container">
+                <div class="flex items-center">
+                  <MapMarkedAlt class="icon" />
+                  <RouterLink
+                    to={{ name: 'map', params: { id: 'loviseholm-park' } }}
+                    class="mx-2 show-map"
+                  >
+                    {this.$t('showOnMap')}
+                  </RouterLink>
+                </div>
                 <RouterLink
                   to={{ name: 'map', params: { id: 'loviseholm-park' } }}
-                  class="mx-2 show-map"
                 >
-                  {this.$t('showOnMap')}
+                  <ChevronRight class="w-5" />
                 </RouterLink>
               </div>
-              <RouterLink
-                to={{ name: 'map', params: { id: 'loviseholm-park' } }}
-              >
-                <ChevronRight class="w-5" />
-              </RouterLink>
-            </div>
+            </li>
           </div>
         </AppMain>
         <AppFooter>
