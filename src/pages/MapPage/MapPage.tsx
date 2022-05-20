@@ -4,7 +4,7 @@ import { useRoute } from 'vue-router';
 import { handleMapLink } from './handleMapLink';
 import MapMarkerAltIcon from '@/assets/icons/map-marker-alt.svg?raw';
 import { locations } from '@/content/locations';
-import AppHeader from '@/components/AppHeader';
+import GoBackHeader from '@/components/GoBackHeader';
 import AppFooter from '@/components/AppFooter';
 import AppMain from '@/components/AppMain';
 import './MapPage.css';
@@ -163,7 +163,7 @@ export default defineComponent({
   render(): VNode {
     return (
       <>
-        <AppHeader />
+        <GoBackHeader />
         <AppMain class="map" id="map" ref="map" />
         <AppFooter />
       </>
