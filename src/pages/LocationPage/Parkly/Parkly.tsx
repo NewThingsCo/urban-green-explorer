@@ -20,7 +20,11 @@ export default defineComponent({
           <h1 class="pt-10 px-4 title text-left text-black">
             {this.$t('locations.parkly.title')}
           </h1>
-          <img src={ParklyImage} class="object-cover h-100 w-full" />
+          <img
+            src={ParklyImage}
+            alt={this.$t('locations.parkly.title')}
+            class="object-cover h-100 w-full"
+          />
           <div class="px-4">
             <label class="label"> {this.$t('locations.parkly.category')}</label>
             <p class="text-left text-black">

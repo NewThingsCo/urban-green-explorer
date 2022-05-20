@@ -20,7 +20,11 @@ export default defineComponent({
           <h1 class="pt-10 px-4 title text-left text-black">
             {this.$t('locations.aurora.title')}
           </h1>
-          <img src={AuroraImage} class="object-cover h-100 w-full" />
+          <img
+            src={AuroraImage}
+            alt={this.$t('locations.aurora.title')}
+            class="object-cover h-100 w-full"
+          />
           <div class="px-4">
             <label class="label">{this.$t('locations.aurora.category')}</label>
             <p class="text-left text-black">

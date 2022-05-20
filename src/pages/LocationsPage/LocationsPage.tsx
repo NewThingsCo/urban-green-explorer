@@ -34,6 +34,7 @@ export default defineComponent({
                           return (
                             <img
                               src={ParklyImage}
+                              alt={this.$t('locations.parkly.title')}
                               class="object-fill h-21 w-43"
                             />
                           );
@@ -41,6 +42,7 @@ export default defineComponent({
                           return (
                             <img
                               src={AuroraImage}
+                              alt={this.$t('locations.aurora.title')}
                               class="object-fill h-21 w-43"
                             />
                           );
@@ -48,6 +50,7 @@ export default defineComponent({
                           return (
                             <img
                               src={LoviseholmImage}
+                              alt={this.$t('locations.loviseholm.title')}
                               class="object-fill h-21 w-43"
                             />
                           );
@@ -59,6 +62,7 @@ export default defineComponent({
                           return (
                             <img
                               src={TramImage}
+                              alt={this.$t('locations.tram.title')}
                               class="object-fill h-21 w-43"
                             />
                           );
