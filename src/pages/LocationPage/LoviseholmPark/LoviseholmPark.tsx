@@ -12,12 +12,6 @@ import '../Location.css';
 
 export default defineComponent({
   name: 'LoviseholmPark',
-  setup() {
-    const imgUrl = new URL(LoviseholmImage, import.meta.url).href;
-    return {
-      imgUrl,
-    };
-  },
   render(): VNode {
     return (
       <>
