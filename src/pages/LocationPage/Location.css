@@ -1,6 +1,5 @@
 .location-wrapper {
   @apply max-h-[150vh];
-  @apply sm:h-[calc(100vh+8rem)];
   @apply h-[calc(200vh+8rem)];
   @apply px-10;
   @apply py-20;
