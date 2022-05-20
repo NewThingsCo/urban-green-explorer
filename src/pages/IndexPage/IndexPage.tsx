@@ -1,4 +1,10 @@
 import { defineComponent } from 'vue';
+import BGLogo from '@/assets/logos/bglogo.png?url';
+import EULogo from '@/assets/logos/eu.png?url';
+import TallinnLogo from '@/assets/logos/tallinn.png?url';
+import SeiLogo from '@/assets/logos/sei.png?url';
+import HelsinkiLogo from '@/assets/logos/helsinki.png?url';
+import InterregLogo from '@/assets/logos/interreg.png?url';
 import AppFooter from '@/components/AppFooter';
 import AppHeader from '@/components/AppHeader';
 import AppMain from '@/components/AppMain';
@@ -15,31 +21,12 @@ export default defineComponent({
           <Hero />
           <div class="index-wrapper">
             <div class="logos">
-              {/* TODO: Fix logos */}
-              <img
-                class="w-40 h-20"
-                src="https://bgreen-project.eu/wp-content/uploads/2021/05/sei-logo.png"
-              />
-              <img
-                class="w-40 h-15"
-                src="https://bgreen-project.eu/wp-content/uploads/2021/05/tallinna-strateegiakeskus-logo-sinine@2x.png"
-              />
-              <img
-                class="w-23 h-11"
-                src="https://bgreen-project.eu/wp-content/uploads/2021/06/helsinki_tunnus.png"
-              />
-              <img
-                class="w-20 h-9"
-                src="https://bgreen-project.eu/wp-content/uploads/2021/05/FVH_logo_PMS021_thumb.png"
-              />
-              <img
-                class="w-25 h-10"
-                src="https://bgreen-project.eu/wp-content/uploads/2021/05/European_Union_Regional_Development_Fund_landscape.jpg"
-              />
-              <img
-                class="w-22 h-11"
-                src="https://bgreen-project.eu/wp-content/uploads/2021/05/Interreg_Central_Baltic.jpg"
-              />
+              <img class="h-1/2" src={SeiLogo} />
+              <img class="h-1/2" src={TallinnLogo} />
+              <img class="h-1/2" src={BGLogo} />
+              <img class="h-1/2" src={HelsinkiLogo} />
+              <img class="h-1/2" src={EULogo} />
+              <img class="h-1/2" src={InterregLogo} />
             </div>
             <span class="text-sm text-gray-400">© 2022 B.Green project</span>
           </div>

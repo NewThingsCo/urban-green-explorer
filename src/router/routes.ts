@@ -8,8 +8,8 @@ const routes: RouteRecordRaw[] = [
   },
   {
     component: async () => await import('../pages/LocationsPage'),
-    name: 'list',
-    path: '/list',
+    name: 'locations',
+    path: '/locations',
   },
   {
     component: async () => await import('../pages/MapPage'),

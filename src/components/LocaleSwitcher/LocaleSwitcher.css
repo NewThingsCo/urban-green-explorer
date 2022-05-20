@@ -1,5 +1,6 @@
 [name='locale-switcher'] {
-  @apply flex mb-4 justify-center;
+  @apply flex justify-center;
+  @apply mb-0;
 
   [type='radio'] {
     position: absolute;
