@@ -2,6 +2,7 @@
   @apply h-screen;
   @apply overflow-auto;
   @apply h-1/2;
+  @apply bg-white;
 
   .links {
     @apply mt-3;

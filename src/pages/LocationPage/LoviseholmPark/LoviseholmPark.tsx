@@ -16,16 +16,16 @@ export default defineComponent({
     return (
       <>
         <AppHeader />
-        <AppMain class="main-wrapper">
-          <div class="location-wrapper">
-            <h1 class="pt-10 title text-left text-black">
-              {this.$t('locations.loviseholm.title')}
-            </h1>
-            <img src={LoviseholmImage} class="object-cover h-100 w-full" />
+        <AppMain class="main-wrapper pb-80">
+          <h1 class="pt-10 title text-left text-black">
+            {this.$t('locations.loviseholm.title')}
+          </h1>
+          <img src={LoviseholmImage} class="object-cover h-100 w-full" />
+          <div class="px-4">
             <label class="label">
               {this.$t('locations.loviseholm.category')}
             </label>
-            <p class="text-left">
+            <p class="text-left text-black">
               {this.$t('locations.loviseholm.description')}
             </p>
             <div class="map-container">
