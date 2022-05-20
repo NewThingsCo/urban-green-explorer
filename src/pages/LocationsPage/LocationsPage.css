@@ -1,5 +1,6 @@
 .main-locations {
-  @apply py-20;
+  @apply pb-20;
+  @apply pt-5;
   @apply px-5;
 
   .title {
