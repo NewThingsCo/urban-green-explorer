@@ -1,7 +1,7 @@
 import type { VNode } from 'vue';
 import { defineComponent } from 'vue';
 import { RouterLink } from 'vue-router';
-import ParklyImage from '@/assets/images/Parkly.jpeg';
+import ParklyImage from '@/assets/images/Parkly.jpeg?url';
 import MapMarkedAlt from '@/assets/icons/map-marked-alt.svg?component';
 import ChevronRight from '@/assets/icons/chevron-right.svg?component';
 import AppFooter from '@/components/AppFooter';
@@ -12,12 +12,6 @@ import '../Location.css';
 
 export default defineComponent({
   name: 'Parkly',
-  setup() {
-    const imgUrl = new URL(ParklyImage, import.meta.url).href;
-    return {
-      imgUrl,
-    };
-  },
   render(): VNode {
     return (
       <>
@@ -27,7 +21,7 @@ export default defineComponent({
             <h1 class="pt-10 title text-left text-black">
               {this.$t('locations.parkly.title')}
             </h1>
-            <img src={this.imgUrl} class="object-cover h-100 w-full" />
+            <img src={ParklyImage} class="object-cover h-100 w-full" />
             <label class="label"> {this.$t('locations.parkly.category')}</label>
             <p class="text-left">{this.$t('locations.parkly.description')}</p>
             <div class="map-container">

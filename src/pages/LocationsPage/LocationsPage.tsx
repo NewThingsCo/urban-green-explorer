@@ -1,10 +1,10 @@
 import type { VNode } from 'vue';
 import { defineComponent } from 'vue';
 import { RouterLink } from 'vue-router';
-import ParklyImage from '@/assets/images/Parkly.jpeg';
-import AuroraImage from '@/assets/images/Aurora.jpeg';
-import LoviseholmImage from '@/assets/images/Loviseholm.jpeg';
-import TramImage from '@/assets/images/Tram.jpeg';
+import ParklyImage from '@/assets/images/Parkly.jpeg?url';
+import AuroraImage from '@/assets/images/Aurora.jpeg?url';
+import LoviseholmImage from '@/assets/images/Loviseholm.jpeg?url';
+import TramImage from '@/assets/images/Tram.jpeg?url';
 import MapMarkerAlt from '@/assets/icons/map-marker-alt.svg?component';
 import AppFooter from '@/components/AppFooter';
 import AppHeader from '@/components/AppHeader';
@@ -14,21 +14,6 @@ import './LocationsPage.css';
 
 export default defineComponent({
   name: 'LocationsPage',
-  setup() {
-    const parklyUrl = new URL(ParklyImage, import.meta.url).href;
-    const auroraUrl = new URL(AuroraImage, import.meta.url).href;
-    const loviseholmUrl = new URL(LoviseholmImage, import.meta.url).href;
-    const greenUrbanUrl = new URL(ParklyImage, import.meta.url).href;
-    const tramUrl = new URL(TramImage, import.meta.url).href;
-
-    return {
-      parklyUrl,
-      auroraUrl,
-      loviseholmUrl,
-      greenUrbanUrl,
-      tramUrl,
-    };
-  },
   render(): VNode {
     return (
       <>
@@ -48,21 +33,21 @@ export default defineComponent({
                         case 'parkly':
                           return (
                             <img
-                              src={this.parklyUrl}
+                              src={ParklyImage}
                               class="object-fill h-21 w-43"
                             />
                           );
                         case 'aurora-block':
                           return (
                             <img
-                              src={this.auroraUrl}
+                              src={AuroraImage}
                               class="object-fill h-21 w-43"
                             />
                           );
                         case 'loviseholm-park':
                           return (
                             <img
-                              src={this.loviseholmUrl}
+                              src={LoviseholmImage}
                               class="object-fill h-21 w-43"
                             />
                           );
@@ -73,7 +58,7 @@ export default defineComponent({
                         case 'green-tram-stop':
                           return (
                             <img
-                              src={this.tramUrl}
+                              src={TramImage}
                               class="object-fill h-21 w-43"
                             />
                           );

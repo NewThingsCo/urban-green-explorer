@@ -1,7 +1,7 @@
 import type { VNode } from 'vue';
 import { defineComponent } from 'vue';
 import { RouterLink } from 'vue-router';
-import AuroraImage from '@/assets/images/Aurora.jpeg';
+import AuroraImage from '@/assets/images/Aurora.jpeg?url';
 import MapMarkedAlt from '@/assets/icons/map-marked-alt.svg?component';
 import ChevronRight from '@/assets/icons/chevron-right.svg?component';
 import AppFooter from '@/components/AppFooter';
@@ -12,12 +12,6 @@ import '../Location.css';
 
 export default defineComponent({
   name: 'AuroraBlock',
-  setup() {
-    const imgUrl = new URL(AuroraImage, import.meta.url).href;
-    return {
-      imgUrl,
-    };
-  },
   render(): VNode {
     return (
       <>
@@ -27,7 +21,7 @@ export default defineComponent({
             <h1 class="pt-10 title text-left text-black">
               {this.$t('locations.aurora.title')}
             </h1>
-            <img src={this.imgUrl} class="object-cover h-100 w-full" />
+            <img src={AuroraImage} class="object-cover h-100 w-full" />
             <label class="label">{this.$t('locations.aurora.category')}</label>
             <p class="text-left">{this.$t('locations.aurora.description')}</p>
             <div class="map-container">
