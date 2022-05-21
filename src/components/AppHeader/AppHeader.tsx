@@ -1,4 +1,4 @@
-import type { PropType, VNode } from 'vue';
+import type { VNode } from 'vue';
 import { defineComponent } from 'vue';
 import { RouterLink, useRouter } from 'vue-router';
 import LocaleSwitcher from '../LocaleSwitcher';
