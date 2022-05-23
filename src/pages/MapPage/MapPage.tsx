@@ -47,9 +47,11 @@ export default defineComponent({
         })
         .addTo(map);
 
-      setTimeout(function () {
+      const resizeObserver = new ResizeObserver(() => {
         map.invalidateSize();
-      }, 400);
+      });
+
+      resizeObserver.observe(document.getElementById('map'));
 
       // MARKERS
       const markerIcon = this.$leaflet.divIcon({
