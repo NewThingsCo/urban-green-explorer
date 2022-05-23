@@ -6,4 +6,8 @@ const router = createRouter({
   routes,
 });
 
-export { router };
+function goBack(): void {
+  router.go(-1);
+}
+
+export { router, goBack };
