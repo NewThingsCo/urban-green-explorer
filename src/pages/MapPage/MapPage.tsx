@@ -29,7 +29,8 @@ export default defineComponent({
   mounted() {
     if (!this.$leaflet) return;
     try {
-      const map = this.$leaflet.map('map').setView([60.1807, 24.9773], 16.5);
+      const mapDiv = document.getElementById('map') as HTMLDivElement;
+      const map = this.$leaflet.map(mapDiv).setView([60.1807, 24.9773], 16.5);
       this.$leaflet.control
         .locate({
           position: 'topleft',
@@ -46,6 +47,12 @@ export default defineComponent({
           detectRetina: true,
         })
         .addTo(map);
+
+      const resizeObserver = new ResizeObserver(() => {
+        map.invalidateSize();
+      });
+
+      resizeObserver.observe(mapDiv);
 
       // MARKERS
       const markerIcon = this.$leaflet.divIcon({
