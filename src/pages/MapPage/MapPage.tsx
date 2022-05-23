@@ -47,6 +47,10 @@ export default defineComponent({
         })
         .addTo(map);
 
+      setTimeout(function () {
+        map.invalidateSize();
+      }, 400);
+
       // MARKERS
       const markerIcon = this.$leaflet.divIcon({
         html: MapMarkerAltIcon,
