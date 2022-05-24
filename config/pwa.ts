@@ -3,7 +3,6 @@ import type {
   ManifestOptions,
   VitePWAOptions,
 } from 'vite-plugin-pwa';
-import type { GenerateSWOptions } from 'workbox-build';
 
 /**
  * Development options.
@@ -16,7 +15,6 @@ const devOptions: DevOptions = {
 /**
  * Manifest options.
  *
- * @todo Add icon(s)
  * @todo Add screenshot(s)
  * @todo Change theme colors
  */
@@ -24,6 +22,18 @@ const manifest: Partial<ManifestOptions> = {
   background_color: '#ffffff',
   categories: ['city planning', 'exploration', 'future architecture'],
   dir: 'ltr',
+  icons: [
+    {
+      sizes: '32x32',
+      src: 'favicon.ico',
+      type: 'image/x-icon',
+    },
+    {
+      sizes: '512x512',
+      src: 'favicon.png',
+      type: 'image/png',
+    },
+  ],
   lang: 'en',
   orientation: 'natural',
   related_applications: [
@@ -45,6 +55,7 @@ const manifest: Partial<ManifestOptions> = {
   theme_color: '#42b883',
 };
 
+/** @todo Add service worker */
 // const workbox: Partial<GenerateSWOptions> = {
 //   cleanupOutdatedCaches: true,
 //   globPatterns: ['**/*.{js,css,html}'],
