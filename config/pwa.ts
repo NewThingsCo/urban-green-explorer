@@ -5,7 +5,15 @@ import type {
 } from 'vite-plugin-pwa';
 
 /**
+ * Static assets that should be precached by the service worker.
+ * @link https://vite-plugin-pwa.netlify.app/guide/static-assets.html
+ * Icons from the manifest are cached by default.
+ */
+const includeAssets: VitePWAOptions['includeAssets'] = ['robots.txt'];
+
+/**
  * Development options.
+ * @link https://vite-plugin-pwa.netlify.app/guide/development.html
  */
 const devOptions: DevOptions = {
   enabled: true,
@@ -14,6 +22,7 @@ const devOptions: DevOptions = {
 
 /**
  * Manifest options.
+ * @link https://developer.mozilla.org/en-US/docs/Web/Manifest
  *
  * @todo Add screenshot(s)
  * @todo Change theme colors
@@ -65,6 +74,7 @@ const manifest: Partial<ManifestOptions> = {
 const vitePWAOptions: Partial<VitePWAOptions> = {
   devOptions,
   filename: 'sw.ts',
+  includeAssets,
   manifest,
   registerType: 'autoUpdate',
   srcDir: 'src',
