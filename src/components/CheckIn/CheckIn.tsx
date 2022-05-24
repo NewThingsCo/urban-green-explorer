@@ -10,6 +10,7 @@ import {
 } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { RouterLink, useRouter } from 'vue-router';
+import Popup from '@/components/Popup';
 import { locations } from '@/content/locations';
 import Button from '@/components/Button';
 import LocateIcon from '@/assets/icons/locate.svg?component';
@@ -17,6 +18,9 @@ import './CheckIn.css';
 
 export default defineComponent({
   name: 'CheckIn',
+  components: {
+    Popup,
+  },
   setup() {
     const { d, t } = useI18n();
     const router = useRouter();
@@ -53,6 +57,12 @@ export default defineComponent({
      * @default true
      */
     const isButtonHidden = ref(true);
+
+    /**
+     * Opens the popup if set to `true`.
+     * @default true
+     */
+    const isPopupVisible = ref(false);
 
     /** ID of the current location. */
     const locationId = router.currentRoute.value.name?.toString() || '';
@@ -148,6 +158,9 @@ export default defineComponent({
       saveCheckIn(checkIn);
       existingCheckIn.value = checkIn;
       checkInLabelI18nKey.value = isLastLocation ? 'complete' : 'visited';
+      if (isLastLocation) {
+        isPopupVisible.value = true;
+      }
     }
 
     /** Handles check-in states. */
@@ -409,6 +422,7 @@ export default defineComponent({
       handleCheckIn,
       isButtonDisabled,
       isButtonHidden,
+      isPopupVisible,
     };
   },
   render(): VNode {
@@ -426,6 +440,7 @@ export default defineComponent({
         <p class="label" id="check-in-label">
           {this.checkInLabel || <>&nbsp;</>}
         </p>
+        {this.isPopupVisible && <Popup />}
       </form>
     );
   },
