@@ -13,7 +13,7 @@
   @apply z-50;
 
   .modal-wrapper {
-    @apply h-full;
+    @apply h-1/2;
     @apply relative;
     @apply w-full;
     @apply text-2xl;

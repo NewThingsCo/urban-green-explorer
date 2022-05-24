@@ -62,7 +62,7 @@ export default defineComponent({
      * Opens the popup if set to `true`.
      * @default true
      */
-    const isPopupVisible = ref(false);
+    const isModalVisible = ref(false);
 
     /** ID of the current location. */
     const locationId = router.currentRoute.value.name?.toString() || '';
@@ -159,7 +159,7 @@ export default defineComponent({
       existingCheckIn.value = checkIn;
       checkInLabelI18nKey.value = isLastLocation ? 'complete' : 'visited';
       if (isLastLocation) {
-        isPopupVisible.value = true;
+        isModalVisible.value = true;
       }
     }
 
@@ -415,6 +415,15 @@ export default defineComponent({
      */
     watch(checkInLabelI18nKey, handleCheckInState);
 
+    const buttonLabel = computed(() =>
+      isModalVisible.value ? 'Close modal' : 'Show modal'
+    );
+    /** Toggles the modal's visibility. */
+    function toggleModalVisibility(event: Event): void {
+      event?.preventDefault();
+      isModalVisible.value = !isModalVisible.value;
+    }
+
     return {
       ariaDescribedby,
       checkInLabel,
@@ -422,7 +431,9 @@ export default defineComponent({
       handleCheckIn,
       isButtonDisabled,
       isButtonHidden,
-      isPopupVisible,
+      buttonLabel,
+      isModalVisible,
+      toggleModalVisibility,
     };
   },
   render(): VNode {
@@ -440,7 +451,9 @@ export default defineComponent({
         <p class="label" id="check-in-label">
           {this.checkInLabel || <>&nbsp;</>}
         </p>
-        {this.isPopupVisible && <LastLocationPopup />}
+        {this.isModalVisible && (
+          <LastLocationPopup onClose={this.toggleModalVisibility} />
+        )}
       </form>
     );
   },

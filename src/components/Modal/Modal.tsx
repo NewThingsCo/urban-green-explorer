@@ -1,14 +1,13 @@
-import type { VNode } from 'vue';
+import type { VNode, PropType } from 'vue';
 import { defineComponent } from 'vue';
 import './Modal.css';
-import Button from '@/components/Button';
 
 export default defineComponent({
   name: 'Modal',
   props: {
-    modalClose: {
-      default: false,
-      type: Boolean,
+    onClose: {
+      required: true,
+      type: Function as PropType<(event: Event) => void>,
     },
     title: {
       default: '',
@@ -20,7 +19,7 @@ export default defineComponent({
       <aside tabindex="-1" class="modal-dialog">
         <div class="modal-wrapper">
           <div class="modal-header">
-            <Button type="button">
+            <button onClick={this.onClose} type="button">
               <svg
                 class="w-5 h-5"
                 fill="currentColor"
@@ -33,10 +32,10 @@ export default defineComponent({
                   clip-rule="evenodd"
                 ></path>
               </svg>
-            </Button>
+            </button>
           </div>
           <div class="modal-body">
-            <h2 class="font-semibold pb-8">{this.title}</h2>
+            <h2 class="text-2xl font-semibold pb-8">{this.title}</h2>
             {this.$slots.default ? this.$slots.default() : null}
           </div>
         </div>
