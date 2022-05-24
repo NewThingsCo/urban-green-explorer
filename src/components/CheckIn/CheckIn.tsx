@@ -10,7 +10,7 @@ import {
 } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { RouterLink, useRouter } from 'vue-router';
-import Popup from '@/components/Popup';
+import LastLocationPopup from '@/components/LastLocationPopup';
 import { locations } from '@/content/locations';
 import Button from '@/components/Button';
 import LocateIcon from '@/assets/icons/locate.svg?component';
@@ -19,7 +19,7 @@ import './CheckIn.css';
 export default defineComponent({
   name: 'CheckIn',
   components: {
-    Popup,
+    LastLocationPopup,
   },
   setup() {
     const { d, t } = useI18n();
@@ -440,7 +440,7 @@ export default defineComponent({
         <p class="label" id="check-in-label">
           {this.checkInLabel || <>&nbsp;</>}
         </p>
-        {this.isPopupVisible && <Popup />}
+        {this.isPopupVisible && <LastLocationPopup />}
       </form>
     );
   },

@@ -1,19 +1,29 @@
 import type { VNode } from 'vue';
 import { defineComponent } from 'vue';
-import ChevronRight from '@/assets/icons/chevron-right.svg?component';
-import './Popup.css';
+import './Modal.css';
+import Button from '@/components/Button';
 
 export default defineComponent({
-  name: 'Popup',
+  name: 'Modal',
+  props: {
+    modalClose: {
+      default: false,
+      type: Boolean,
+    },
+    title: {
+      default: '',
+      type: String,
+    },
+  },
   render(): VNode {
     return (
-      <div tabindex="-1" aria-hidden="true" class="modal-dialog">
+      <aside tabindex="-1" class="modal-dialog">
         <div class="modal-wrapper">
           <div class="modal-header">
-            <button type="button">
+            <Button type="button">
               <svg
                 class="w-5 h-5"
-                fill="black"
+                fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -23,18 +33,14 @@ export default defineComponent({
                   clip-rule="evenodd"
                 ></path>
               </svg>
-            </button>
+            </Button>
           </div>
           <div class="modal-body">
-            <h2 class="modal-title">Congrats!</h2>
-            <p class="modal-text">You've completed all the locations.</p>
-            <p class="modal-text">Hope you enjoyed the tour!</p>
-            <p class="modal-text">
-              Feedback form? <ChevronRight class="w-5" />
-            </p>
+            <h2 class="font-semibold pb-8">{this.title}</h2>
+            {this.$slots.default ? this.$slots.default() : null}
           </div>
         </div>
-      </div>
+      </aside>
     );
   },
 });

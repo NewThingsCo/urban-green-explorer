@@ -4,6 +4,12 @@
   },
   "back": "Takaisin",
   "categories": "Kategoriat",
+  "completed": {
+    "title": "Congrats!",
+    "p1": "You've completed all the locations.",
+    "p2": "Hope you enjoyed the tour!",
+    "feedback": "Feedback form?"
+  },
   "checkInButton": "Avaa kohde",
   "checkInLabel": {
     "complete": {

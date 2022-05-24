@@ -16,10 +16,14 @@
     @apply h-full;
     @apply relative;
     @apply w-full;
+    @apply text-2xl;
+    @apply text-base;
+    @apply text-black;
 
     .modal-header {
       @apply bg-white;
       @apply flex;
+      @apply flex-col;
       @apply items-end;
       @apply justify-between;
       @apply p-4;
@@ -32,20 +36,6 @@
       @apply justify-center;
       @apply p-6;
       @apply space-y-6;
-
-      .modal-title {
-        @apply font-semibold;
-        @apply pb-8;
-        @apply text-2xl;
-        @apply text-base;
-        @apply text-black;
-      }
-
-      .modal-text {
-        @apply text-2xl;
-        @apply text-base;
-        @apply text-black;
-      }
     }
   }
 }
