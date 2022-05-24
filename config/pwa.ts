@@ -7,7 +7,7 @@ import type {
 /**
  * Static assets that should be precached by the service worker.
  * @link https://vite-plugin-pwa.netlify.app/guide/static-assets.html
- * Icons from the manifest are cached by default.
+ * Icons from the manifest are precached by default.
  */
 const includeAssets: VitePWAOptions['includeAssets'] = ['robots.txt'];
 
@@ -73,7 +73,6 @@ const manifest: Partial<ManifestOptions> = {
 
 const vitePWAOptions: Partial<VitePWAOptions> = {
   devOptions,
-  filename: 'sw.ts',
   includeAssets,
   manifest,
   registerType: 'autoUpdate',
