@@ -14,11 +14,10 @@ export default defineComponent({
   render(): VNode {
     return (
       <Modal onClose={this.onClose} title={this.$t('completed.title')}>
-        <p class="text-2xl">{this.$t('completed.p1')}</p>
-        <p class="text-2xl">{this.$t('completed.p2')}</p>
+        <p>{this.$t('completed.p1')}</p>
+        <p>{this.$t('completed.p2')}</p>
         <div class="flex items-center text-center justify-center">
-          <p class="text-2xl">{this.$t('completed.feedback')}</p>{' '}
-          <ChevronRight class="w-5" />
+          <p>{this.$t('completed.feedback')}</p> <ChevronRight class="w-5" />
         </div>
       </Modal>
     );

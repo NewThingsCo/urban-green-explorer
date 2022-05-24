@@ -16,9 +16,6 @@
     @apply h-1/2;
     @apply relative;
     @apply w-full;
-    @apply text-2xl;
-    @apply text-base;
-    @apply text-black;
 
     .modal-header {
       @apply bg-white;
@@ -36,6 +33,11 @@
       @apply justify-center;
       @apply p-6;
       @apply space-y-6;
+
+      p {
+        @apply text-2xl;
+        @apply text-base;
+      }
     }
   }
 }
