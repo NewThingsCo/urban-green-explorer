@@ -11,33 +11,38 @@
   @apply top-0;
   @apply w-full;
   @apply z-50;
+}
 
-  .modal-wrapper {
-    @apply h-1/2;
-    @apply relative;
-    @apply w-full;
+.modal-wrapper {
+  @apply h-1/2;
+  @apply relative;
+  @apply w-full;
+}
 
-    .modal-header {
-      @apply bg-white;
-      @apply flex;
-      @apply flex-col;
-      @apply items-end;
-      @apply justify-between;
-      @apply p-4;
-    }
+.modal-body {
+  @apply flex-col;
+  @apply flex;
+  @apply h-full;
+  @apply justify-center;
+  @apply p-6;
+  @apply space-y-6;
 
-    .modal-body {
-      @apply flex-col;
-      @apply flex;
-      @apply h-full;
-      @apply justify-center;
-      @apply p-6;
-      @apply space-y-6;
-
-      p {
-        @apply text-2xl;
-        @apply text-base;
-      }
-    }
+  p {
+    @apply text-2xl;
   }
+}
+
+.modal-header {
+  @apply bg-white;
+  @apply flex;
+  @apply flex-col;
+  @apply items-end;
+  @apply justify-between;
+  @apply p-4;
+}
+
+.modal-title {
+  @apply text-2xl;
+  @apply font-semibold;
+  @apply pb-8;
 }

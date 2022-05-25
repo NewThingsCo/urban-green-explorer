@@ -35,7 +35,7 @@ export default defineComponent({
             </button>
           </div>
           <div class="modal-body">
-            <h2 class="text-2xl font-semibold pb-8">{this.title}</h2>
+            <h2 class="modal-title">{this.title}</h2>
             {this.$slots.default ? this.$slots.default() : null}
           </div>
         </div>
