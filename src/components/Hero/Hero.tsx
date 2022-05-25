@@ -1,19 +1,10 @@
 import type { VNode } from 'vue';
 import { defineComponent } from 'vue';
+import { RouterLink } from 'vue-router';
 import './Hero.css';
-import Button from '@/components/Button';
-import { router } from '@/router';
 
 export default defineComponent({
   name: 'Hero',
-  setup() {
-    function pushToLocation() {
-      router.push({ name: 'locations' });
-    }
-    return {
-      pushToLocation,
-    };
-  },
   render(): VNode {
     return (
       <div
@@ -25,9 +16,9 @@ export default defineComponent({
           <div class="max-w-md">
             <h1 class="title">{this.$t('introduction.helloThere')}</h1>
             <p>{this.$t('introduction.bodyText')}</p>
-            <Button class="button" onClick={this.pushToLocation}>
+            <RouterLink class="button" to={{ name: 'locations' }}>
               {this.$t('introduction.getStarted')}
-            </Button>
+            </RouterLink>
           </div>
         </div>
       </div>
