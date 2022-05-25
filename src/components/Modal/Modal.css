@@ -1,0 +1,48 @@
+.modal-dialog {
+  @apply bg-white;
+  @apply fixed;
+  @apply h-full;
+  @apply h-modal;
+  @apply inset-0;
+  @apply left-0;
+  @apply overflow-x-hidden;
+  @apply overflow-y-auto;
+  @apply right-0;
+  @apply top-0;
+  @apply w-full;
+  @apply z-50;
+}
+
+.modal-wrapper {
+  @apply h-1/2;
+  @apply relative;
+  @apply w-full;
+}
+
+.modal-body {
+  @apply flex-col;
+  @apply flex;
+  @apply h-full;
+  @apply justify-center;
+  @apply p-6;
+  @apply space-y-6;
+
+  p {
+    @apply text-2xl;
+  }
+}
+
+.modal-header {
+  @apply bg-white;
+  @apply flex;
+  @apply flex-col;
+  @apply items-end;
+  @apply justify-between;
+  @apply p-4;
+}
+
+.modal-title {
+  @apply text-2xl;
+  @apply font-semibold;
+  @apply pb-8;
+}

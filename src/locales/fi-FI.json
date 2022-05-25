@@ -4,6 +4,12 @@
   },
   "back": "Takaisin",
   "categories": "Kategoriat",
+  "completed": {
+    "title": "Onneksi olkoon!",
+    "p1": "Olet käynyt kaikki kohteet läpi.",
+    "p2": "Toivottavasti nautit seikkailusta!",
+    "feedback": "Palaute?"
+  },
   "checkInButton": "Avaa kohde",
   "checkInLabel": {
     "complete": {
