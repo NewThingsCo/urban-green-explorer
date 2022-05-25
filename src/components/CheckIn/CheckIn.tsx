@@ -413,9 +413,6 @@ export default defineComponent({
      */
     watch(checkInLabelI18nKey, handleCheckInState);
 
-    const buttonLabel = computed(() =>
-      isModalVisible.value ? 'Close modal' : 'Show modal'
-    );
     /** Toggles the modal's visibility. */
     function toggleModalVisibility(event: Event): void {
       event?.preventDefault();
@@ -429,7 +426,6 @@ export default defineComponent({
       handleCheckIn,
       isButtonDisabled,
       isButtonHidden,
-      buttonLabel,
       isModalVisible,
       toggleModalVisibility,
     };
