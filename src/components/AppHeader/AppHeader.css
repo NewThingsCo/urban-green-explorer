@@ -12,12 +12,16 @@
 
   .title {
     @apply antialiased;
+    @apply font-semibold;
+    @apply text-xl;
+    @apply text-black;
     @apply my-4;
+    @apply ml-4;
+  }
 
-    a {
-      @apply font-semibold;
-      @apply text-black;
-      @apply text-xl;
-    }
+  a {
+    @apply font-semibold;
+    @apply text-black;
+    @apply text-xl;
   }
 }

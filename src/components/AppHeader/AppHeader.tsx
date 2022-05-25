@@ -20,12 +20,10 @@ export default defineComponent({
     if ('map' !== this.router.currentRoute.value.name) {
       return (
         <header class="app-header">
-          <h1 class="title flex">
+          <RouterLink class="flex items-center" to={{ name: 'home' }}>
             <img class="w-9 h-7" src={BGReenLogo} />
-            <RouterLink class="ml-10" to={{ name: 'home' }}>
-              Urban Green Explorer
-            </RouterLink>
-          </h1>
+            <h2 class="title">Urban Green Explorer</h2>
+          </RouterLink>
           <LocaleSwitcher />
         </header>
       );
