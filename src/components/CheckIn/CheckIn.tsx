@@ -10,17 +10,15 @@ import {
 } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { RouterLink, useRouter } from 'vue-router';
-import LastLocationPopup from '@/components/LastLocationPopup';
+import Modal from '@/components/Modal';
 import { locations } from '@/content/locations';
 import Button from '@/components/Button';
+import ChevronRight from '@/assets/icons/chevron-right.svg?component';
 import LocateIcon from '@/assets/icons/locate.svg?component';
 import './CheckIn.css';
 
 export default defineComponent({
   name: 'CheckIn',
-  components: {
-    LastLocationPopup,
-  },
   setup() {
     const { d, t } = useI18n();
     const router = useRouter();
@@ -452,7 +450,17 @@ export default defineComponent({
           {this.checkInLabel || <>&nbsp;</>}
         </p>
         {this.isModalVisible && (
-          <LastLocationPopup onClose={this.toggleModalVisibility} />
+          <Modal
+            onClose={this.toggleModalVisibility}
+            title={this.$t('completed.title')}
+          >
+            <p>{this.$t('completed.p1')}</p>
+            <p>{this.$t('completed.p2')}</p>
+            <div class="flex items-center text-center justify-center">
+              <p>{this.$t('completed.feedback')}</p>{' '}
+              <ChevronRight class="w-5" />
+            </div>
+          </Modal>
         )}
       </form>
     );
