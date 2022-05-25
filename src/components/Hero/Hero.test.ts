@@ -3,10 +3,11 @@ import { mount } from '@vue/test-utils';
 import { createPinia, setActivePinia } from 'pinia';
 import Component from './Hero';
 import { i18n } from '@/utils';
+import { router } from '@/router';
 
 const wrapper = mount(Component, {
   global: {
-    plugins: [createTestingPinia(), i18n],
+    plugins: [createTestingPinia(), i18n, router],
   },
 });
 
