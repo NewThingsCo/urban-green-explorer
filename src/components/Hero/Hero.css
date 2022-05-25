@@ -29,6 +29,7 @@
       @apply bg-green-500;
       @apply text-white;
       @apply border-none;
+      @apply hover:bg-green-600;
     }
   }
 }
