@@ -3,7 +3,7 @@ import { defineComponent } from 'vue';
 import { RouterLink, useRouter } from 'vue-router';
 import LocaleSwitcher from '../LocaleSwitcher';
 import './AppHeader.css';
-import BGReenLogo from '@/assets/logos/BGreen.png?url';
+import BGreenLogo from '@/assets/logos/BGreen.png?url';
 import { goBack } from '@/router';
 import Button from '@/components/Button';
 import ChevronLeft from '@/assets/icons/chevron-left.svg?component';
@@ -20,8 +20,8 @@ export default defineComponent({
     if ('map' !== this.router.currentRoute.value.name) {
       return (
         <header class="app-header">
-          <RouterLink class="flex items-center" to={{ name: 'home' }}>
-            <img class="w-9 h-7" src={BGReenLogo} />
+          <RouterLink class="home-link" to={{ name: 'home' }}>
+            <img alt="B.Green logo" class="logo" src={BGreenLogo} />
             <h2 class="title">Urban Green Explorer</h2>
           </RouterLink>
           <LocaleSwitcher />
