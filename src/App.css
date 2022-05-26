@@ -3,6 +3,8 @@
 
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+
+  @apply antialiased;
 }
 
 code {
@@ -19,7 +21,7 @@ body {
 }
 
 a {
-  @apply text-green-500;
+  @apply text-primary-color;
 }
 
 [hidden] {
