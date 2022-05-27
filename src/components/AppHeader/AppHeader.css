@@ -1,23 +1,24 @@
 .app-header {
   @apply bg-white;
   @apply flex;
-  @apply items-center;
   @apply justify-between;
-  @apply mx-auto;
-  @apply pt-5;
-  @apply px-5;
-  @apply text-center;
-  @apply w-full;
-  @apply z-10;
+  @apply p-3;
+
+  .home-link {
+    @apply flex;
+    @apply hover:text-primary-color;
+    @apply items-center;
+    @apply text-black;
+  }
+
+  .logo {
+    @apply h-7;
+    @apply w-9;
+  }
 
   .title {
-    @apply antialiased;
-    @apply my-4;
-
-    a {
-      @apply font-semibold;
-      @apply text-black;
-      @apply text-xl;
-    }
+    @apply font-semibold;
+    @apply ml-3;
+    @apply md:text-xl;
   }
 }

@@ -1,5 +1,6 @@
 import type { VNode } from 'vue';
 import { defineComponent } from 'vue';
+import { RouterLink } from 'vue-router';
 import './Hero.css';
 
 export default defineComponent({
@@ -15,7 +16,9 @@ export default defineComponent({
           <div class="max-w-md">
             <h1 class="title">{this.$t('introduction.helloThere')}</h1>
             <p>{this.$t('introduction.bodyText')}</p>
-            <button class="button">{this.$t('introduction.getStarted')}</button>
+            <RouterLink class="button" to={{ name: 'locations' }}>
+              {this.$t('introduction.getStarted')}
+            </RouterLink>
           </div>
         </div>
       </div>
