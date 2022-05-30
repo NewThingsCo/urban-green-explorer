@@ -2,8 +2,17 @@ import { locations } from '@/content/locations';
 import { LOCALE_CODES } from '@/constants';
 import en from '@/locales/en.json';
 
+interface Category {
+  key: string;
+}
+
+interface Coordinates {
+  lat: number;
+  lng: number;
+}
+
 interface CheckIn {
-  locationId: string;
+  locationSlug: string;
   visited: Date;
 }
 
@@ -16,10 +25,28 @@ type Locale = {
   name: readonly string;
 };
 
-type Locations = typeof locations;
-
-type Location = Locations[number];
-
 type Translations = typeof en;
 
-export { CheckIn, Locale, Locales, LocaleCode, Location, Translations };
+type CategoryKey = keyof Translations['category'];
+
+type TranslationKey = keyof Translations;
+
+interface Location {
+  categories: CategoryKey[];
+  coordinates: Coordinates;
+  description: string;
+  minDistance: number;
+  slug: string;
+  title: string;
+}
+
+export {
+  Category,
+  CheckIn,
+  Locale,
+  location,
+  Locales,
+  LocaleCode,
+  Location,
+  Translations,
+};

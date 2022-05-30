@@ -4,11 +4,11 @@
   },
   "back": "Back",
   "categories": "Categories",
-  "completed": {
-    "title": "Congrats!",
-    "p1": "You've completed all the locations.",
-    "p2": "Hope you enjoyed the tour!",
-    "feedback": "Feedback form?"
+  "category": {
+    "block": "Block",
+    "meetingPoint": "Meeting point",
+    "park": "Park",
+    "tramStop": "Tram stop"
   },
   "checkInButton": "Check-in",
   "checkInLabel": {
@@ -36,6 +36,12 @@
       "linkText": "See next location"
     }
   },
+  "completed": {
+    "feedback": "Feedback form?",
+    "p1": "You've completed all the locations.",
+    "p2": "Hope you enjoyed the tour!",
+    "title": "Congrats!"
+  },
   "coverImage": "Cover image",
   "currencies": "Currencies",
   "currency": "Currency",
@@ -52,27 +58,22 @@
   "localeSwitcher": "Language menu",
   "locations": {
     "aurora": {
-      "category": "Block",
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
       "title": "Aurora Block"
     },
     "greenUrbanMapping": {
-      "category": "Block",
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
       "title": "Green Urban Mapping"
     },
     "loviseholm": {
-      "category": "Park",
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
       "title": "Loviseholm Park"
     },
     "parkly": {
-      "category": "Meeting point",
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
       "title": "Start at Parkly"
     },
     "tram": {
-      "category": "Tram stop",
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
       "title": "Green Tramp Stop"
     }

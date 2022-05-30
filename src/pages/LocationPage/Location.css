@@ -1,6 +1,10 @@
 .main-location {
   @apply pb-80;
 
+  .category-list {
+    @apply my-4;
+  }
+
   .label {
     @apply text-left;
     @apply text-sm;

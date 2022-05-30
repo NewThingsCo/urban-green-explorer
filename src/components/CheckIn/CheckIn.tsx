@@ -63,21 +63,21 @@ export default defineComponent({
     const isModalVisible = ref(false);
 
     /** ID of the current location. */
-    const locationId = router.currentRoute.value.name?.toString() || '';
+    const locationSlug = router.currentRoute.value.name?.toString() || '';
 
     /** Existing check-in for the current location.*/
     const existingCheckIn: Ref<CheckIn | null> = ref(
-      getCheckIn(locationId) || null
+      getCheckIn(locationSlug) || null
     );
 
     /** Current location. */
     const location = locations.find(
-      (location) => location.params === locationId
+      (location) => location.slug === locationSlug
     ) as Location;
 
     /** Location index used to determine next location. */
     const locationIndex = locations.findIndex(
-      (location) => location.params === locationId
+      (location) => location.slug === locationSlug
     );
 
     /** Contains the next location if available. */
@@ -113,16 +113,16 @@ export default defineComponent({
     }
 
     /** Gets a single check-ins from Local Storage. */
-    function getCheckIn(id?: Location['id']): CheckIn | void {
-      if (!id) return;
+    function getCheckIn(slug?: Location['slug']): CheckIn | void {
+      if (!slug) return;
       try {
         const checkIn = getCheckIns().find(
-          (checkIn) => checkIn.locationId === id
+          (checkIn) => checkIn.locationSlug === slug
         );
         console.debug(
           checkIn ? 'Found existing check-in to' : 'No check-in found for',
           'this location:',
-          checkIn || locationId
+          checkIn || locationSlug
         );
         return checkIn;
       } catch (error) {
@@ -151,8 +151,8 @@ export default defineComponent({
     function handleCheckIn(event: Event): void {
       event.preventDefault();
       const visited = new Date();
-      const checkIn: CheckIn = { locationId, visited };
-      console.info('User checked-in to', locationId, 'at', visited);
+      const checkIn: CheckIn = { locationSlug, visited };
+      console.info('User checked-in to', locationSlug, 'at', visited);
       saveCheckIn(checkIn);
       existingCheckIn.value = checkIn;
       checkInLabelI18nKey.value = isLastLocation ? 'complete' : 'visited';
@@ -229,8 +229,8 @@ export default defineComponent({
       const distanceFromLocation = measureDistance(
         deviceLatitude,
         deviceLongitude,
-        location.coordinates[0],
-        location.coordinates[1]
+        location.coordinates.lat,
+        location.coordinates.lng
       );
       const closeEnough = distanceFromLocation < location.minDistance;
       console.debug(
@@ -269,7 +269,7 @@ export default defineComponent({
     /** Cached render of the `disabled` label. */
     const labelDisabled: VNode = (
       <i18n-t keypath="checkInLabel.disabled.label" scope="global">
-        <RouterLink to={{ name: 'map', params: { id: locationId } }}>
+        <RouterLink to={{ name: 'map', params: { slug: locationSlug } }}>
           {t('checkInLabel.disabled.linkText')}
         </RouterLink>
       </i18n-t>
@@ -313,7 +313,7 @@ export default defineComponent({
         <RouterLink
           to={{
             name: 'map',
-            params: { id: nextLocation?.params || '' },
+            params: { id: nextLocation?.slug || '' },
           }}
         >
           {t('checkInLabel.visited.linkText')}

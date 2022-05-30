@@ -1,6 +1,7 @@
 import type { VNode } from 'vue';
 import { defineComponent } from 'vue';
-import { RouterLink } from 'vue-router';
+import { RouterLink, useRoute } from 'vue-router';
+import { locations } from '../../../content/locations';
 import LoviseholmImage from '@/assets/images/Loviseholm.jpeg?url';
 import MapMarkedAlt from '@/assets/icons/map-marked-alt.svg?component';
 import ChevronRight from '@/assets/icons/chevron-right.svg?component';
@@ -8,10 +9,19 @@ import AppFooter from '@/components/AppFooter';
 import AppHeader from '@/components/AppHeader';
 import AppMain from '@/components/AppMain';
 import CheckIn from '@/components/CheckIn';
+import CategoryList from '@/components/CategoryList';
+
 import '../Location.css';
 
 export default defineComponent({
   name: 'LoviseholmPark',
+  setup() {
+    const route = useRoute();
+    const location =
+      locations.find((l) => l.slug === route.name?.toString()) || null;
+    const categories = location?.categories || [];
+    return { categories };
+  },
   render(): VNode {
     return (
       <>
@@ -23,9 +33,7 @@ export default defineComponent({
             alt={this.$t('locations.loviseholm.title')}
           />
           <div class="px-4">
-            <label class="label">
-              {this.$t('locations.loviseholm.category')}
-            </label>
+            <CategoryList categories={this.categories} />
             <p class="description">
               {this.$t('locations.loviseholm.description')}
             </p>

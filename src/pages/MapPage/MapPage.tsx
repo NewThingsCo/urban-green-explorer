@@ -14,10 +14,8 @@ export default defineComponent({
   name: 'MapPage',
   setup() {
     const route = useRoute();
-    const id = computed(() => route.params.id);
-    return {
-      id,
-    };
+    const slug = computed(() => route.params.id);
+    return { slug };
   },
   beforeUnmount() {
     Array.from(window.document.querySelectorAll('.router-link')).forEach(
@@ -65,33 +63,33 @@ export default defineComponent({
       // POPUP ON MARKER CLICK
       locations.map((location) => {
         this.$leaflet
-          .marker([location.coordinates[0], location.coordinates[1]], {
+          .marker([location.coordinates.lat, location.coordinates.lng], {
             icon: markerIcon,
           })
           .bindPopup(
             `<div class="flex flex-col items-center"><h2 class="text-sm">${this.$t(
               location.title
             )}</h2><a class="router-link" href="/location/${
-              location.params
+              location.slug
             }"}>${this.$t('moreInfo')}</a></div>`
           )
           .addTo(map);
       });
 
       // POPUPS
-      switch (this.id) {
+      switch (this.slug) {
         case 'parkly':
           this.$leaflet
             .popup()
             .setLatLng([
-              locations[0].coordinates[0],
-              locations[0].coordinates[1],
+              locations[0].coordinates.lat,
+              locations[0].coordinates.lng,
             ])
             .setContent(
               `<div class="flex flex-col items-center"><h2 class="text-sm">${this.$t(
                 locations[0].title
               )}</h2><a class="router-link" href="/location/${
-                locations[0].params
+                locations[0].slug
               }"}>${this.$t('moreInfo')}</a></div>`
             )
             .openOn(map);
@@ -100,14 +98,14 @@ export default defineComponent({
           this.$leaflet
             .popup()
             .setLatLng([
-              locations[1].coordinates[0],
-              locations[1].coordinates[1],
+              locations[1].coordinates.lat,
+              locations[1].coordinates.lng,
             ])
             .setContent(
               `<div class="flex flex-col items-center"><h2 class="text-sm">${this.$t(
                 locations[1].title
               )}</h2><a class="router-link" href="/location/${
-                locations[1].params
+                locations[1].slug
               }"}>${this.$t('moreInfo')}</a></div>`
             )
             .openOn(map);
@@ -116,14 +114,14 @@ export default defineComponent({
           this.$leaflet
             .popup()
             .setLatLng([
-              locations[2].coordinates[0],
-              locations[2].coordinates[1],
+              locations[2].coordinates.lat,
+              locations[2].coordinates.lng,
             ])
             .setContent(
               `<div class="flex flex-col items-center"><h2 class="text-sm">${this.$t(
                 locations[2].title
               )}</h2><a class="router-link" href="/location/${
-                locations[2].params
+                locations[2].slug
               }"}>${this.$t('moreInfo')}</a></div>`
             )
             .openOn(map);
@@ -132,14 +130,14 @@ export default defineComponent({
           this.$leaflet
             .popup()
             .setLatLng([
-              locations[3].coordinates[0],
-              locations[3].coordinates[1],
+              locations[3].coordinates.lat,
+              locations[3].coordinates.lng,
             ])
             .setContent(
               `<div class="flex flex-col items-center"><h2 class="text-sm">${this.$t(
                 locations[3].title
               )}</h2><a class="router-link" href="/location/${
-                locations[3].params
+                locations[3].slug
               }"}>${this.$t('moreInfo')}</a></div>`
             )
             .openOn(map);
@@ -148,20 +146,20 @@ export default defineComponent({
           this.$leaflet
             .popup()
             .setLatLng([
-              locations[4].coordinates[0],
-              locations[4].coordinates[1],
+              locations[4].coordinates.lat,
+              locations[4].coordinates.lng,
             ])
             .setContent(
               `<div class="flex flex-col items-center"><h2 class="text-sm">${this.$t(
                 locations[4].title
               )}</h2><a class="router-link" href="/location/${
-                locations[4].params
+                locations[4].slug
               }"}>${this.$t('moreInfo')}</a></div>`
             )
             .openOn(map);
           break;
         default:
-          console.warn('Unhandled popup case:', this.id);
+          console.warn('Unhandled popup case:', this.slug);
       }
     } catch (error) {
       console.error(error);

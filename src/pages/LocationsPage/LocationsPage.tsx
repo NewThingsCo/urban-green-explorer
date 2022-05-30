@@ -6,6 +6,7 @@ import AuroraImage from '@/assets/images/Aurora.jpeg?url';
 import LoviseholmImage from '@/assets/images/Loviseholm.jpeg?url';
 import TramImage from '@/assets/images/Tram.jpeg?url';
 import MapMarkerAlt from '@/assets/icons/map-marker-alt.svg?component';
+import CategoryList from '@/components/CategoryList';
 import AppFooter from '@/components/AppFooter';
 import AppHeader from '@/components/AppHeader';
 import AppMain from '@/components/AppMain';
@@ -22,14 +23,14 @@ export default defineComponent({
           <div class="main-locations">
             <h1 class="title">{this.$t('locationsTitle')}</h1>
             <ul class="text-left items-center flex flex-col">
-              {locations.map((location) => (
+              {locations.map((location, index) => (
                 <li class="list">
                   <a
                     class="cursor-pointer mr-3"
-                    href={`/location/${location.params}`}
+                    href={`/location/${location.slug}`}
                   >
                     {(() => {
-                      switch (location.params) {
+                      switch (location.slug) {
                         case 'parkly':
                           return (
                             <img
@@ -73,26 +74,18 @@ export default defineComponent({
                   </a>
                   <div class="flex flex-col w-full">
                     <h2 class="text-black">
-                      {location.id}. {this.$t(location.title)}
+                      {index + 1}. {this.$t(location.title)}
                     </h2>
-                    <ul
-                      aria-label={this.$t('categories')}
-                      class="list-none"
-                      role="list"
-                    >
-                      <li class="category" role="listitem">
-                        {this.$t(location.category)}
-                      </li>
-                    </ul>
+                    <CategoryList categories={location.categories} />
                     <RouterLink
-                      to={{ name: 'map', params: { id: location.params } }}
+                      to={{ name: 'map', params: { id: location.slug } }}
                       class="show-map"
                     >
                       {this.$t('showOnMap')}
                     </RouterLink>
                   </div>
                   <RouterLink
-                    to={{ name: 'map', params: { id: location.params } }}
+                    to={{ name: 'map', params: { id: location.slug } }}
                   >
                     <MapMarkerAlt class="icon" />
                   </RouterLink>

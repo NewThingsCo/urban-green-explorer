@@ -22,7 +22,8 @@ const routes: RouteRecordRaw[] = [
     path: '/location/parkly',
   },
   {
-    component: async () => await import('../pages/LocationPage/AuroraBlock'),
+    component: async () =>
+      await import('../pages/LocationPage/AuroraBlock/AuroraBlock'),
     name: 'aurora-block',
     path: '/location/aurora-block',
   },

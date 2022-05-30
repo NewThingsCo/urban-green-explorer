@@ -1,10 +1,10 @@
 import { defineComponent } from 'vue';
 import BGLogo from '@/assets/logos/bglogo.png?url';
 import EULogo from '@/assets/logos/eu.png?url';
-import TallinnLogo from '@/assets/logos/tallinn.png?url';
-import SeiLogo from '@/assets/logos/sei.png?url';
 import HelsinkiLogo from '@/assets/logos/helsinki.png?url';
 import InterregLogo from '@/assets/logos/interreg.png?url';
+import SeiLogo from '@/assets/logos/sei.png?url';
+import TallinnLogo from '@/assets/logos/tallinn.png?url';
 import AppFooter from '@/components/AppFooter';
 import AppHeader from '@/components/AppHeader';
 import AppMain from '@/components/AppMain';
