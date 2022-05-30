@@ -1,0 +1,14 @@
+.category-list {
+  @apply flex;
+  @apply list-none;
+  @apply text-left;
+
+  .category + .category {
+    &::before {
+      @apply mr-2;
+
+      content: ',';
+      display: inline-block;
+    }
+  }
+}
