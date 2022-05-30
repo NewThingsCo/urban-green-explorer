@@ -28,7 +28,7 @@ export default defineComponent({
               <img class="h-1/2" src={EULogo} />
               <img class="h-1/2" src={InterregLogo} />
             </div>
-            <span class="text-sm text-gray-400">© 2022 B.Green project</span>
+            <p class="copyright">&copy; 2022 B.Green project</p>
           </div>
         </AppMain>
         <AppFooter />

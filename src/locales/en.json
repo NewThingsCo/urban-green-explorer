@@ -8,6 +8,7 @@
     "block": "Block",
     "meetingPoint": "Meeting point",
     "park": "Park",
+    "title": "Kategoria",
     "tramStop": "Tram stop"
   },
   "checkInButton": "Check-in",
@@ -57,25 +58,25 @@
   "language": "English",
   "localeSwitcher": "Language menu",
   "locations": {
-    "aurora": {
+    "auroraBlock": {
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
       "title": "Aurora Block"
+    },
+    "greenTramStop": {
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
+      "title": "Green Tramp Stop"
     },
     "greenUrbanMapping": {
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
       "title": "Green Urban Mapping"
     },
-    "loviseholm": {
+    "loviseholmPark": {
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
       "title": "Loviseholm Park"
     },
     "parkly": {
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
       "title": "Start at Parkly"
-    },
-    "tram": {
-      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
-      "title": "Green Tramp Stop"
     }
   },
   "locationsTitle": "Locations",

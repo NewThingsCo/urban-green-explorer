@@ -5,6 +5,12 @@
   @apply md:h-[35vh];
   @apply h-[50vh];
 
+  .copyright {
+    @apply text-gray-400;
+    @apply mt-8;
+    @apply text-center;
+  }
+
   .logos {
     @apply content-center;
     @apply gap-4;

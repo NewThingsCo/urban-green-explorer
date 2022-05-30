@@ -1,20 +1,20 @@
 import type { VNode } from 'vue';
-import { defineComponent, computed } from 'vue';
+import { computed, defineComponent } from 'vue';
 import { useRoute } from 'vue-router';
 import { handleMapLink } from './handleMapLink';
 import MapMarkerAltIcon from '@/assets/icons/map-marker-alt.svg?raw';
-import { locations } from '@/content/locations';
-import AppHeader from '@/components/AppHeader';
 import AppFooter from '@/components/AppFooter';
+import AppHeader from '@/components/AppHeader';
 import AppMain from '@/components/AppMain';
-import './MapPage.css';
+import { locations } from '@/content/locations';
 import 'leaflet.locatecontrol';
+import './MapPage.css';
 
 export default defineComponent({
   name: 'MapPage',
   setup() {
     const route = useRoute();
-    const slug = computed(() => route.params.id);
+    const slug = computed(() => route.params?.id || null);
     return { slug };
   },
   beforeUnmount() {
@@ -78,22 +78,6 @@ export default defineComponent({
 
       // POPUPS
       switch (this.slug) {
-        case 'parkly':
-          this.$leaflet
-            .popup()
-            .setLatLng([
-              locations[0].coordinates.lat,
-              locations[0].coordinates.lng,
-            ])
-            .setContent(
-              `<div class="flex flex-col items-center"><h2 class="text-sm">${this.$t(
-                locations[0].title
-              )}</h2><a class="router-link" href="/location/${
-                locations[0].slug
-              }"}>${this.$t('moreInfo')}</a></div>`
-            )
-            .openOn(map);
-          break;
         case 'aurora-block':
           this.$leaflet
             .popup()
@@ -106,38 +90,6 @@ export default defineComponent({
                 locations[1].title
               )}</h2><a class="router-link" href="/location/${
                 locations[1].slug
-              }"}>${this.$t('moreInfo')}</a></div>`
-            )
-            .openOn(map);
-          break;
-        case 'loviseholm-park':
-          this.$leaflet
-            .popup()
-            .setLatLng([
-              locations[2].coordinates.lat,
-              locations[2].coordinates.lng,
-            ])
-            .setContent(
-              `<div class="flex flex-col items-center"><h2 class="text-sm">${this.$t(
-                locations[2].title
-              )}</h2><a class="router-link" href="/location/${
-                locations[2].slug
-              }"}>${this.$t('moreInfo')}</a></div>`
-            )
-            .openOn(map);
-          break;
-        case 'green-urban-mapping':
-          this.$leaflet
-            .popup()
-            .setLatLng([
-              locations[3].coordinates.lat,
-              locations[3].coordinates.lng,
-            ])
-            .setContent(
-              `<div class="flex flex-col items-center"><h2 class="text-sm">${this.$t(
-                locations[3].title
-              )}</h2><a class="router-link" href="/location/${
-                locations[3].slug
               }"}>${this.$t('moreInfo')}</a></div>`
             )
             .openOn(map);
@@ -158,8 +110,56 @@ export default defineComponent({
             )
             .openOn(map);
           break;
+        case 'green-urban-mapping':
+          this.$leaflet
+            .popup()
+            .setLatLng([
+              locations[3].coordinates.lat,
+              locations[3].coordinates.lng,
+            ])
+            .setContent(
+              `<div class="flex flex-col items-center"><h2 class="text-sm">${this.$t(
+                locations[3].title
+              )}</h2><a class="router-link" href="/location/${
+                locations[3].slug
+              }"}>${this.$t('moreInfo')}</a></div>`
+            )
+            .openOn(map);
+          break;
+        case 'loviseholm-park':
+          this.$leaflet
+            .popup()
+            .setLatLng([
+              locations[2].coordinates.lat,
+              locations[2].coordinates.lng,
+            ])
+            .setContent(
+              `<div class="flex flex-col items-center"><h2 class="text-sm">${this.$t(
+                locations[2].title
+              )}</h2><a class="router-link" href="/location/${
+                locations[2].slug
+              }"}>${this.$t('moreInfo')}</a></div>`
+            )
+            .openOn(map);
+          break;
+        case 'parkly':
+          this.$leaflet
+            .popup()
+            .setLatLng([
+              locations[0].coordinates.lat,
+              locations[0].coordinates.lng,
+            ])
+            .setContent(
+              `<div class="flex flex-col items-center"><h2 class="text-sm">${this.$t(
+                locations[0].title
+              )}</h2><a class="router-link" href="/location/${
+                locations[0].slug
+              }"}>${this.$t('moreInfo')}</a></div>`
+            )
+            .openOn(map);
+          break;
         default:
-          console.warn('Unhandled popup case:', this.slug);
+          console.log('No pre-determined location detected.');
       }
     } catch (error) {
       console.error(error);

@@ -1,7 +1,4 @@
 .app-main {
-  @apply h-screen;
-  @apply overflow-auto;
-  @apply h-1/2;
   @apply bg-white;
 
   .links {
@@ -18,8 +15,4 @@
     @apply heading-1;
     @apply mb-6;
   }
-}
-
-.main-wrapper {
-  @apply text-center;
 }

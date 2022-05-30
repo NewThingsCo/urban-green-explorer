@@ -35,6 +35,7 @@ interface Location {
   categories: CategoryKey[];
   coordinates: Coordinates;
   description: string;
+  image: string;
   minDistance: number;
   slug: string;
   title: string;
@@ -44,7 +45,6 @@ export {
   Category,
   CheckIn,
   Locale,
-  location,
   Locales,
   LocaleCode,
   Location,
