@@ -4,8 +4,7 @@
   @apply bottom-0;
   @apply fixed;
   @apply mx-auto;
-  @apply px-10;
-  @apply pt-4 pb-5;
+  @apply py-4;
   @apply shadow-gray-500/50 shadow-xl;
   @apply text-center;
   @apply w-full;
