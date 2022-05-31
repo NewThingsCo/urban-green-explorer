@@ -198,6 +198,7 @@
       "semi": "off",
       "vue/multi-word-component-names": "off",
       "vue/order-in-components": "error",
+      "vue/no-reserved-component-names": "off",
       "yoda": [
         "error",
         "always"
