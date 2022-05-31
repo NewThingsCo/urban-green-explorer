@@ -1,17 +1,12 @@
 .app-main {
   @apply bg-white;
+  @apply min-h-full;
+  @apply pb-40;
+  @apply pt-20;
+  @apply px-2;
+  @apply text-black;
 
-  .links {
-    @apply mt-3;
-
-    .link + .link {
-      @apply border-solid border-l-1 border-light-900;
-      @apply ml-3;
-      @apply pl-3;
-    }
-  }
-
-  .title {
+  .page-title {
     @apply heading-1;
     @apply mb-6;
   }
