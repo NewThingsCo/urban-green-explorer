@@ -1,29 +1,41 @@
 .navigation {
   @apply capitalize;
-  @apply flex flex-row;
-  @apply justify-around;
-  @apply lg:w-1/2;
-  @apply xl:w-1/3;
+  @apply flex flex-row justify-between;
   @apply m-auto;
+  @apply max-w-45rem;
+  @apply w-full;
 
   .icon {
     @apply fill-current;
-    @apply m-auto;
+    @apply mx-auto;
+    @apply mb-2;
     @apply h-7;
     @apply w-7;
   }
 
+  .link-text {
+    @apply w-min;
+
+    &::after {
+      @apply block;
+      @apply border-transparent;
+      @apply border-top-2;
+      @apply mt-2;
+      @apply w-full;
+
+      content: '';
+    }
+  }
+
   .router-link {
-    @apply flex flex-col;
-    @apply border-transparent;
-    @apply border-bottom-2;
-    @apply md:mx-20;
-    @apply max-w-[8vh];
+    @apply flex flex-col items-center;
     @apply w-full;
   }
 
   .router-link-active {
-    @apply border-blue-900;
-    @apply text-blue-900;
+    .link-text::after {
+      @apply border-blue-900;
+      @apply text-blue-900;
+    }
   }
 }
