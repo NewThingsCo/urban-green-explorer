@@ -13,7 +13,8 @@ export default defineConfig({
   plugins: [AspectRatio, Forms, Filters, LineClamp, DaisyUI],
   shortcuts: {
     'heading-1': 'font-bold opacity-80 text-size-3xl',
-    'text-primary-color': 'text-green-500',
+    'text-primary': 'text-green-500',
+    'text-secondary': 'text-blue-800',
   },
   theme: {
     extend: {
