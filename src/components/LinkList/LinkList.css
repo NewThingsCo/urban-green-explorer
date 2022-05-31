@@ -1,0 +1,38 @@
+.link-list {
+  @apply flex flex-col gap-4;
+  @apply list-none;
+  @apply mt-4;
+
+  .icon-left {
+    @apply mr-2;
+    @apply w-10;
+    @apply h-10;
+  }
+
+  .icon-right {
+    @apply w-6;
+    @apply h-6;
+  }
+
+  .item {
+    + .item {
+      @apply border-t-2 border-gray-200;
+      @apply pt-4;
+    }
+  }
+
+  .link {
+    @apply flex items-center gap-4 justify-between;
+    @apply focus:text-primary hover:text-primary;
+    @apply no-underline;
+    @apply text-inherit;
+
+    * {
+      pointer-events: none;
+    }
+  }
+
+  .title {
+    @apply flex-1;
+  }
+}
