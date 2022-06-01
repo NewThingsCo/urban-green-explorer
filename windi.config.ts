@@ -7,6 +7,9 @@ import DaisyUI from 'daisyui';
 
 export default defineConfig({
   darkMode: 'class',
+  daisyui: {
+    themes: false,
+  },
   extract: {
     include: ['index.html', 'src/**/*.{html,css,tsx}'],
   },
