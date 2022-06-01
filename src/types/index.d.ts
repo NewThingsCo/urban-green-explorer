@@ -1,4 +1,5 @@
-import { locations } from '@/content/locations';
+import type { LocationAsRelativeRaw, RouteLocationRaw } from 'vue-router';
+import type { FunctionalComponent, SVGAttributes } from 'vue';
 import { LOCALE_CODES } from '@/constants';
 import en from '@/locales/en.json';
 
@@ -31,10 +32,23 @@ type CategoryKey = keyof Translations['category'];
 
 type TranslationKey = keyof Translations;
 
+type LocationIcon = FunctionalComponent<SVGAttributes>;
+
+type LocationLinkType = 'external' | 'panel' | 'router-link';
+
+interface LocationLink {
+  iconLeft: LocationIcon | null;
+  iconRight: LocationIcon | null;
+  title: TranslationKey;
+  to: LocationAsRelativeRaw;
+  type: LocationLinkType;
+}
+
 interface Location {
   categories: CategoryKey[];
   coordinates: Coordinates;
   description: string;
+  links: LocationLink[];
   image: string;
   minDistance: number;
   slug: string;
@@ -45,8 +59,10 @@ export {
   Category,
   CheckIn,
   Locale,
-  Locales,
   LocaleCode,
+  Locales,
   Location,
+  LocationLink,
+  LocationLinkPanel,
   Translations,
 };

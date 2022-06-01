@@ -3,12 +3,16 @@
   @apply list-none;
   @apply text-left;
 
-  .category + .category {
-    &::before {
-      @apply mr-2;
+  .category {
+    @apply text-gray-400;
 
-      content: ',';
-      display: inline-block;
+    + .category {
+      &::before {
+        @apply mr-2;
+
+        content: ',';
+        display: inline-block;
+      }
     }
   }
 }

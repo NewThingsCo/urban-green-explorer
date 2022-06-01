@@ -3,7 +3,7 @@ import type { RouteRecordRaw } from 'vue-router';
 const routes: RouteRecordRaw[] = [
   {
     component: async () => await import('../pages/IndexPage'),
-    name: 'home',
+    name: 'index',
     path: '/',
   },
   {
@@ -19,6 +19,11 @@ const routes: RouteRecordRaw[] = [
   {
     component: async () => await import('../pages/MapPage'),
     name: 'map',
+    path: '/map',
+  },
+  {
+    component: async () => await import('../pages/MapPage'),
+    name: 'mapWithPopup',
     path: '/map/:id',
   },
   {

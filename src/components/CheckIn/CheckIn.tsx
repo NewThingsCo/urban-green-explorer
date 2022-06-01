@@ -63,7 +63,7 @@ export default defineComponent({
     const isModalVisible = ref(false);
 
     /** ID of the current location. */
-    const locationSlug = router.currentRoute.value.name?.toString() || '';
+    const locationSlug = router.currentRoute.value.params.id?.toString() || '';
 
     /** Existing check-in for the current location.*/
     const existingCheckIn: Ref<CheckIn | null> = ref(
@@ -74,6 +74,8 @@ export default defineComponent({
     const location = locations.find(
       (location) => location.slug === locationSlug
     ) as Location;
+
+    if (!location) console.error('Location missing for slug:', locationSlug);
 
     /** Location index used to determine next location. */
     const locationIndex = locations.findIndex(
@@ -140,6 +142,7 @@ export default defineComponent({
         ) as CheckIn[]
       )
         // Format dates
+        .filter((checkIn) => Boolean(checkIn))
         .map((checkIn) => ({ ...checkIn, visited: new Date(checkIn.visited) }));
       console.debug('Existing check-ins:', checkIns);
       return checkIns;
@@ -269,7 +272,7 @@ export default defineComponent({
     /** Cached render of the `disabled` label. */
     const labelDisabled: VNode = (
       <i18n-t keypath="checkInLabel.disabled.label" scope="global">
-        <RouterLink to={{ name: 'map', params: { slug: locationSlug } }}>
+        <RouterLink to={{ name: 'mapWithPopup', params: { id: locationSlug } }}>
           {t('checkInLabel.disabled.linkText')}
         </RouterLink>
       </i18n-t>
@@ -311,10 +314,7 @@ export default defineComponent({
           </time>
         </em>
         <RouterLink
-          to={{
-            name: 'map',
-            params: { id: nextLocation?.slug || '' },
-          }}
+          to={{ name: 'mapWithPopup', params: { id: nextLocation?.slug } }}
         >
           {t('checkInLabel.visited.linkText')}
         </RouterLink>

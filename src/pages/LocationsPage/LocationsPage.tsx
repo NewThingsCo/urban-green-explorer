@@ -15,84 +15,49 @@ export default defineComponent({
     return (
       <>
         <AppHeader />
-        <AppMain class="main-wrapper">
-          <div class="main-locations">
-            <h1 class="title">{this.$t('locationsTitle')}</h1>
-            <ul class="text-left items-center flex flex-col">
-              {locations.map((location, index) => (
-                <li class="list">
-                  <a
-                    class="cursor-pointer mr-3"
-                    href={`/location/${location.slug}`}
-                  >
-                    {(() => {
-                      switch (location.slug) {
-                        case 'parkly':
-                          return (
-                            <img
-                              src={location.image}
-                              alt={this.$t('locations.parkly.title')}
-                              class="object-fill h-21 w-43"
-                            />
-                          );
-                        case 'aurora-block':
-                          return (
-                            <img
-                              src={location.image}
-                              alt={this.$t('locations.auroraBlock.title')}
-                              class="object-fill h-21 w-43"
-                            />
-                          );
-                        case 'loviseholm-park':
-                          return (
-                            <img
-                              src={location.image}
-                              alt={this.$t('locations.loviseholm.title')}
-                              class="object-fill h-21 w-43"
-                            />
-                          );
-                        case 'green-urban-mapping':
-                          return (
-                            <img
-                              src={location.image}
-                              alt={this.$t('locations.greenUrbanMapping.title')}
-                              class="object-fill h-21 w-43"
-                            />
-                          );
-                        case 'green-tram-stop':
-                          return (
-                            <img
-                              src={location.image}
-                              alt={this.$t('locations.tram.title')}
-                              class="object-fill h-21 w-43"
-                            />
-                          );
-                        default:
-                          return null;
-                      }
-                    })()}
-                  </a>
-                  <div class="flex flex-col w-full">
-                    <h2 class="text-black">
-                      {index + 1}. {this.$t(location.title)}
-                    </h2>
-                    <CategoryList categories={location.categories} />
+        <AppMain>
+          <h1 class="page-title">{this.$t('locationsTitle')}</h1>
+          <ul class="location-list">
+            {locations.map((location, index) => (
+              <li class="location">
+                <RouterLink
+                  class="image-link"
+                  to={{ name: 'location', params: { id: location.slug } }}
+                >
+                  <img
+                    alt={this.$t(location.title)}
+                    class="image"
+                    src={location.image}
+                  />
+                </RouterLink>
+                <div class="content">
+                  <h2 class="title">
                     <RouterLink
-                      to={{ name: 'map', params: { id: location.slug } }}
-                      class="show-map"
+                      class="title-link"
+                      to={{ name: 'location', params: { id: location.slug } }}
                     >
-                      {this.$t('showOnMap')}
+                      {index + 1}. {this.$t(location.title)}
                     </RouterLink>
-                  </div>
+                  </h2>
+                  <CategoryList categories={location.categories} />
                   <RouterLink
-                    to={{ name: 'map', params: { id: location.slug } }}
+                    class="map-link"
+                    to={{
+                      name: 'mapWithPopup',
+                      params: { id: location.slug },
+                    }}
                   >
-                    <MapMarkerAlt class="icon" />
+                    {this.$t('showOnMap')}
                   </RouterLink>
-                </li>
-              ))}
-            </ul>
-          </div>
+                </div>
+                <RouterLink
+                  to={{ name: 'mapWithPopup', params: { id: location.slug } }}
+                >
+                  <MapMarkerAlt class="icon" />
+                </RouterLink>
+              </li>
+            ))}
+          </ul>
         </AppMain>
         <AppFooter />
       </>
