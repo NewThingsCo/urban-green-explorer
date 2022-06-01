@@ -33,9 +33,10 @@
   }
 
   .router-link-active {
+    @apply text-blue-900;
+
     .link-text::after {
       @apply border-blue-900;
-      @apply text-blue-900;
     }
   }
 }
