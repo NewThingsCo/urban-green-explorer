@@ -17,19 +17,17 @@ export default defineComponent({
     return (
       <>
         <AppHeader />
-        <AppMain class="main-wrapper">
+        <AppMain>
           <Hero />
-          <div class="index-wrapper">
-            <div class="logos">
-              <img class="h-1/2" src={SeiLogo} />
-              <img class="h-1/2" src={TallinnLogo} />
-              <img class="h-1/2" src={BGLogo} />
-              <img class="h-1/2" src={HelsinkiLogo} />
-              <img class="h-1/2" src={EULogo} />
-              <img class="h-1/2" src={InterregLogo} />
-            </div>
-            <p class="copyright">&copy; 2022 B.Green project</p>
+          <div class="logos">
+            <img class="logo" src={SeiLogo} />
+            <img class="logo" src={TallinnLogo} />
+            <img class="logo" src={BGLogo} />
+            <img class="logo" src={HelsinkiLogo} />
+            <img class="logo" src={EULogo} />
+            <img class="logo" src={InterregLogo} />
           </div>
+          <p class="copyright">&copy; 2022 B.Green project</p>
         </AppMain>
         <AppFooter />
       </>
