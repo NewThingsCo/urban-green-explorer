@@ -1,15 +1,12 @@
 .map {
-  @apply absolute;
-  @apply bottom-0;
-  @apply h-full;
-  @apply m-auto;
-  @apply left-0;
-  @apply right-0;
-  @apply top-50;
-  @apply w-full;
-  @apply z-10;
-}
+  @apply fixed;
+  @apply inset-0;
 
-.leaflet-popup {
-  @apply mb-14.5;
+  .leaflet-popup {
+    @apply mb-14.5;
+  }
+
+  .leaflet-top {
+    top: 5rem;
+  }
 }
