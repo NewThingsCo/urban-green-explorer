@@ -33,7 +33,7 @@ export default defineComponent({
         <AppHeader />
         <AppMain>
           {this.title && (
-            <div class="container">
+            <div class="main-wrapper">
               <h1 class="page-title">{this.title}</h1>
             </div>
           )}
@@ -44,7 +44,7 @@ export default defineComponent({
               src={this.image}
             />
           )}
-          <div class="container">
+          <div class="main-wrapper">
             <CategoryList categories={this.categories} />
             {this.description && (
               <p class="description">{this.$t(this.description)}</p>

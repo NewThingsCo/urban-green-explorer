@@ -8,6 +8,9 @@
   }
 
   .logo {
+    @apply inline-block;
+    @apply text-current;
+
     width: 100%;
   }
 

@@ -9,19 +9,19 @@ import {
   watch,
 } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { RouterLink, useRouter } from 'vue-router';
-import Modal from '@/components/Modal';
-import { locations } from '@/content/locations';
-import Button from '@/components/Button';
+import { RouterLink, useRoute } from 'vue-router';
 import ChevronRight from '@/assets/icons/chevron-right.svg?component';
 import LocateIcon from '@/assets/icons/locate.svg?component';
+import Button from '@/components/Button';
+import Modal from '@/components/Modal';
+import { locations } from '@/content/locations';
 import './CheckIn.css';
 
 export default defineComponent({
   name: 'CheckIn',
   setup() {
     const { d, t } = useI18n();
-    const router = useRouter();
+    const route = useRoute();
 
     /** Adds an additional description to the button. */
     const ariaDescribedby = computed(() =>
@@ -63,7 +63,7 @@ export default defineComponent({
     const isModalVisible = ref(false);
 
     /** ID of the current location. */
-    const locationSlug = router.currentRoute.value.params.id?.toString() || '';
+    const locationSlug = route.params.id?.toString() || '';
 
     /** Existing check-in for the current location.*/
     const existingCheckIn: Ref<CheckIn | null> = ref(
@@ -75,7 +75,9 @@ export default defineComponent({
       (location) => location.slug === locationSlug
     ) as Location;
 
-    if (!location) console.error('Location missing for slug:', locationSlug);
+    if (!location) {
+      console.warn('Location missing for slug:', locationSlug);
+    }
 
     /** Location index used to determine next location. */
     const locationIndex = locations.findIndex(

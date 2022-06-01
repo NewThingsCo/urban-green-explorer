@@ -1,6 +1,4 @@
 :root {
-  --logo-width: 5rem;
-
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 
@@ -34,8 +32,13 @@ a {
   @apply hidden !important;
 }
 
-.logo {
-  @apply inline-block;
-  @apply text-current;
-  @apply w-[var(--logo-width)];
+.main-wrapper {
+  @apply max-w-90vw xl:max-w-60vw;
+  @apply mx-auto;
+  @apply w-full;
+}
+
+.page-title {
+  @apply heading-1;
+  @apply my-6 md:my-8;
 }

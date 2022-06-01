@@ -1,5 +1,5 @@
-import type { LocationAsRelativeRaw, RouteLocationRaw } from 'vue-router';
 import type { FunctionalComponent, SVGAttributes } from 'vue';
+import type { LocationAsRelativeRaw } from 'vue-router';
 import { LOCALE_CODES } from '@/constants';
 import en from '@/locales/en.json';
 

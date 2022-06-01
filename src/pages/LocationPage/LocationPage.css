@@ -3,15 +3,10 @@
     @apply my-4;
   }
 
-  .container {
-    @apply max-w-90vw xl:max-w-60vw;
-    @apply mx-auto;
-    @apply w-full;
-  }
-
   .image {
     @apply object-cover;
     @apply h-full;
+    @apply max-h-35vh;
     @apply w-full;
   }
 }

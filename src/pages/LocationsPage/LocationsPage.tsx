@@ -15,7 +15,7 @@ export default defineComponent({
     return (
       <>
         <AppHeader />
-        <AppMain>
+        <AppMain class="main-wrapper">
           <h1 class="page-title">{this.$t('locationsTitle')}</h1>
           <ul class="location-list">
             {locations.map((location, index) => (
