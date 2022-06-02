@@ -16,8 +16,10 @@ export default defineComponent({
       <>
         <AppHeader />
         <AppMain class="main-wrapper">
-          <h1 class="page-title">{this.$t('locationsTitle')}</h1>
-          <ul class="location-list">
+          <h1 class="page-title" id="page-title">
+            {this.$t('locationsTitle')}
+          </h1>
+          <ul aria-label={this.$t('locationList')} class="location-list">
             {locations.map((location, index) => (
               <li class="location">
                 <RouterLink

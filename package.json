@@ -39,6 +39,7 @@
         2,
         "always",
         [
+          "A11y",
           "Assets",
           "Build",
           "Chore",
