@@ -1,21 +1,16 @@
 .main-locations {
+  @apply pb-34;
+
   .location {
     @apply rounded-xl shadow-md shadow-gray-200;
     @apply flex;
     @apply p-3;
     @apply w-full;
 
-    + .location {
-      @apply mt-7;
-    }
-  }
-
-  .location-list {
-    @apply flex flex-col;
-
     .icon {
       @apply flex;
       @apply h-10;
+      @apply ml-4;
       @apply mt-3;
       @apply text-black;
       @apply w-10;
@@ -23,7 +18,7 @@
 
     .category {
       @apply text-gray-500;
-      @apply text-sm;
+      @apply text-xs sm:text-sm;
     }
 
     .content {
@@ -40,16 +35,27 @@
     }
 
     .title {
-      @apply text-black;
       @apply font-semibold;
-      @apply text-xl;
+      @apply text-sm sm:text-xl;
+
+      overflow: hidden;
+      white-space: no-wrap;
+      text-overflow: ellipsis;
     }
+
+    + .location {
+      @apply mt-7;
+    }
+  }
+
+  .location-list {
+    @apply flex flex-col;
   }
 
   .map-link {
     @apply mt-2;
     @apply text-secondary;
-    @apply text-sm;
+    @apply text-xs sm:text-sm;
   }
 
   .title-link {
