@@ -1,14 +1,11 @@
 {
-  "about": {
-    "title": "About (en)"
-  },
   "back": "Back",
   "categories": "Categories",
   "category": {
     "block": "Block",
     "meetingPoint": "Meeting point",
     "park": "Park",
-    "title": "Kategoria",
+    "title": "Category",
     "tramStop": "Tram stop"
   },
   "checkInButton": "Check-in",
@@ -51,6 +48,9 @@
   "downloadIosApp": "Download iOS application",
   "enableGeolocation": "Enable location from your browser",
   "homePath": "/",
+  "info": {
+    "title": "Info"
+  },
   "introduction": {
     "bodyText": "Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.",
     "getStarted": "Get started",
@@ -63,22 +63,27 @@
   "locations": {
     "auroraBlock": {
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
+      "subtitle": "Lorem ipsum dolor sit amet",
       "title": "Aurora Block"
     },
     "greenTramStop": {
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
+      "subtitle": "Lorem ipsum dolor sit amet",
       "title": "Green Tramp Stop"
     },
     "greenUrbanMapping": {
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
+      "subtitle": "Lorem ipsum dolor sit amet",
       "title": "Green Urban Mapping"
     },
     "loviseholmPark": {
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
+      "subtitle": "Lorem ipsum dolor sit amet",
       "title": "Loviseholm Park"
     },
     "parkly": {
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
+      "subtitle": "Temporary Green Street Furniture",
       "title": "Start at Parkly"
     }
   },
@@ -87,7 +92,7 @@
   "moreInfo": "More info",
   "short": "Short",
   "showOnMap": "Show on map",
-  "title": "Urban Green Explorer (en)",
+  "title": "Urban Green Explorer",
   "today": "Today",
   "viteDocs": {
     "href": "https://vitejs.dev/",

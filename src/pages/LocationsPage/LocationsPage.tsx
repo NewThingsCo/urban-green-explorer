@@ -41,6 +41,9 @@ export default defineComponent({
                     />
                   </h2>
                   <CategoryList categories={location.categories} />
+                  {location.subtitle && (
+                    <h3 class="subtitle">{this.$t(location.subtitle)}</h3>
+                  )}
                   <RouterLink
                     class="map-link"
                     to={{

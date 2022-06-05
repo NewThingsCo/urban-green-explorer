@@ -52,6 +52,7 @@ interface Location {
   image: string;
   minDistance: number;
   slug: string;
+  subtitle: string;
   title: string;
 }
 

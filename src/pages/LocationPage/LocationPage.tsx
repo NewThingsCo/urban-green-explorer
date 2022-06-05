@@ -12,7 +12,7 @@ import { locations } from '@/content/locations';
 import './LocationPage.css';
 
 export default defineComponent({
-  name: 'Location',
+  name: 'LocationPage',
   setup() {
     const route = useRoute();
     const { t } = useI18n();
@@ -24,8 +24,11 @@ export default defineComponent({
     );
     const links = computed(() => location?.links || []);
     const image = computed(() => location?.image || null);
+    const subtitle = computed(() =>
+      location?.subtitle ? t(location.subtitle) : null
+    );
     const title = computed(() => (location?.title ? t(location.title) : null));
-    return { categories, description, image, links, location, title };
+    return { categories, description, image, links, location, subtitle, title };
   },
   render(): VNode {
     return (
@@ -46,6 +49,7 @@ export default defineComponent({
           )}
           <div class="main-wrapper">
             <CategoryList categories={this.categories} />
+            {this.subtitle && <h2 class="page-subtitle">{this.subtitle}</h2>}
             {this.description && (
               <p class="description">{this.$t(this.description)}</p>
             )}

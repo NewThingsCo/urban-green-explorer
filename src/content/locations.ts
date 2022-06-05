@@ -27,6 +27,7 @@ export const locations: Location[] = [
     image: ParklyImage,
     minDistance: 0.2,
     slug: 'parkly',
+    subtitle: 'locations.parkly.subtitle',
     title: 'locations.parkly.title',
   },
   {
@@ -45,6 +46,7 @@ export const locations: Location[] = [
     ],
     minDistance: 0.2,
     slug: 'aurora-block',
+    subtitle: 'locations.auroraBlock.subtitle',
     title: 'locations.auroraBlock.title',
   },
   {
@@ -63,6 +65,7 @@ export const locations: Location[] = [
     ],
     minDistance: 0.2,
     slug: 'green-urban-mapping',
+    subtitle: 'locations.greenUrbanMapping.subtitle',
     title: 'locations.greenUrbanMapping.title',
   },
   {
@@ -102,6 +105,7 @@ export const locations: Location[] = [
     ],
     minDistance: 0.2,
     slug: 'loviseholm-park',
+    subtitle: 'locations.loviseholmPark.subtitle',
     title: 'locations.loviseholmPark.title',
   },
   {
@@ -120,6 +124,7 @@ export const locations: Location[] = [
     image: GreenTramStopImage,
     minDistance: 0.2,
     slug: 'green-tram-stop',
+    subtitle: 'locations.greenTramStop.subtitle',
     title: 'locations.greenTramStop.title',
   },
 ];

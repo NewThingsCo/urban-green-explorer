@@ -9,4 +9,10 @@
     @apply max-h-35vh;
     @apply w-full;
   }
+
+  .page-subtitle {
+    @apply font-semi-bold;
+    @apply text-md;
+    @apply mb-4;
+  }
 }
