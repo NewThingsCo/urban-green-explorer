@@ -48,6 +48,7 @@
   "currency": "Valuutta",
   "currencyWithoutCents": "Valuutta ilman senttejä",
   "dateTimes": "Ajat ja päivämäärät",
+  "downloadIosApp": "Lataa iOS-sovellus",
   "enableGeolocation": "Ota sijainti käyttöön selaimesta",
   "homePath": "/",
   "introduction": {

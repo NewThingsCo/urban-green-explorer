@@ -10,6 +10,7 @@ export default defineComponent({
       default: () => [],
       type: Array as PropType<LocationLink[]>,
     },
+    /** @todo Implement panel logic */
     showPanel: {
       default: (event: MouseEvent): void => {
         event.preventDefault();
@@ -35,6 +36,20 @@ export default defineComponent({
               }) => {
                 switch (type) {
                   case 'external':
+                    return (
+                      <li class="item">
+                        <a
+                          class="link"
+                          href={to.name?.toString()}
+                          rel="external"
+                          target="_blank"
+                        >
+                          {IconLeft && <IconLeft class="icon icon-left" />}
+                          <span class="title">{this.$t(title)}</span>
+                          {IconRight && <IconRight class="icon icon-right" />}
+                        </a>
+                      </li>
+                    );
                   case 'router-link':
                     return (
                       <li class="item">

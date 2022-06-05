@@ -2,8 +2,8 @@ import type { VNode } from 'vue';
 import { computed, defineComponent } from 'vue';
 import { RouterLink, useRoute } from 'vue-router';
 import LocaleSwitcher from '../LocaleSwitcher';
-import ChevronLeft from '@/assets/icons/chevron-left.svg?component';
 import BGreenLogo from '@/assets/logos/BGreen.png?url';
+import ChevronLeft from '@/assets/icons/chevron-left.svg?component';
 import './AppHeader.css';
 
 export default defineComponent({

@@ -48,6 +48,7 @@
   "currency": "Currency",
   "currencyWithoutCents": "Currency without cents",
   "dateTimes": "Dates and times",
+  "downloadIosApp": "Download iOS application",
   "enableGeolocation": "Enable location from your browser",
   "homePath": "/",
   "introduction": {

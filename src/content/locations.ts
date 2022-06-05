@@ -1,9 +1,11 @@
 import { Location } from '../types';
+import ArrowUpRight from '@/assets/icons/arrow-up-right-from-square-solid.svg?component';
+import ChevronRight from '@/assets/icons/chevron-right.svg?component';
+import CloudDownload from '@/assets/icons/cloud-arrow-down-solid.svg?component';
+import MapMarkedAlt from '@/assets/icons/map-marked-alt.svg?component';
 import AuroraBlockImage from '@/assets/images/AuroraBlock.jpg?url';
 import GreenTramStopImage from '@/assets/images/GreenTramStop.jpg?url';
 import GreenUrbanMappingImage from '@/assets/images/GreenUrbanMapping.jpg?url';
-import ChevronRight from '@/assets/icons/chevron-right.svg?component';
-import MapMarkedAlt from '@/assets/icons/map-marked-alt.svg?component';
 import LoviseholmParkImage from '@/assets/images/LoviseholmPark.jpg?url';
 import ParklyImage from '@/assets/images/Parkly.jpg?url';
 
@@ -74,6 +76,15 @@ export const locations: Location[] = [
         title: 'showOnMap',
         to: { name: 'mapWithPopup', params: { id: 'loviseholm-park' } },
         type: 'router-link',
+      },
+      {
+        iconLeft: CloudDownload,
+        iconRight: ArrowUpRight,
+        title: 'downloadIosApp',
+        to: {
+          name: 'https://apps.apple.com/fi/app/green-kalasatama/id1573262748',
+        },
+        type: 'external',
       },
     ],
     minDistance: 0.2,
