@@ -2,6 +2,7 @@ import { Location } from '../types';
 import ArrowUpRight from '@/assets/icons/arrow-up-right-from-square-solid.svg?component';
 import ChevronRight from '@/assets/icons/chevron-right.svg?component';
 import CloudDownload from '@/assets/icons/cloud-arrow-down-solid.svg?component';
+import MoreInfo from '@/assets/icons/book-open-reader-solid.svg?component';
 import MapMarkedAlt from '@/assets/icons/map-marked-alt.svg?component';
 import AuroraBlockImage from '@/assets/images/AuroraBlock.jpg?url';
 import GreenTramStopImage from '@/assets/images/GreenTramStop.jpg?url';
@@ -70,6 +71,18 @@ export const locations: Location[] = [
     description: 'locations.loviseholmPark.description',
     image: LoviseholmParkImage,
     links: [
+      {
+        iconLeft: MoreInfo,
+        iconRight: ChevronRight,
+        title: 'moreInfo',
+        to: {
+          name: '#',
+          params: {
+            id: 'more-info',
+          },
+        },
+        type: 'panel',
+      },
       {
         iconLeft: MapMarkedAlt,
         iconRight: ChevronRight,

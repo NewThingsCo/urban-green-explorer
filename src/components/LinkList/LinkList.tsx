@@ -50,16 +50,6 @@ export default defineComponent({
                         </a>
                       </li>
                     );
-                  case 'router-link':
-                    return (
-                      <li class="item">
-                        <RouterLink class="link" to={to}>
-                          {IconLeft && <IconLeft class="icon icon-left" />}
-                          <span class="title">{this.$t(title)}</span>
-                          {IconRight && <IconRight class="icon icon-right" />}
-                        </RouterLink>
-                      </li>
-                    );
                   /** @todo */
                   case 'panel':
                     return (
@@ -71,9 +61,19 @@ export default defineComponent({
                           onClick={this.showPanel}
                         >
                           {IconLeft && <IconLeft class="icon icon-left" />}
-                          <span class="link-title">{this.$t(title)}</span>
+                          <span class="title">{this.$t(title)}</span>
                           {IconRight && <IconRight class="icon icon-right" />}
                         </a>
+                      </li>
+                    );
+                  case 'router-link':
+                    return (
+                      <li class="item">
+                        <RouterLink class="link" to={to}>
+                          {IconLeft && <IconLeft class="icon icon-left" />}
+                          <span class="title">{this.$t(title)}</span>
+                          {IconRight && <IconRight class="icon icon-right" />}
+                        </RouterLink>
                       </li>
                     );
                   default:
