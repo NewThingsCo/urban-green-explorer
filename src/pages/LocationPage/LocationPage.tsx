@@ -34,7 +34,7 @@ export default defineComponent({
         <AppMain>
           {this.title && (
             <div class="main-wrapper">
-              <h1 class="page-title">{this.title}</h1>
+              <h1 class="page-title" v-html={this.title} />
             </div>
           )}
           {this.image && (

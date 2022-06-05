@@ -7,13 +7,13 @@
     @apply p-3;
     @apply w-full;
 
-    .icon {
+    .map-icon-link {
       @apply flex;
-      @apply h-10;
+      @apply h-8 md:h-10;
       @apply ml-4;
-      @apply mt-3;
+      @apply mt-2;
       @apply text-black;
-      @apply w-10;
+      @apply w-8 md:w-10;
     }
 
     .category {

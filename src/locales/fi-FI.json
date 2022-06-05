@@ -62,19 +62,19 @@
   "locations": {
     "auroraBlock": {
       "description": "Aurora-korttelin piharatkaisussa hulevesien käsittely on merkittävässä osassa. Tiivistyvässä kaupungissa sadevesien keräämiseen tulee kiinnittää enenevässä määrin huomiota. Hyvillä maisema-arkkitehtonisilla ratkaisuilla voidaan yhdistää tekninen hulevesien käsittely, pihan toiminnallisuus ja esteettinen kokonaisuus. Aurora-korttelissa on myös erityisen paljon kattopuutarhanpinta-alaa. Kortteliin on sijoitettu eri paikoihin kolme samanlaista anturipakettia.",
-      "title": "Aurorakortteli"
+      "title": "Aurora&shy;kortteli"
     },
     "greenTramStop": {
       "description": "Kalasatamaan rakennetaan uusi raitiolinja, joka kulkee Kalastamasta Pasilaan, Kumpulan alueen läpi, ohittaen myös Sompasaaren. B.Green-projektissa konseptoitiin raitiopysäkkikonsepti, jossa pysäkin sijaintiin liittyyviin viheralueisiin voi tutustua nopeasti raitiovaunua odottaessa tai ottaa informaatio mukaan omaan mobiililaitteen ja AR-palvelun yhdistelmällä.",
-      "title": "Vehreä raitiopysäkki"
+      "title": "Vehreä raitio&shy;pysäkki"
     },
     "greenUrbanMapping": {
       "description": "Kaupungin kasvillisuutta kartoitetaan jatkuvasti kaupungin toimesta, mutta koska kaupungin tuntevat parhaiten asuinympäristönsä, on järkevää tuottaa helppokäyttöisiä ja hauskoja kartoitustyökaluja asukkaille, jota kautta voidaan päästä käsiksi tarkempaan ja ajantasaisempaa tietoon, kuin aikaisemmin on ollut olemassa. B.Green-projektissa haimme kartoitustyökaluratkaisuita paikallisilta toimijoilta, joista XD Visuals Oy ja Granlund Oy valikoituivat kokeilemaan ratkaisuita Sompasaaren alueella. Granlundin kartoitusratkaisu perustuu mobiililaitteiden AR-ominaisuuksien hyötykäyttöön ja XD Visualsin ratkaisu perustuu pistepilviaineiston analysointiin. ",
-      "title": "Kaupunkivehreän kartoitus"
+      "title": "Kaupunki&shy;vehreän kartoitus"
     },
     "loviseholmPark": {
       "description": "Loviseholmin puiston puut ja pensaat istutetaan tämän kesän aikana, mutta niiden kasvaminen täysikasvuisiksi kestää helposti vuosikymmeniä. Green Kalasatama AR-appilla voi nähdä miltä puisto näyttää osana ympäristöään tulevaisuudessa. Appilla voi myös istuttaa itse puita tai suunnittella puiden istutusta puistossa yhdessä kaverin kanssa. Tulevaisuuden puistoa visualisoimalla muistutamme käyttäjiä, että kaupunkiekologian kehittymisessä aika on tärkeä komponentti ja hukattu kaupunkivehreän palautuminenkestää vuosikymmeniä.",
-      "title": "Loviseholmin puisto"
+      "title": "Lovise&shy;holmin puisto"
     },
     "parkly": {
       "description": "Parkly kehittää julkisiin tiloihin modulaarisia ja skaalattavia ratkaisuja kaupunkikalusteilla, joissa on helppo nauttia urbaanista ympäristöstä ja kohdata muita kaupunkilaisia. Urbaani luonto ja kaupungin vehreys tuottavat tutkitusti lisää hyvinvointia ja tyytyväisyyttä. Parklyn vihermoduulien pölyttäjäystävälliset kukat, hiiltä sitovat puut ja syötävät kasvit lisäävät kaupunkiluonnon monimuotoisuutta ja mahdollistavat moniaistilliset kokemukset julkisissa tiloissa. //Tähän tulee myös meriveden lämpö Uiras-anturista.",

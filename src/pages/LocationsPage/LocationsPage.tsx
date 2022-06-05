@@ -37,9 +37,8 @@ export default defineComponent({
                     <RouterLink
                       class="title-link"
                       to={{ name: 'location', params: { id: location.slug } }}
-                    >
-                      {index + 1}. {this.$t(location.title)}
-                    </RouterLink>
+                      v-html={`${index + 1}. ${this.$t(location.title)}`}
+                    />
                   </h2>
                   <CategoryList categories={location.categories} />
                   <RouterLink
@@ -53,6 +52,7 @@ export default defineComponent({
                   </RouterLink>
                 </div>
                 <RouterLink
+                  class="map-icon-link"
                   to={{ name: 'mapWithPopup', params: { id: location.slug } }}
                 >
                   <MapMarkerAlt class="icon" />
