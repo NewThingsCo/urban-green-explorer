@@ -1,9 +1,13 @@
-import { defineComponent } from 'vue';
+import { defineComponent, KeepAlive } from 'vue';
 import './App.css';
 
 export default defineComponent({
   name: 'App',
   render() {
-    return <router-view />;
+    return (
+      <KeepAlive>
+        <router-view />
+      </KeepAlive>
+    );
   },
 });
