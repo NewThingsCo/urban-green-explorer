@@ -17,9 +17,14 @@ import { vitePWAOptions } from './config';
  */
 export default defineConfig({
   base: '/',
+  build: {
+    minify: 'esbuild',
+  },
   esbuild: {
+    drop: ['console', 'debugger'],
     jsxFactory: 'h',
     jsxFragment: 'Fragment',
+    minify: true,
   },
   plugins: [
     ESLintPlugin({
