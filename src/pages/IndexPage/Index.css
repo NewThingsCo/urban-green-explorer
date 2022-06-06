@@ -1,17 +1,23 @@
-.index-wrapper {
-  @apply flex;
-  @apply flex-col;
-  @apply p-5;
-  @apply md:h-[35vh];
-  @apply h-[50vh];
+.main-index {
+  @apply px-0;
+
+  .copyright {
+    @apply text-gray-400;
+    @apply mt-8;
+    @apply text-center;
+  }
+
+  .logo {
+    @apply inline-block;
+    @apply text-current;
+
+    width: 100%;
+  }
 
   .logos {
-    @apply content-center;
-    @apply gap-4;
-    @apply grid-flow-col;
-    @apply grid-rows-2;
-    @apply grid;
-    @apply md:grid-rows-1;
-    @apply items-center;
+    @apply grid grid-flow-col grid-rows-2 md:grid-rows-1 gap-8 place-items-center;
+    @apply max-w-60rem;
+    @apply mx-auto;
+    @apply p-6;
   }
 }

@@ -1,46 +1,47 @@
 import type { VNode } from 'vue';
-import { defineComponent } from 'vue';
-import { RouterLink, useRouter } from 'vue-router';
+import { computed, defineComponent } from 'vue';
+import { RouterLink, useRoute } from 'vue-router';
 import LocaleSwitcher from '../LocaleSwitcher';
-import './AppHeader.css';
 import BGreenLogo from '@/assets/logos/BGreen.png?url';
-import { goBack } from '@/router';
-import Button from '@/components/Button';
 import ChevronLeft from '@/assets/icons/chevron-left.svg?component';
+import './AppHeader.css';
 
 export default defineComponent({
   name: 'AppHeader',
   setup() {
-    const router = useRouter();
-    return {
-      router,
-    };
+    const route = useRoute();
+    const headerType = computed(() => {
+      switch (route.name) {
+        case 'mapWithPopup':
+          return route.params.id ? 'back-link' : '';
+        default:
+          return '';
+      }
+    });
+    return { headerType };
   },
   render(): VNode {
-    if ('map' !== this.router.currentRoute.value.name) {
-      return (
-        <header class="app-header">
-          <RouterLink class="home-link" to={{ name: 'home' }}>
-            <img alt="B.Green logo" class="logo" src={BGreenLogo} />
-            <h2 class="title">Urban Green Explorer</h2>
-          </RouterLink>
-          <LocaleSwitcher />
-        </header>
-      );
-    } else {
-      return (
-        <header class="app-header">
-          <Button
-            class="my-5 text-black bg-white border-none font-semibold cursor-pointer hover:bg-white"
-            onClick={goBack}
-            type="submit"
-          >
-            <ChevronLeft class="w-3 h-3 mr-1" />
-            {this.$t('back')}
-          </Button>
-          <LocaleSwitcher />
-        </header>
-      );
+    switch (this.headerType) {
+      case 'back-link':
+        return (
+          <header class="app-header">
+            <RouterLink class="button button-transparent home-link" to="-1">
+              <ChevronLeft class="w-3 h-3 mr-1" />
+              <span class="title">{this.$t('back')}</span>
+            </RouterLink>
+            <LocaleSwitcher />
+          </header>
+        );
+      default:
+        return (
+          <header class="app-header">
+            <RouterLink class="home-link" to={{ name: 'index' }}>
+              <img alt="B.Green logo" class="logo" src={BGreenLogo} />
+              <h2 class="title">Urban Green Explorer</h2>
+            </RouterLink>
+            <LocaleSwitcher />
+          </header>
+        );
     }
   },
 });

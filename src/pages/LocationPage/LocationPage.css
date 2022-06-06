@@ -1,0 +1,18 @@
+.main-location {
+  .category-list {
+    @apply my-4;
+  }
+
+  .image {
+    @apply object-cover;
+    @apply h-full;
+    @apply max-h-35vh;
+    @apply w-full;
+  }
+
+  .page-subtitle {
+    @apply font-semi-bold;
+    @apply text-md;
+    @apply mb-4;
+  }
+}

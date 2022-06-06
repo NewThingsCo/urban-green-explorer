@@ -1,25 +1,8 @@
 .app-main {
-  @apply h-screen;
-  @apply overflow-auto;
-  @apply h-1/2;
   @apply bg-white;
-
-  .links {
-    @apply mt-3;
-
-    .link + .link {
-      @apply border-solid border-l-1 border-light-900;
-      @apply ml-3;
-      @apply pl-3;
-    }
-  }
-
-  .title {
-    @apply heading-1;
-    @apply mb-6;
-  }
-}
-
-.main-wrapper {
-  @apply text-center;
+  @apply min-h-full;
+  @apply pb-16rem;
+  @apply pt-16;
+  @apply px-2;
+  @apply text-black;
 }

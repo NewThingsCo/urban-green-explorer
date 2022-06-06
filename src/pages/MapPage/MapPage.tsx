@@ -1,23 +1,24 @@
 import type { VNode } from 'vue';
-import { defineComponent, computed } from 'vue';
+import { computed, defineComponent } from 'vue';
 import { useRoute } from 'vue-router';
 import { handleMapLink } from './handleMapLink';
 import MapMarkerAltIcon from '@/assets/icons/map-marker-alt.svg?raw';
-import { locations } from '@/content/locations';
-import AppHeader from '@/components/AppHeader';
 import AppFooter from '@/components/AppFooter';
+import AppHeader from '@/components/AppHeader';
 import AppMain from '@/components/AppMain';
-import './MapPage.css';
+import { locations } from '@/content/locations';
 import 'leaflet.locatecontrol';
+import './MapPage.css';
 
 export default defineComponent({
   name: 'MapPage',
   setup() {
     const route = useRoute();
-    const id = computed(() => route.params.id);
-    return {
-      id,
-    };
+    const slug = computed(() => route.params?.id || null);
+    const location = slug.value
+      ? locations.find((l) => l.slug === slug.value)
+      : null;
+    return { location, slug };
   },
   beforeUnmount() {
     Array.from(window.document.querySelectorAll('.router-link')).forEach(
@@ -41,10 +42,10 @@ export default defineComponent({
         .tileLayer('https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png', {
           attribution:
             'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
+          detectRetina: true,
           maxZoom: 30,
           tileSize: 512,
           zoomOffset: -1,
-          detectRetina: true,
         })
         .addTo(map);
 
@@ -62,106 +63,39 @@ export default defineComponent({
         iconAnchor: [12, 40],
       });
 
-      // POPUP ON MARKER CLICK
-      locations.map((location) => {
+      // Location popups
+      locations.map((l) => {
         this.$leaflet
-          .marker([location.coordinates[0], location.coordinates[1]], {
+          .marker([l.coordinates.lat, l.coordinates.lng], {
             icon: markerIcon,
           })
           .bindPopup(
             `<div class="flex flex-col items-center"><h2 class="text-sm">${this.$t(
-              location.title
-            )}</h2><a class="router-link" href="/location/${
-              location.params
-            }"}>${this.$t('moreInfo')}</a></div>`
+              l.title
+            )}</h2><a class="router-link" href="/location/${l.slug}"}>${this.$t(
+              'moreInfo'
+            )}</a></div>`
           )
           .addTo(map);
       });
 
-      // POPUPS
-      switch (this.id) {
-        case 'parkly':
-          this.$leaflet
-            .popup()
-            .setLatLng([
-              locations[0].coordinates[0],
-              locations[0].coordinates[1],
-            ])
-            .setContent(
-              `<div class="flex flex-col items-center"><h2 class="text-sm">${this.$t(
-                locations[0].title
-              )}</h2><a class="router-link" href="/location/${
-                locations[0].params
-              }"}>${this.$t('moreInfo')}</a></div>`
-            )
-            .openOn(map);
-          break;
-        case 'aurora-block':
-          this.$leaflet
-            .popup()
-            .setLatLng([
-              locations[1].coordinates[0],
-              locations[1].coordinates[1],
-            ])
-            .setContent(
-              `<div class="flex flex-col items-center"><h2 class="text-sm">${this.$t(
-                locations[1].title
-              )}</h2><a class="router-link" href="/location/${
-                locations[1].params
-              }"}>${this.$t('moreInfo')}</a></div>`
-            )
-            .openOn(map);
-          break;
-        case 'loviseholm-park':
-          this.$leaflet
-            .popup()
-            .setLatLng([
-              locations[2].coordinates[0],
-              locations[2].coordinates[1],
-            ])
-            .setContent(
-              `<div class="flex flex-col items-center"><h2 class="text-sm">${this.$t(
-                locations[2].title
-              )}</h2><a class="router-link" href="/location/${
-                locations[2].params
-              }"}>${this.$t('moreInfo')}</a></div>`
-            )
-            .openOn(map);
-          break;
-        case 'green-urban-mapping':
-          this.$leaflet
-            .popup()
-            .setLatLng([
-              locations[3].coordinates[0],
-              locations[3].coordinates[1],
-            ])
-            .setContent(
-              `<div class="flex flex-col items-center"><h2 class="text-sm">${this.$t(
-                locations[3].title
-              )}</h2><a class="router-link" href="/location/${
-                locations[3].params
-              }"}>${this.$t('moreInfo')}</a></div>`
-            )
-            .openOn(map);
-          break;
-        case 'green-tram-stop':
-          this.$leaflet
-            .popup()
-            .setLatLng([
-              locations[4].coordinates[0],
-              locations[4].coordinates[1],
-            ])
-            .setContent(
-              `<div class="flex flex-col items-center"><h2 class="text-sm">${this.$t(
-                locations[4].title
-              )}</h2><a class="router-link" href="/location/${
-                locations[4].params
-              }"}>${this.$t('moreInfo')}</a></div>`
-            )
-            .openOn(map);
-          break;
-        default:
-          console.warn('Unhandled popup case:', this.id);
+      // Open pre-defined popup
+      if (this.location) {
+        console.debug('Showing popup for pre-defined location:', this.location);
+        this.$leaflet
+          .popup()
+          .setLatLng([
+            this.location.coordinates.lat,
+            this.location.coordinates.lng,
+          ])
+          .setContent(
+            `<div class="flex flex-col items-center"><h2 class="text-sm">${this.$t(
+              this.location.title
+            )}</h2><a class="router-link" href="/location/${
+              this.location.slug
+            }"}>${this.$t('moreInfo')}</a></div>`
+          )
+          .openOn(map);
       }
     } catch (error) {
       console.error(error);

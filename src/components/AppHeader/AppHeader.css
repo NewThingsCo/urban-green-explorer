@@ -1,12 +1,17 @@
 .app-header {
   @apply bg-white;
+  @apply fixed;
   @apply flex;
   @apply justify-between;
+  @apply left-0 right-0 top-0;
   @apply p-3;
+  @apply shadow shadow-md shadow-gray-200;
+  @apply w-full;
+  @apply z-index-100;
 
   .home-link {
     @apply flex;
-    @apply hover:text-primary-color;
+    @apply hover:text-primary;
     @apply items-center;
     @apply text-black;
   }

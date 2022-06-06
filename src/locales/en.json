@@ -1,14 +1,12 @@
 {
-  "about": {
-    "title": "About (en)"
-  },
   "back": "Back",
   "categories": "Categories",
-  "completed": {
-    "title": "Congrats!",
-    "p1": "You've completed all the locations.",
-    "p2": "Hope you enjoyed the tour!",
-    "feedback": "Feedback form?"
+  "category": {
+    "block": "Block",
+    "meetingPoint": "Meeting point",
+    "park": "Park",
+    "title": "Category",
+    "tramStop": "Tram stop"
   },
   "checkInButton": "Check-in",
   "checkInLabel": {
@@ -36,13 +34,23 @@
       "linkText": "See next location"
     }
   },
+  "completed": {
+    "feedback": "Feedback form?",
+    "p1": "You've completed all the locations.",
+    "p2": "Hope you enjoyed the tour!",
+    "title": "Congrats!"
+  },
   "coverImage": "Cover image",
   "currencies": "Currencies",
   "currency": "Currency",
   "currencyWithoutCents": "Currency without cents",
   "dateTimes": "Dates and times",
+  "downloadIosApp": "Download iOS application",
   "enableGeolocation": "Enable location from your browser",
   "homePath": "/",
+  "info": {
+    "title": "Info"
+  },
   "introduction": {
     "bodyText": "Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.",
     "getStarted": "Get started",
@@ -50,31 +58,33 @@
   },
   "language": "English",
   "localeSwitcher": "Language menu",
+  "locationLinks": "Links",
+  "locationList": "List of locations",
   "locations": {
-    "aurora": {
-      "category": "Block",
+    "auroraBlock": {
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
+      "subtitle": "Lorem ipsum dolor sit amet",
       "title": "Aurora Block"
     },
-    "greenUrbanMapping": {
-      "category": "Block",
+    "greenTramStop": {
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
+      "subtitle": "Lorem ipsum dolor sit amet",
+      "title": "Green Tramp Stop"
+    },
+    "greenUrbanMapping": {
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
+      "subtitle": "Lorem ipsum dolor sit amet",
       "title": "Green Urban Mapping"
     },
-    "loviseholm": {
-      "category": "Park",
+    "loviseholmPark": {
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
+      "subtitle": "Lorem ipsum dolor sit amet",
       "title": "Loviseholm Park"
     },
     "parkly": {
-      "category": "Meeting point",
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
+      "subtitle": "Temporary Green Street Furniture",
       "title": "Start at Parkly"
-    },
-    "tram": {
-      "category": "Tram stop",
-      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
-      "title": "Green Tramp Stop"
     }
   },
   "locationsTitle": "Locations",
@@ -82,7 +92,7 @@
   "moreInfo": "More info",
   "short": "Short",
   "showOnMap": "Show on map",
-  "title": "Urban Green Explorer (en)",
+  "title": "Urban Green Explorer",
   "today": "Today",
   "viteDocs": {
     "href": "https://vitejs.dev/",

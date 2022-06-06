@@ -9,19 +9,19 @@ import {
   watch,
 } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { RouterLink, useRouter } from 'vue-router';
-import Modal from '@/components/Modal';
-import { locations } from '@/content/locations';
-import Button from '@/components/Button';
+import { RouterLink, useRoute } from 'vue-router';
 import ChevronRight from '@/assets/icons/chevron-right.svg?component';
 import LocateIcon from '@/assets/icons/locate.svg?component';
+import Button from '@/components/Button';
+import Modal from '@/components/Modal';
+import { locations } from '@/content/locations';
 import './CheckIn.css';
 
 export default defineComponent({
   name: 'CheckIn',
   setup() {
     const { d, t } = useI18n();
-    const router = useRouter();
+    const route = useRoute();
 
     /** Adds an additional description to the button. */
     const ariaDescribedby = computed(() =>
@@ -63,21 +63,25 @@ export default defineComponent({
     const isModalVisible = ref(false);
 
     /** ID of the current location. */
-    const locationId = router.currentRoute.value.name?.toString() || '';
+    const locationSlug = route.params.id?.toString() || '';
 
     /** Existing check-in for the current location.*/
     const existingCheckIn: Ref<CheckIn | null> = ref(
-      getCheckIn(locationId) || null
+      getCheckIn(locationSlug) || null
     );
 
     /** Current location. */
     const location = locations.find(
-      (location) => location.params === locationId
+      (location) => location.slug === locationSlug
     ) as Location;
+
+    if (!location) {
+      console.warn('Location missing for slug:', locationSlug);
+    }
 
     /** Location index used to determine next location. */
     const locationIndex = locations.findIndex(
-      (location) => location.params === locationId
+      (location) => location.slug === locationSlug
     );
 
     /** Contains the next location if available. */
@@ -113,16 +117,16 @@ export default defineComponent({
     }
 
     /** Gets a single check-ins from Local Storage. */
-    function getCheckIn(id?: Location['id']): CheckIn | void {
-      if (!id) return;
+    function getCheckIn(slug?: Location['slug']): CheckIn | void {
+      if (!slug) return;
       try {
         const checkIn = getCheckIns().find(
-          (checkIn) => checkIn.locationId === id
+          (checkIn) => checkIn.locationSlug === slug
         );
         console.debug(
           checkIn ? 'Found existing check-in to' : 'No check-in found for',
           'this location:',
-          checkIn || locationId
+          checkIn || locationSlug
         );
         return checkIn;
       } catch (error) {
@@ -140,6 +144,7 @@ export default defineComponent({
         ) as CheckIn[]
       )
         // Format dates
+        .filter((checkIn) => Boolean(checkIn))
         .map((checkIn) => ({ ...checkIn, visited: new Date(checkIn.visited) }));
       console.debug('Existing check-ins:', checkIns);
       return checkIns;
@@ -151,8 +156,8 @@ export default defineComponent({
     function handleCheckIn(event: Event): void {
       event.preventDefault();
       const visited = new Date();
-      const checkIn: CheckIn = { locationId, visited };
-      console.info('User checked-in to', locationId, 'at', visited);
+      const checkIn: CheckIn = { locationSlug, visited };
+      console.info('User checked-in to', locationSlug, 'at', visited);
       saveCheckIn(checkIn);
       existingCheckIn.value = checkIn;
       checkInLabelI18nKey.value = isLastLocation ? 'complete' : 'visited';
@@ -229,8 +234,8 @@ export default defineComponent({
       const distanceFromLocation = measureDistance(
         deviceLatitude,
         deviceLongitude,
-        location.coordinates[0],
-        location.coordinates[1]
+        location.coordinates.lat,
+        location.coordinates.lng
       );
       const closeEnough = distanceFromLocation < location.minDistance;
       console.debug(
@@ -269,7 +274,7 @@ export default defineComponent({
     /** Cached render of the `disabled` label. */
     const labelDisabled: VNode = (
       <i18n-t keypath="checkInLabel.disabled.label" scope="global">
-        <RouterLink to={{ name: 'map', params: { id: locationId } }}>
+        <RouterLink to={{ name: 'mapWithPopup', params: { id: locationSlug } }}>
           {t('checkInLabel.disabled.linkText')}
         </RouterLink>
       </i18n-t>
@@ -311,10 +316,7 @@ export default defineComponent({
           </time>
         </em>
         <RouterLink
-          to={{
-            name: 'map',
-            params: { id: nextLocation?.params || '' },
-          }}
+          to={{ name: 'mapWithPopup', params: { id: nextLocation?.slug } }}
         >
           {t('checkInLabel.visited.linkText')}
         </RouterLink>

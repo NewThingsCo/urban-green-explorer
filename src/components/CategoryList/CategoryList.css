@@ -1,0 +1,18 @@
+.category-list {
+  @apply flex;
+  @apply list-none;
+  @apply text-left;
+
+  .category {
+    @apply text-gray-400;
+
+    + .category {
+      &::before {
+        @apply mr-2;
+
+        content: ',';
+        display: inline-block;
+      }
+    }
+  }
+}
