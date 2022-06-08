@@ -3,6 +3,7 @@
 *.local
 ~*
 coverage
+dev-dist
 dist
 dist-ssr
 node_modules

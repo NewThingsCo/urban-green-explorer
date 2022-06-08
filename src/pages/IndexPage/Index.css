@@ -1,6 +1,4 @@
 .main-index {
-  @apply px-0;
-
   .copyright {
     @apply text-gray-400;
     @apply mt-8;
@@ -10,8 +8,8 @@
   .logo {
     @apply inline-block;
     @apply text-current;
-
-    width: 100%;
+    @apply max-w-20vw;
+    @apply w-full;
   }
 
   .logos {

@@ -4,7 +4,7 @@
     "baseUrl": ".",
     "esModuleInterop": true,
     "jsx": "preserve",
-    "lib": ["esnext", "dom"],
+    "lib": ["ESNext", "DOM", "WebWorker"],
     "module": "ESNext",
     "moduleResolution": "Node",
     "noImplicitAny": true,
@@ -25,9 +25,9 @@
       "leaflet",
       "node",
       "vite/client",
+      "vite-plugin-pwa/client",
       "./src/types"
     ],
     "useDefineForClassFields": true
-  },
-  "include": ["**/*.ts", "**/*.d.ts", "src/**/*.tsx"]
+  }
 }
