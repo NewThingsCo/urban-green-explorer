@@ -81,8 +81,8 @@
     "@commitlint/config-conventional": "^17.0.3",
     "@intlify/vite-plugin-vue-i18n": "^3.4.0",
     "@pinia/testing": "^0.0.12",
-    "@playwright/test": "^1.23.0",
-    "@types/eslint": "^8.4.3",
+    "@playwright/test": "^1.23.1",
+    "@types/eslint": "8.4.3",
     "@types/jest": "^27.5.2",
     "@types/leaflet": "^1.7.11",
     "@types/leaflet.locatecontrol": "^0.74.0",
@@ -97,14 +97,14 @@
     "@vueuse/schema-org-vite": "^0.6.2",
     "babel-preset-vite": "^1.0.4",
     "commitlint": "^17.0.3",
-    "eslint": "8.18.0",
+    "eslint": "^8.18.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-alias": "^1.1.2",
-    "eslint-import-resolver-typescript": "^3.1.1",
+    "eslint-import-resolver-typescript": "^3.1.2",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-markdown": "^2.2.1",
-    "eslint-plugin-prettier": "^4.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.1.1",
     "husky": "^8.0.1",
     "jest": "^27.5.1",
@@ -126,13 +126,13 @@
     "vite-jest": "^0.1.4",
     "vite-plugin-eslint": "^1.6.1",
     "vite-plugin-mkcert": "^1.7.2",
-    "vite-plugin-pwa": "^0.12.0",
-    "vite-plugin-stylelint": "^2.2.3",
-    "vite-plugin-windicss": "^1.8.5",
+    "vite-plugin-pwa": "^0.12.2",
+    "vite-plugin-stylelint": "^2.3.0",
+    "vite-plugin-windicss": "^1.8.6",
     "vite-svg-loader": "^3.4.0",
     "vue-i18n": "^9.1.10",
     "vue-tsc": "^0.38.2",
-    "windicss": "^3.5.5"
+    "windicss": "^3.5.6"
   },
   "engines": {
     "node": "16.x"
@@ -305,9 +305,6 @@
     ]
   },
   "name": "@newthingsco/urban-green-explorer",
-  "overrides": {
-    "eslint": "8.18.0"
-  },
   "postcss": {
     "plugins": {
       "postcss-preset-env": {
