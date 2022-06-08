@@ -9,7 +9,7 @@ import AppFooter from '@/components/AppFooter';
 import AppHeader from '@/components/AppHeader';
 import AppMain from '@/components/AppMain';
 import Hero from '@/components/Hero';
-import './Index.css';
+import './IndexPage.css';
 
 export default defineComponent({
   name: 'IndexPage',
