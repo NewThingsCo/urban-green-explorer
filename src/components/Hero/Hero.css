@@ -1,35 +1,37 @@
 .hero {
-  @apply hero;
-  @apply min-h-130;
-  @apply md:min-h-150;
-
-  .hero-overlay {
-    @apply hero-overlay;
-    @apply bg-opacity-60;
-  }
+  @apply bg-center bg-cover;
+  @apply grid;
+  @apply min-h-md;
+  @apply overflow-hidden;
+  @apply relative;
 
   .content {
-    @apply text-center;
+    @apply flex flex-col;
+    @apply gap-4;
+    @apply items-center;
+    @apply justify-center;
+    @apply lg:text-xl;
+    @apply m-auto;
+    @apply max-w-md lg:max-w-xl;
+    @apply p-4;
     @apply text-white;
-    @apply hero-content;
-    @apply text-neutral-content;
+    @apply z-1;
+  }
 
-    .title {
-      @apply mb-5;
-      @apply text-5xl;
-      @apply font-bold;
-    }
+  .overlay {
+    @apply bg-dark-900;
+    @apply bg-opacity-50;
+    @apply h-full w-full;
+    @apply absolute;
+    @apply z-0;
+  }
 
-    p {
-      @apply mb-5;
-    }
+  .title {
+    @apply mb-3;
+    @apply text-4xl lg:text-5xl;
+  }
 
-    .button {
-      @apply btn;
-      @apply bg-green-500;
-      @apply text-white;
-      @apply border-none;
-      @apply hover:bg-green-600;
-    }
+  p {
+    @apply mb-5;
   }
 }

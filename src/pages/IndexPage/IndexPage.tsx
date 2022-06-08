@@ -1,14 +1,16 @@
 import { defineComponent } from 'vue';
-import BGLogo from '@/assets/logos/bglogo.png?url';
-import EULogo from '@/assets/logos/eu.png?url';
-import HelsinkiLogo from '@/assets/logos/helsinki.png?url';
-import InterregLogo from '@/assets/logos/interreg.png?url';
-import SeiLogo from '@/assets/logos/sei.png?url';
-import TallinnLogo from '@/assets/logos/tallinn.png?url';
+import { RouterLink } from 'vue-router';
 import AppFooter from '@/components/AppFooter';
 import AppHeader from '@/components/AppHeader';
 import AppMain from '@/components/AppMain';
+import BGLogo from '@/assets/logos/bglogo.png?url';
+import EULogo from '@/assets/logos/eu.png?url';
+import HelsinkiLogo from '@/assets/logos/helsinki.png?url';
 import Hero from '@/components/Hero';
+import HeroBackground from '@/assets/images/Sompasaari-overview.jpg?url';
+import InterregLogo from '@/assets/logos/interreg.png?url';
+import SeiLogo from '@/assets/logos/sei.png?url';
+import TallinnLogo from '@/assets/logos/tallinn.png?url';
 import './IndexPage.css';
 
 export default defineComponent({
@@ -18,7 +20,16 @@ export default defineComponent({
       <>
         <AppHeader />
         <AppMain>
-          <Hero />
+          <Hero style={{ backgroundImage: `url(${HeroBackground})` }}>
+            <h1 class="title">{this.$t('introduction.helloThere')}</h1>
+            <p>{this.$t('introduction.bodyText')}</p>
+            <RouterLink
+              class="button button-default"
+              to={{ name: 'locations' }}
+            >
+              {this.$t('introduction.getStarted')}
+            </RouterLink>
+          </Hero>
           <div class="logos">
             <img class="logo" src={SeiLogo} />
             <img class="logo" src={TallinnLogo} />
