@@ -8,7 +8,7 @@
   .icon {
     @apply fill-current;
     @apply mx-auto;
-    @apply mb-2;
+    @apply mb-1;
     @apply h-7;
     @apply w-7;
   }
@@ -20,10 +20,18 @@
       @apply block;
       @apply border-transparent;
       @apply border-top-2;
-      @apply mt-2;
+      @apply mt-1;
       @apply w-full;
 
       content: '';
+    }
+  }
+
+  .router-link-active {
+    @apply text-blue-900;
+
+    .link-text::after {
+      @apply border-blue-900;
     }
   }
 
@@ -32,11 +40,13 @@
     @apply w-full;
   }
 
-  .router-link-active {
-    @apply text-blue-900;
-
-    .link-text::after {
-      @apply border-blue-900;
+  .router-link:not(.router-link-active) {
+    &:active,
+    &:focus,
+    &:hover {
+      .link-text::after {
+        @apply border-green-500;
+      }
     }
   }
 }

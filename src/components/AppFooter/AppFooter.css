@@ -1,11 +1,11 @@
 .app-footer {
   @apply bg-white;
-  @apply border border-gray-200 border-top-1;
+  @apply border border-gray-200 border-t-1;
   @apply bottom-0;
   @apply fixed;
   @apply mx-auto;
   @apply py-4;
-  @apply shadow-gray-500/50 shadow-xl;
+  @apply shadow-xl shadow-gray-800/50;
   @apply text-center;
   @apply w-full;
   @apply z-index-10;

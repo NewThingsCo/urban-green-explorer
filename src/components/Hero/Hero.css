@@ -1,6 +1,7 @@
 .hero {
   @apply bg-center bg-cover;
   @apply grid;
+  @apply h-62vh;
   @apply min-h-md;
   @apply overflow-hidden;
   @apply relative;
@@ -15,14 +16,15 @@
     @apply max-w-md lg:max-w-xl;
     @apply p-4;
     @apply text-white;
+    @apply text-center;
     @apply z-1;
   }
 
   .overlay {
+    @apply absolute;
     @apply bg-dark-900;
     @apply bg-opacity-50;
     @apply h-full w-full;
-    @apply absolute;
     @apply z-0;
   }
 

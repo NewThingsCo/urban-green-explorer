@@ -1,6 +1,8 @@
 import type { ButtonHTMLAttributes, PropType, VNode } from 'vue';
 import { defineComponent } from 'vue';
+import { RouteLocationRaw, RouterLink } from 'vue-router';
 import { defaultEventHandler } from '@/utils';
+import './Button.css';
 
 export default defineComponent({
   name: 'Button',
@@ -25,24 +27,37 @@ export default defineComponent({
       default: defaultEventHandler,
       type: Function as PropType<(event?: Event) => void>,
     },
+    to: {
+      default: null,
+      type: Object as PropType<RouteLocationRaw>,
+    },
     type: {
       default: 'button',
-      type: String as PropType<ButtonHTMLAttributes['type']>,
+      type: String as PropType<ButtonHTMLAttributes['type'] | 'router-link'>,
     },
   },
   render(): VNode {
-    return (
-      <button
-        autofocus={this.autofocus}
-        class="btn"
-        disabled={this.disabled}
-        hidden={this.hidden}
-        name={this.name}
-        onClick={this.onClick}
-        type={this.type}
-      >
-        {this.$slots.default ? this.$slots.default() : ''}
-      </button>
-    );
+    switch (this.type) {
+      case 'router-link':
+        return (
+          <RouterLink class="button" to={this.to}>
+            {this.$slots.default ? this.$slots.default() : ''}
+          </RouterLink>
+        );
+      default:
+        return (
+          <button
+            autofocus={this.autofocus}
+            class="button"
+            disabled={this.disabled}
+            hidden={this.hidden}
+            name={this.name}
+            onClick={this.onClick}
+            type={this.type}
+          >
+            {this.$slots.default ? this.$slots.default() : ''}
+          </button>
+        );
+    }
   },
 });
