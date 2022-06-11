@@ -40,6 +40,7 @@
     "p2": "Toivottavasti nautit seikkailusta!",
     "title": "Onneksi olkoon!"
   },
+  "contact": "Yhteystiedot",
   "coverImage": "Kansikuva",
   "currencies": "Valuutat",
   "currency": "Valuutta",
@@ -47,6 +48,7 @@
   "dateTimes": "Ajat ja päivämäärät",
   "downloadIosApp": "Lataa iOS-sovellus",
   "enableGeolocation": "Ota sijainti käyttöön selaimesta",
+  "feedbackFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSenYm9KhrLSoZmKYDUssDPWYfUze73ultNMXuEbDhDj4NB67Q/viewform?embedded=true",
   "homePath": "/",
   "info": {
     "title": "Info"

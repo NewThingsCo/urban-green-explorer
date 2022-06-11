@@ -40,6 +40,7 @@
     "p2": "Hope you enjoyed the tour!",
     "title": "Congrats!"
   },
+  "contact": "Contact",
   "coverImage": "Cover image",
   "currencies": "Currencies",
   "currency": "Currency",
@@ -47,6 +48,7 @@
   "dateTimes": "Dates and times",
   "downloadIosApp": "Download iOS application",
   "enableGeolocation": "Enable location from your browser",
+  "feedbackFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSenYm9KhrLSoZmKYDUssDPWYfUze73ultNMXuEbDhDj4NB67Q/viewform?embedded=true",
   "homePath": "/",
   "info": {
     "title": "Info"
