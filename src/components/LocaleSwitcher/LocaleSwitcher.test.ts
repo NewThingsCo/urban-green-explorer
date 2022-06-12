@@ -4,7 +4,7 @@ import { jest } from '@jest/globals';
 import { createTestingPinia } from '@pinia/testing';
 import { mount } from '@vue/test-utils';
 import { createPinia, setActivePinia } from 'pinia';
-import LocaleSwitcher from './LocaleSwitcher';
+import Component from './LocaleSwitcher';
 import { LOCALES } from '@/constants';
 import { i18n } from '@/utils';
 
@@ -12,13 +12,13 @@ const mockCallback = jest.fn();
 
 let localeCode: LocaleCode = 'en-US';
 
-const wrapper = mount(LocaleSwitcher, {
+const wrapper = mount(Component, {
   global: {
     plugins: [createTestingPinia(), i18n],
   },
 });
 
-describe('LocaleSwitcher', () => {
+describe(Component.name, () => {
   beforeEach(() => {
     setActivePinia(createPinia());
   });
@@ -26,24 +26,24 @@ describe('LocaleSwitcher', () => {
     expect(wrapper.exists()).toBeTruthy();
   });
   it('should have the correct amount of switches', () => {
-    expect(wrapper.findAll('.locale-switch').length).toEqual(LOCALES.length);
+    expect(wrapper.findAll('.locale-option').length).toEqual(LOCALES.length);
   });
   it('switches are all different', () => {
     const $switches: DOMWrapper<HTMLLabelElement>[] =
-      wrapper.findAll('.locale-switch');
+      wrapper.findAll('.locale-option');
     const names: string[] = $switches.map(($switch) => $switch.text());
     const filterDuplicates = new Set(names);
     expect(names.length === filterDuplicates.size).toBeTruthy();
   });
   it('switches languages', () => {
-    wrapper.vm.handleChange({
+    wrapper.vm.handleLocaleChange({
       ...new Event('change'),
       preventDefault: mockCallback,
       target: { ...new EventTarget(), value: localeCode },
     });
     expect(wrapper.vm.$i18n.locale).toMatch(localeCode);
     localeCode = 'fi-FI';
-    wrapper.vm.handleChange({
+    wrapper.vm.handleLocaleChange({
       ...new Event('change'),
       preventDefault: mockCallback,
       target: { ...new EventTarget(), value: localeCode },

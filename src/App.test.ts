@@ -28,7 +28,7 @@ describe('App', () => {
     expect(wrapper.find('.app-header').exists()).toBeTruthy();
   });
   it('should have a locale switcher', () => {
-    expect(wrapper.find('[name="locale-switcher"]').exists()).toBeTruthy();
+    expect(wrapper.find('.locale-switcher').exists()).toBeTruthy();
   });
   it('should have a main area', () => {
     expect(wrapper.find('.app-main').exists()).toBeTruthy();
