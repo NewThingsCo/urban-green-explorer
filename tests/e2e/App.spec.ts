@@ -1,4 +1,4 @@
-import { test } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 
 test.describe('App', () => {
   test.beforeEach(async ({ baseURL, page }) => {
@@ -6,8 +6,7 @@ test.describe('App', () => {
   });
 
   /** i18n */
-  test('language switch works as expected', async ({ page }) => {
-    await page.locator('.locale-switch').first().click();
-    await page.locator('.locale-switch').last().click();
+  test('has a language switcher', async ({ page }) => {
+    expect(await page.locator('.locale-switcher').count()).toBe(1);
   });
 });
