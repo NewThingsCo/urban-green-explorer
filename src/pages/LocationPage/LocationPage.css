@@ -3,6 +3,10 @@
     @apply my-4;
   }
 
+  .link-list {
+    @apply mt-10;
+  }
+
   .image {
     @apply object-cover;
     @apply h-full;

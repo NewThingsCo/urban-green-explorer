@@ -27,7 +27,12 @@ export default defineComponent({
     const subtitle = computed(() =>
       location?.subtitle ? t(location.subtitle) : null
     );
-    const title = computed(() => (location?.title ? t(location.title) : null));
+    const locationIndex = locations.findIndex(
+      (l) => l.title === location?.title
+    );
+    const title = computed(() =>
+      location?.title ? `${locationIndex + 1}. ${t(location.title)}` : null
+    );
     return { categories, description, image, links, location, subtitle, title };
   },
   render(): VNode {
