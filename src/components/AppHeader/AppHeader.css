@@ -2,10 +2,11 @@
   @apply bg-white;
   @apply fixed;
   @apply flex;
+  @apply items-center;
   @apply justify-between;
-  @apply left-0 right-0 top-0;
   @apply p-3;
   @apply shadow shadow-md shadow-gray-200;
+  @apply top-0 right-0 left-0;
   @apply w-full;
   @apply z-index-100;
 

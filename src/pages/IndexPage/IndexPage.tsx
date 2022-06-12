@@ -1,4 +1,5 @@
 import { defineComponent } from 'vue';
+import HeroBackground from '@/assets/images/Sompasaari-overview.jpg?url';
 import BGLogo from '@/assets/logos/bglogo.png?url';
 import EULogo from '@/assets/logos/eu.png?url';
 import HelsinkiLogo from '@/assets/logos/helsinki.png?url';
@@ -8,8 +9,9 @@ import TallinnLogo from '@/assets/logos/tallinn.png?url';
 import AppFooter from '@/components/AppFooter';
 import AppHeader from '@/components/AppHeader';
 import AppMain from '@/components/AppMain';
+import Button from '@/components/Button';
 import Hero from '@/components/Hero';
-import './Index.css';
+import './IndexPage.css';
 
 export default defineComponent({
   name: 'IndexPage',
@@ -18,7 +20,17 @@ export default defineComponent({
       <>
         <AppHeader />
         <AppMain>
-          <Hero />
+          <Hero style={{ backgroundImage: `url(${HeroBackground})` }}>
+            <h1 class="title">{this.$t('introduction.helloThere')}</h1>
+            <p>{this.$t('introduction.bodyText')}</p>
+            <Button
+              class="button button-primary"
+              to={{ name: 'locations' }}
+              type="router-link"
+            >
+              {this.$t('introduction.getStarted')}
+            </Button>
+          </Hero>
           <div class="logos">
             <img class="logo" src={SeiLogo} />
             <img class="logo" src={TallinnLogo} />

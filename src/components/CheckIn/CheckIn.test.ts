@@ -14,7 +14,7 @@ describe(Component.name, () => {
     expect(wrapper.exists()).toBeTruthy();
   });
   it('has a check-in button', () => {
-    expect(wrapper.find('.btn').text()).toBeTruthy();
+    expect(wrapper.find('.button').text()).toBeTruthy();
   });
   it('has a label', () => {
     expect(wrapper.find('.label').text()).toBeTruthy();

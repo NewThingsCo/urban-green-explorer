@@ -13,7 +13,7 @@
   }
 
   .logos {
-    @apply grid grid-flow-col grid-rows-2 md:grid-rows-1 gap-8 place-items-center;
+    @apply grid grid-flow-col gap-8 grid-rows-2 place-items-center md:grid-rows-1;
     @apply max-w-60rem;
     @apply mx-auto;
     @apply p-6;

@@ -1,6 +1,7 @@
 import type { VNode } from 'vue';
 import { computed, defineComponent } from 'vue';
 import { RouterLink, useRoute } from 'vue-router';
+import Button from '../Button';
 import LocaleSwitcher from '../LocaleSwitcher';
 import BGreenLogo from '@/assets/logos/BGreen.png?url';
 import ChevronLeft from '@/assets/icons/chevron-left.svg?component';
@@ -25,10 +26,10 @@ export default defineComponent({
       case 'back-link':
         return (
           <header class="app-header">
-            <RouterLink class="button button-transparent home-link" to="-1">
-              <ChevronLeft class="w-3 h-3 mr-1" />
+            <Button to="-1" type="router-link">
+              <ChevronLeft class="h-4 w-4" />
               <span class="title">{this.$t('back')}</span>
-            </RouterLink>
+            </Button>
             <LocaleSwitcher />
           </header>
         );
