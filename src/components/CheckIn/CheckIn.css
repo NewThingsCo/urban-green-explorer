@@ -3,6 +3,10 @@
   @apply mx-auto;
   @apply max-w-28rem;
 
+  .button {
+    @apply mb-2;
+  }
+
   .label {
     @apply flex-col;
     @apply justify-center;
