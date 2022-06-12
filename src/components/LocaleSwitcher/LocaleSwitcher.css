@@ -1,13 +1,33 @@
-[name='locale-switcher'] {
-  @apply flex justify-center;
-  @apply mb-0;
+.locale-switcher {
+  @apply relative;
+  @apply inline-block;
 
-  [type='radio'] {
-    position: absolute;
-    left: -999em;
+  & > *:focus {
+    @apply outline-none;
+  }
 
-    &:checked + .label {
-      @apply font-bold;
+  .icon {
+    @apply h-7;
+    @apply w-7;
+    @apply cursor-pointer;
+  }
+
+  .select-menu {
+    @apply invisible absolute z-50 opacity-0;
+    @apply origin-top scale-95 transform transition duration-200 ease-in-out;
+    @apply right-0;
+  }
+
+  &[data-open='true'] {
+    .select-menu {
+      @apply visible opacity-100;
+      @apply scale-100;
+    }
+  }
+
+  .ios &[data-open='true'] {
+    .select-menu {
+      @apply opacity-0;
     }
   }
 }
