@@ -90,6 +90,12 @@
   "locationsTitle": "Locations",
   "long": "Long",
   "moreInfo": "More info",
+  "routes": {
+    "index": "Home",
+    "info": "Info",
+    "locations": "Locations",
+    "map": "Map"
+  },
   "short": "Short",
   "showOnMap": "Show on map",
   "title": "Urban Green Explorer",

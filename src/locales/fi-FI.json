@@ -90,6 +90,12 @@
   "locationsTitle": "Kohteet",
   "long": "Pitkä",
   "moreInfo": "Lisätietoja",
+  "routes": {
+    "index": "Alkuun",
+    "info": "Info",
+    "locations": "Kohteet",
+    "map": "Kartta"
+  },
   "short": "Lyhyt",
   "showOnMap": "Näytä kartalla",
   "title": "Urban Green Explorer",

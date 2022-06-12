@@ -35,7 +35,9 @@ export default defineComponent({
                   type="router-link"
                 >
                   <HomeIcon class="icon" />
-                  <span class="link-text"> {route.name}</span>
+                  <span class="link-text">
+                    {this.$t(`routes.${route.name.toString()}`)}
+                  </span>
                 </Button>
               );
             case 'locations':
@@ -47,7 +49,9 @@ export default defineComponent({
                   type="router-link"
                 >
                   <ListIcon class="icon" />
-                  <span class="link-text">{route.name}</span>
+                  <span class="link-text">
+                    {this.$t(`routes.${route.name.toString()}`)}
+                  </span>
                 </Button>
               );
             case 'map':
@@ -59,7 +63,9 @@ export default defineComponent({
                   type="router-link"
                 >
                   <MapMarkedAltIcon class="icon" />
-                  <span class="link-text">{route.name}</span>
+                  <span class="link-text">
+                    {this.$t(`routes.${route.name.toString()}`)}
+                  </span>
                 </Button>
               );
             case 'info':
@@ -70,7 +76,9 @@ export default defineComponent({
                   type="router-link"
                 >
                   <InfoIcon class="icon" />
-                  <span class="link-text">{route.name}</span>
+                  <span class="link-text">
+                    {this.$t(`routes.${route.name.toString()}`)}
+                  </span>
                 </Button>
               );
             default:
