@@ -27,11 +27,13 @@ export default defineComponent({
     const subtitle = computed(() =>
       location?.subtitle ? t(location.subtitle) : null
     );
-    const locationIndex = locations.findIndex(
-      (l) => l.title === location?.title
+    const locationIndex = computed(() =>
+      locations.findIndex((l) => l.title === location?.title)
     );
     const title = computed(() =>
-      location?.title ? `${locationIndex + 1}. ${t(location.title)}` : null
+      location?.title
+        ? `${locationIndex.value + 1}. ${t(location.title)}`
+        : null
     );
     return { categories, description, image, links, location, subtitle, title };
   },
