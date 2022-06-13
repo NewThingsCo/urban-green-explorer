@@ -1,10 +1,48 @@
 .main-locations {
   @apply pb-34;
 
+  .category {
+    @apply text-gray-500;
+    @apply text-xs sm:text-sm;
+  }
+
   .location {
-    @apply rounded-xl shadow-md shadow-gray-200;
+    @apply relative;
+
+    + .location {
+      @apply mt-7;
+    }
+  }
+
+  .map-link {
+    @apply mt-2;
+    @apply text-secondary hover:text-primary focus:text-primary;
+    @apply z-10;
+
+    &:focus,
+    &:hover {
+      .icon {
+        @apply text-primary;
+      }
+    }
+
+    .label {
+      @apply absolute;
+      @apply bottom-3;
+      @apply inline-block;
+      @apply left-32.75;
+      @apply p-3;
+      @apply text-sm md:text-base;
+    }
+  }
+
+  .location-link {
     @apply flex;
-    @apply p-3;
+    @apply bg-gray-50;
+    @apply p-4 pr-12;
+    @apply rounded-xl;
+    @apply shadow-md shadow-gray-200 hover:shadow-lg;
+    @apply text-black;
     @apply w-full;
 
     .content {
@@ -13,10 +51,15 @@
     }
 
     .image {
+      @apply h-28;
       @apply mr-4;
       @apply rounded;
-      @apply h-28;
       @apply w-28;
+    }
+
+    .label {
+      @apply invisible;
+      @apply text-2xl;
     }
 
     .subtitle {
@@ -26,42 +69,14 @@
     .title {
       @apply font-semibold;
       @apply text-sm sm:text-xl;
-
-      overflow: hidden;
-      white-space: no-wrap;
-      text-overflow: ellipsis;
-    }
-
-    + .location {
-      @apply mt-7;
     }
   }
 
-  .category {
-    @apply text-gray-500;
-    @apply text-xs sm:text-sm;
-  }
-
-  .location-list {
-    @apply flex flex-col;
-  }
-
-  .map-icon-link {
-    @apply flex;
-    @apply h-8 md:h-10;
-    @apply ml-4;
-    @apply mt-2;
+  .map-icon {
+    @apply h-8 md:h-12;
+    @apply object-contain;
     @apply text-black;
-    @apply w-8 md:w-10;
-  }
-
-  .map-link {
-    @apply mt-2;
-    @apply text-secondary;
-    @apply text-xs sm:text-sm;
-  }
-
-  .title-link {
-    @apply text-inherit;
+    @apply top-4 right-4 absolute;
+    @apply w-8 md:w-12;
   }
 }

@@ -15,6 +15,7 @@ export default defineConfig({
   plugins: [AspectRatio, Forms, Filters, LineClamp],
   shortcuts: {
     'heading-1': 'font-bold opacity-80 text-size-3xl',
+    'outline-primary': 'outline-green-500',
     'text-primary': 'text-green-500',
     'text-secondary': 'text-blue-800',
   },
@@ -28,7 +29,7 @@ export default defineConfig({
         '1/3': '33.3vh',
       },
       screens: {
-        sm: '400px',
+        sm: '490px',
         md: '768px',
         lg: '1024px',
         xl: '1280px',

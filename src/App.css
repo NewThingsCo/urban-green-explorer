@@ -28,6 +28,7 @@ html,
 }
 
 a {
+  @apply outline-primary;
   @apply text-primary;
 }
 

@@ -38,6 +38,10 @@
   .router-link {
     @apply flex flex-col items-center;
     @apply w-full;
+
+    .link-text::after {
+      @apply transition-all;
+    }
   }
 
   .router-link:not(.router-link-active) {

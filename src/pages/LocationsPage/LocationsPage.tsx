@@ -23,7 +23,7 @@ export default defineComponent({
             {locations.map((location, index) => (
               <li class="location">
                 <RouterLink
-                  class="image-link"
+                  class="location-link"
                   to={{ name: 'location', params: { id: location.slug } }}
                 >
                   <img
@@ -31,34 +31,27 @@ export default defineComponent({
                     class="image"
                     src={location.image}
                   />
-                </RouterLink>
-                <div class="content">
-                  <h2 class="title">
-                    <RouterLink
-                      class="title-link"
-                      to={{ name: 'location', params: { id: location.slug } }}
+                  <div class="content">
+                    <h2
+                      class="title"
                       v-html={`${index + 1}. ${this.$t(location.title)}`}
                     />
-                  </h2>
-                  <CategoryList categories={location.categories} />
-                  {location.subtitle && (
-                    <h3 class="subtitle">{this.$t(location.subtitle)}</h3>
-                  )}
-                  <RouterLink
-                    class="map-link"
-                    to={{
-                      name: 'mapWithPopup',
-                      params: { id: location.slug },
-                    }}
-                  >
-                    {this.$t('showOnMap')}
-                  </RouterLink>
-                </div>
+                    <CategoryList categories={location.categories} />
+                    {location.subtitle && (
+                      <h3 class="subtitle">{this.$t(location.subtitle)}</h3>
+                    )}
+                    <span class="label">{this.$t('showOnMap')}</span>
+                  </div>
+                </RouterLink>
                 <RouterLink
-                  class="map-icon-link"
-                  to={{ name: 'mapWithPopup', params: { id: location.slug } }}
+                  class="map-link"
+                  to={{
+                    name: 'mapWithPopup',
+                    params: { id: location.slug },
+                  }}
                 >
-                  <MapMarkerAlt class="icon" />
+                  <MapMarkerAlt class="icon map-icon" />
+                  <span class="label">{this.$t('showOnMap')}</span>
                 </RouterLink>
               </li>
             ))}
