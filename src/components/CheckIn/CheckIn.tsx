@@ -100,7 +100,7 @@ export default defineComponent({
      */
     const geolocationWatchPositionOptions: PositionOptions = {
       enableHighAccuracy: true,
-      timeout: 5000,
+      timeout: 2000,
     };
 
     /** Returns true if this is the last location. */
@@ -229,6 +229,14 @@ export default defineComponent({
      * @link https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/watchPosition#success
      */
     function handleGeolocationSuccess(position: GeolocationPosition): void {
+      if (
+        existingCheckIn.value &&
+        ('complete' === checkInLabelI18nKey.value ||
+          'visited' === checkInLabelI18nKey.value)
+      ) {
+        clearGeolocationWatch(geolocationWatchId.value);
+        return;
+      }
       const deviceLatitude = position.coords.latitude;
       const deviceLongitude = position.coords.longitude;
       const distanceFromLocation = measureDistance(
@@ -454,7 +462,7 @@ export default defineComponent({
           >
             <p>{this.$t('completed.p1')}</p>
             <p>{this.$t('completed.p2')}</p>
-            <div class="flex items-center text-center justify-center">
+            <div class="flex text-center items-center justify-center">
               <p>{this.$t('completed.feedback')}</p>{' '}
               <ChevronRight class="w-5" />
             </div>
