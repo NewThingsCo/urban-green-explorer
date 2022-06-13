@@ -1,7 +1,0 @@
-.locale-switch {
-  @apply cursor-pointer;
-
-  + .locale-switch {
-    @apply ml-4;
-  }
-}
