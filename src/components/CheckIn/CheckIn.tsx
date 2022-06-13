@@ -20,7 +20,7 @@ import './CheckIn.css';
 export default defineComponent({
   name: 'CheckIn',
   setup() {
-    const { d, t } = useI18n();
+    const { d, locale, t } = useI18n();
     const hasGeolocationSupport = ref(true);
     const route = useRoute();
 
@@ -425,6 +425,9 @@ export default defineComponent({
         startGeolocationWatch();
       }
     });
+
+    /** Re-render check-in labels when locale changes. */
+    watch(locale, () => handleCheckInState(checkInLabelI18nKey.value));
 
     /**
      * Watches for changes and updates check-in states.
