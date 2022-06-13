@@ -21,6 +21,7 @@ export default defineComponent({
   name: 'CheckIn',
   setup() {
     const { d, t } = useI18n();
+    const hasGeolocationSupport = ref(true);
     const route = useRoute();
 
     /** Adds an additional description to the button. */
@@ -207,7 +208,8 @@ export default defineComponent({
         case error.PERMISSION_DENIED:
           console.info('User denied permission to use the Geolocation API.');
           clearGeolocationWatch(geolocationWatchId.value);
-          checkInLabelI18nKey.value = 'unavailable';
+          checkInLabelI18nKey.value = 'enabled'; // unavailable
+          hasGeolocationSupport.value = false;
           break;
         case error.TIMEOUT:
           console.log('The Geolocation API timed out.');
@@ -220,7 +222,8 @@ export default defineComponent({
         case error.POSITION_UNAVAILABLE:
         default:
           console.error('The Geolocation API is unavailable.');
-          checkInLabelI18nKey.value = 'unavailable';
+          hasGeolocationSupport.value = false;
+          checkInLabelI18nKey.value = 'enabled'; // unavailable
       }
     }
 
@@ -229,11 +232,7 @@ export default defineComponent({
      * @link https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/watchPosition#success
      */
     function handleGeolocationSuccess(position: GeolocationPosition): void {
-      if (
-        existingCheckIn.value &&
-        ('complete' === checkInLabelI18nKey.value ||
-          'visited' === checkInLabelI18nKey.value)
-      ) {
+      if (existingCheckIn.value) {
         clearGeolocationWatch(geolocationWatchId.value);
         return;
       }
@@ -275,24 +274,29 @@ export default defineComponent({
             {d(new Date(existingCheckIn.value?.visited || ''), 'long')}
           </time>
         </em>
-        <strong>{t('checkInLabel.complete.helpText')}</strong>
+        <strong class="mt-2">{t('checkInLabel.complete.helpText')}</strong>
       </i18n-t>
     );
 
     /** Cached render of the `disabled` label. */
     const labelDisabled: VNode = (
       <i18n-t keypath="checkInLabel.disabled.label" scope="global">
-        <RouterLink to={{ name: 'mapWithPopup', params: { id: locationSlug } }}>
+        <RouterLink
+          class="sub-label"
+          to={{ name: 'mapWithPopup', params: { id: locationSlug } }}
+        >
           {t('checkInLabel.disabled.linkText')}
         </RouterLink>
       </i18n-t>
     );
 
     /** Cached render of the `enabled` label. */
-    const labelEnabled: VNode = (
+    const labelEnabled: VNode = checkInLabel.value ? (
       <i18n-t keypath="checkInLabel.enabled.label" scope="global">
-        <strong class="block">{t('checkInLabel.enabled.helpText')}</strong>
+        <strong class="sub-label">{t('checkInLabel.enabled.helpText')}</strong>
       </i18n-t>
+    ) : (
+      <p>{t('checkInLabel.enabled.helpText')}</p>
     );
 
     /** Cached render of the `locating` label. */
@@ -309,7 +313,9 @@ export default defineComponent({
         keypath="checkInLabel.unavailable.label"
         scope="global"
       >
-        <strong>{t('checkInLabel.unavailable.helpText')}</strong>
+        <strong class="sub-label">
+          {t('checkInLabel.unavailable.helpText')}
+        </strong>
       </i18n-t>
     );
 
@@ -324,6 +330,7 @@ export default defineComponent({
           </time>
         </em>
         <RouterLink
+          class="sub-label"
           to={{ name: 'mapWithPopup', params: { id: nextLocation?.slug } }}
         >
           {t('checkInLabel.visited.linkText')}
@@ -376,7 +383,8 @@ export default defineComponent({
         );
       } else {
         console.info('Geolocation is not supported by this browser.');
-        checkInLabelI18nKey.value = 'unavailable';
+        hasGeolocationSupport.value = false;
+        checkInLabelI18nKey.value = 'enabled'; // unavailable
       }
     }
 

@@ -19,14 +19,14 @@
       "linkText": "See location on the map"
     },
     "enabled": {
-      "helpText": "Tap the button to unlock more content",
+      "helpText": "Tap the button to unlock more content.",
       "label": "You're now close enough! {0}"
     },
     "locating": {
       "label": "{0} Locating …"
     },
     "unavailable": {
-      "helpText": "Turn on the location setting from your browser",
+      "helpText": "Turn on the location setting from your browser.",
       "label": "{0} to unlock more content."
     },
     "visited": {

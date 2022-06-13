@@ -19,14 +19,14 @@
       "linkText": "Näytä kohde kartalla"
     },
     "enabled": {
-      "helpText": "Napsauta painikkeesta saadaksesi lisää sisältöä",
+      "helpText": "Napsauta painikkeesta saadaksesi lisää sisältöä.",
       "label": "Olet nyt tarpeeksi lähellä! {0}"
     },
     "locating": {
       "label": "{0} Paikannetaan …"
     },
     "unavailable": {
-      "helpText": "Ota lokaatio käyttöön selaimen asetuksista",
+      "helpText": "Ota lokaatio käyttöön selaimen asetuksista.",
       "label": "{0} niin saat lisätietoja kohteesta kun olet tarpeeksi lähellä."
     },
     "visited": {
