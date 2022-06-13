@@ -3,6 +3,7 @@ import { computed, defineComponent } from 'vue';
 import { RouterLink, useRoute } from 'vue-router';
 import Button from '../Button';
 import LocaleSwitcher from '../LocaleSwitcher';
+import { goBack } from '@/router';
 import BGreenLogo from '@/assets/logos/BGreen.png?url';
 import ChevronLeft from '@/assets/icons/chevron-left.svg?component';
 import './AppHeader.css';
@@ -26,7 +27,7 @@ export default defineComponent({
       case 'back-link':
         return (
           <header class="app-header">
-            <Button to="-1" type="router-link">
+            <Button to="#" onClick={goBack} type="button">
               <ChevronLeft class="h-4 w-4" />
               <span class="title">{this.$t('back')}</span>
             </Button>
