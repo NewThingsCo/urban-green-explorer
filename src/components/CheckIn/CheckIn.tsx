@@ -10,11 +10,9 @@ import {
 } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { RouterLink, useRoute } from 'vue-router';
-import ChevronRight from '@/assets/icons/chevron-right.svg?component';
-import LocateIcon from '@/assets/icons/locate.svg?component';
-import Button from '@/components/Button';
-import Modal from '@/components/Modal';
 import { locations } from '@/content/locations';
+import Button from '@/components/Button';
+import LocateIcon from '@/assets/icons/locate.svg?component';
 import './CheckIn.css';
 
 export default defineComponent({
@@ -56,12 +54,6 @@ export default defineComponent({
      * @default true
      */
     const isButtonHidden = ref(true);
-
-    /**
-     * Opens the popup if set to `true`.
-     * @default true
-     */
-    const isModalVisible = ref(false);
 
     /** ID of the current location. */
     const locationSlug = route.params.id?.toString() || '';
@@ -162,9 +154,6 @@ export default defineComponent({
       saveCheckIn(checkIn);
       existingCheckIn.value = checkIn;
       checkInLabelI18nKey.value = isLastLocation ? 'complete' : 'visited';
-      if (isLastLocation) {
-        isModalVisible.value = true;
-      }
     }
 
     /** Handles check-in states. */
@@ -434,12 +423,6 @@ export default defineComponent({
      */
     watch(checkInLabelI18nKey, handleCheckInState);
 
-    /** Toggles the modal's visibility. */
-    function toggleModalVisibility(event: Event): void {
-      event?.preventDefault();
-      isModalVisible.value = !isModalVisible.value;
-    }
-
     return {
       ariaDescribedby,
       checkInLabel,
@@ -447,8 +430,6 @@ export default defineComponent({
       handleCheckIn,
       isButtonDisabled,
       isButtonHidden,
-      isModalVisible,
-      toggleModalVisibility,
     };
   },
   render(): VNode {
@@ -466,19 +447,6 @@ export default defineComponent({
         <p class="label" id="check-in-label">
           {this.checkInLabel || <>&nbsp;</>}
         </p>
-        {this.isModalVisible && (
-          <Modal
-            onClose={this.toggleModalVisibility}
-            title={this.$t('completed.title')}
-          >
-            <p>{this.$t('completed.p1')}</p>
-            <p>{this.$t('completed.p2')}</p>
-            <div class="flex text-center items-center justify-center">
-              <p>{this.$t('completed.feedback')}</p>{' '}
-              <ChevronRight class="w-5" />
-            </div>
-          </Modal>
-        )}
       </form>
     );
   },

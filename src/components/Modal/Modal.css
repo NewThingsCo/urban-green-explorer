@@ -2,7 +2,6 @@
   @apply bg-white;
   @apply fixed;
   @apply h-full;
-  @apply h-modal;
   @apply inset-0;
   @apply left-0;
   @apply overflow-x-hidden;
@@ -10,7 +9,7 @@
   @apply right-0;
   @apply top-0;
   @apply w-full;
-  @apply z-50;
+  @apply z-1000;
 }
 
 .modal-wrapper {
