@@ -3,6 +3,7 @@ import type {
   ManifestOptions,
   VitePWAOptions,
 } from 'vite-plugin-pwa';
+import type { GenerateSWOptions } from 'workbox-build';
 
 /**
  * Static assets that should be precached by the service worker.
@@ -29,7 +30,12 @@ const devOptions: DevOptions = {
  */
 const manifest: Partial<ManifestOptions> = {
   background_color: '#ffffff',
-  categories: ['city planning', 'exploration', 'future architecture'],
+  categories: [
+    'city planning',
+    'exploration',
+    'future architecture',
+    'sensors',
+  ],
   dir: 'ltr',
   icons: [
     {
@@ -71,12 +77,24 @@ const manifest: Partial<ManifestOptions> = {
   theme_color: '#42b883',
 };
 
-/** @todo Add service worker */
-// const workbox: Partial<GenerateSWOptions> = {
-//   cleanupOutdatedCaches: true,
-//   globPatterns: ['**/*.{js,css,html}'],
-//   sourcemap: true,
-// };
+/**
+ * Workbox-build configuration.
+ * @link https://developer.chrome.com/docs/workbox/modules/workbox-build/
+ */
+const workbox: Partial<GenerateSWOptions> = {
+  additionalManifestEntries: [
+    { revision: Date.now().toString(), url: 'index.html' },
+  ],
+  cleanupOutdatedCaches: true,
+  globIgnores: [
+    'index.html',
+    '**/coverage/**/*',
+    '**/dev-dist/**/*',
+    '**/node_modules/**/*',
+  ],
+  globPatterns: ['**/*.{js,css,html}'],
+  sourcemap: true,
+};
 
 const vitePWAOptions: Partial<VitePWAOptions> = {
   devOptions,
@@ -85,6 +103,7 @@ const vitePWAOptions: Partial<VitePWAOptions> = {
   registerType: 'autoUpdate',
   srcDir: 'src',
   useCredentials: false,
+  workbox,
 };
 
 export { vitePWAOptions };
