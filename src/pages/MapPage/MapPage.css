@@ -6,6 +6,14 @@
     @apply mb-14.5;
   }
 
+  .leaflet-popup-container {
+    @apply text-center;
+  }
+
+  .leaflet-popup-title {
+    @apply text-sm;
+  }
+
   .leaflet-top {
     top: 5rem;
   }

@@ -1,6 +1,7 @@
 import type { ButtonHTMLAttributes, PropType, VNode } from 'vue';
+import type { RouteLocationRaw } from 'vue-router';
 import { defineComponent } from 'vue';
-import { RouteLocationRaw, RouterLink } from 'vue-router';
+import { RouterLink } from 'vue-router';
 import { defaultEventHandler } from '@/utils';
 import './Button.css';
 

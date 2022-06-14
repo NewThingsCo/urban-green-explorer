@@ -31,7 +31,7 @@ export default defineComponent({
               return (
                 <Button
                   class={classes.join(' ')}
-                  to={route.path}
+                  to={{ path: route.path }}
                   type="router-link"
                 >
                   <HomeIcon class="icon" />
@@ -45,7 +45,7 @@ export default defineComponent({
               return (
                 <Button
                   class={classes.join(' ')}
-                  to={route.path}
+                  to={{ path: route.path }}
                   type="router-link"
                 >
                   <ListIcon class="icon" />
@@ -59,7 +59,7 @@ export default defineComponent({
               return (
                 <Button
                   class={classes.join(' ')}
-                  to={route.path}
+                  to={{ path: route.path }}
                   type="router-link"
                 >
                   <MapMarkedAltIcon class="icon" />
@@ -72,7 +72,7 @@ export default defineComponent({
               return (
                 <Button
                   class={classes.join(' ')}
-                  to={route.path}
+                  to={{ path: route.path }}
                   type="router-link"
                 >
                   <InfoIcon class="icon" />

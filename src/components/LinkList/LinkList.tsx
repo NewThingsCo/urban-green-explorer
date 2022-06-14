@@ -1,5 +1,6 @@
+import type { PropType, VNode } from 'vue';
 import type { LocationLink } from '@/types';
-import { defineComponent, PropType, VNode } from 'vue';
+import { defineComponent } from 'vue';
 import { RouterLink } from 'vue-router';
 import './LinkList.css';
 

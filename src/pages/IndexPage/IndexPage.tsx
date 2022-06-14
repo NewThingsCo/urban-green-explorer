@@ -1,3 +1,4 @@
+import type { VNode } from 'vue';
 import { defineComponent } from 'vue';
 import HeroBackground from '@/assets/images/Sompasaari-overview.jpg?url';
 import BGLogo from '@/assets/logos/bglogo.png?url';
@@ -15,7 +16,7 @@ import './IndexPage.css';
 
 export default defineComponent({
   name: 'IndexPage',
-  render() {
+  render(): VNode {
     return (
       <>
         <AppHeader />

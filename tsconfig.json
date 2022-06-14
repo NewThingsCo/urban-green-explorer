@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "esModuleInterop": true,
@@ -29,5 +30,6 @@
       "./src/types"
     ],
     "useDefineForClassFields": true
-  }
+  },
+  "exclude": ["coverage"]
 }

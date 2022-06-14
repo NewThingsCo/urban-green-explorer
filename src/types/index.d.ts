@@ -1,3 +1,4 @@
+import type { TileLayerOptions } from 'leaflet';
 import type { FunctionalComponent, SVGAttributes } from 'vue';
 import type { LocationAsRelativeRaw } from 'vue-router';
 import { LOCALE_CODES } from '@/constants';
@@ -56,6 +57,11 @@ interface Location {
   title: string;
 }
 
+interface MapTheme {
+  options: TileLayerOptions;
+  urlTemplate: string;
+}
+
 export {
   Category,
   CheckIn,
@@ -65,5 +71,6 @@ export {
   Location,
   LocationLink,
   LocationLinkPanel,
+  MapTheme,
   Translations,
 };
