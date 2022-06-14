@@ -1,8 +1,15 @@
 import type { Location } from '@/types';
-import type { Map, TileLayer } from 'leaflet';
-import type { VNode, VNodeRef } from 'vue';
+import type { Layer, Map, TileLayer } from 'leaflet';
+import {
+  VNode,
+  VNodeRef,
+  watch,
+  computed,
+  defineComponent,
+  onMounted,
+  ref,
+} from 'vue';
 import leaflet from 'leaflet';
-import { computed, defineComponent, onMounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRoute } from 'vue-router';
 import MapMarkerAltIcon from '@/assets/icons/map-marker-alt.svg?raw';
@@ -17,7 +24,7 @@ import './MapPage.css';
 export default defineComponent({
   name: 'MapPage',
   setup() {
-    const { t } = useI18n();
+    const { locale, t } = useI18n();
     const route = useRoute();
     const mapInstance = ref<null | Map>(null);
     const layers = ref<null | TileLayer>(null);
@@ -34,17 +41,33 @@ export default defineComponent({
     /** Location slug. */
     const slug = computed(() => route.params?.id || null);
 
-    function invalidateMap(): void {
-      mapInstance.value?.invalidateSize();
-    }
-
     /** Current location based on slug value. */
     const location = slug.value
       ? locations.find((l) => l.slug === slug.value)
       : null;
 
-    /** Invalidates map size when window is resized. */
-    const resizeObserver = new ResizeObserver(invalidateMap);
+    /** Invalidates map size. */
+    function invalidateMap(): void {
+      mapInstance.value?.invalidateSize();
+    }
+
+    /** Creates markers for locations. */
+    function createLocationMarker(l: Location): void {
+      const marker = leaflet
+        .marker([l.coordinates.lat, l.coordinates.lng], {
+          icon: markerIcon,
+        })
+        .bindPopup(renderPopup(l));
+      console.debug('Creating marker:', marker);
+      marker.addTo(mapInstance.value as Map);
+    }
+
+    /** Handles locale changes. */
+    function handleLocaleChange(): void {
+      console.info('Locale change detected.');
+      resetMap();
+      locations.map(createLocationMarker);
+    }
 
     /** Renders popup content. */
     function renderPopup(l: Location): string {
@@ -55,17 +78,25 @@ export default defineComponent({
       )}</a></div>`;
     }
 
-    /** Creates markers for locations. */
-    function createLocationMarker(l: Location): void {
-      leaflet
-        .marker([l.coordinates.lat, l.coordinates.lng], {
-          icon: markerIcon,
-        })
-        .bindPopup(renderPopup(l))
-        .addTo(mapInstance.value as Map);
+    /** Removes a layer from the map if it contains click events. */
+    function removeMarker(layer: Layer): void {
+      if (!layer.hasEventListeners('click')) return;
+      console.debug('Removing marker:', layer);
+      layer.remove();
     }
 
-    onMounted(() => {
+    /** Resets the map and re-renders popups. */
+    function resetMap(): void {
+      console.log('Closing popups …');
+      mapInstance.value?.closePopup();
+      mapInstance.value?.eachLayer(removeMarker);
+    }
+
+    /** Invalidates map size when window is resized. */
+    const resizeObserver = new ResizeObserver(invalidateMap);
+
+    /** Initializes the map. */
+    function initializeMap(): void {
       // Create map instance
       mapInstance.value = leaflet
         .map(map.value.$el)
@@ -91,7 +122,14 @@ export default defineComponent({
           .setContent(renderPopup(location))
           .openOn(mapInstance.value as Map);
       }
-    });
+    }
+
+    // Watch for locale changes
+    watch(locale, handleLocaleChange);
+
+    // Initialize map on load
+    onMounted(initializeMap);
+
     return { map };
   },
   render(): VNode {
