@@ -31,5 +31,5 @@
     ],
     "useDefineForClassFields": true
   },
-  "exclude": ["coverage"]
+  "exclude": ["coverage", "dev-dist", "dist", "tests/unit"]
 }
