@@ -1,16 +1,23 @@
 import type { Location } from '@/types';
-import type { Layer, Map, PopupEvent, TileLayer } from 'leaflet';
+import type {
+  LatLngTuple,
+  Layer,
+  Map,
+  MarkerOptions,
+  PopupEvent,
+  TileLayer,
+} from 'leaflet';
+import leaflet from 'leaflet';
 import {
+  computed,
+  defineComponent,
+  onBeforeUnmount,
+  onMounted,
+  ref,
   VNode,
   VNodeRef,
   watch,
-  computed,
-  defineComponent,
-  onMounted,
-  ref,
-  onBeforeUnmount,
 } from 'vue';
-import leaflet from 'leaflet';
 import { useI18n } from 'vue-i18n';
 import { useRoute, useRouter } from 'vue-router';
 import MapMarkerAltIcon from '@/assets/icons/map-marker-alt.svg?raw';
@@ -44,8 +51,8 @@ export default defineComponent({
     const slug = computed(() => route.params?.id || null);
 
     /** Current location based on slug value. */
-    const location = slug.value
-      ? locations.find((l) => l.slug === slug.value)
+    const currentLocation = slug.value
+      ? locations.find((location) => location.slug === slug.value)
       : null;
 
     /** Invalidates map size. */
@@ -54,12 +61,15 @@ export default defineComponent({
     }
 
     /** Creates markers for locations. */
-    function createLocationMarker(l: Location): void {
+    function createLocationMarker(location: Location): void {
+      const {
+        coordinates: { lat, lng },
+      } = location;
+      const latlng: LatLngTuple = [lat, lng];
+      const markerOptions: MarkerOptions = { icon: markerIcon };
       const marker = leaflet
-        .marker([l.coordinates.lat, l.coordinates.lng], {
-          icon: markerIcon,
-        })
-        .bindPopup(renderPopup(l));
+        .marker(latlng, markerOptions)
+        .bindPopup(renderPopup(location));
       console.debug('Creating marker:', marker);
       marker.addTo(mapInstance.value as Map);
     }
@@ -88,6 +98,20 @@ export default defineComponent({
         console.debug('Adding event listener to:', $link);
         $link.addEventListener('click', handleRouteChange);
       });
+    }
+
+    /** Opens a popup for a location. */
+    function openLocationPopup(location: Location): void {
+      console.debug('Showing popup for location:', location);
+      const {
+        coordinates: { lat, lng },
+      } = location;
+      const latlng: LatLngTuple = [lat, lng];
+      leaflet
+        .popup()
+        .setLatLng(latlng)
+        .setContent(renderPopup(location))
+        .openOn(mapInstance.value as Map);
     }
 
     /** Removes event handlers from router links within popups. */
@@ -120,10 +144,10 @@ export default defineComponent({
     }
 
     /** Renders popup content. */
-    function renderPopup(l: Location): string {
+    function renderPopup({ slug, title }: Location): string {
       return `<div class="flex flex-col items-center"><h2 class="text-sm">${t(
-        l.title
-      )}</h2><a class="router-link" href="/location/${l.slug}">${t(
+        title
+      )}</h2><a class="router-link" href="/location/${slug}">${t(
         'moreInfo'
       )}</a></div>`;
     }
@@ -160,14 +184,9 @@ export default defineComponent({
       mapInstance.value.addEventListener('popupclose', handlePopupclose);
       mapInstance.value.addEventListener('popupopen', handlePopupopen);
 
-      // Open pre-defined popup
-      if (location) {
-        console.debug('Showing popup for pre-defined location:', location);
-        leaflet
-          .popup()
-          .setLatLng([location.coordinates.lat, location.coordinates.lng])
-          .setContent(renderPopup(location))
-          .openOn(mapInstance.value as Map);
+      // Open popup for current location
+      if (currentLocation) {
+        openLocationPopup(currentLocation);
       }
     }
 
