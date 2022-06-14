@@ -1,6 +1,6 @@
+import type { TileLayerOptions } from 'leaflet';
 import type { FunctionalComponent, SVGAttributes } from 'vue';
 import type { LocationAsRelativeRaw } from 'vue-router';
-import { TileLayerOptions } from 'leaflet';
 import { LOCALE_CODES } from '@/constants';
 import en from '@/locales/en.json';
 

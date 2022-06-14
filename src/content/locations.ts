@@ -1,4 +1,4 @@
-import { Location } from '../types';
+import type { Location } from '../types';
 import ArrowUpRight from '@/assets/icons/arrow-up-right-from-square-solid.svg?component';
 import ChevronRight from '@/assets/icons/chevron-right.svg?component';
 import CloudDownload from '@/assets/icons/cloud-arrow-down-solid.svg?component';

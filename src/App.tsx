@@ -1,3 +1,4 @@
+import type { VNode } from 'vue';
 import { defineComponent, KeepAlive, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 import './App.css';
@@ -18,7 +19,7 @@ export default defineComponent({
       }
     });
   },
-  render() {
+  render(): VNode {
     return (
       <KeepAlive>
         <router-view />

@@ -1,5 +1,6 @@
+import type { PropType, VNode } from 'vue';
 import type { Location } from '@/types';
-import { defineComponent, PropType, VNode } from 'vue';
+import { defineComponent } from 'vue';
 import './CategoryList.css';
 
 export default defineComponent({
