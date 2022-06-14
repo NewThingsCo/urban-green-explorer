@@ -1,11 +1,15 @@
-import type { VNode } from 'vue';
-import { computed, defineComponent } from 'vue';
+import type { Location } from '@/types';
+import type { Map, TileLayer } from 'leaflet';
+import type { VNode, VNodeRef } from 'vue';
+import leaflet from 'leaflet';
+import { computed, defineComponent, onMounted, ref } from 'vue';
+import { useI18n } from 'vue-i18n';
 import { useRoute } from 'vue-router';
-import { handleMapLink } from './handleMapLink';
 import MapMarkerAltIcon from '@/assets/icons/map-marker-alt.svg?raw';
 import AppFooter from '@/components/AppFooter';
 import AppHeader from '@/components/AppHeader';
 import AppMain from '@/components/AppMain';
+import { DEFAULT_MAP_COORDINATES, LIGHT_MAP_THEME } from '@/constants';
 import { locations } from '@/content/locations';
 import 'leaflet.locatecontrol';
 import './MapPage.css';
@@ -13,99 +17,88 @@ import './MapPage.css';
 export default defineComponent({
   name: 'MapPage',
   setup() {
+    const { t } = useI18n();
     const route = useRoute();
+    const mapInstance = ref<null | Map>(null);
+    const layers = ref<null | TileLayer>(null);
+    const map = ref<null | VNodeRef>(null);
+
+    /** Marker icon used in the map. */
+    const markerIcon = leaflet.divIcon({
+      html: MapMarkerAltIcon,
+      className: '',
+      iconSize: [24, 40],
+      iconAnchor: [12, 40],
+    });
+
+    /** Location slug. */
     const slug = computed(() => route.params?.id || null);
+
+    function invalidateMap(): void {
+      mapInstance.value?.invalidateSize();
+    }
+
+    /** Current location based on slug value. */
     const location = slug.value
       ? locations.find((l) => l.slug === slug.value)
       : null;
-    return { location, slug };
-  },
-  beforeUnmount() {
-    Array.from(window.document.querySelectorAll('.router-link')).forEach(
-      ($link: Element): void => {
-        $link.removeEventListener('click', handleMapLink);
-      }
-    );
-  },
-  mounted() {
-    if (!this.$leaflet) return;
-    try {
-      const mapDiv = document.getElementById('map') as HTMLDivElement;
-      const map = this.$leaflet.map(mapDiv).setView([60.1807, 24.9773], 16.5);
-      this.$leaflet.control
-        .locate({
-          position: 'topleft',
-          icon: 'leaflet-control-locate-location-arrow',
+
+    /** Invalidates map size when window is resized. */
+    const resizeObserver = new ResizeObserver(invalidateMap);
+
+    /** Renders popup content. */
+    function renderPopup(l: Location): string {
+      return `<div class="flex flex-col items-center"><h2 class="text-sm">${t(
+        l.title
+      )}</h2><a class="router-link" href="/location/${l.slug}">${t(
+        'moreInfo'
+      )}</a></div>`;
+    }
+
+    /** Creates markers for locations. */
+    function createLocationMarker(l: Location): void {
+      leaflet
+        .marker([l.coordinates.lat, l.coordinates.lng], {
+          icon: markerIcon,
         })
-        .addTo(map);
-      this.$leaflet
-        .tileLayer('https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png', {
-          attribution:
-            'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
-          detectRetina: true,
-          maxZoom: 30,
-          tileSize: 512,
-          zoomOffset: -1,
-        })
-        .addTo(map);
+        .bindPopup(renderPopup(l))
+        .addTo(mapInstance.value as Map);
+    }
 
-      const resizeObserver = new ResizeObserver(() => {
-        map.invalidateSize();
-      });
+    onMounted(() => {
+      // Create map instance
+      mapInstance.value = leaflet
+        .map(map.value.$el)
+        .setView(DEFAULT_MAP_COORDINATES, 16.5);
 
-      resizeObserver.observe(mapDiv);
+      // Add tiles
+      layers.value = leaflet
+        .tileLayer(LIGHT_MAP_THEME.urlTemplate, LIGHT_MAP_THEME.options)
+        .addTo(mapInstance.value as Map);
 
-      // MARKERS
-      const markerIcon = this.$leaflet.divIcon({
-        html: MapMarkerAltIcon,
-        className: '',
-        iconSize: [24, 40],
-        iconAnchor: [12, 40],
-      });
+      // Add location markers
+      locations.map(createLocationMarker);
 
-      // Location popups
-      locations.map((l) => {
-        this.$leaflet
-          .marker([l.coordinates.lat, l.coordinates.lng], {
-            icon: markerIcon,
-          })
-          .bindPopup(
-            `<div class="flex flex-col items-center"><h2 class="text-sm">${this.$t(
-              l.title
-            )}</h2><a class="router-link" href="/location/${l.slug}"}>${this.$t(
-              'moreInfo'
-            )}</a></div>`
-          )
-          .addTo(map);
-      });
+      // Invalidate map on window resize
+      resizeObserver.observe(map.value.$el);
 
       // Open pre-defined popup
-      if (this.location) {
-        console.debug('Showing popup for pre-defined location:', this.location);
-        this.$leaflet
+      if (location) {
+        console.debug('Showing popup for pre-defined location:', location);
+        leaflet
           .popup()
-          .setLatLng([
-            this.location.coordinates.lat,
-            this.location.coordinates.lng,
-          ])
-          .setContent(
-            `<div class="flex flex-col items-center"><h2 class="text-sm">${this.$t(
-              this.location.title
-            )}</h2><a class="router-link" href="/location/${
-              this.location.slug
-            }"}>${this.$t('moreInfo')}</a></div>`
-          )
-          .openOn(map);
+          .setLatLng([location.coordinates.lat, location.coordinates.lng])
+          .setContent(renderPopup(location))
+          .openOn(mapInstance.value as Map);
       }
-    } catch (error) {
-      console.error(error);
-    }
+    });
+    return { map };
   },
   render(): VNode {
     return (
       <>
         <AppHeader />
-        <AppMain class="map" id="map" ref="map" />
+        <AppMain class="map" ref="map" />
         <AppFooter />
       </>
     );
