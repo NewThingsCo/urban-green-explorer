@@ -1,4 +1,3 @@
-import type { Location } from '@/types';
 import type {
   LatLngTuple,
   Layer,
@@ -7,7 +6,9 @@ import type {
   PopupEvent,
   TileLayer,
 } from 'leaflet';
+import type { Location } from '@/types';
 import leaflet from 'leaflet';
+import 'leaflet.locatecontrol';
 import {
   computed,
   defineComponent,
@@ -20,24 +21,24 @@ import {
 } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRoute, useRouter } from 'vue-router';
+import { renderToString } from 'vue/server-renderer';
+import { locations } from '@/content/locations';
+import { DEFAULT_MAP_COORDINATES, LIGHT_MAP_THEME } from '@/constants';
 import MapMarkerAltIcon from '@/assets/icons/map-marker-alt.svg?raw';
 import AppFooter from '@/components/AppFooter';
-import AppHeader from '@/components/AppHeader';
 import AppMain from '@/components/AppMain';
-import { DEFAULT_MAP_COORDINATES, LIGHT_MAP_THEME } from '@/constants';
-import { locations } from '@/content/locations';
-import 'leaflet.locatecontrol';
+import AppHeader from '@/components/AppHeader';
 import './MapPage.css';
 
 export default defineComponent({
   name: 'MapPage',
   setup() {
     const { locale, t } = useI18n();
-    const route = useRoute();
-    const router = useRouter();
-    const mapInstance = ref<null | Map>(null);
     const layers = ref<null | TileLayer>(null);
     const map = ref<null | VNodeRef>(null);
+    const mapInstance = ref<null | Map>(null);
+    const route = useRoute();
+    const router = useRouter();
 
     /** Marker icon used for locations. */
     const markerIcon = leaflet.divIcon({
@@ -61,7 +62,7 @@ export default defineComponent({
     }
 
     /** Creates markers for locations. */
-    function createLocationMarker(location: Location): void {
+    async function createLocationMarker(location: Location): Promise<void> {
       const {
         coordinates: { lat, lng },
       } = location;
@@ -69,7 +70,7 @@ export default defineComponent({
       const markerOptions: MarkerOptions = { icon: markerIcon };
       const marker = leaflet
         .marker(latlng, markerOptions)
-        .bindPopup(renderPopup(location));
+        .bindPopup(await renderPopup(location));
       console.debug('Creating marker:', marker);
       marker.addTo(mapInstance.value as Map);
     }
@@ -101,7 +102,7 @@ export default defineComponent({
     }
 
     /** Opens a popup for a location. */
-    function openLocationPopup(location: Location): void {
+    async function openLocationPopup(location: Location): Promise<void> {
       console.debug('Showing popup for location:', location);
       const {
         coordinates: { lat, lng },
@@ -110,7 +111,7 @@ export default defineComponent({
       leaflet
         .popup()
         .setLatLng(latlng)
-        .setContent(renderPopup(location))
+        .setContent(await renderPopup(location))
         .openOn(mapInstance.value as Map);
     }
 
@@ -144,12 +145,15 @@ export default defineComponent({
     }
 
     /** Renders popup content. */
-    function renderPopup({ slug, title }: Location): string {
-      return `<div class="flex flex-col items-center"><h2 class="text-sm">${t(
-        title
-      )}</h2><a class="router-link" href="/location/${slug}">${t(
-        'moreInfo'
-      )}</a></div>`;
+    function renderPopup({ slug, title }: Location): Promise<string> {
+      return renderToString(
+        <div class="leaflet-popup-container">
+          <h2 class="leaflet-popup-title" v-html={t(title)} />
+          <a class="router-link" href={`/location/${slug}`}>
+            {t('moreInfo')}
+          </a>
+        </div>
+      );
     }
 
     /** Resets the map and re-renders popups. */
@@ -175,7 +179,7 @@ export default defineComponent({
         .addTo(mapInstance.value as Map);
 
       // Add location markers
-      locations.map(createLocationMarker);
+      Promise.all(locations.map(createLocationMarker));
 
       // Invalidate map on window resize
       resizeObserver.observe(map.value.$el);
@@ -197,14 +201,14 @@ export default defineComponent({
       resetPopupLinks();
     }
 
-    // Watch for locale changes
-    watch(locale, handleLocaleChange);
-
     // Initialize map on mount
     onMounted(initializeMap);
 
     // Remove event listeners on unmount
     onBeforeUnmount(removeEventListeners);
+
+    // Watch for locale changes
+    watch(locale, handleLocaleChange);
 
     return { map };
   },
