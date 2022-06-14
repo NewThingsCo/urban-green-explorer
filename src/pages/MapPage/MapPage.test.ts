@@ -21,7 +21,8 @@ describe(Component.name, () => {
   });
   it('renders the component', () => {
     expect(wrapper.exists()).toBeTruthy();
-    // Error expected from Leaflet
-    expect(console.error).toHaveBeenCalledTimes(1);
+  });
+  it('has children', () => {
+    expect(wrapper.element.childElementCount).toEqual(3);
   });
 });
