@@ -27,7 +27,7 @@ export default defineComponent({
       case 'back-link':
         return (
           <header class="app-header">
-            <Button to="#" onClick={goBack} type="button">
+            <Button to={{ path: '#' }} onClick={goBack} type="button">
               <ChevronLeft class="h-4 w-4" />
               <span class="title">{this.$t('back')}</span>
             </Button>
