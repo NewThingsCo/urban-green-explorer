@@ -1,4 +1,5 @@
 import type {
+  Control,
   LatLngTuple,
   Layer,
   Map,
@@ -39,6 +40,15 @@ export default defineComponent({
     const mapInstance = ref<null | Map>(null);
     const route = useRoute();
     const router = useRouter();
+
+    /** Options for the `Leaflet.Locate` plugin. */
+    const locateControlOptions: Control.LocateOptions = {
+      icon: 'leaflet-control-locate-location-arrow',
+      locateOptions: {
+        enableHighAccuracy: true,
+      },
+      position: 'topleft',
+    };
 
     /** Marker icon used for locations. */
     const markerIcon = leaflet.divIcon({
@@ -187,6 +197,11 @@ export default defineComponent({
       // Handle popup events
       mapInstance.value.addEventListener('popupclose', handlePopupclose);
       mapInstance.value.addEventListener('popupopen', handlePopupopen);
+
+      // Initialize locate feature
+      mapInstance.value.addControl(
+        leaflet.control.locate(locateControlOptions)
+      );
 
       // Open popup for current location
       if (currentLocation) {
