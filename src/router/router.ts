@@ -3,6 +3,10 @@ import { routes } from './routes';
 
 const router = createRouter({
   history: createWebHistory(),
+  scrollBehavior() {
+    // Always scroll to top when changing paths internally
+    return { top: 0 };
+  },
   routes,
 });
 
