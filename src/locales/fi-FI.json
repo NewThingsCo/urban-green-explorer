@@ -81,7 +81,13 @@
     },
     "greenTramStop": {
       "additionalContent": "<p>Kalasatamasta Pasilaan hankkeessa suunnitellaan ja toteutetaan uutta raitiolinjaa, joka yhdistää Kalasataman eteläisimmän pään Kumpulan läpi Pasilan asemalle.</p><p>Linja kulkee läpi Kalasataman kehittyvien alueiden. B.Green projektissa konseptoitiin raitiopysäkkiä, joka jakaa käyttäjilleen tietoa pysäkin välittömässä läheisyydessä sijaitsevasta kaupunkivehreästä.</p><p>Green Kalasatama Appista, voit nähdä tulevaisuudessa rakennettavan pysäkin ja kadun täysikasvuiset puut paikoillaan.</p>",
-      "additionalLinks": [],
+      "additionalLinks": [
+        {
+          "alert": "Sovellus on ladattavissa 27.6 alkaen.",
+          "href": "#",
+          "label": "Lataa AR-sovellus"
+        }
+      ],
       "description": "B.Green-projektissa ideoitiin raitiovaunupysäkki, jonka lähellä oleviin viheralueisiin voi tutustua oman mobiililaitteen ja AR-palvelun yhdistelmällä.",
       "images": [
         {
@@ -99,6 +105,11 @@
     "greenUrbanMapping": {
       "additionalContent": "<p>Green Urban Mapping avoimessa haussa etsittiin ratkaisuja digitaaliseen kaupunkikasvillisuuden kartoittamiseen.</p><p>XD-Visuals Oy tarjosi Forum Virium Helsingin järjestämään avoimeen hakuun pistepilvimallin analyysiin perustuvan ratkaisun ja Granlund Oy jatkoi lisätyn todellisuuden ratkaisun kehittämiseen kartoituksen osalta.</p><p>Kaupunkiekologian kehittymisen kannalta on tärkeää, että voimme kerätä tarkkaa sijainti- ja lajitietoa kasvillisuudesta. Kehittämällä helposti käytettäviä kartoitustapoja, kaupunkilaisia voidaan osallistaa lähitiedon keräämiseen kotikaupungistaan.</p>",
       "additionalLinks": [
+        {
+          "alert": "Sovellus on ladattavissa 27.6 alkaen.",
+          "href": "#",
+          "label": "Lataa AR-sovellus"
+        },
         {
           "alert": "",
           "href": " https://www.granlund.fi/palvelut/digitaaliset-palvelut/",

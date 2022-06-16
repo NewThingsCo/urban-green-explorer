@@ -136,8 +136,8 @@ export const locations: Location[] = [
     additionalContent: 'locations.greenUrbanMapping.additionalContent',
     additionalLinks: [
       {
-        alert: '',
-        iconLeft: LaptopFile,
+        alert: 'locations.greenUrbanMapping.additionalLinks[0].alert',
+        iconLeft: CloudDownload,
         iconRight: ArrowUpRight,
         title: 'locations.greenUrbanMapping.additionalLinks[0].label',
         to: 'locations.greenUrbanMapping.additionalLinks[0].href',
@@ -145,10 +145,18 @@ export const locations: Location[] = [
       },
       {
         alert: '',
-        iconLeft: Website,
+        iconLeft: LaptopFile,
         iconRight: ArrowUpRight,
         title: 'locations.greenUrbanMapping.additionalLinks[1].label',
         to: 'locations.greenUrbanMapping.additionalLinks[1].href',
+        type: 'external',
+      },
+      {
+        alert: '',
+        iconLeft: Website,
+        iconRight: ArrowUpRight,
+        title: 'locations.greenUrbanMapping.additionalLinks[2].label',
+        to: 'locations.greenUrbanMapping.additionalLinks[2].href',
         type: 'external',
       },
     ],
@@ -185,7 +193,16 @@ export const locations: Location[] = [
   },
   {
     additionalContent: 'locations.greenTramStop.additionalContent',
-    additionalLinks: [],
+    additionalLinks: [
+      {
+        alert: 'locations.greenTramStop.additionalLinks[0].alert',
+        iconLeft: CloudDownload,
+        iconRight: ArrowUpRight,
+        title: 'locations.greenTramStop.additionalLinks[0].label',
+        to: 'locations.greenTramStop.additionalLinks[0].href',
+        type: 'external',
+      },
+    ],
     categories: ['tramStop'],
     coordinates: { lat: 60.18101, lng: 24.97858 },
     description: 'locations.greenTramStop.description',
