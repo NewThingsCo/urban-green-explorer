@@ -1,0 +1,9 @@
+.main-info {
+  .list {
+    @apply mt-4;
+  }
+
+  .list-title {
+    font-weight: bold !important;
+  }
+}
