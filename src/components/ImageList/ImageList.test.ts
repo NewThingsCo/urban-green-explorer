@@ -2,21 +2,18 @@ import { createTestingPinia } from '@pinia/testing';
 import { mount } from '@vue/test-utils';
 import Component from './ImageList';
 import { i18n } from '@/utils';
-import MapMarkedAlt from '@/assets/icons/map-marked-alt.svg?component';
 import { router } from '@/router';
 
 const emptyList: typeof Component['props'] = {
   links: [],
 };
 
-const listWithLinks: typeof Component['props'] = {
-  links: [
+const imageLinks: typeof Component['props'] = {
+  images: [
     {
-      iconLeft: MapMarkedAlt,
-      iconRight: MapMarkedAlt,
-      title: 'showOnMap',
-      to: { name: 'mapWithPopup', params: { id: 'test' } },
-      type: 'router-link',
+      alt: 'showOnMap',
+      caption: 'showOnMap',
+      src: '#',
     },
   ],
 };
@@ -25,10 +22,10 @@ const wrapperWithLinks = mount(Component, {
   global: {
     plugins: [createTestingPinia(), i18n, router],
   },
-  props: listWithLinks,
+  props: imageLinks,
 });
 
-const wrapperWithoutLinks = mount(Component, {
+const wrapperWithoutImages = mount(Component, {
   global: {
     plugins: [createTestingPinia(), i18n, router],
   },
@@ -39,16 +36,16 @@ describe(Component.name, () => {
   it('renders the component', () => {
     expect(wrapperWithLinks.exists()).toBeTruthy();
   });
-  it('renders a list of categories', () => {
-    expect(wrapperWithLinks.findAll('.link').length).toBeTruthy();
+  it('renders a list of images', () => {
+    expect(wrapperWithLinks.findAll('.item').length).toBeTruthy();
   });
-  it('categories contain icons', () => {
-    expect(wrapperWithLinks.findAll('.icon').length).toBeTruthy();
+  it('list contains images', () => {
+    expect(wrapperWithLinks.findAll('.image').length).toBeTruthy();
   });
-  it('categories contain titles', () => {
-    expect(wrapperWithLinks.findAll('.title').length).toBeTruthy();
+  it('contains captions', () => {
+    expect(wrapperWithLinks.findAll('.caption').length).toBeTruthy();
   });
   it('skips rendering categories when given an empty array', () => {
-    expect(wrapperWithoutLinks.findAll('.link').length).toBeFalsy();
+    expect(wrapperWithoutImages.findAll('.item').length).toBeFalsy();
   });
 });
