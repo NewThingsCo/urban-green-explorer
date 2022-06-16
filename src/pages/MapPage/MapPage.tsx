@@ -25,11 +25,11 @@ import { useI18n } from 'vue-i18n';
 import { useRoute, useRouter } from 'vue-router';
 import { renderToString } from 'vue/server-renderer';
 import MapMarkerAltIcon from '@/assets/icons/map-marker-alt.svg?raw';
+import AppFooter from '@/components/AppFooter';
+import AppHeader from '@/components/AppHeader';
+import AppMain from '@/components/AppMain';
 import { locations } from '@/content/locations';
 import { DEFAULT_MAP_COORDINATES, LIGHT_MAP_THEME } from '@/constants';
-import AppFooter from '@/components/AppFooter';
-import AppMain from '@/components/AppMain';
-import AppHeader from '@/components/AppHeader';
 import './MapPage.css';
 
 export default defineComponent({
