@@ -74,7 +74,7 @@
     "vue": "^3.2.37",
     "vue-router": "^4.0.16"
   },
-  "description": "Urban Green Explorer app for exploring the city of Helsinki.",
+  "description": "Urban Green Digital Development tour guide. B.Green project 2020-2022. Sompasaari, Kalasatama-District, City of Helsinki, Finland.",
   "devDependencies": {
     "@commitlint/cli": "^17.0.2",
     "@commitlint/config-conventional": "^17.0.2",

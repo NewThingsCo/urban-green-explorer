@@ -1,12 +1,17 @@
-import type { Locale, LocaleCode } from '@/types';
+import type {
+  I18nLocaleMessages,
+  I18nTranslations,
+  Locale,
+  LocaleCode,
+} from '@/types';
 import type {
   FallbackLocale,
   I18nOptions,
   IntlDateTimeFormats,
   IntlNumberFormats,
 } from 'vue-i18n';
-import en from '../locales/en.json';
-import fi_FI from '../locales/fi-FI.json';
+import en from '@/locales/en.json';
+import fi_FI from '@/locales/fi-FI.json';
 
 const DATE_TIME_FORMATS: IntlDateTimeFormats = {
   'en-US': {
@@ -47,7 +52,7 @@ const DATE_TIME_FORMATS: IntlDateTimeFormats = {
 
 const DEFAULT_LOCALE: Locale = {
   code: 'fi-FI',
-  name: 'English',
+  name: 'Suomi',
 };
 
 const DEFAULT_LOCALE_CODE: LocaleCode =
@@ -56,12 +61,13 @@ const DEFAULT_LOCALE_CODE: LocaleCode =
       DEFAULT_LOCALE.code
     : DEFAULT_LOCALE.code;
 
-const I18N_MESSAGES: I18nOptions['messages'] & { [name: string]: typeof en } = {
+const I18N_MESSAGES: I18nOptions['messages'] & I18nLocaleMessages = {
   'en-US': en,
   'fi-FI': fi_FI,
 };
 
-const I18N_DEFAULT_MESSAGES = I18N_MESSAGES[DEFAULT_LOCALE_CODE];
+const I18N_DEFAULT_MESSAGES: I18nTranslations =
+  I18N_MESSAGES[DEFAULT_LOCALE_CODE];
 
 const LOCALE_CODES = ['en-US', 'fi-FI'] as const;
 

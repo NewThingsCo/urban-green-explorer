@@ -28,5 +28,23 @@
     @apply block;
     @apply mt-2;
     @apply text-base;
+
+    animation: pop 0.35s ease-out;
+
+    &.large {
+      @apply pb-4;
+      @apply text-lg;
+    }
+
+    @media (prefers-reduced-motion) {
+      animation: none;
+    }
+  }
+
+  .time {
+    @apply block;
+    @apply font-normal;
+    @apply text-gray-400;
+    @apply text-sm;
   }
 }

@@ -1,13 +1,15 @@
-import type { VNode } from 'vue';
-import { computed, defineComponent } from 'vue';
+import type { CategoryKey, CheckIn, Location, LocationLink } from '@/types';
+import type { ComputedRef, VNode } from 'vue';
+import { computed, defineComponent, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRoute } from 'vue-router';
 import AppFooter from '@/components/AppFooter';
 import AppHeader from '@/components/AppHeader';
 import AppMain from '@/components/AppMain';
 import CategoryList from '@/components/CategoryList';
-import CheckIn from '@/components/CheckIn';
+import CheckInComponent, { getCheckIn } from '@/components/CheckIn';
 import LinkList from '@/components/LinkList';
+import ImageList from '@/components/ImageList';
 import { locations } from '@/content/locations';
 import './LocationPage.css';
 
@@ -16,26 +18,95 @@ export default defineComponent({
   setup() {
     const route = useRoute();
     const { t } = useI18n();
-    const location =
-      locations.find((l) => l.slug === route.params.id?.toString()) || null;
-    const categories = computed(() => location?.categories || []);
-    const description = computed(() =>
-      location?.description ? t(location?.description) : null
+
+    /** Slug of the current route. */
+    const routeSlug: string = route.params.id?.toString() || '';
+
+    /** Current location. */
+    const currentLocation: Location | null =
+      locations.find((l) => l.slug === routeSlug) || null;
+
+    console.debug('Current locaxtion', currentLocation);
+
+    if (!currentLocation)
+      throw new Error(`No location found for slug: ${routeSlug}`);
+
+    /** Index number of current location. */
+    const locationIndex: ComputedRef<number> = computed(() =>
+      locations.findIndex(
+        (location) => location.title === currentLocation.title
+      )
     );
-    const links = computed(() => location?.links || []);
-    const image = computed(() => location?.image || null);
+
+    /** Additional content to be displayed after the user has checked-in. */
+    const additionalContent: ComputedRef<string> = computed(() =>
+      existingCheckIn.value && currentLocation.additionalContent
+        ? t(currentLocation.additionalContent)
+        : ''
+    );
+
+    /** Location categories. */
+    const categories: ComputedRef<CategoryKey[]> = computed(
+      () => currentLocation.categories || []
+    );
+
+    /** Location description. */
+    const description: ComputedRef<string> = computed(
+      () =>
+        (currentLocation.description && t(currentLocation.description)) || ''
+    );
+
+    /** Existing check-in. */
+    const existingCheckIn = ref<CheckIn | null>(
+      getCheckIn(currentLocation.slug) || null
+    );
+
+    /** Location links including additional links if user has checked-in. */
+    const links: ComputedRef<LocationLink[]> = computed(() =>
+      existingCheckIn.value &&
+      currentLocation?.links &&
+      currentLocation?.additionalLinks
+        ? [...currentLocation.links, ...currentLocation.additionalLinks]
+        : currentLocation?.links || []
+    );
+
+    /** Location image. */
+    const image = currentLocation.image;
+
+    const images = computed(
+      () => (existingCheckIn.value && currentLocation.images) || null
+    );
+
+    /** Location subtitle. */
     const subtitle = computed(() =>
-      location?.subtitle ? t(location.subtitle) : null
+      currentLocation.subtitle ? t(currentLocation.subtitle) : null
     );
-    const locationIndex = computed(() =>
-      locations.findIndex((l) => l.title === location?.title)
-    );
+
+    /** Location title. */
     const title = computed(() =>
-      location?.title
-        ? `${locationIndex.value + 1}. ${t(location.title)}`
+      currentLocation.title
+        ? `${locationIndex.value + 1}. ${t(currentLocation.title)}`
         : null
     );
-    return { categories, description, image, links, location, subtitle, title };
+
+    /** Handles check-in event from CheckIn component. */
+    function handleCheckIn(checkIn: CheckIn): void {
+      if (!checkIn) return;
+      existingCheckIn.value = checkIn;
+    }
+
+    return {
+      additionalContent,
+      categories,
+      description,
+      existingCheckIn,
+      handleCheckIn,
+      image,
+      images,
+      links,
+      subtitle,
+      title,
+    };
   },
   render(): VNode {
     return (
@@ -50,7 +121,7 @@ export default defineComponent({
           {this.image && (
             <img
               alt={this.$t(this.title || '')}
-              class="image"
+              class="cover-image"
               src={this.image}
             />
           )}
@@ -60,11 +131,25 @@ export default defineComponent({
             {this.description && (
               <p class="description">{this.$t(this.description)}</p>
             )}
-            <LinkList links={this.links} />
+            {this.additionalContent && (
+              <div
+                class="additional-content"
+                v-html={this.$t(this.additionalContent)}
+              />
+            )}
+            {this.links && <LinkList links={this.links} />}
+            {this.images && (
+              <>
+                <h2 class="page-subtitle image-title" id="image-list-title">
+                  {this.$t('locationImages')}
+                </h2>
+                <ImageList images={this.images} />
+              </>
+            )}
           </div>
         </AppMain>
         <AppFooter>
-          <CheckIn />
+          <CheckInComponent onCheckIn={this.handleCheckIn} />
         </AppFooter>
       </>
     );

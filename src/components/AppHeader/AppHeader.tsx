@@ -4,7 +4,7 @@ import { RouterLink, useRoute } from 'vue-router';
 import Button from '../Button';
 import LocaleSwitcher from '../LocaleSwitcher';
 import { goBack } from '@/router';
-import BGreenLogo from '@/assets/logos/BGreen.png?url';
+import BGreenLogo from '@/assets/logos/b-green-small.png?url';
 import ChevronLeft from '@/assets/icons/chevron-left.svg?component';
 import './AppHeader.css';
 

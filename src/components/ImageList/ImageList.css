@@ -1,0 +1,31 @@
+.image-list {
+  @apply flex flex-col gap-4;
+  @apply list-none;
+  @apply mt-4;
+
+  .caption {
+    @apply bg-light-200;
+    @apply text-sm;
+    @apply p-3;
+    @apply text-gray-600;
+  }
+
+  .container {
+    @apply shadow shadow-md;
+    @apply m-0;
+    @apply overflow-hidden;
+    @apply rounded-2xl;
+  }
+
+  .item {
+    @apply mt-4;
+  }
+
+  .image {
+    @apply w-full;
+  }
+
+  .title {
+    @apply flex-1;
+  }
+}

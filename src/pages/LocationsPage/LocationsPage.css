@@ -32,7 +32,7 @@
       @apply inline-block;
       @apply left-32.75;
       @apply p-3;
-      @apply text-sm md:text-base;
+      @apply md:text-lg;
     }
   }
 

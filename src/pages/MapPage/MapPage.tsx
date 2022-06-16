@@ -216,7 +216,7 @@ export default defineComponent({
     return (
       <>
         <AppHeader />
-        <AppMain class="map" ref="map" />
+        <AppMain class="main-map" ref="map" />
         <AppFooter />
       </>
     );
