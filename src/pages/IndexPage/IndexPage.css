@@ -7,15 +7,18 @@
 
   .logo {
     @apply inline-block;
+    @apply object-contain;
     @apply text-current;
+    @apply max-h-10 xl:max-h-14;
     @apply max-w-20vw;
     @apply w-full;
   }
 
   .logos {
-    @apply grid grid-flow-col gap-8 grid-rows-2 place-items-center md:grid-rows-1;
-    @apply max-w-60rem;
+    @apply flex flex-wrap gap-8 items-center justify-center xl:flex-nowrap xl:gap-12;
+    @apply max-w-80rem;
     @apply mx-auto;
-    @apply p-6;
+    @apply my-6;
+    @apply w-full;
   }
 }
