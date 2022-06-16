@@ -13,7 +13,7 @@ export default defineComponent({
   },
   render(): VNode {
     return (
-      <ul aria-label={this.$t('locationImages')} class="image-list">
+      <ul aria-labelledby="image-list-title" class="image-list">
         {this.images.map(({ alt, caption, src }) => (
           <li class="item">
             <figure class="container">

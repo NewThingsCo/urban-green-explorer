@@ -140,7 +140,7 @@ export default defineComponent({
             {this.links && <LinkList links={this.links} />}
             {this.images && (
               <>
-                <h2 class="page-subtitle image-title">
+                <h2 class="page-subtitle image-title" id="image-list-title">
                   {this.$t('locationImages')}
                 </h2>
                 <ImageList images={this.images} />
