@@ -40,55 +40,124 @@
     "p2": "Hope you enjoyed the tour!",
     "title": "Congrats!"
   },
-  "coverImage": "Cover image",
-  "currencies": "Currencies",
-  "currency": "Currency",
-  "currencyWithoutCents": "Currency without cents",
-  "dateTimes": "Dates and times",
   "downloadIosApp": "Download iOS application",
   "enableGeolocation": "Enable location from your browser",
   "homePath": "/",
   "info": {
+    "subtitle": "Green Urban Explorer Digital Service",
     "title": "Info"
   },
   "introduction": {
-    "bodyText": "Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.",
-    "getStarted": "Get started",
-    "helloThere": "Hello there"
+    "buttonText": "Get started",
+    "content": "<p>Welcome to Urban Green Explorer, a digital service that gets you acquainted with green infrastructure through different digital solutions produced within the B.Green project.</p><p>The service is browser-based, but is best served on site, at Sompasaari, in the Kalasatama-district of Helsinki.</p>",
+    "title": "Hello there!"
   },
   "language": "English",
   "localeSwitcher": "Language menu",
+  "locationImages": "Photos related to the location",
   "locationLinks": "Links",
+  "financier": "Financier",
   "locationList": "List of locations",
+  "bGreenContact": "B.Green project website and contact",
   "locations": {
     "auroraBlock": {
-      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
-      "subtitle": "Lorem ipsum dolor sit amet",
+      "additionalContent": "<p>The Aurora block interior court is a modern and interesting piece of landscape architecture. Large amounts of stormwater are steered with site topography towards the south east corner outdoor staircase.</p><p>The parking spaces of the block are under the garden and buildings, which limits the sizes of planted trees.The sandy forms and long grasses and hays, added with rusted steel colored furniture create an interesting visual site.</p><p>The rooftop of the block holds two separate roof gardens and can be accessed by residents.</p>",
+      "description": "The interior courtyard of the Aurora block is a combination of functionality, urban greenery, stormwater management and artistry. The block also has roof gardens.",
+      "images": [
+        {
+          "alt": "Photo from the top",
+          "caption": "View of the Aurora-block from the top."
+        },
+        {
+          "alt": "Photo of rooftop garden",
+          "caption": "The eastern side rooftop garden of the Aurora block."
+        }
+      ],
+      "subtitle": "Landscape architectonic stormwater management",
       "title": "Aurora Block"
     },
+    "digitalService": "Green Urban Explorer Digital Service",
     "greenTramStop": {
-      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
-      "subtitle": "Lorem ipsum dolor sit amet",
+      "additionalContent": "<p>The Kalasatamasta Pasilaan project is realizing a new tram line, that connects the southern end of the developing district of Kalasatama to the train station of Pasila.</p><p>B.Green innovated a new kind of tram stop, that dispenses the commuters information about the greenery sites and how they can be accessed.</p><p>With the Green Kalasatama app, you can see the location of the future tramstop and the nearby matured trees.</p>",
+      "description": "B.Green project concepted a tram stop, that provides information of hyperlocal urban greenery with a combination of a mobile device and and AR-service.",
+      "images": [
+        {
+          "alt": "Concept illustration",
+          "caption": "Concept illustration of the B.Green tram stop."
+        },
+        {
+          "alt": "Concept illustration",
+          "caption": "Concept illustration of the B.Green tram stop."
+        }
+      ],
+      "subtitle": "Green tram from Kalasatama to Pasila",
       "title": "Green Tramp Stop"
     },
     "greenUrbanMapping": {
-      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
-      "subtitle": "Lorem ipsum dolor sit amet",
+      "additionalContent": "<p>Green Urban Mapping Open Call was searching for solutions for digital mapping of urban vegetation.</p><p>XD Visuals Ltd. suggested a solution based on analyzing created pointclouds. The second chosen case to be piloted, was by Granlund Ltd, who suggested a solution that developed the idea of using AR in data collection.</p><p>For the development of higher quality  urban ecology, it is important to be able to collect precise species and location data of vegetation. By developing easily usable methods of mapping, citizens can participate in the collection of environmental data.</p><p>You can read more about XD Visuals Ltd. and Granlund Ltd. on their websites.</p>",
+      "additionalLinks": [
+        {
+          "href": "https://www.granlundgroup.com/services/digital-services/",
+          "label": "Grandlund’s digital services"
+        },
+        {
+          "href": "https://www.xd-visuals.fi/",
+          "label": "XD Visuals homepage"
+        }
+      ],
+      "description": "Residents are provided easy-to-use and fun mapping tools, that can provide cities diverse information about it’s green environments.",
+      "images": [
+        {
+          "alt": "Screenshot",
+          "caption": " Screenshot of XD Twin-software by XD Visuals Ltd."
+        },
+        {
+          "alt": "Screenshot",
+          "caption": "Granlund’s PlantsMapper AR-app."
+        }
+      ],
+      "subtitle": "Mapping with augmented reality",
       "title": "Green Urban Mapping"
     },
     "loviseholmPark": {
-      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
-      "subtitle": "Lorem ipsum dolor sit amet",
+      "additionalContent": "<p>Granlund Ltd. works widely in the fields of environment- and real estate and property planning development and developed as part of The Healthy Liveable Neighborhoods-project, the Green Kalasatama AR app, that uses a pointcloud map to precisely locate the user.</p><p>When planting trees in parks, it takes time for the vegetation to mature. With the app, the trees can be seen in their future full size. As the 3D-city modeling develops, these peeks to the future become easier to produce. This Loviseholm park model uses a Helsinki species specific 3D-vegetation model library, produced as part of the B.Green project.</p><p>You can download Granlund’s Green Kalasatama AR-app below.</p><p>The Green Kalasatama AR-app was originally produced as part of the Healthy Liveable Neighborhoods project.</p>",
+      "additionalLinks": [
+        {
+          "alert": "The app will be available on the 27th of June.",
+          "href": "#",
+          "label": "Download the AR-app"
+        },
+        {
+          "href": "https://www.youtube.com/watch?v=Qr9OIrAV2DU",
+          "label": "Watch a video of the project"
+        }
+      ],
+      "description": "The future of a fully grown Loviseholm park can be seen with Augmented Reality. The Green Kalasatama AR-app lets you also plant virtual trees.",
+      "images": [
+        {
+          "alt": "Photo of people using the app",
+          "caption": "Grandlund’s Green Kalasatama AR-app in action."
+        }
+      ],
+      "subtitle": "The future of the park as an augmented reality",
       "title": "Loviseholm Park"
     },
     "parkly": {
-      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.",
+      "additionalContent": "<p>Parkly is a local Finnish company that produces modular public space green furniture, which can be used to create new kinds of activating urban environments.</p><p>Sensors have been integrated into the furniture in Sompasaari, which give information on growing surface humidity, movement on site and hyperlocal weather.</p><p>Read more about Parkly on their website.</p>",
+      "additionalLinks": [
+        {
+          "href": "https://www.helloparkly.com/",
+          "label": "Parkly's website"
+        }
+      ],
+      "description": "The pollinator friendly flowers, shadow providing trees and edible plants in planter boxes bring a variety of vegetation into the urban environment. They also bring enchanting experiences for all senses.",
       "subtitle": "Temporary Green Street Furniture",
       "title": "Start at Parkly"
     }
   },
-  "locationsTitle": "Locations",
-  "long": "Long",
+  "implementation": "Implementation",
+  "locationsTitle": "Locations on tour",
+  "producer": "Producer",
   "moreInfo": "More info",
   "routes": {
     "index": "Home",
@@ -96,16 +165,6 @@
     "locations": "Locations",
     "map": "Map"
   },
-  "short": "Short",
   "showOnMap": "Show on map",
-  "title": "Urban Green Explorer",
-  "today": "Today",
-  "viteDocs": {
-    "href": "https://vitejs.dev/",
-    "label": "Vite Docs"
-  },
-  "vueDocs": {
-    "href": "https://v3.vuejs.org/",
-    "label": "Vue 3 Docs"
-  }
+  "title": "Urban Green Explorer"
 }

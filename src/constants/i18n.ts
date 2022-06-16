@@ -5,8 +5,8 @@ import type {
   IntlDateTimeFormats,
   IntlNumberFormats,
 } from 'vue-i18n';
-import en from '../locales/en.json';
-import fi_FI from '../locales/fi-FI.json';
+import en from '@/locales/en.json';
+import fi_FI from '@/locales/fi-FI.json';
 
 const DATE_TIME_FORMATS: IntlDateTimeFormats = {
   'en-US': {
