@@ -13,10 +13,10 @@
     @apply justify-center;
     @apply lg:text-xl;
     @apply m-auto;
-    @apply max-w-md lg:max-w-xl;
-    @apply p-4;
-    @apply text-white;
+    @apply max-w-md md:max-w-xl;
+    @apply p-3;
     @apply text-center;
+    @apply text-white;
     @apply z-1;
   }
 
@@ -29,7 +29,7 @@
   }
 
   .title {
-    @apply mb-3;
+    @apply mb-2;
     @apply text-4xl lg:text-5xl;
   }
 
