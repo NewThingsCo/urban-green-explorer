@@ -66,6 +66,7 @@ export {
   AdditionalContent,
   Category,
   CheckIn,
+  Coordinates,
   Locales,
   Location,
   LocationImage,
