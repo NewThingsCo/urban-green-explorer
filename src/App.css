@@ -46,3 +46,9 @@ a {
   @apply heading-1;
   @apply my-6 md:my-8;
 }
+
+.page-subtitle {
+  @apply font-semi-bold;
+  @apply text-lg;
+  @apply mb-4;
+}

@@ -38,23 +38,38 @@ type LocationIcon = FunctionalComponent<SVGAttributes>;
 type LocationLinkType = 'external' | 'panel' | 'router-link';
 
 interface LocationLink {
+  alert?: string; // Link to translation for alert
   iconLeft: LocationIcon | null;
   iconRight: LocationIcon | null;
-  title: TranslationKey;
-  to: LocationAsRelativeRaw;
+  title: string; // Link to translation
+  to: LocationAsPath | LocationAsRelativeRaw; // URL, link to translation or relative path
   type: LocationLinkType;
 }
 
+interface AdditionalContent {
+  content: string;
+  links: LocationLink[];
+}
+
 interface Location {
+  additionalContent?: string;
+  additionalLinks?: LocationLink[];
   categories: CategoryKey[];
   coordinates: Coordinates;
   description: string;
-  links: LocationLink[];
   image: string;
+  images?: LocationImage[];
+  links?: LocationLink[];
   minDistance: number;
   slug: string;
   subtitle: string;
   title: string;
+}
+
+interface LocationImage {
+  alt: string; // Translation reference
+  caption?: string; // Translation reference
+  src: string;
 }
 
 interface MapTheme {
@@ -63,12 +78,15 @@ interface MapTheme {
 }
 
 export {
+  AdditionalContent,
   Category,
+  CategoryKey,
   CheckIn,
   Locale,
   LocaleCode,
   Locales,
   Location,
+  LocationImage,
   LocationLink,
   LocationLinkPanel,
   MapTheme,
