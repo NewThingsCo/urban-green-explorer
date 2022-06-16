@@ -36,6 +36,8 @@ const manifest: Partial<ManifestOptions> = {
     'future architecture',
     'sensors',
   ],
+  description:
+    'Urban Green Digital Development tour guide. B.Green project 2020-2022. Sompasaari, Kalasatama-District, City of Helsinki, Finland.',
   dir: 'ltr',
   icons: [
     {
@@ -49,7 +51,8 @@ const manifest: Partial<ManifestOptions> = {
       type: 'image/png',
     },
   ],
-  lang: 'en',
+  lang: 'fi',
+  name: 'Urban Green Explorer',
   orientation: 'natural',
   related_applications: [
     {
@@ -58,6 +61,7 @@ const manifest: Partial<ManifestOptions> = {
       url: 'https://apps.apple.com/fi/app/green-kalasatama/id1573262748',
     },
   ],
+  short_name: 'UGE',
   theme_color: '#42b883',
 };
 
