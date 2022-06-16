@@ -4,7 +4,7 @@ import HeroBackground from '@/assets/images/cover-images/sompasaari-overview.jpg
 import BGLogo from '@/assets/logos/b-green.svg?component';
 import InterregLogo from '@/assets/logos/central-baltic-programme-logo.svg?component';
 import EULogo from '@/assets/logos/eu.svg?component';
-import ForumVirium from '@/assets/logos/forum.png?url';
+import ForumVirium from '@/assets/logos/forum-virium.svg?component';
 import HelsinkiLogo from '@/assets/logos/helsinki.svg?component';
 import SeiLogo from '@/assets/logos/sei.svg?component';
 import TallinnLogo from '@/assets/logos/tallinna-strateegiakeskus.svg?component';
@@ -35,10 +35,10 @@ export default defineComponent({
           </Hero>
           <div class="logos">
             <BGLogo class="logo" />
-            <EULogo class="logo" />
-            <img class="logo" src={ForumVirium} />
-            <HelsinkiLogo class="logo" />
             <InterregLogo class="logo" />
+            <EULogo class="logo" />
+            <ForumVirium class="logo" />
+            <HelsinkiLogo class="logo" />
             <SeiLogo class="logo" />
             <TallinnLogo class="logo" />
           </div>
