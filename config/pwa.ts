@@ -58,22 +58,6 @@ const manifest: Partial<ManifestOptions> = {
       url: 'https://apps.apple.com/fi/app/green-kalasatama/id1573262748',
     },
   ],
-  screenshots: [
-    {
-      label: 'Home screen of Urban Green Explorer',
-      platform: 'narrow',
-      sizes: '1170x2532',
-      src: 'screenshots/narrow.png',
-      type: 'image/png',
-    },
-    {
-      label: 'Home screen of Urban Green Explorer',
-      platform: 'wide',
-      sizes: '2360x1640',
-      src: 'screenshots/wide.png',
-      type: 'image/png',
-    },
-  ],
   theme_color: '#42b883',
 };
 
