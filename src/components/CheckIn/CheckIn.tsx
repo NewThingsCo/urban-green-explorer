@@ -1,5 +1,5 @@
 import type { CheckIn, Location, Translations } from '@/types';
-import type { Ref, VNode } from 'vue';
+import type { PropType, Ref, VNode } from 'vue';
 import {
   computed,
   defineComponent,
@@ -10,14 +10,22 @@ import {
 } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { RouterLink, useRoute } from 'vue-router';
-import { locations } from '@/content/locations';
-import Button from '@/components/Button';
+import { getCheckIn, getCheckIns } from './utils';
 import LocateIcon from '@/assets/icons/locate.svg?component';
+import Button from '@/components/Button';
+import { locations } from '@/content/locations';
 import './CheckIn.css';
 
 export default defineComponent({
   name: 'CheckIn',
-  setup() {
+  props: {
+    onCheckIn: {
+      default: () => null,
+      required: true,
+      type: Function as PropType<(checkIn: CheckIn) => void>,
+    },
+  },
+  setup(props) {
     const { d, locale, t } = useI18n();
     const hasGeolocationSupport = ref(true);
     const route = useRoute();
@@ -109,40 +117,6 @@ export default defineComponent({
       navigator.geolocation.clearWatch(eventId);
     }
 
-    /** Gets a single check-ins from Local Storage. */
-    function getCheckIn(slug?: Location['slug']): CheckIn | void {
-      if (!slug) return;
-      try {
-        const checkIn = getCheckIns().find(
-          (checkIn) => checkIn.locationSlug === slug
-        );
-        console.debug(
-          checkIn ? 'Found existing check-in to' : 'No check-in found for',
-          'this location:',
-          checkIn || locationSlug
-        );
-        return checkIn;
-      } catch (error) {
-        console.warn('Unable to get check-ins.');
-        console.error(error);
-        return;
-      }
-    }
-
-    /** Gets check-ins from Local Storage. */
-    function getCheckIns(): CheckIn[] {
-      const checkIns = (
-        JSON.parse(
-          window.localStorage.getItem('check-ins') || '[]'
-        ) as CheckIn[]
-      )
-        // Format dates
-        .filter((checkIn) => Boolean(checkIn))
-        .map((checkIn) => ({ ...checkIn, visited: new Date(checkIn.visited) }));
-      console.debug('Existing check-ins:', checkIns);
-      return checkIns;
-    }
-
     /**
      * Handles check-in events.
      */
@@ -153,6 +127,7 @@ export default defineComponent({
       console.info('User checked-in to', locationSlug, 'at', visited);
       saveCheckIn(checkIn);
       existingCheckIn.value = checkIn;
+      props.onCheckIn && props.onCheckIn(checkIn);
       checkInLabelI18nKey.value = isLastLocation ? 'complete' : 'visited';
     }
 
@@ -256,14 +231,13 @@ export default defineComponent({
     /** Cached render of the `complete` label. */
     const labelComplete: VNode = (
       <i18n-t keypath="checkInLabel.complete.label" scope="global">
-        <em class="block">
-          <time
-            datetime={new Date(existingCheckIn.value?.visited || '').toString()}
-          >
-            {d(new Date(existingCheckIn.value?.visited || ''), 'long')}
-          </time>
-        </em>
-        <strong class="mt-2">{t('checkInLabel.complete.helpText')}</strong>
+        <time
+          class="time"
+          datetime={new Date(existingCheckIn.value?.visited || '').toString()}
+        >
+          {d(new Date(existingCheckIn.value?.visited || ''), 'long')}
+        </time>
+        <strong class="sub-label">{t('checkInLabel.complete.helpText')}</strong>
       </i18n-t>
     );
 
@@ -311,15 +285,14 @@ export default defineComponent({
     /** Cached render of the `visited` label. */
     const labelVisited: VNode = (
       <i18n-t keypath="checkInLabel.visited.label" scope="global">
-        <em class="block">
-          <time
-            datetime={new Date(existingCheckIn.value?.visited || '').toString()}
-          >
-            {d(new Date(existingCheckIn.value?.visited || ''), 'long')}
-          </time>
-        </em>
+        <time
+          class="time"
+          datetime={new Date(existingCheckIn.value?.visited || '').toString()}
+        >
+          {d(new Date(existingCheckIn.value?.visited || ''), 'long')}
+        </time>
         <RouterLink
-          class="sub-label"
+          class="sub-label large"
           to={{ name: 'mapWithPopup', params: { id: nextLocation?.slug } }}
         >
           {t('checkInLabel.visited.linkText')}
