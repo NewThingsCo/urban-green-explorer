@@ -1,4 +1,4 @@
-import type { Coordinates, Location } from '@/types';
+import type { AntPathOptions, Coordinates, Location } from '@/types';
 import type {
   Control,
   LatLngTuple,
@@ -58,7 +58,7 @@ export default defineComponent({
     ];
 
     /** Ant Path options. */
-    const antPathOptions = {
+    const antPathOptions: Partial<AntPathOptions> = {
       color: '#00D7A7',
       dashArray: [2, 70],
       delay: 1600,

@@ -59,6 +59,7 @@ export {
   I18nLocations,
   I18nTranslations,
   Locale,
+  Locales,
   LocaleCode,
   LocaleCodes,
   TranslationKey,
