@@ -112,7 +112,7 @@ export default defineComponent({
     return (
       <>
         <AppHeader />
-        <AppMain>
+        <AppMain class="main-location">
           {this.title && (
             <div class="main-wrapper">
               <h1 class="page-title" v-html={this.title} />
@@ -137,15 +137,15 @@ export default defineComponent({
                 v-html={this.$t(this.additionalContent)}
               />
             )}
-            {this.links && <LinkList links={this.links} />}
-            {this.images && (
+            {this.links.length ? <LinkList links={this.links} /> : null}
+            {this.images?.length ? (
               <>
                 <h2 class="page-subtitle image-title" id="image-list-title">
                   {this.$t('locationImages')}
                 </h2>
                 <ImageList images={this.images} />
               </>
-            )}
+            ) : null}
           </div>
         </AppMain>
         <AppFooter>
