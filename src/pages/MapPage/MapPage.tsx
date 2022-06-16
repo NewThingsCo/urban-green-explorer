@@ -53,7 +53,22 @@ export default defineComponent({
 
     /** Latitude and longitudes for Ant Path. */
     const antPathCoordinates: Coordinates[] = [
-      ...locations.map((location) => location.coordinates),
+      locations[0].coordinates,
+      { lat: 60.1813, lng: 24.97726 },
+      { lat: 60.18142, lng: 24.97726 },
+      locations[1].coordinates,
+      { lat: 60.1816, lng: 24.97709 },
+      { lat: 60.1813, lng: 24.9772 },
+      { lat: 60.18072, lng: 24.97698 },
+      { lat: 60.18069, lng: 24.97729 },
+      { lat: 60.18084, lng: 24.97737 },
+      locations[2].coordinates,
+      { lat: 60.18084, lng: 24.97784 },
+      locations[3].coordinates,
+      { lat: 60.1805, lng: 24.97836 },
+      { lat: 60.18055, lng: 24.97844 },
+      { lat: 60.18095, lng: 24.97862 },
+      locations[4].coordinates,
       locations[0].coordinates,
     ];
 
