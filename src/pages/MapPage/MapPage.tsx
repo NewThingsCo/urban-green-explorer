@@ -1,3 +1,4 @@
+import type { AntPathOptions, Coordinates, Location } from '@/types';
 import type {
   Control,
   LatLngTuple,
@@ -7,8 +8,8 @@ import type {
   PopupEvent,
   TileLayer,
 } from 'leaflet';
-import type { Location } from '@/types';
 import leaflet from 'leaflet';
+import { antPath } from 'leaflet-ant-path';
 import 'leaflet.locatecontrol';
 import {
   computed,
@@ -23,12 +24,12 @@ import {
 import { useI18n } from 'vue-i18n';
 import { useRoute, useRouter } from 'vue-router';
 import { renderToString } from 'vue/server-renderer';
-import { locations } from '@/content/locations';
-import { DEFAULT_MAP_COORDINATES, LIGHT_MAP_THEME } from '@/constants';
 import MapMarkerAltIcon from '@/assets/icons/map-marker-alt.svg?raw';
 import AppFooter from '@/components/AppFooter';
-import AppMain from '@/components/AppMain';
 import AppHeader from '@/components/AppHeader';
+import AppMain from '@/components/AppMain';
+import { locations } from '@/content/locations';
+import { DEFAULT_MAP_COORDINATES, LIGHT_MAP_THEME } from '@/constants';
 import './MapPage.css';
 
 export default defineComponent({
@@ -49,6 +50,40 @@ export default defineComponent({
       },
       position: 'topleft',
     };
+
+    /** Latitude and longitudes for Ant Path. */
+    const antPathCoordinates: Coordinates[] = [
+      locations[0].coordinates,
+      { lat: 60.1813, lng: 24.97726 },
+      { lat: 60.18142, lng: 24.97726 },
+      locations[1].coordinates,
+      { lat: 60.1816, lng: 24.97709 },
+      { lat: 60.1813, lng: 24.9772 },
+      { lat: 60.18072, lng: 24.97698 },
+      { lat: 60.18069, lng: 24.97729 },
+      { lat: 60.18084, lng: 24.97737 },
+      locations[2].coordinates,
+      { lat: 60.18084, lng: 24.97784 },
+      locations[3].coordinates,
+      { lat: 60.1805, lng: 24.97836 },
+      { lat: 60.18055, lng: 24.97844 },
+      { lat: 60.18095, lng: 24.97862 },
+      locations[4].coordinates,
+      locations[0].coordinates,
+    ];
+
+    /** Ant Path options. */
+    const antPathOptions: Partial<AntPathOptions> = {
+      color: '#00D7A7',
+      dashArray: [2, 70],
+      delay: 1600,
+      fill: false,
+      pulseColor: '#ffffff',
+      weight: 4,
+    };
+
+    /** Ant Path control for Leaflet. */
+    const antPathControl = antPath(antPathCoordinates, antPathOptions);
 
     /** Marker icon used for locations. */
     const markerIcon = leaflet.divIcon({
@@ -197,6 +232,9 @@ export default defineComponent({
       // Handle popup events
       mapInstance.value.addEventListener('popupclose', handlePopupclose);
       mapInstance.value.addEventListener('popupopen', handlePopupopen);
+
+      // Initialize Ant Path
+      antPathControl.addTo(mapInstance.value);
 
       // Initialize locate feature
       mapInstance.value.addControl(
