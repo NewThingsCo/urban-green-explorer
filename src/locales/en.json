@@ -41,6 +41,7 @@
     "p2": "Hope you enjoyed the tour!",
     "title": "Congrats!"
   },
+  "digitalService": "Green Urban Explorer Digital Service",
   "downloadIosApp": "Download iOS application",
   "enableGeolocation": "Enable location from your browser",
   "financier": "Financier",
@@ -63,6 +64,7 @@
   "locations": {
     "auroraBlock": {
       "additionalContent": "<p>The Aurora block interior court is a modern and interesting piece of landscape architecture. Large amounts of stormwater are steered with site topography towards the south east corner outdoor staircase.</p><p>The parking spaces of the block are under the garden and buildings, which limits the sizes of planted trees.The sandy forms and long grasses and hays, added with rusted steel colored furniture create an interesting visual site.</p><p>The rooftop of the block holds two separate roof gardens and can be accessed by residents.</p>",
+      "additionalLinks": [],
       "description": "The interior courtyard of the Aurora block is a combination of functionality, urban greenery, stormwater management and artistry. The block also has roof gardens.",
       "images": [
         {
@@ -77,9 +79,15 @@
       "subtitle": "Landscape architectonic stormwater management",
       "title": "Aurora Block"
     },
-    "digitalService": "Green Urban Explorer Digital Service",
     "greenTramStop": {
       "additionalContent": "<p>The Kalasatamasta Pasilaan project is realizing a new tram line, that connects the southern end of the developing district of Kalasatama to the train station of Pasila.</p><p>B.Green innovated a new kind of tram stop, that dispenses the commuters information about the greenery sites and how they can be accessed.</p><p>With the Green Kalasatama app, you can see the location of the future tramstop and the nearby matured trees.</p>",
+      "additionalLinks": [
+        {
+          "alert": "Sovellus on ladattavissa 27.6 alkaen.",
+          "href": "#",
+          "label": "Lataa AR-sovellus"
+        }
+      ],
       "description": "B.Green project concepted a tram stop, that provides information of hyperlocal urban greenery with a combination of a mobile device and and AR-service.",
       "images": [
         {
@@ -98,10 +106,17 @@
       "additionalContent": "<p>Green Urban Mapping Open Call was searching for solutions for digital mapping of urban vegetation.</p><p>XD Visuals Ltd. suggested a solution based on analyzing created pointclouds. The second chosen case to be piloted, was by Granlund Ltd, who suggested a solution that developed the idea of using AR in data collection.</p><p>For the development of higher quality  urban ecology, it is important to be able to collect precise species and location data of vegetation. By developing easily usable methods of mapping, citizens can participate in the collection of environmental data.</p><p>You can read more about XD Visuals Ltd. and Granlund Ltd. on their websites.</p>",
       "additionalLinks": [
         {
+          "alert": "Sovellus on ladattavissa 27.6 alkaen.",
+          "href": "#",
+          "label": "Lataa AR-sovellus"
+        },
+        {
+          "alert": "",
           "href": "https://www.granlundgroup.com/services/digital-services/",
           "label": "Grandlund’s digital services"
         },
         {
+          "alert": "",
           "href": "https://www.xd-visuals.fi/",
           "label": "XD Visuals homepage"
         }
@@ -129,6 +144,7 @@
           "label": "Download the AR-app"
         },
         {
+          "alert": "",
           "href": "https://www.youtube.com/watch?v=Qr9OIrAV2DU",
           "label": "Watch a video of the project"
         }
@@ -147,11 +163,13 @@
       "additionalContent": "<p>Parkly is a local Finnish company that produces modular public space green furniture, which can be used to create new kinds of activating urban environments.</p><p>Sensors have been integrated into the furniture in Sompasaari, which give information on growing surface humidity, movement on site and hyperlocal weather.</p><p>Read more about Parkly on their website.</p>",
       "additionalLinks": [
         {
+          "alert": "",
           "href": "https://www.helloparkly.com/",
           "label": "Parkly's website"
         }
       ],
       "description": "The pollinator friendly flowers, shadow providing trees and edible plants in planter boxes bring a variety of vegetation into the urban environment. They also bring enchanting experiences for all senses.",
+      "images": [],
       "subtitle": "Temporary Green Street Furniture",
       "title": "Start at Parkly"
     }

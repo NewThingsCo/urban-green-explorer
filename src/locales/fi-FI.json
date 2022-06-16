@@ -64,6 +64,7 @@
   "locations": {
     "auroraBlock": {
       "additionalContent": "<p>Aurora-korttelin sisäpiha on moderni ja mielenkiintoinen maisema-arkkitehtoninen kokonaisuus. Suuria hulevesimääriä ohjataan pinnanmuodoilla kohti korttelin suurta kulmaportaikkoa.</p><p>Korttelille osoitetut autopaikat ovat sijoitettu autotalliin rakennuksen alle, joka rajoittaa esim. istutettavien puiden kokoa. Puutarhan hiekka ja heinät sekä corten-teräksiset ja väriset valaisimet, roskakorit ja muut kalusteet luovat pihasta mielenkiintoisen visuaalisen kokonaisuuden.</p><p>Korttelin katolla on kaksi erillistä asukkaiden käytössä olevaa kattopuutarhaa.</p>",
+      "additionalLinks": [],
       "description": "Korttelin piharatkaisuissa on onnistuneesti yhdistetty toiminnallisuus, kaupunkiluonto, hulevesien käsittely ja artistisuus. Kortteliin on perustettu myös kattopuutarhoja.",
       "images": [
         {
@@ -80,6 +81,7 @@
     },
     "greenTramStop": {
       "additionalContent": "<p>Kalasatamasta Pasilaan hankkeessa suunnitellaan ja toteutetaan uutta raitiolinjaa, joka yhdistää Kalasataman eteläisimmän pään Kumpulan läpi Pasilan asemalle.</p><p>Linja kulkee läpi Kalasataman kehittyvien alueiden. B.Green projektissa konseptoitiin raitiopysäkkiä, joka jakaa käyttäjilleen tietoa pysäkin välittömässä läheisyydessä sijaitsevasta kaupunkivehreästä.</p><p>Green Kalasatama Appista, voit nähdä tulevaisuudessa rakennettavan pysäkin ja kadun täysikasvuiset puut paikoillaan.</p>",
+      "additionalLinks": [],
       "description": "B.Green-projektissa ideoitiin raitiovaunupysäkki, jonka lähellä oleviin viheralueisiin voi tutustua oman mobiililaitteen ja AR-palvelun yhdistelmällä.",
       "images": [
         {
@@ -98,10 +100,12 @@
       "additionalContent": "<p>Green Urban Mapping avoimessa haussa etsittiin ratkaisuja digitaaliseen kaupunkikasvillisuuden kartoittamiseen.</p><p>XD-Visuals Oy tarjosi Forum Virium Helsingin järjestämään avoimeen hakuun pistepilvimallin analyysiin perustuvan ratkaisun ja Granlund Oy jatkoi lisätyn todellisuuden ratkaisun kehittämiseen kartoituksen osalta.</p><p>Kaupunkiekologian kehittymisen kannalta on tärkeää, että voimme kerätä tarkkaa sijainti- ja lajitietoa kasvillisuudesta. Kehittämällä helposti käytettäviä kartoitustapoja, kaupunkilaisia voidaan osallistaa lähitiedon keräämiseen kotikaupungistaan.</p>",
       "additionalLinks": [
         {
+          "alert": "",
           "href": " https://www.granlund.fi/palvelut/digitaaliset-palvelut/",
           "label": "Granlundin digitaaliset palvelut"
         },
         {
+          "alert": "",
           "href": "https://www.xd-visuals.fi/",
           "label": "XD Visualsin kotisivut"
         }
@@ -129,6 +133,7 @@
           "label": "Lataa AR-sovellus"
         },
         {
+          "alert": "",
           "href": "https://www.youtube.com/watch?v=Qr9OIrAV2DU",
           "label": "Katso video projektista"
         }
@@ -147,11 +152,13 @@
       "additionalContent": "<p>Parkly on Helsinkiläinen yritys, joka tuottaa modulaarisia julkisen tilan viherkalusteita, jolla luodaan uudenlaista ja asukkaita aktivoivaa kaupunkitilaa.</p><p>Sompasaaren Parkly-kalusteisiin on upotettu myös sensoreita, jotka antavat tietoa muun muassa Parklyn kasvuperän kosteudesta, liikkeestä kalusteiden läheisyydessä sekä hyperpaikallisista sääoloista.</p><p>Lisää Parklysta voit lukea heidän sivuiltaan.</p>",
       "additionalLinks": [
         {
+          "alert": "",
           "href": "https://www.helloparkly.com/fi/",
           "label": "Parklyn kotisivut"
         }
       ],
       "description": "Laatikkoviljelmien pörriäisystävälliset kukat, varjoa tarjoavat puut ja syötävät kasvit tuovat kaupunkiluontoon vaihtelua. Lisäksi ne tarjoavat elämyksiä kaikille aisteille.",
+      "images": [],
       "subtitle": "Väliaikaiset kadun vihertävät kalusteet",
       "title": "Aloitus Parklylla"
     }

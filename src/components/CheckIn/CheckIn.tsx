@@ -1,4 +1,4 @@
-import type { CheckIn, Location, Translations } from '@/types';
+import type { CheckIn, I18nTranslations, Location } from '@/types';
 import type { PropType, Ref, VNode } from 'vue';
 import {
   computed,
@@ -41,9 +41,9 @@ export default defineComponent({
      * Key for the help text translation.
      * @default ''
      */
-    const checkInLabelI18nKey = ref<keyof Translations['checkInLabel'] | null>(
-      null
-    );
+    const checkInLabelI18nKey = ref<
+      keyof I18nTranslations['checkInLabel'] | null
+    >(null);
 
     /**
      * Check-in label text or element.
@@ -157,9 +157,9 @@ export default defineComponent({
           checkInLabel.value = labelVisited;
           break;
         default:
-          checkInLabel.value =
-            checkInLabelI18nKey.value &&
-            t(`checkInLabel.${checkInLabelI18nKey.value}`);
+          checkInLabel.value = checkInLabelI18nKey.value
+            ? t(`checkInLabel.${checkInLabelI18nKey.value.toString()}`)
+            : null;
       }
     }
 

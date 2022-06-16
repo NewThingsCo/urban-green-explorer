@@ -24,6 +24,7 @@ export const locations: Location[] = [
     additionalContent: 'locations.parkly.additionalContent',
     additionalLinks: [
       {
+        alert: '',
         iconLeft: Website,
         iconRight: ArrowUpRight,
         title: 'locations.parkly.additionalLinks[0].label',
@@ -36,6 +37,7 @@ export const locations: Location[] = [
     description: 'locations.parkly.description',
     links: [
       {
+        alert: '',
         iconLeft: MapMarkedAlt,
         iconRight: ChevronRight,
         title: 'showOnMap',
@@ -44,6 +46,7 @@ export const locations: Location[] = [
       },
     ],
     image: ParklyImage,
+    images: [],
     minDistance: 0.03,
     slug: 'parkly',
     subtitle: 'locations.parkly.subtitle',
@@ -61,6 +64,7 @@ export const locations: Location[] = [
         type: 'external',
       },
       {
+        alert: '',
         iconLeft: YouTube,
         iconRight: ArrowUpRight,
         title: 'locations.loviseholmPark.additionalLinks[1].label',
@@ -81,6 +85,7 @@ export const locations: Location[] = [
     ],
     links: [
       {
+        alert: '',
         iconLeft: MapMarkedAlt,
         iconRight: ChevronRight,
         title: 'showOnMap',
@@ -95,6 +100,7 @@ export const locations: Location[] = [
   },
   {
     additionalContent: 'locations.auroraBlock.additionalContent',
+    additionalLinks: [],
     categories: ['block'],
     coordinates: { lat: 60.1808104, lng: 24.9775642 },
     description: 'locations.auroraBlock.description',
@@ -113,6 +119,7 @@ export const locations: Location[] = [
     ],
     links: [
       {
+        alert: '',
         iconLeft: MapMarkedAlt,
         iconRight: ChevronRight,
         title: 'showOnMap',
@@ -129,6 +136,7 @@ export const locations: Location[] = [
     additionalContent: 'locations.greenUrbanMapping.additionalContent',
     additionalLinks: [
       {
+        alert: '',
         iconLeft: LaptopFile,
         iconRight: ArrowUpRight,
         title: 'locations.greenUrbanMapping.additionalLinks[0].label',
@@ -136,6 +144,7 @@ export const locations: Location[] = [
         type: 'external',
       },
       {
+        alert: '',
         iconLeft: Website,
         iconRight: ArrowUpRight,
         title: 'locations.greenUrbanMapping.additionalLinks[1].label',
@@ -161,6 +170,7 @@ export const locations: Location[] = [
     ],
     links: [
       {
+        alert: '',
         iconLeft: MapMarkedAlt,
         iconRight: ChevronRight,
         title: 'showOnMap',
@@ -175,6 +185,7 @@ export const locations: Location[] = [
   },
   {
     additionalContent: 'locations.greenTramStop.additionalContent',
+    additionalLinks: [],
     categories: ['tramStop'],
     coordinates: { lat: 60.18101, lng: 24.97858 },
     description: 'locations.greenTramStop.description',
@@ -192,6 +203,7 @@ export const locations: Location[] = [
     ],
     links: [
       {
+        alert: '',
         iconLeft: MapMarkedAlt,
         iconRight: ChevronRight,
         title: 'showOnMap',
