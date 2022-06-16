@@ -1,4 +1,5 @@
 {
+  "bGreenContact": "B.Green project website and contact",
   "back": "Back",
   "categories": "Categories",
   "category": {
@@ -42,7 +43,9 @@
   },
   "downloadIosApp": "Download iOS application",
   "enableGeolocation": "Enable location from your browser",
+  "financier": "Financier",
   "homePath": "/",
+  "implementation": "Implementation",
   "info": {
     "subtitle": "Green Urban Explorer Digital Service",
     "title": "Info"
@@ -56,9 +59,7 @@
   "localeSwitcher": "Language menu",
   "locationImages": "Photos related to the location",
   "locationLinks": "Links",
-  "financier": "Financier",
   "locationList": "List of locations",
-  "bGreenContact": "B.Green project website and contact",
   "locations": {
     "auroraBlock": {
       "additionalContent": "<p>The Aurora block interior court is a modern and interesting piece of landscape architecture. Large amounts of stormwater are steered with site topography towards the south east corner outdoor staircase.</p><p>The parking spaces of the block are under the garden and buildings, which limits the sizes of planted trees.The sandy forms and long grasses and hays, added with rusted steel colored furniture create an interesting visual site.</p><p>The rooftop of the block holds two separate roof gardens and can be accessed by residents.</p>",
@@ -155,10 +156,9 @@
       "title": "Start at Parkly"
     }
   },
-  "implementation": "Implementation",
   "locationsTitle": "Locations on tour",
-  "producer": "Producer",
   "moreInfo": "More info",
+  "producer": "Producer",
   "routes": {
     "index": "Home",
     "info": "Info",
