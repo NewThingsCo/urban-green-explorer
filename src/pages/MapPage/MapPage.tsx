@@ -52,7 +52,7 @@ export default defineComponent({
     };
 
     /** Latitude and longitudes for Ant Path. */
-    const antPathLatLngs: Coordinates[] = [
+    const antPathCoordinates: Coordinates[] = [
       ...locations.map((location) => location.coordinates),
       locations[0].coordinates,
     ];
@@ -67,8 +67,8 @@ export default defineComponent({
       weight: 4,
     };
 
-    /** Path for Ant Path. */
-    const path = antPath(antPathLatLngs, antPathOptions);
+    /** Ant Path control for Leaflet. */
+    const antPathControl = antPath(antPathCoordinates, antPathOptions);
 
     /** Marker icon used for locations. */
     const markerIcon = leaflet.divIcon({
@@ -219,7 +219,7 @@ export default defineComponent({
       mapInstance.value.addEventListener('popupopen', handlePopupopen);
 
       // Initialize Ant Path
-      path.addTo(mapInstance.value);
+      antPathControl.addTo(mapInstance.value);
 
       // Initialize locate feature
       mapInstance.value.addControl(
