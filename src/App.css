@@ -2,10 +2,13 @@
 @import './assets/styles/leaflet.css';
 
 :root {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
+  --background-color: #fff;
+  --text-color: #222;
 
   @apply antialiased;
+
+  background: var(--background-color);
+  color: var(--text-color);
 }
 
 code {
@@ -43,12 +46,18 @@ a {
 }
 
 .page-title {
-  @apply heading-1;
+  @apply heading;
   @apply my-6 md:my-8;
 }
 
 .page-subtitle {
-  @apply font-semi-bold;
-  @apply text-lg;
+  @apply subtitle;
   @apply mb-4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #222;
+    --text-color: #fff;
+  }
 }

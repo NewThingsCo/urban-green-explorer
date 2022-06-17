@@ -6,16 +6,15 @@ import LineClamp from 'windicss/plugin/line-clamp';
 
 export default defineConfig({
   darkMode: 'class',
-  daisyui: {
-    themes: false,
-  },
   extract: {
     include: ['index.html', 'src/**/*.{html,css,tsx}'],
   },
   plugins: [AspectRatio, Forms, Filters, LineClamp],
   shortcuts: {
-    'heading-1': 'font-bold opacity-80 text-size-3xl',
+    heading: 'font-bold opacity-80 text-size-3xl',
+    'border-primary': 'border-green-500',
     'outline-primary': 'outline-green-500',
+    subtitle: 'font-semi-bold text-lg',
     'text-primary': 'text-green-500',
     'text-secondary': 'text-blue-800',
   },
