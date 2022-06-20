@@ -186,11 +186,16 @@ export default defineComponent({
         coordinates: { lat, lng },
       } = location;
       const latlng: LatLngTuple = [lat, lng];
+
+      // Create and open popup
       leaflet
         .popup()
         .setLatLng(latlng)
         .setContent(await renderPopup(location))
         .openOn(mapInstance.value as Map);
+
+      // Center map view on popup
+      mapInstance.value?.setView(latlng);
     }
 
     /** Removes event handlers from router links within popups. */
