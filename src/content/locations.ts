@@ -56,7 +56,7 @@ export const locations: Location[] = [
     additionalContent: 'locations.loviseholmPark.additionalContent',
     additionalLinks: [
       {
-        alert: 'locations.loviseholmPark.additionalLinks[0].alert',
+        alert: '',
         iconLeft: CloudDownload,
         iconRight: ArrowUpRight,
         title: 'locations.loviseholmPark.additionalLinks[0].label',
@@ -136,7 +136,7 @@ export const locations: Location[] = [
     additionalContent: 'locations.greenUrbanMapping.additionalContent',
     additionalLinks: [
       {
-        alert: 'locations.greenUrbanMapping.additionalLinks[0].alert',
+        alert: '',
         iconLeft: CloudDownload,
         iconRight: ArrowUpRight,
         title: 'locations.greenUrbanMapping.additionalLinks[0].label',
@@ -195,7 +195,7 @@ export const locations: Location[] = [
     additionalContent: 'locations.greenTramStop.additionalContent',
     additionalLinks: [
       {
-        alert: 'locations.greenTramStop.additionalLinks[0].alert',
+        alert: '',
         iconLeft: CloudDownload,
         iconRight: ArrowUpRight,
         title: 'locations.greenTramStop.additionalLinks[0].label',

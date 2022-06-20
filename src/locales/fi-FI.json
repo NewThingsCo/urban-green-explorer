@@ -83,8 +83,7 @@
       "additionalContent": "<p>Kalasatamasta Pasilaan hankkeessa suunnitellaan ja toteutetaan uutta raitiolinjaa, joka yhdistää Kalasataman eteläisimmän pään Kumpulan läpi Pasilan asemalle.</p><p>Linja kulkee läpi Kalasataman kehittyvien alueiden. B.Green projektissa konseptoitiin raitiopysäkkiä, joka jakaa käyttäjilleen tietoa pysäkin välittömässä läheisyydessä sijaitsevasta kaupunkivehreästä.</p><p>Green Kalasatama Appista, voit nähdä tulevaisuudessa rakennettavan pysäkin ja kadun täysikasvuiset puut paikoillaan.</p>",
       "additionalLinks": [
         {
-          "alert": "Sovellus on ladattavissa 27.6 alkaen.",
-          "href": "#",
+          "href": "https://apps.apple.com/be/app/green-kalasatama/id1573262748",
           "label": "Lataa AR-sovellus"
         }
       ],
@@ -106,17 +105,14 @@
       "additionalContent": "<p>Green Urban Mapping avoimessa haussa etsittiin ratkaisuja digitaaliseen kaupunkikasvillisuuden kartoittamiseen.</p><p>XD-Visuals Oy tarjosi Forum Virium Helsingin järjestämään avoimeen hakuun pistepilvimallin analyysiin perustuvan ratkaisun ja Granlund Oy jatkoi lisätyn todellisuuden ratkaisun kehittämiseen kartoituksen osalta.</p><p>Kaupunkiekologian kehittymisen kannalta on tärkeää, että voimme kerätä tarkkaa sijainti- ja lajitietoa kasvillisuudesta. Kehittämällä helposti käytettäviä kartoitustapoja, kaupunkilaisia voidaan osallistaa lähitiedon keräämiseen kotikaupungistaan.</p>",
       "additionalLinks": [
         {
-          "alert": "Sovellus on ladattavissa 27.6 alkaen.",
-          "href": "#",
+          "href": "https://apps.apple.com/be/app/green-kalasatama/id1573262748",
           "label": "Lataa AR-sovellus"
         },
         {
-          "alert": "",
           "href": " https://www.granlund.fi/palvelut/digitaaliset-palvelut/",
           "label": "Granlundin digitaaliset palvelut"
         },
         {
-          "alert": "",
           "href": "https://www.xd-visuals.fi/",
           "label": "XD Visualsin kotisivut"
         }
@@ -139,12 +135,10 @@
       "additionalContent": "<p>Granlund Oy toimii mm. ympäristö- ja kiinteistösuunnittelualalla ja kehitti osana Healthy Liveable Neighborhoods-projektia Green Kalasatama AR appin, joka käyttää pistepilveä AR-laitteen sijainnin tarkkaan selvittämiseen.</p><p>Puistoon istutettavat puut ja pensaat vaativat aikaa kasvaakseen isoiksi. Appin avulla puut voi nähdä täydessä koossaan. 3D-kaupunkimallinnuksen kehittyessä näitä kurkistuksia tulevaisuuden kaupunkiin voidaan tehdä entistä helpommin.</p><p>Tässä Loviseholmin mallinnuksessa on käytetty helsinkiläiseen kasvilajistoon perustuvaa 3D-mallinnuskirjastoa, joka on tuotettu osana B.Green-projektia.</p><p>Voit ladata alta Granlundin Green Kalasatama-appin.</p><p>Green Kalasatama AR-sovellus tuotettiin alun perin osana Healthy Liveable Negihbourhoods-projektia.</p>",
       "additionalLinks": [
         {
-          "alert": "Sovellus on ladattavissa 27.6 alkaen.",
-          "href": "#",
+          "href": "https://apps.apple.com/be/app/green-kalasatama/id1573262748",
           "label": "Lataa AR-sovellus"
         },
         {
-          "alert": "",
           "href": "https://www.youtube.com/watch?v=Qr9OIrAV2DU",
           "label": "Katso video projektista"
         }
@@ -163,7 +157,6 @@
       "additionalContent": "<p>Parkly on Helsinkiläinen yritys, joka tuottaa modulaarisia julkisen tilan viherkalusteita, jolla luodaan uudenlaista ja asukkaita aktivoivaa kaupunkitilaa.</p><p>Sompasaaren Parkly-kalusteisiin on upotettu myös sensoreita, jotka antavat tietoa muun muassa Parklyn kasvuperän kosteudesta, liikkeestä kalusteiden läheisyydessä sekä hyperpaikallisista sääoloista.</p><p>Lisää Parklysta voit lukea heidän sivuiltaan.</p>",
       "additionalLinks": [
         {
-          "alert": "",
           "href": "https://www.helloparkly.com/fi/",
           "label": "Parklyn kotisivut"
         }

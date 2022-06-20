@@ -83,8 +83,7 @@
       "additionalContent": "<p>The Kalasatamasta Pasilaan project is realizing a new tram line, that connects the southern end of the developing district of Kalasatama to the train station of Pasila.</p><p>B.Green innovated a new kind of tram stop, that dispenses the commuters information about the greenery sites and how they can be accessed.</p><p>With the Green Kalasatama app, you can see the location of the future tramstop and the nearby matured trees.</p>",
       "additionalLinks": [
         {
-          "alert": "The app will be available on the 27th of June.",
-          "href": "#",
+          "href": "https://apps.apple.com/be/app/green-kalasatama/id1573262748",
           "label": "Download the AR-app"
         }
       ],
@@ -106,17 +105,14 @@
       "additionalContent": "<p>Green Urban Mapping Open Call was searching for solutions for digital mapping of urban vegetation.</p><p>XD Visuals Ltd. suggested a solution based on analyzing created pointclouds. The second chosen case to be piloted, was by Granlund Ltd, who suggested a solution that developed the idea of using AR in data collection.</p><p>For the development of higher quality  urban ecology, it is important to be able to collect precise species and location data of vegetation. By developing easily usable methods of mapping, citizens can participate in the collection of environmental data.</p><p>You can read more about XD Visuals Ltd. and Granlund Ltd. on their websites.</p>",
       "additionalLinks": [
         {
-          "alert": "The app will be available on the 27th of June.",
-          "href": "#",
+          "href": "https://apps.apple.com/be/app/green-kalasatama/id1573262748",
           "label": "Download the AR-app"
         },
         {
-          "alert": "",
           "href": "https://www.granlundgroup.com/services/digital-services/",
           "label": "Grandlund’s digital services"
         },
         {
-          "alert": "",
           "href": "https://www.xd-visuals.fi/",
           "label": "XD Visuals homepage"
         }
@@ -139,12 +135,10 @@
       "additionalContent": "<p>Granlund Ltd. works widely in the fields of environment- and real estate and property planning development and developed as part of The Healthy Liveable Neighborhoods-project, the Green Kalasatama AR app, that uses a pointcloud map to precisely locate the user.</p><p>When planting trees in parks, it takes time for the vegetation to mature. With the app, the trees can be seen in their future full size. As the 3D-city modeling develops, these peeks to the future become easier to produce. This Loviseholm park model uses a Helsinki species specific 3D-vegetation model library, produced as part of the B.Green project.</p><p>You can download Granlund’s Green Kalasatama AR-app below.</p><p>The Green Kalasatama AR-app was originally produced as part of the Healthy Liveable Neighborhoods project.</p>",
       "additionalLinks": [
         {
-          "alert": "The app will be available on the 27th of June.",
-          "href": "#",
+          "href": "https://apps.apple.com/be/app/green-kalasatama/id1573262748",
           "label": "Download the AR-app"
         },
         {
-          "alert": "",
           "href": "https://www.youtube.com/watch?v=Qr9OIrAV2DU",
           "label": "Watch a video of the project"
         }
@@ -163,7 +157,6 @@
       "additionalContent": "<p>Parkly is a local Finnish company that produces modular public space green furniture, which can be used to create new kinds of activating urban environments.</p><p>Sensors have been integrated into the furniture in Sompasaari, which give information on growing surface humidity, movement on site and hyperlocal weather.</p><p>Read more about Parkly on their website.</p>",
       "additionalLinks": [
         {
-          "alert": "",
           "href": "https://www.helloparkly.com/",
           "label": "Parkly's website"
         }
