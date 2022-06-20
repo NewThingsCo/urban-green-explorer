@@ -10,6 +10,24 @@
     @apply mb-14.5;
   }
 
+  .leaflet-popup-close-button {
+    @apply dark:hover:text-green-500 dark:focus:text-green-500;
+  }
+
+  .router-link {
+    @apply flex items-center justify-start;
+    @apply dark:hover:text-green-500 dark:focus:text-green-500;
+
+    * {
+      pointer-events: none;
+    }
+
+    .icon {
+      @apply h-8 w-8;
+      @apply ml-3;
+    }
+  }
+
   .leaflet-popup-container {
     @apply text-center;
   }
@@ -19,6 +37,6 @@
   }
 
   .leaflet-top {
-    top: 5rem;
+    top: 4.5rem;
   }
 }
