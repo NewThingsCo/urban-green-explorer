@@ -1,5 +1,5 @@
-import type { ComputedRef, Ref, VNode } from 'vue';
 import type { ColorScheme } from '@/types';
+import type { ComputedRef, Ref, VNode } from 'vue';
 import { useSchemaOrg } from '@vueuse/schema-org';
 import {
   computed,
@@ -11,9 +11,9 @@ import {
 } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRoute } from 'vue-router';
-import './App.css';
-import { SCHEMA_ORG } from '@/constants';
 import useTheme from '@/stores/theme';
+import { SCHEMA_ORG } from '@/constants';
+import './App.css';
 
 export default defineComponent({
   name: 'App',

@@ -1,4 +1,4 @@
-import type { ColorScheme } from '../types';
+import type { ColorScheme } from '@/types';
 import { defineStore } from 'pinia';
 
 const useTheme = defineStore('theme', {

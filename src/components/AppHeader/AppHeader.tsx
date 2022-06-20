@@ -1,12 +1,12 @@
 import type { VNode } from 'vue';
 import { computed, defineComponent } from 'vue';
 import { RouterLink, useRoute } from 'vue-router';
-import Button from '../Button';
-import LocaleSwitcher from '../LocaleSwitcher';
-import { goBack } from '@/router';
-import ThemeSwitcher from '@/components/ThemeSwitcher';
-import BGreenLogo from '@/assets/logos/b-green.svg?component';
 import ChevronLeft from '@/assets/icons/chevron-left.svg?component';
+import BGreenLogo from '@/assets/logos/b-green.svg?component';
+import Button from '@/components/Button';
+import LocaleSwitcher from '@/components/LocaleSwitcher';
+import ThemeSwitcher from '@/components/ThemeSwitcher';
+import { goBack } from '@/router';
 import './AppHeader.css';
 
 export default defineComponent({

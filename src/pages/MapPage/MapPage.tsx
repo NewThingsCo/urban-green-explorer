@@ -13,36 +13,33 @@ import type {
   PopupEvent,
   TileLayer,
 } from 'leaflet';
+import type { ComputedRef, Ref, VNode, VNodeRef } from 'vue';
 import leaflet from 'leaflet';
 import { antPath } from 'leaflet-ant-path';
-import 'leaflet.locatecontrol';
 import {
   computed,
-  ComputedRef,
   defineComponent,
   onBeforeUnmount,
   onMounted,
-  Ref,
   ref,
-  VNode,
-  VNodeRef,
   watch,
 } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRoute, useRouter } from 'vue-router';
 import { renderToString } from 'vue/server-renderer';
-import useTheme from '../../stores/theme';
 import CircleInfo from '@/assets/icons/circle-info-solid.svg?component';
 import MapMarkerAltIcon from '@/assets/icons/map-marker-alt.svg?raw';
 import AppFooter from '@/components/AppFooter';
 import AppHeader from '@/components/AppHeader';
 import AppMain from '@/components/AppMain';
-import { locations } from '@/content/locations';
 import {
   DARK_MAP_THEME,
   DEFAULT_MAP_COORDINATES,
   LIGHT_MAP_THEME,
 } from '@/constants';
+import { locations } from '@/content/locations';
+import useTheme from '@/stores/theme';
+import 'leaflet.locatecontrol';
 import './MapPage.css';
 
 export default defineComponent({
