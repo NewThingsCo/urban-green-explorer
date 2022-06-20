@@ -1,4 +1,3 @@
-import type { AntPathOptions, Coordinates, Location } from '@/types';
 import type {
   Control,
   LatLngTuple,
@@ -8,17 +7,16 @@ import type {
   PopupEvent,
   TileLayer,
 } from 'leaflet';
+import type { VNode, VNodeRef } from 'vue';
+import type { AntPathOptions, Coordinates, Location } from '@/types';
 import leaflet from 'leaflet';
 import { antPath } from 'leaflet-ant-path';
-import 'leaflet.locatecontrol';
 import {
   computed,
   defineComponent,
   onBeforeUnmount,
   onMounted,
   ref,
-  VNode,
-  VNodeRef,
   watch,
 } from 'vue';
 import { useI18n } from 'vue-i18n';
@@ -31,6 +29,7 @@ import AppHeader from '@/components/AppHeader';
 import AppMain from '@/components/AppMain';
 import { locations } from '@/content/locations';
 import { DEFAULT_MAP_COORDINATES, LIGHT_MAP_THEME } from '@/constants';
+import 'leaflet.locatecontrol';
 import './MapPage.css';
 
 export default defineComponent({

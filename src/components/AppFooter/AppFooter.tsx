@@ -1,6 +1,6 @@
 import type { VNode } from 'vue';
 import { defineComponent } from 'vue';
-import Navigation from '../Navigation';
+import Navigation from '@/components/Navigation';
 import './AppFooter.css';
 
 export default defineComponent({

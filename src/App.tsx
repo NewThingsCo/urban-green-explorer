@@ -2,8 +2,8 @@ import type { VNode } from 'vue';
 import { defineComponent, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useSchemaOrg } from '#vueuse/schema-org/runtime';
-import './App.css';
 import { GLOBAL_SCHEMA_ORG } from '@/constants';
+import './App.css';
 
 export default defineComponent({
   name: 'App',

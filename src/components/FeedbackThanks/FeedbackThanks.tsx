@@ -1,6 +1,6 @@
 import { computed, defineComponent, VNode } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { getSeason } from '../../utils';
+import { getSeason } from '@/utils';
 
 export default defineComponent({
   name: 'FeedbackThanks',
