@@ -11,12 +11,15 @@ export default defineConfig({
   },
   plugins: [AspectRatio, Forms, Filters, LineClamp],
   shortcuts: {
-    heading: 'font-bold opacity-80 text-size-3xl',
+    'bg-secondary': 'bg-[#74D1C9]',
     'border-primary': 'border-green-500',
     'outline-primary': 'outline-green-500',
-    subtitle: 'font-semi-bold text-lg',
+    'separator-top': 'border-t-2 border-gray-200 dark:border-dark-200',
+    'text-dark': 'text-dark-600 dark:text-white',
     'text-primary': 'text-green-500',
-    'text-secondary': 'text-blue-800',
+    'text-secondary': 'text-blue-800 dark:text-blue-400',
+    heading: 'font-bold opacity-80 text-size-3xl',
+    subtitle: 'font-semi-bold text-lg',
   },
   theme: {
     extend: {
