@@ -24,6 +24,7 @@ import {
 import { useI18n } from 'vue-i18n';
 import { useRoute, useRouter } from 'vue-router';
 import { renderToString } from 'vue/server-renderer';
+import CircleInfo from '@/assets/icons/circle-info-solid.svg?component';
 import MapMarkerAltIcon from '@/assets/icons/map-marker-alt.svg?raw';
 import AppFooter from '@/components/AppFooter';
 import AppHeader from '@/components/AppHeader';
@@ -193,9 +194,13 @@ export default defineComponent({
     function renderPopup({ slug, title }: Location): Promise<string> {
       return renderToString(
         <div class="leaflet-popup-container">
-          <h2 class="leaflet-popup-title" v-html={t(title)} />
-          <a class="router-link" href={`/location/${slug}`}>
-            {t('moreInfo')}
+          <a
+            class="router-link"
+            href={`/location/${slug}`}
+            title={t('moreInfo')}
+          >
+            <h2 class="leaflet-popup-title" v-html={t(title)} />
+            {<CircleInfo aria-hidden="true" class="icon" />}
           </a>
         </div>
       );
