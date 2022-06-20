@@ -59,23 +59,40 @@ See [Projects][roadmap] on GitHub.
 
 ## Installation
 
+Before continuing, make sure you have installed everything in the [Requirements](#requirements) list.
+
+### 1. Clone the repository
+
 ```shell
-# Clone the repository
 $ git clone git@github.com:NewThingsCo/urban-green-explorer.git
 $ cd urban-green-explorer
+```
 
-# Install the correct Node version
+### 2. Install the correct Node version
+
+```shell
 $ nvm install
+```
 
-# Install dependencies
+### 3. Install your local dependencies
+
+```shell
 $ npm install
 ```
 
 ## Development
 
+Start the development server:
+
 ```shell
 $ nvm install
 $ npm run dev
+```
+
+To expose your local IP for mobile testing within your local network, use this instead:
+
+```shell
+$ npm run dev:host
 ```
 
 ### Commits
