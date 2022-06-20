@@ -19,6 +19,6 @@ describe(Component.name, () => {
     expect(wrapper.exists()).toBeTruthy();
   });
   it('should have the correct amount of children', () => {
-    expect(wrapper.element.childElementCount).toEqual(3);
+    expect(wrapper.element.childElementCount).toEqual(4);
   });
 });
