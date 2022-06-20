@@ -5,7 +5,7 @@ import Button from '../Button';
 import LocaleSwitcher from '../LocaleSwitcher';
 import { goBack } from '@/router';
 import ThemeSwitcher from '@/components/ThemeSwitcher';
-import BGreenLogo from '@/assets/logos/b-green.svg?url';
+import BGreenLogo from '@/assets/logos/b-green.svg?component';
 import ChevronLeft from '@/assets/icons/chevron-left.svg?component';
 import './AppHeader.css';
 
@@ -46,7 +46,7 @@ export default defineComponent({
         return (
           <header class="app-header">
             <RouterLink class="home-link" to={{ name: 'index' }}>
-              <img alt="B.Green logo" class="logo" src={BGreenLogo} />
+              <BGreenLogo aria-hidden="true" class="logo" />
               <h2 class="title">Urban Green Explorer</h2>
             </RouterLink>
             <div class="actions">
