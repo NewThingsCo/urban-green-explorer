@@ -14,9 +14,14 @@
     @apply dark:hover:text-green-500 dark:focus:text-green-500;
   }
 
+  .leaflet-tile-pane {
+    @apply dark:grayscale dark:invert dark:filter;
+    @apply transition-colors;
+  }
+
   .router-link {
     @apply flex items-center justify-start;
-    @apply dark:hover:text-green-500 dark:focus:text-green-500;
+    @apply text-primary dark:hover:text-secondary dark:focus:text-secondary;
 
     * {
       pointer-events: none;

@@ -11,13 +11,9 @@ export default defineConfig({
   },
   plugins: [AspectRatio, Forms, Filters, LineClamp],
   shortcuts: {
-    'bg-secondary': 'bg-[#74D1C9]',
-    'border-primary': 'border-green-500',
     'outline-primary': 'outline-green-500',
-    'separator-top': 'border-t-2 border-gray-200 dark:border-dark-200',
+    'separator-top': 'border-t-2 border-t-gray-200 dark:border-t-dark-800',
     'text-dark': 'text-dark-600 dark:text-white',
-    'text-primary': 'text-green-500',
-    'text-secondary': 'text-blue-800 dark:text-blue-400',
     heading: 'font-bold opacity-80 text-size-3xl',
     subtitle: 'font-semi-bold text-lg',
   },
@@ -36,6 +32,16 @@ export default defineConfig({
         lg: '1024px',
         xl: '1280px',
         '2xl': '1536px',
+      },
+      backgroundColor: {
+        secondary: '#74D1C9',
+      },
+      borderColor: {
+        primary: 'border-green-500',
+      },
+      textColor: {
+        primary: '#00D7A7',
+        secondary: '#1A2238',
       },
     },
   },

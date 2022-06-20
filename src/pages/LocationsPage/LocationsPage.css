@@ -16,7 +16,7 @@
 
   .map-link {
     @apply mt-2;
-    @apply text-secondary hover:text-primary focus:text-primary;
+    @apply text-secondary dark:text-primary hover:text-primary focus:text-primary;
     @apply z-10;
 
     &:focus,
@@ -38,7 +38,7 @@
 
   .location-link {
     @apply flex;
-    @apply bg-light-400 dark:bg-gray-900 hover:bg-light-600 dark:hover:bg-gray-700;
+    @apply bg-light-400 dark:bg-gray-900 hover:bg-light-600 dark:hover:bg-gray-900 dark:hover:opacity-85;
     @apply p-4 pr-12;
     @apply rounded-xl;
     @apply shadow-md hover:shadow-lg;

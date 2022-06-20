@@ -14,19 +14,13 @@
     @apply h-6;
   }
 
-  .item {
-    + .item {
-      @apply pt-4;
-      @apply separator-top;
-    }
-  }
-
   .link {
     @apply flex gap-4 items-center justify-between;
     @apply focus:text-dark-600 dark:focus:text-white;
     @apply hover:text-dark-600 dark:hover:text-white;
     @apply no-underline;
-    @apply text-primary;
+    @apply p-5;
+    @apply rounded-xl shadow shadow-lg dark:shadow-2xl;
     @apply text-primary;
 
     * {

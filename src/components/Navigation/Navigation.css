@@ -39,14 +39,6 @@
     @apply flex flex-col items-center;
     @apply dark:outline-[#1A2238];
     @apply w-full;
-
-    .link-text::after {
-      @apply transition-all;
-
-      @media (prefers-reduced-motion) {
-        transition: none;
-      }
-    }
   }
 
   .router-link:not(.router-link-active) {

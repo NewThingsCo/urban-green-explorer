@@ -6,12 +6,14 @@ const DEFAULT_MAP_COORDINATES: LatLngExpression = [60.1807, 24.9773];
 const DARK_MAP_THEME: MapTheme = {
   options: {
     attribution:
-      '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
+      'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
+    detectRetina: true,
     maxZoom: 20,
     minZoom: 8,
+    tileSize: 512,
+    zoomOffset: -1,
   },
-  urlTemplate:
-    'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png',
+  urlTemplate: 'https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png',
 };
 
 const LIGHT_MAP_THEME: MapTheme = {

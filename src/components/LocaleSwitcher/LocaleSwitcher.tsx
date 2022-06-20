@@ -44,7 +44,7 @@ export default defineComponent({
         data-open={this.isOpen}
         title={this.$t('localeSwitcher')}
       >
-        <label>
+        <label class="label">
           <TranslateIcon class="icon" onClick={this.toggleVisibility} />
           <select
             class="select-menu"

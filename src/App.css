@@ -80,6 +80,6 @@ select {
 }
 
 :root.dark {
-  @apply bg-gray-800;
+  @apply bg-cool-gray-800;
   @apply text-white;
 }

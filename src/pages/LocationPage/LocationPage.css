@@ -23,7 +23,8 @@
   .image-title {
     @apply mt-4;
     @apply pt-8;
-    @apply separator-top;
+
+    /* @apply separator-top; */
   }
 
   .link-list {
