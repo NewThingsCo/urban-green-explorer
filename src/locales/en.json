@@ -2,6 +2,7 @@
   "bGreenContact": "B.Green project website and contact",
   "back": "Back",
   "backToInfo": "Back to info page",
+  "backToPreviousLocation": "Back to location",
   "backToStart": "Back to start",
   "categories": "Categories",
   "category": {
@@ -56,7 +57,7 @@
   "financier": "Financier",
   "greetingsFrom": "",
   "homePath": "/",
-  "implementation": "Implementation",
+  "implementation": "Design & implementation",
   "info": {
     "subtitle": "Green Urban Explorer Digital Service",
     "title": "Info"
@@ -67,7 +68,7 @@
     "title": "Hello there!"
   },
   "language": "English",
-  "localeSwitcher": "Language menu",
+  "localeSwitcher": "Change language",
   "locationImages": "Photos related to the location",
   "locationLinks": "Links",
   "locationList": "List of locations",
@@ -199,6 +200,8 @@
   "sendFeedback": "Send feedback",
   "showOnMap": "Show on map",
   "subject": "Subject",
+  "switchToDarkTheme": "Switch to dark theme",
+  "switchToLightTheme": "Switch to light theme",
   "termsOfUse": "Terms of use and privacy policy",
   "theTeam": "The Urban Green Explorer team",
   "title": "Urban Green Explorer",

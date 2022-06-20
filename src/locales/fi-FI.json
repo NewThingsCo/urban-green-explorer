@@ -2,6 +2,7 @@
   "bGreenContact": "B.Green-projektin sivusto ja kontakti",
   "back": "Takaisin",
   "backToInfo": "Takaisin info-sivulle",
+  "backToPreviousLocation": "Takaisin kohteeseen",
   "backToStart": "Takaisin alkuun",
   "categories": "Kategoriat",
   "category": {
@@ -56,7 +57,7 @@
   "financier": "Rahoittaja",
   "greetingsFrom": "T.",
   "homePath": "/",
-  "implementation": "Toteutus",
+  "implementation": "Design & toteutus",
   "info": {
     "subtitle": "Green Urban Explorer digitaalinen palvelu",
     "title": "Info"
@@ -67,7 +68,7 @@
     "title": "Hei!"
   },
   "language": "Suomi",
-  "localeSwitcher": "Kielivalinta",
+  "localeSwitcher": "Vaihda kieltä",
   "locationImages": "Kohteeseen liittyviä kuvia",
   "locationLinks": "Linkit",
   "locationList": "Lista kohteista",
@@ -199,6 +200,8 @@
   "sendFeedback": "Lähetä palaute",
   "showOnMap": "Näytä kartalla",
   "subject": "Aihe",
+  "switchToDarkTheme": "Vaihda yö teemaan",
+  "switchToLightTheme": "Vaihda päivä teemaan",
   "termsOfUse": "Käyttöehdot ja tietosuojakäytäntö",
   "theTeam": "Urban Green Explorer -tiimi",
   "title": "Urban Green Explorer",
