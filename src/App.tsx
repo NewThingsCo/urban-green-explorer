@@ -1,28 +1,43 @@
-import type { Ref, VNode } from 'vue';
+import type { ComputedRef, Ref, VNode } from 'vue';
+import type { ColorScheme } from '@/types';
 import { useSchemaOrg } from '@vueuse/schema-org';
-import { defineComponent, KeepAlive, onMounted, ref, watch } from 'vue';
+import {
+  computed,
+  defineComponent,
+  KeepAlive,
+  onMounted,
+  ref,
+  watch,
+} from 'vue';
 import { useI18n } from 'vue-i18n';
+import { useRoute } from 'vue-router';
 import './App.css';
-import { SCHEMA_ORG } from './constants';
-import type { ColorScheme } from './types';
+import { SCHEMA_ORG } from '@/constants';
+import useTheme from '@/stores/theme';
 
 export default defineComponent({
   name: 'App',
   setup() {
     const { locale } = useI18n();
+    const route = useRoute();
+    const theme = useTheme();
 
     /** Keeps track of our current color scheme. */
-    const colorScheme: Ref<ColorScheme | null> = ref(null);
+    const colorScheme: ComputedRef<ColorScheme | null> = computed(
+      () => theme.colorScheme
+    );
+
+    /** Root HTML element of the app. */
     const $html: Ref<HTMLElement | null> = ref(null);
 
     /** Changes the color scheme class in the HTML element. */
-    function changeDocumentColorSchemeClass(scheme: ColorScheme | null): void {
+    function handleColorSchemeChange(scheme: ColorScheme | null): void {
       if (!$html.value || !scheme) {
         throw new Error(
           'Attempting to update theme without a document element present in window.'
         );
       }
-      console.debug('Updating document theme to:', scheme);
+      console.debug('Updating document class to:', scheme);
       switch (scheme) {
         case 'dark':
           $html.value.classList.remove('light');
@@ -41,10 +56,10 @@ export default defineComponent({
       setColorScheme(event.matches ? 'dark' : 'light');
     }
 
-    /** Sets the current color scheme to `dark` or `light`. */
+    /** Sets the current theme's color scheme to `dark` or `light`. */
     function setColorScheme(scheme: ColorScheme): void {
       console.debug('Changing color scheme to:', scheme);
-      colorScheme.value = 'dark' === scheme ? 'dark' : 'light';
+      theme.colorScheme = 'dark' === scheme ? 'dark' : 'light';
     }
 
     /** Initializes application. */
@@ -72,11 +87,16 @@ export default defineComponent({
       // Set the initial color scheme
       setColorScheme(initialColorScheme);
 
-      // Platform classes
+      // Add platform specific classes
       switch (true) {
-        case !!window.navigator.userAgent.match(/iPhone|iPod|iPad/):
+        case Boolean(window.navigator.userAgent.match(/iPhone|iPod|iPad/)):
           $html.value.classList.add('ios');
           break;
+        default:
+          console.debug(
+            'No additional class set for user agent:',
+            window.navigator.userAgent
+          );
       }
 
       // Watch for media query changes
@@ -85,9 +105,19 @@ export default defineComponent({
         ?.addEventListener('change', handleMediaQueryChange);
     }
 
+    /** Handles route changes. */
+    function handleRouteChange() {
+      // Add current route for styling
+      if ($html.value && route.name) {
+        console.debug('Setting route name:', route.name);
+        $html.value.dataset.route = route.name.toString();
+      }
+    }
+
     onMounted(initializeApp);
     useSchemaOrg(SCHEMA_ORG);
-    watch(colorScheme, changeDocumentColorSchemeClass);
+    watch(colorScheme, handleColorSchemeChange);
+    watch(route, handleRouteChange);
   },
   render(): VNode {
     return (
