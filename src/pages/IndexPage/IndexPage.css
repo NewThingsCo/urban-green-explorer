@@ -1,4 +1,7 @@
 .main-index {
+  @apply relative;
+  @apply pb-40vw md:pb-30vw xl:pb-20vw 2xl:pb-22vw;
+
   .additional-links {
     @apply flex flex-col items-center justify-center;
     @apply p-6;

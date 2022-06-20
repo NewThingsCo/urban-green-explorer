@@ -2,13 +2,24 @@
 @import './assets/styles/leaflet.css';
 
 :root {
-  --background-color: #fff;
-  --text-color: #222;
+  --outline-offset: 0.2em;
+  --outline: 12px solid;
 
   @apply antialiased;
+  @apply bg-white;
+  @apply relative;
+  @apply text-dark-600;
+}
 
-  background: var(--background-color);
-  color: var(--text-color);
+/* Prevent transitions onload. */
+[data-route] {
+  @apply transition-colors;
+
+  transition-duration: 400ms !important;
+
+  @media (prefers-reduced-motion) {
+    transition: none;
+  }
 }
 
 code {
@@ -31,12 +42,26 @@ html,
 }
 
 a {
-  @apply outline-primary;
   @apply text-primary;
+}
+
+a,
+button,
+input,
+select {
+  @apply outline-primary;
+
+  outline-offset: var(--outline-offset);
 }
 
 [hidden] {
   @apply hidden !important;
+}
+
+.illustration {
+  @apply bottom-23 absolute;
+  @apply -z-1;
+  @apply w-full;
 }
 
 .main-wrapper {
@@ -55,9 +80,7 @@ a {
   @apply mb-4;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: #222;
-    --text-color: #fff;
-  }
+:root.dark {
+  @apply bg-gray-800;
+  @apply text-white;
 }

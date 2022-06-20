@@ -16,16 +16,18 @@
 
   .item {
     + .item {
-      @apply border-t-2 border-gray-200;
       @apply pt-4;
+      @apply separator-top;
     }
   }
 
   .link {
-    @apply flex items-center gap-4 justify-between;
-    @apply focus:text-primary hover:text-primary;
+    @apply flex gap-4 items-center justify-between;
+    @apply focus:text-dark-600 dark:focus:text-white;
+    @apply hover:text-dark-600 dark:hover:text-white;
     @apply no-underline;
-    @apply text-inherit;
+    @apply text-primary;
+    @apply text-primary;
 
     * {
       pointer-events: none;

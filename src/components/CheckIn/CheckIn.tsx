@@ -292,7 +292,7 @@ export default defineComponent({
           {d(new Date(existingCheckIn.value?.visited || ''), 'long')}
         </time>
         <RouterLink
-          class="sub-label large"
+          class="link sub-label large"
           to={{ name: 'mapWithPopup', params: { id: nextLocation?.slug } }}
         >
           {t('checkInLabel.visited.linkText')}

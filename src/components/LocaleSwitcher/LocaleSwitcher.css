@@ -8,16 +8,23 @@
     @apply outline-none;
   }
 
-  .icon {
-    @apply h-7;
-    @apply w-7;
-    @apply cursor-pointer;
-  }
-
   .select-menu {
-    @apply opacity-0 z-50 invisible absolute;
+    @apply invisible;
+    @apply mt-2;
+    @apply opacity-0;
+    @apply p-2 pr-10;
+    @apply right-0 absolute;
+    @apply text-current;
     @apply transform origin-top transition ease-in-out scale-95 duration-200;
-    @apply right-0;
+    @apply z-50;
+
+    .dark & {
+      @apply bg-gray-600;
+    }
+
+    @media (prefers-reduced-motion) {
+      transition: none;
+    }
   }
 
   &[data-open='true'] {
@@ -25,6 +32,10 @@
       @apply opacity-100 visible;
       @apply scale-100;
     }
+  }
+
+  .dark & {
+    @apply bg-blue-gray-800;
   }
 
   .ios &[data-open='true'] {

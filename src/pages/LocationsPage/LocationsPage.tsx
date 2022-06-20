@@ -1,6 +1,7 @@
 import type { VNode } from 'vue';
 import { defineComponent } from 'vue';
 import { RouterLink } from 'vue-router';
+import Illustration from '@/components/Illustration';
 import MapMarkerAlt from '@/assets/icons/map-marker-alt.svg?component';
 import AppFooter from '@/components/AppFooter';
 import AppHeader from '@/components/AppHeader';
@@ -57,6 +58,7 @@ export default defineComponent({
             ))}
           </ul>
         </AppMain>
+        <Illustration />
         <AppFooter />
       </>
     );

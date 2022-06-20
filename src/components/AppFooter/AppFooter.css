@@ -1,6 +1,6 @@
 .app-footer {
-  @apply bg-white;
-  @apply border border-gray-200 border-t-1;
+  @apply bg-white dark:bg-secondary;
+  @apply border-t-gray-200 border-t-1 dark:border-none;
   @apply bottom-0;
   @apply fixed;
   @apply mx-auto;
@@ -8,5 +8,5 @@
   @apply shadow-xl shadow-gray-800/50;
   @apply text-center;
   @apply w-full;
-  @apply z-index-10;
+  @apply z-index-20;
 }

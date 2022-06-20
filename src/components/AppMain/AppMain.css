@@ -1,7 +1,4 @@
 .app-main {
-  @apply bg-white;
   @apply min-h-full;
-  @apply pb-10rem;
   @apply pt-3.6rem;
-  @apply text-black;
 }

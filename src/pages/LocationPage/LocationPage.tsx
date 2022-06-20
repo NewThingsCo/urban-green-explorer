@@ -8,8 +8,9 @@ import AppHeader from '@/components/AppHeader';
 import AppMain from '@/components/AppMain';
 import CategoryList from '@/components/CategoryList';
 import CheckInComponent, { getCheckIn } from '@/components/CheckIn';
-import LinkList from '@/components/LinkList';
+import Illustration from '@/components/Illustration';
 import ImageList from '@/components/ImageList';
+import LinkList from '@/components/LinkList';
 import { locations } from '@/content/locations';
 import './LocationPage.css';
 
@@ -148,6 +149,7 @@ export default defineComponent({
             ) : null}
           </div>
         </AppMain>
+        <Illustration />
         <AppFooter>
           <CheckInComponent onCheckIn={this.handleCheckIn} />
         </AppFooter>

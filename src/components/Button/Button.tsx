@@ -32,6 +32,10 @@ export default defineComponent({
       default: null,
       type: Object as PropType<RouteLocationRaw>,
     },
+    title: {
+      default: '',
+      type: String,
+    },
     type: {
       default: 'button',
       type: String as PropType<ButtonHTMLAttributes['type'] | 'router-link'>,

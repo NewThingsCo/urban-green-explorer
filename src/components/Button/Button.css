@@ -4,6 +4,7 @@
   @apply cursor-pointer;
   @apply inline-flex items-center;
   @apply no-underline;
+  @apply outline-primary;
   @apply p-0;
   @apply rounded-md;
   @apply select-none;
@@ -11,6 +12,7 @@
   @apply transition-all ease-in-out duration-400;
 
   animation: pop 0.35s ease-out;
+  outline-offset: var(--outline-offset);
 
   &:active:hover,
   &:active:focus {
@@ -31,7 +33,7 @@
 
 .button-default {
   @apply py-1 px-2;
-  @apply text-black;
+  @apply text-black dark:text-white;
 
   &:focus-visible {
     outline: 2px solid hsl(var(--nf));
@@ -46,7 +48,7 @@
 }
 
 .button-primary {
-  @apply bg-green-500;
+  @apply bg-green-500 opacity-75;
   @apply py-3 px-6;
   @apply text-white;
   @apply uppercase;
@@ -54,9 +56,12 @@
   &:active,
   &:hover {
     @apply text-white;
+    @apply outline-dotted-blue-gray-300;
   }
 
   &:focus-visible {
     @apply outline-primary;
+
+    outline-offset: var(--outline-offset);
   }
 }

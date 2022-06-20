@@ -2,6 +2,10 @@
   @apply fixed;
   @apply inset-0;
 
+  .leaflet-marker-icon {
+    @apply dark:text-blue-400;
+  }
+
   .leaflet-popup {
     @apply mb-14.5;
   }

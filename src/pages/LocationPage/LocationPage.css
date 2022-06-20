@@ -1,5 +1,5 @@
 .main-location {
-  @apply pb-16rem;
+  @apply pb-60vw md:pb-30vw xl:pb-20vw 2xl:pb-22vw;
 
   p + p {
     @apply mt-3;
@@ -21,9 +21,9 @@
   }
 
   .image-title {
-    @apply border-t-2 border-gray-200;
-    @apply pt-8;
     @apply mt-4;
+    @apply pt-8;
+    @apply separator-top;
   }
 
   .link-list {

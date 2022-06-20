@@ -5,13 +5,20 @@
   @apply px-2;
 
   .button {
+    @apply dark:bg-[#1A2238];
     @apply mb-2;
+    @apply dark:outline-light-50;
   }
 
   .label {
     @apply flex-col;
     @apply justify-center;
+    @apply dark:text-white;
     @apply text-sm;
+  }
+
+  .link {
+    @apply decoration-current underline dark:text-white;
   }
 
   .icon {
@@ -44,7 +51,7 @@
   .time {
     @apply block;
     @apply font-normal;
-    @apply text-gray-400;
+    @apply text-gray-400 dark:text-gray-600;
     @apply text-sm;
   }
 }

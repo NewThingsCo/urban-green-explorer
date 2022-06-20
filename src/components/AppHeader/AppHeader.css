@@ -1,20 +1,45 @@
 .app-header {
-  @apply bg-white;
+  @apply bg-white dark:bg-gray-900;
+  @apply border-b-gray-200 border-b-1 dark:border-b-gray-900;
   @apply fixed;
   @apply flex;
   @apply items-center;
   @apply justify-between;
   @apply p-3;
-  @apply shadow shadow-md shadow-gray-200;
+  @apply shadow shadow-md dark:shadow-sm dark:shadow-gray-600;
   @apply top-0 right-0 left-0;
   @apply w-full;
   @apply z-index-100;
+
+  .actions {
+    @apply flex flex-1 gap-4 items-center justify-end;
+  }
 
   .home-link {
     @apply flex;
     @apply hover:text-primary;
     @apply items-center;
-    @apply text-black;
+    @apply text-dark;
+    @apply transition ease-in-out duration-200;
+
+    &:active:hover,
+    &:active:focus {
+      animation: none;
+      transform: scale(0.95);
+    }
+
+    @media (prefers-reduced-motion) {
+      transform: none;
+    }
+  }
+
+  .icon {
+    @apply text-primary;
+    @apply focus:text-dark-600 dark:focus:text-white;
+    @apply hover:text-dark-600 dark:hover:text-white;
+    @apply cursor-pointer;
+    @apply h-7;
+    @apply w-7;
   }
 
   .logo {

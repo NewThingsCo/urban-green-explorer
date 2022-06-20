@@ -1,4 +1,6 @@
 .main-info {
+  @apply pb-70vw md:pb-50vw xl:pb-50vw 2xl:pb-54vw;
+
   .list {
     @apply mt-4;
   }

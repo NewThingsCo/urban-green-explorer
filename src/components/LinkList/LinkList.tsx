@@ -89,9 +89,13 @@ export default defineComponent({
                       href={`#panel-${to.params?.id}`}
                       onClick={this.showPanel}
                     >
-                      {IconLeft && <IconLeft class="icon icon-left" />}
+                      {IconLeft && (
+                        <IconLeft aria-hidden="true" class="icon icon-left" />
+                      )}
                       <span class="title">{this.$t(title)}</span>
-                      {IconRight && <IconRight class="icon icon-right" />}
+                      {IconRight && (
+                        <IconRight aria-hidden="true" class="icon icon-right" />
+                      )}
                     </a>
                   </li>
                 );
@@ -99,9 +103,13 @@ export default defineComponent({
                 return (
                   <li class="item">
                     <RouterLink class="link" to={to}>
-                      {IconLeft && <IconLeft class="icon icon-left" />}
+                      {IconLeft && (
+                        <IconLeft aria-hidden="true" class="icon icon-left" />
+                      )}
                       <span class="title">{this.$t(title)}</span>
-                      {IconRight && <IconRight class="icon icon-right" />}
+                      {IconRight && (
+                        <IconRight aria-hidden="true" class="icon icon-right" />
+                      )}
                     </RouterLink>
                   </li>
                 );

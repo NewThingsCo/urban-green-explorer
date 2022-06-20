@@ -28,28 +28,35 @@
   }
 
   .router-link-active {
-    @apply text-blue-900;
+    @apply text-dark;
 
     .link-text::after {
-      @apply border-blue-900;
+      @apply border-blue-900 dark:border-current;
     }
   }
 
   .router-link {
     @apply flex flex-col items-center;
+    @apply dark:outline-[#1A2238];
     @apply w-full;
 
     .link-text::after {
       @apply transition-all;
+
+      @media (prefers-reduced-motion) {
+        transition: none;
+      }
     }
   }
 
   .router-link:not(.router-link-active) {
+    @apply dark:text-[#1A2238];
+
     &:active,
     &:focus,
     &:hover {
       .link-text::after {
-        @apply border-primary;
+        @apply dark:border-current;
       }
     }
   }

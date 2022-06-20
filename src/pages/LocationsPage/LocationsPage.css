@@ -1,5 +1,5 @@
 .main-locations {
-  @apply pb-34;
+  @apply pb-40vw md:pb-30vw xl:pb-20vw 2xl:pb-22vw;
 
   .category {
     @apply text-gray-500;
@@ -38,11 +38,11 @@
 
   .location-link {
     @apply flex;
-    @apply bg-gray-50;
+    @apply bg-light-400 dark:bg-gray-900 hover:bg-light-600 dark:hover:bg-gray-700;
     @apply p-4 pr-12;
     @apply rounded-xl;
-    @apply shadow-md shadow-gray-200 hover:shadow-lg;
-    @apply text-black;
+    @apply shadow-md hover:shadow-lg;
+    @apply text-dark;
     @apply w-full;
 
     .content {
@@ -75,7 +75,7 @@
   .map-icon {
     @apply h-8 md:h-12;
     @apply object-contain;
-    @apply text-black;
+    @apply text-dark;
     @apply top-4 right-4 absolute;
     @apply w-8 md:w-12;
   }

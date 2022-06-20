@@ -14,6 +14,7 @@ import AppHeader from '@/components/AppHeader';
 import AppMain from '@/components/AppMain';
 import Button from '@/components/Button';
 import Hero from '@/components/Hero';
+import Illustration from '@/components/Illustration';
 import './IndexPage.css';
 
 export default defineComponent({
@@ -59,6 +60,7 @@ export default defineComponent({
             </RouterLink>
           </p>
         </AppMain>
+        <Illustration />
         <AppFooter />
       </>
     );

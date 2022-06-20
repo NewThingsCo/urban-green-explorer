@@ -26,7 +26,7 @@
 
   .overlay {
     @apply absolute;
-    @apply bg-dark-900;
+    @apply bg-gray-900;
     @apply bg-opacity-50;
     @apply h-full w-full;
     @apply z-0;

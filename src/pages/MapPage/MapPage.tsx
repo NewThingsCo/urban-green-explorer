@@ -1,4 +1,9 @@
-import type { AntPathOptions, Coordinates, Location } from '@/types';
+import type {
+  AntPathOptions,
+  ColorScheme,
+  Coordinates,
+  Location,
+} from '@/types';
 import type {
   Control,
   LatLngTuple,
@@ -13,9 +18,11 @@ import { antPath } from 'leaflet-ant-path';
 import 'leaflet.locatecontrol';
 import {
   computed,
+  ComputedRef,
   defineComponent,
   onBeforeUnmount,
   onMounted,
+  Ref,
   ref,
   VNode,
   VNodeRef,
@@ -24,18 +31,28 @@ import {
 import { useI18n } from 'vue-i18n';
 import { useRoute, useRouter } from 'vue-router';
 import { renderToString } from 'vue/server-renderer';
+import useTheme from '../../stores/theme';
 import MapMarkerAltIcon from '@/assets/icons/map-marker-alt.svg?raw';
 import AppFooter from '@/components/AppFooter';
 import AppHeader from '@/components/AppHeader';
 import AppMain from '@/components/AppMain';
 import { locations } from '@/content/locations';
-import { DEFAULT_MAP_COORDINATES, LIGHT_MAP_THEME } from '@/constants';
+import {
+  DARK_MAP_THEME,
+  DEFAULT_MAP_COORDINATES,
+  LIGHT_MAP_THEME,
+} from '@/constants';
 import './MapPage.css';
 
 export default defineComponent({
   name: 'MapPage',
   setup() {
     const { locale, t } = useI18n();
+    const $html: Ref<HTMLElement | null> = ref(null);
+    const theme = useTheme();
+    const colorScheme: ComputedRef<ColorScheme> = computed(
+      () => theme.colorScheme
+    );
     const layers = ref<null | TileLayer>(null);
     const map = ref<null | VNodeRef>(null);
     const mapInstance = ref<null | Map>(null);
@@ -146,6 +163,21 @@ export default defineComponent({
       });
     }
 
+    /** Changes the map tiles according to the current theme. */
+    function handleColorSchemeChange(scheme: ColorScheme | null): void {
+      switch (scheme) {
+        case 'dark':
+          layers.value = leaflet
+            .tileLayer(DARK_MAP_THEME.urlTemplate, DARK_MAP_THEME.options)
+            .addTo(mapInstance.value as Map);
+          break;
+        default:
+          layers.value = leaflet
+            .tileLayer(LIGHT_MAP_THEME.urlTemplate, LIGHT_MAP_THEME.options)
+            .addTo(mapInstance.value as Map);
+      }
+    }
+
     /** Opens a popup for a location. */
     async function openLocationPopup(location: Location): Promise<void> {
       console.debug('Showing popup for location:', location);
@@ -213,15 +245,21 @@ export default defineComponent({
 
     /** Initializes the map. */
     function initializeMap(): void {
+      /** Populate HTML element to keep track of color changes. */
+      $html.value = window.document.documentElement;
+
+      if (!$html.value)
+        throw new Error(
+          'Window document element not found. Aborting initialization.'
+        );
+
       // Create map instance
       mapInstance.value = leaflet
         .map(map.value.$el)
         .setView(DEFAULT_MAP_COORDINATES, 16.5);
 
       // Add tiles
-      layers.value = leaflet
-        .tileLayer(LIGHT_MAP_THEME.urlTemplate, LIGHT_MAP_THEME.options)
-        .addTo(mapInstance.value as Map);
+      handleColorSchemeChange(theme.colorScheme);
 
       // Add location markers
       Promise.all(locations.map(createLocationMarker));
@@ -259,6 +297,9 @@ export default defineComponent({
 
     // Remove event listeners on unmount
     onBeforeUnmount(removeEventListeners);
+
+    // Watch for color scheme changes
+    watch(colorScheme, handleColorSchemeChange);
 
     // Watch for locale changes
     watch(locale, handleLocaleChange);
