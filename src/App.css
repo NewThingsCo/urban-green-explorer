@@ -5,10 +5,9 @@
   --outline-offset: 0.2em;
   --outline: 12px solid;
 
-  @apply antialiased;
   @apply bg-white;
   @apply relative;
-  @apply text-dark-600;
+  @apply text-dark-900;
 }
 
 /* Prevent transitions onload. */
