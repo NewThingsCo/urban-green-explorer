@@ -3,7 +3,7 @@
   @apply inset-0;
 
   .leaflet-marker-icon {
-    @apply dark:text-blue-400;
+    @apply dark:text-[#00D7A7] hover:text-white;
   }
 
   .leaflet-popup {
