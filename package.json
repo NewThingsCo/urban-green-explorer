@@ -333,7 +333,7 @@
     "build": "vue-tsc --noEmit && vite build",
     "build:docker": "docker build . -t urban-green-explorer",
     "dev": "vite",
-    "dev:host": "vite -- --host",
+    "dev:host": "vite --host",
     "lint": "npm run lint:client && npm run lint:styles",
     "lint:client": "eslint --ignore-path .gitignore .",
     "lint:fix:client": "eslint --fix --ignore-path .gitignore .",
