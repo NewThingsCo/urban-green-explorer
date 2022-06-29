@@ -21,7 +21,7 @@ export default defineComponent({
     return (
       <>
         <AppHeader />
-        <AppMain>
+        <AppMain class="main-index">
           <Hero style={{ backgroundImage: `url(${HeroBackground})` }}>
             <h1 class="title">{this.$t('introduction.title')}</h1>
             <div class="content" v-html={this.$t('introduction.content')} />

@@ -8,7 +8,7 @@ import StylelintPlugin from 'vite-plugin-stylelint';
 import WindiCSS from 'vite-plugin-windicss';
 import SVGLoader from 'vite-svg-loader';
 import path from 'path';
-import { vitePWAOptions } from './config';
+import { svgLoaderOptions, vitePWAOptions } from './config';
 
 /**
  * Configuration for Vite
@@ -38,32 +38,7 @@ export default defineConfig({
       fix: true,
       include: ['src/**/*.css'],
     }),
-    SVGLoader({
-      svgoConfig: {
-        plugins: [
-          {
-            name: 'preset-default',
-            params: {
-              overrides: {
-                cleanupAttrs: false,
-                cleanupIDs: false,
-                inlineStyles: false,
-                removeUnknownsAndDefaults: false,
-                removeUselessDefs: false,
-                removeUselessStrokeAndFill: false,
-                sortDefsChildren: false,
-              },
-            },
-          },
-          {
-            name: 'sortAttrs',
-            params: {
-              xmlnsOrder: 'alphabetical',
-            },
-          },
-        ],
-      },
-    }),
+    SVGLoader(svgLoaderOptions),
     VitePWA(vitePWAOptions),
     VueI18n({
       include: path.resolve(__dirname, './src/locales/**'),
