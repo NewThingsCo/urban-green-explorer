@@ -15,7 +15,7 @@ export default defineComponent({
     return (
       <>
         <AppHeader />
-        <AppMain class="main-wrapper">
+        <AppMain class="main-locations main-wrapper">
           <h1 class="page-title" id="page-title">
             {this.$t('locationsTitle')}
           </h1>
