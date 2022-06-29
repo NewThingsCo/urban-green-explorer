@@ -12,8 +12,6 @@ import { i18n, pinia } from './utils';
 import leaflet from './plugins/leaflet';
 import { SCHEMA_ORG_OPTIONS } from './constants';
 
-const app = createApp(App);
-
 if ('undefined' !== typeof window) {
   registerSW({
     onOfflineReady() {
@@ -33,10 +31,15 @@ const schemaOrg = createSchemaOrg({
   },
 });
 
-app.use(i18n).use(head).use(leaflet).use(pinia).use(router).use(schemaOrg);
+createApp(App)
+  .use(i18n)
+  .use(head)
+  .use(leaflet)
+  .use(pinia)
+  .use(router)
+  .use(schemaOrg)
+  .mount('#app');
 
 schemaOrg.setupDOM();
-
-app.mount('#app');
 
 export { i18n };
