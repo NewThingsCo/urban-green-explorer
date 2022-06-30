@@ -19,7 +19,7 @@ Email: info@forumvirium.fi
 New Things Company Oy (“New Things Co”, “NTC”)
 Business ID: 2806288-7
 Lönnrotinkatu 20, 5th floor, 00120 Helsinki, Finland
-Email: sales@newthings.co
+Email: info@newthings.co
 Tel. +358 50 326 7292
 ```
 

@@ -26,7 +26,7 @@ Email: info@forumvirium.fi</pre></p>
           <p><pre class="info">New Things Company Oy (“New Things Co”, “NTC”)
 Business ID: 2806288-7
 Lönnrotinkatu 20, 5th floor, 00120 Helsinki, Finland
-Email: sales@newthings.co
+Email: info@newthings.co
 Tel. +358 50 326 7292</pre></p>
           <h2 id="terms-of-use-of-the-urban-green-explorer-web-application">
             Terms of Use of the Urban Green Explorer web application
@@ -194,7 +194,7 @@ Sähköposti: info@forumvirium.fi</pre></p>
         <p><pre class="info">New Things Company Oy (“New Things Co”, “NTC”)
 Y-tunnus: 2806288-7
 Osoite: Lönnrotinkatu 20, 5th floor, 00120 Helsinki, Suomi
-Sähköposti: sales@newthings.co
+Sähköposti: info@newthings.co
 Puh. +358 50 326 7292</pre></p>
         <h2 id="urban-green-explorer--verkkopalvelun-käyttöehdot">
           Urban Green Explorer -verkkopalvelun käyttöehdot
