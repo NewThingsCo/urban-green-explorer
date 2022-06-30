@@ -1,6 +1,8 @@
 .locale-switcher {
-  @apply relative;
+  @apply hover:text-primary focus:text-primary;
   @apply inline-block;
+  @apply relative;
+  @apply transition-colors;
 
   & > *:focus {
     @apply outline-none;
@@ -13,14 +15,14 @@
   }
 
   .select-menu {
-    @apply invisible absolute z-50 opacity-0;
-    @apply origin-top scale-95 transform transition duration-200 ease-in-out;
+    @apply opacity-0 z-50 invisible absolute;
+    @apply transform origin-top transition ease-in-out scale-95 duration-200;
     @apply right-0;
   }
 
   &[data-open='true'] {
     .select-menu {
-      @apply visible opacity-100;
+      @apply opacity-100 visible;
       @apply scale-100;
     }
   }

@@ -1,10 +1,10 @@
 import { jest } from '@jest/globals';
 import { mount } from '@vue/test-utils';
-import Button from './Button';
+import Component from './Button';
 
 const mockCallback = jest.fn();
 
-const props: typeof Button['props'] = {
+const props: typeof Component['props'] = {
   name: 'name',
   onClick: mockCallback,
   value: 'value',
@@ -17,14 +17,14 @@ const ChildComponent = {
   template: `<div class="child">${testContent}</div>`,
 };
 
-const wrapper = mount(Button, {
+const wrapper = mount(Component, {
   props,
   slots: {
     default: ChildComponent,
   },
 });
 
-describe('Button', () => {
+describe(Component, () => {
   it('renders the component', () => {
     expect(wrapper.exists()).toBeTruthy();
   });

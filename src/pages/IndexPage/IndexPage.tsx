@@ -1,5 +1,6 @@
 import type { VNode } from 'vue';
 import { defineComponent } from 'vue';
+import { RouterLink } from 'vue-router';
 import HeroBackground from '@/assets/images/cover-images/sompasaari-overview.jpg?url';
 import BGLogo from '@/assets/logos/b-green.svg?component';
 import InterregLogo from '@/assets/logos/central-baltic-programme-logo.svg?component';
@@ -43,6 +44,20 @@ export default defineComponent({
             <TallinnLogo class="logo" />
           </div>
           <p class="copyright">&copy; 2022 B.Green project</p>
+          <p class="additional-links">
+            <RouterLink
+              class="button button-link"
+              to={{ name: 'terms-of-use', params: { from: 'index' } }}
+            >
+              {this.$t('termsOfUse')}
+            </RouterLink>
+            <RouterLink
+              class="button button-link"
+              to={{ name: 'feedback', params: { from: 'index' } }}
+            >
+              {this.$t('feedback')}
+            </RouterLink>
+          </p>
         </AppMain>
         <AppFooter />
       </>

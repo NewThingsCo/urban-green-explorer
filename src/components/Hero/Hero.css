@@ -1,7 +1,7 @@
 .hero {
   @apply bg-center bg-cover;
   @apply grid;
-  @apply h-62vh;
+  @apply h-60vh;
   @apply min-h-md;
   @apply overflow-hidden;
   @apply relative;

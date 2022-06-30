@@ -1,6 +1,8 @@
 {
   "bGreenContact": "B.Green project website and contact",
   "back": "Back",
+  "backToInfo": "Back to info page",
+  "backToStart": "Back to start",
   "categories": "Categories",
   "category": {
     "block": "Block",
@@ -43,8 +45,16 @@
   },
   "digitalService": "Green Urban Explorer Digital Service",
   "downloadIosApp": "Download iOS application",
+  "email": "Email",
+  "emailSubject": "Feedback from Urban Green Explorer",
   "enableGeolocation": "Enable location from your browser",
+  "errorFeedback": "Unable to send your feedback. Check your connection and try again.",
+  "errorRating": "Please choose one of these options.",
+  "feedback": "Feedback",
+  "feedbackDescription": "We would like to hear your feedback and development suggestions to improve the user experience.",
+  "feedbackThanksTitle": "Thanks for the precious feedback!",
   "financier": "Financier",
+  "greetingsFrom": "",
   "homePath": "/",
   "implementation": "Implementation",
   "info": {
@@ -168,14 +178,32 @@
     }
   },
   "locationsTitle": "Locations on tour",
+  "message": "Message",
   "moreInfo": "More info",
+  "name": "Name",
+  "optional": "(optional)",
   "producer": "Producer",
+  "rating": "Rating",
+  "ratingDescription": "How did you like the overall experience?",
   "routes": {
     "index": "Home",
     "info": "Info",
     "locations": "Locations",
     "map": "Map"
   },
+  "seasonGreetingsAutumn": "Enjoy the autumn,",
+  "seasonGreetingsSpring": "Have a nice spring,",
+  "seasonGreetingsSummer": "Enjoy the summer,",
+  "seasonGreetingsWinter": "Enjoy the winter,",
+  "selectSubject": "Select a subject",
+  "sendFeedback": "Send feedback",
   "showOnMap": "Show on map",
-  "title": "Urban Green Explorer"
+  "subject": "Subject",
+  "termsOfUse": "Terms of use and privacy policy",
+  "theTeam": "The Urban Green Explorer team",
+  "title": "Urban Green Explorer",
+  "topicBug": "Found a bug",
+  "topicFeature": "Feature request / Idea",
+  "topicOther": "Other",
+  "topicPrivacy": "Privacy / GDPR"
 }

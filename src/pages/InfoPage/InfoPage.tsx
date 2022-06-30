@@ -1,12 +1,39 @@
-import type { VNode } from 'vue';
-import { defineComponent } from 'vue';
+import type { LocationLink } from '@/types';
+import { computed, VNode, defineComponent } from 'vue';
+import { useI18n } from 'vue-i18n';
+import ChevronRight from '@/assets/icons/chevron-right.svg?component';
+import CommentIcon from '@/assets/icons/comment.svg?component';
+import UserLockIcon from '@/assets/icons/user-lock.svg?component';
 import AppFooter from '@/components/AppFooter';
 import AppHeader from '@/components/AppHeader';
 import AppMain from '@/components/AppMain';
+import LinkList from '@/components/LinkList';
 import './InfoPage.css';
 
 export default defineComponent({
   name: 'InfoPage',
+  setup() {
+    const { t } = useI18n();
+    const links = computed<LocationLink[]>(() => [
+      {
+        alert: '',
+        iconLeft: CommentIcon,
+        iconRight: ChevronRight,
+        title: t('feedback'),
+        to: { name: 'feedback', params: { from: 'info' } },
+        type: 'router-link',
+      },
+      {
+        alert: '',
+        iconLeft: UserLockIcon,
+        iconRight: ChevronRight,
+        title: t('termsOfUse'),
+        to: { name: 'terms-of-use', params: { from: 'info' } },
+        type: 'router-link',
+      },
+    ]);
+    return { links };
+  },
   render(): VNode {
     return (
       <>
@@ -39,6 +66,8 @@ export default defineComponent({
               <a href="https://newthings.co">https://newthings.co</a>
             </dd>
           </dl>
+          <hr class="my-6" />
+          {this.links.length ? <LinkList links={this.links} /> : null}
         </AppMain>
         <AppFooter />
       </>

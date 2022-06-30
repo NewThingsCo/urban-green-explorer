@@ -1,0 +1,81 @@
+.feedback-form {
+  @apply max-w-90rem;
+  @apply mx-0;
+
+  .hidden-radio {
+    @apply opacity-0;
+    @apply pointer-events-none;
+    @apply top-10 left-10rem absolute;
+  }
+
+  .input {
+    @apply bg-opacity-0;
+    @apply block;
+    @apply flex-shrink;
+    @apply px-4;
+    @apply text-sm leading-loose;
+    @apply transition ease-in-out duration-200;
+  }
+
+  .input-group {
+    @apply leading-relaxed;
+    @apply mt-4;
+  }
+
+  .input,
+  .textarea {
+    @apply border border-gray-400;
+    @apply focus:shadow-md;
+    @apply transition-all ease-in-out duration-150;
+    @apply rounded-md;
+  }
+
+  .input,
+  .rating,
+  .textarea {
+    @apply outline-primary;
+    @apply w-full;
+  }
+
+  .label {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .legend {
+    @apply font-bold;
+    @apply p-0;
+    @apply my-6;
+  }
+
+  .rating {
+    @apply inline-flex;
+    @apply max-w-26rem;
+    @apply relative;
+
+    .icon {
+      @apply cursor-pointer;
+      @apply mr-6;
+      @apply w-12;
+
+      animation: rating-pop 0.25s ease-in;
+
+      @media (prefers-reduced-motion: reduce) {
+        animation: none !important;
+      }
+
+      input:checked + & {
+        @apply bg-opacity-20;
+        @apply text-primary;
+        @apply transition-all ease-in-out duration-300;
+
+        transform: translateY(-0.25em);
+      }
+    }
+  }
+
+  .textarea {
+    @apply flex-shrink transition ease-in-out duration-200;
+    @apply p-h-3;
+    @apply min-h-30;
+  }
+}

@@ -39,6 +39,7 @@ const manifest: Partial<ManifestOptions> = {
   description:
     'Urban Green Digital Development tour guide. B.Green project 2020-2022. Sompasaari, Kalasatama-District, City of Helsinki, Finland.',
   dir: 'ltr',
+  display: 'fullscreen',
   icons: [
     {
       sizes: '32x32',

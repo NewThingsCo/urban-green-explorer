@@ -1,4 +1,12 @@
 .main-index {
+  .additional-links {
+    @apply flex flex-col items-center justify-center;
+    @apply p-6;
+    @apply gap-6;
+    @apply text-center;
+    @apply w-full;
+  }
+
   .copyright {
     @apply text-gray-400;
     @apply mt-8;

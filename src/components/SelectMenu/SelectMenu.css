@@ -1,0 +1,12 @@
+.select-menu {
+  @apply appearance-none;
+  @apply bg-white hover:border-gray-500;
+  @apply block;
+  @apply border border-gray-400;
+  @apply focus:shadow-md;
+  @apply leading-tight;
+  @apply outline-primary;
+  @apply py-3 pr-8 pl-4;
+  @apply rounded-md;
+  @apply transition-all ease-in-out duration-150;
+}

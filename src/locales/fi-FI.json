@@ -1,6 +1,8 @@
 {
   "bGreenContact": "B.Green-projektin sivusto ja kontakti",
   "back": "Takaisin",
+  "backToInfo": "Takaisin info-sivulle",
+  "backToStart": "Takaisin alkuun",
   "categories": "Kategoriat",
   "category": {
     "block": "Kortteli",
@@ -43,8 +45,16 @@
   },
   "digitalService": "Green Urban Explorer Digital Service",
   "downloadIosApp": "Lataa iOS-sovellus",
+  "email": "Sähköposti",
+  "emailSubject": "Palaute Urban Green Explorer -palvelusta",
   "enableGeolocation": "Ota sijainti käyttöön selaimesta",
+  "errorFeedback": "Palautteen lähettäminen ei onnistu. Tarkista yhteys ja yritä uudelleen.",
+  "errorRating": "Ole hyvä ja valitse joku näistä.",
+  "feedback": "Palaute",
+  "feedbackDescription": "Haluaisimme kuulla sinun palautteesi ja kehitysehdotuksesi parantaaksemme käyttäjäkokemusta.",
+  "feedbackThanksTitle": "Kiitos arvokkaasta palautteesta!",
   "financier": "Rahoittaja",
+  "greetingsFrom": "T.",
   "homePath": "/",
   "implementation": "Toteutus",
   "info": {
@@ -168,14 +178,32 @@
     }
   },
   "locationsTitle": "Kohteet kierroksella",
+  "message": "Viesti",
   "moreInfo": "Lisätietoja",
+  "name": "Nimi",
+  "optional": "(vaihtoehtoinen)",
   "producer": "Tuottaja",
+  "rating": "Arvosana",
+  "ratingDescription": "Millainen tunne jäi sovelluksesta noin yleisesti?",
   "routes": {
     "index": "Alkuun",
     "info": "Info",
     "locations": "Kohteet",
     "map": "Kartta"
   },
+  "seasonGreetingsAutumn": "Nauti syksykstä,",
+  "seasonGreetingsSpring": "Nauti keväästä,",
+  "seasonGreetingsSummer": "Mukavaa kesää,",
+  "seasonGreetingsWinter": "Mukavaa talvea,",
+  "selectSubject": "Valitse aihe",
+  "sendFeedback": "Lähetä palaute",
   "showOnMap": "Näytä kartalla",
-  "title": "Urban Green Explorer"
+  "subject": "Aihe",
+  "termsOfUse": "Käyttöehdot ja tietosuojakäytäntö",
+  "theTeam": "Urban Green Explorer -tiimi",
+  "title": "Urban Green Explorer",
+  "topicBug": "Löysin bugin",
+  "topicFeature": "Parannusehdotus / Idea",
+  "topicOther": "Muu",
+  "topicPrivacy": "Yksityisyys / GDPR"
 }
