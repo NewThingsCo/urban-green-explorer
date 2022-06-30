@@ -2,14 +2,18 @@
   @apply max-w-90rem;
   @apply mx-0;
 
+  .hidden-radio {
+    @apply -bottom-20 absolute;
+  }
+
   .input {
+    @apply bg-opacity-0;
     @apply block;
     @apply flex-shrink;
+    @apply overflow-hidden;
     @apply px-4;
-    @apply rounded-md;
     @apply text-sm leading-loose;
     @apply transition ease-in-out duration-200;
-    @apply w-full;
   }
 
   .input-group {
@@ -50,19 +54,14 @@
       @media (prefers-reduced-motion: reduce) {
         animation: none !important;
       }
-    }
 
-    :where(input) {
-      @apply bg-opacity-0;
-      @apply -left-100vw absolute;
-    }
+      input:checked + & {
+        @apply bg-opacity-20;
+        @apply text-primary;
+        @apply transition-all ease-in-out duration-300;
 
-    input:checked + .icon {
-      @apply text-primary;
-      @apply transition-all ease-in-out duration-300;
-      @apply bg-opacity-20;
-
-      transform: translateY(-0.25em);
+        transform: translateY(-0.25em);
+      }
     }
   }
 
