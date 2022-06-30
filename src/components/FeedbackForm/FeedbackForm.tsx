@@ -1,5 +1,6 @@
 import type { VNode } from 'vue';
 import { defineComponent, ref } from 'vue';
+import { useI18n } from 'vue-i18n';
 import AngryIcon from '@/assets/icons/angry.svg?component';
 import FrownIcon from '@/assets/icons/frown.svg?component';
 import GrinIcon from '@/assets/icons/grin.svg?component';
@@ -12,7 +13,15 @@ import './FeedbackForm.css';
 export default defineComponent({
   name: 'FeedbackForm',
   setup() {
+    const { t } = useI18n();
     const feedbackForm = ref<HTMLFormElement | undefined>();
+
+    /** Handles error messages when the user has not chosen a rating for the app. */
+    function handleInvalidRating(event: Event): void {
+      return (event.target as HTMLInputElement)?.setCustomValidity(
+        t('errorRating')
+      );
+    }
 
     /**
      * Handles form submission.
@@ -32,7 +41,7 @@ export default defineComponent({
         .catch(console.error);
     }
 
-    return { feedbackForm, handleSubmit };
+    return { feedbackForm, handleInvalidRating, handleSubmit };
   },
   render(): VNode {
     return (
@@ -53,6 +62,7 @@ export default defineComponent({
                 <input
                   class="hidden-radio"
                   name="rating"
+                  onInvalid={this.handleInvalidRating}
                   required
                   type="radio"
                   value="1"
@@ -65,6 +75,7 @@ export default defineComponent({
                 <input
                   class="hidden-radio"
                   name="rating"
+                  onInvalid={this.handleInvalidRating}
                   required
                   type="radio"
                   value="2"
@@ -77,6 +88,7 @@ export default defineComponent({
                 <input
                   class="hidden-radio"
                   name="rating"
+                  onInvalid={this.handleInvalidRating}
                   required
                   type="radio"
                   value="3"
@@ -89,6 +101,7 @@ export default defineComponent({
                 <input
                   class="hidden-radio"
                   name="rating"
+                  onInvalid={this.handleInvalidRating}
                   required
                   type="radio"
                   value="4"
@@ -101,6 +114,7 @@ export default defineComponent({
                 <input
                   class="hidden-radio"
                   name="rating"
+                  onInvalid={this.handleInvalidRating}
                   required
                   type="radio"
                   value="5"

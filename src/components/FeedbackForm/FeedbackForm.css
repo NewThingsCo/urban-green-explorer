@@ -3,8 +3,9 @@
   @apply mx-0;
 
   .hidden-radio {
-    @apply top-10 left-10rem absolute;
     @apply opacity-0;
+    @apply pointer-events-none;
+    @apply top-10 left-10rem absolute;
   }
 
   .input {

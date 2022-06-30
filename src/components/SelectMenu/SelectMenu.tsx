@@ -17,7 +17,7 @@ export default defineComponent({
   render(): VNode {
     return (
       <select class="select-menu" name={this.selectName}>
-        <option>{this.$t('selectSubject')}</option>
+        <option value="">{this.$t('selectSubject')}</option>
         {Object.keys(this.selectOptions).map((key) => (
           <option value={key}>{this.selectOptions[key]}</option>
         ))}
