@@ -1,7 +1,7 @@
 .main-index {
   .additional-links {
-    @apply flex items-center justify-center;
-    @apply mt-6;
+    @apply flex flex-col items-center justify-center;
+    @apply p-6;
     @apply gap-6;
     @apply text-center;
     @apply w-full;

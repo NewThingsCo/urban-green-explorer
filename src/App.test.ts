@@ -2,19 +2,19 @@ import { jest } from '@jest/globals';
 import { createTestingPinia } from '@pinia/testing';
 import { mount } from '@vue/test-utils';
 import { createPinia, setActivePinia } from 'pinia';
-import App from './App';
+import Component from './App';
 import { i18n } from '@/utils';
 import { router } from '@/router';
 
 jest.retryTimes(2);
 
-const wrapper = mount(App, {
+const wrapper = mount(Component, {
   global: {
     plugins: [createTestingPinia(), i18n, router],
   },
 });
 
-describe('App', () => {
+describe(Component.name, () => {
   beforeEach(() => {
     setActivePinia(createPinia());
   });

@@ -1,5 +1,4 @@
-import type { VNode } from 'vue';
-import { defineComponent, ref } from 'vue';
+import { computed, PropType, VNode, defineComponent, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import Button from '@/components/Button';
 import RatingEmojis from '@/components/RatingEmojis';
@@ -8,10 +7,22 @@ import './FeedbackForm.css';
 
 export default defineComponent({
   name: 'FeedbackForm',
-  setup() {
+  props: {
+    onSuccess: {
+      default: null,
+      type: Function as PropType<(event: Event) => void>,
+    },
+  },
+  setup(props) {
     const { t } = useI18n();
+    const errorTimeout = 5000;
     const feedbackForm = ref<HTMLFormElement | undefined>();
     const formName = 'feedback';
+    const hasError = ref<null | NodeJS.Timeout>(null);
+    const isButtonDisabled = computed(
+      () => Boolean(hasError.value) || Boolean(isSubmitting.value)
+    );
+    const isSubmitting = ref(false);
 
     /** Handles error messages when the user has not chosen a rating for the app. */
     function handleInvalidRating(event: Event): void {
@@ -20,25 +31,58 @@ export default defineComponent({
       );
     }
 
+    /** Handles form submission errors. */
+    function handleError(): void {
+      hasError.value = setTimeout(resetError, errorTimeout);
+    }
+
+    /** Handles successful form submissions. */
+    function handleSuccess(event: Event): void {
+      if (props?.onSuccess) props.onSuccess(event);
+    }
+
+    /** Resets error timeouts. */
+    function resetError(): void {
+      if (!hasError.value) return;
+      clearTimeout(hasError.value);
+      hasError.value = null;
+    }
+
     /**
      * Handles form submission.
      * @link https://docs.netlify.com/forms/setup/
      */
-    function handleSubmit(event: Event): void {
+    async function handleSubmit(event: Event): Promise<void> {
       event.preventDefault();
-      const formData = new FormData(feedbackForm.value);
-      fetch('/', {
-        /* eslint-disable @typescript-eslint/ban-ts-comment */
-        // @ts-ignore TypeScript does not support this method yet.
-        body: new URLSearchParams(formData).toString(),
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        method: 'POST',
-      })
-        .then(console.debug)
-        .catch(console.error);
+      resetError();
+      isSubmitting.value = true;
+      try {
+        const formData = new FormData(feedbackForm.value);
+        const response = await fetch('/', {
+          /* eslint-disable @typescript-eslint/ban-ts-comment */
+          // @ts-ignore TypeScript does not support this method yet.
+          body: new URLSearchParams(formData).toString(),
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          method: 'POST',
+        });
+        console.debug('Form submitted successfully:', response);
+        isSubmitting.value = false;
+        handleSuccess(event);
+      } catch (error) {
+        console.error('Unable submit feedback:', error);
+        isSubmitting.value = false;
+        handleError();
+      }
     }
 
-    return { feedbackForm, formName, handleInvalidRating, handleSubmit };
+    return {
+      feedbackForm,
+      formName,
+      handleInvalidRating,
+      handleSubmit,
+      hasError,
+      isButtonDisabled,
+    };
   },
   render(): VNode {
     return (
@@ -53,6 +97,7 @@ export default defineComponent({
       >
         <input name="form-name" type="hidden" value={this.formName} />
         <input name="subject" type="hidden" value={this.$t('emailSubject')} />
+        <p class="ingress">{this.$t('feedbackDescription')}</p>
         <RatingEmojis
           fieldsetTitle={this.$t('rating')}
           legendText={this.$t('ratingDescription')}
@@ -101,10 +146,17 @@ export default defineComponent({
         </p>
         <div data-netlify-recaptcha="true"></div>
         <p class="input-group">
-          <Button class="button-primary" type="submit">
+          <Button
+            class="button-primary"
+            disabled={this.isButtonDisabled}
+            type="submit"
+          >
             {this.$t('sendFeedback')}
           </Button>
         </p>
+        {!this.hasError && (
+          <p class="mt-3 text-gray-400">{this.$t('errorFeedback')}</p>
+        )}
       </form>
     );
   },

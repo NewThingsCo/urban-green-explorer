@@ -1,11 +1,11 @@
 import { createTestingPinia } from '@pinia/testing';
 import { mount, RouterLinkStub } from '@vue/test-utils';
 import { createPinia, setActivePinia } from 'pinia';
-import Navigation from './Navigation';
+import Component from './Navigation';
 import { i18n } from '@/utils';
 import { router } from '@/router';
 
-const wrapper = mount(Navigation, {
+const wrapper = mount(Component, {
   global: {
     plugins: [createTestingPinia(), i18n, router],
     stubs: {
@@ -14,7 +14,7 @@ const wrapper = mount(Navigation, {
   },
 });
 
-describe('Navigation', () => {
+describe(Component.name, () => {
   beforeEach(() => {
     setActivePinia(createPinia());
   });
