@@ -19,7 +19,7 @@ export default defineComponent({
         iconLeft: UserLock,
         iconRight: ChevronRight,
         title: t('termsOfUse'),
-        to: { name: 'terms-of-use' },
+        to: { name: 'terms-of-use', params: { from: 'info' } },
         type: 'router-link',
       },
     ]);

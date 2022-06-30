@@ -1,4 +1,9 @@
 .main-index {
+  .additiona-links {
+    @apply mt-3;
+    @apply text-center;
+  }
+
   .copyright {
     @apply text-gray-400;
     @apply mt-8;
@@ -20,10 +25,5 @@
     @apply mx-auto;
     @apply my-6;
     @apply w-full;
-  }
-
-  .terms {
-    @apply mt-3;
-    @apply text-center;
   }
 }

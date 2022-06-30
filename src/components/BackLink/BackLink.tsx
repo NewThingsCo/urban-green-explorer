@@ -11,7 +11,7 @@ export default defineComponent({
     const { t } = useI18n();
     const route = useRoute();
     const backLink = computed(() => {
-      switch (route.params?.rel) {
+      switch (route.params?.from) {
         case 'index':
           return (
             <RouterLink to={{ name: 'index' }}>{t('backToStart')}</RouterLink>
