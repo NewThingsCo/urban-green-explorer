@@ -1,5 +1,4 @@
 ---
-excerpt: 'The following are the terms of use between you and the service provider.'
 name: Terms of use and privacy policy
 ---
 
