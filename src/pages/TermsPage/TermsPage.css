@@ -1,0 +1,35 @@
+.main-terms {
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-bold;
+    @apply my-6;
+  }
+
+  h1 {
+    @apply text-2xl;
+  }
+
+  h2 {
+    @apply text-xl;
+  }
+
+  h3 {
+    @apply text-base;
+  }
+
+  h4 {
+    @apply text-sm;
+  }
+
+  .back-link {
+    @apply flex;
+    @apply items-center;
+    @apply my-6;
+
+    .icon {
+      @apply h-4 mr-3;
+    }
+  }
+}

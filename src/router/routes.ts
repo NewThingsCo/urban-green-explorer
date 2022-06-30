@@ -31,6 +31,11 @@ const routes: RouteRecordRaw[] = [
     name: 'info',
     path: '/info',
   },
+  {
+    component: async () => await import('../pages/TermsPage'),
+    name: 'terms-of-use',
+    path: '/terms-of-use',
+  },
 ];
 
 export { routes };

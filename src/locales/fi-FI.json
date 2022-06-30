@@ -1,6 +1,7 @@
 {
   "bGreenContact": "B.Green-projektin sivusto ja kontakti",
   "back": "Takaisin",
+  "backToInfo": "Takaisin info-sivulle",
   "categories": "Kategoriat",
   "category": {
     "block": "Kortteli",
@@ -177,5 +178,6 @@
     "map": "Kartta"
   },
   "showOnMap": "Näytä kartalla",
+  "termsTitle": "Käyttöehdot ja tietosuojakäytäntö",
   "title": "Urban Green Explorer"
 }

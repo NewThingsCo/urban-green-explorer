@@ -1,6 +1,7 @@
 {
   "bGreenContact": "B.Green project website and contact",
   "back": "Back",
+  "backToInfo": "Back to info page",
   "categories": "Categories",
   "category": {
     "block": "Block",
@@ -177,5 +178,6 @@
     "map": "Map"
   },
   "showOnMap": "Show on map",
+  "termsTitle": "Terms of use and privacy policy",
   "title": "Urban Green Explorer"
 }
