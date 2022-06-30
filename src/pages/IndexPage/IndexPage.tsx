@@ -44,7 +44,7 @@ export default defineComponent({
             <TallinnLogo class="logo" />
           </div>
           <p class="copyright">&copy; 2022 B.Green project</p>
-          <p class="additiona-links">
+          <p class="additional-links">
             <RouterLink
               to={{ name: 'terms-of-use', params: { from: 'index' } }}
             >
