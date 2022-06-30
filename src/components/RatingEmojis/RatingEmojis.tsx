@@ -29,7 +29,11 @@ export default defineComponent({
   },
   render(): VNode {
     return (
-      <fieldset class="rating" title={this.$t('rating')}>
+      <fieldset
+        class="rating"
+        onInvalid={this.onInvalid}
+        title={this.$t('rating')}
+      >
         {this.legendText && <legend class="legend">{this.legendText}</legend>}
         <ul class="flex justify-center">
           <li>
@@ -37,7 +41,6 @@ export default defineComponent({
               <input
                 class="hidden-radio"
                 name="rating"
-                onInvalid={this.onInvalid}
                 required={this.required}
                 type="radio"
                 value="1"
@@ -50,7 +53,6 @@ export default defineComponent({
               <input
                 class="hidden-radio"
                 name="rating"
-                onInvalid={this.onInvalid}
                 required={this.required}
                 type="radio"
                 value="2"
@@ -63,7 +65,6 @@ export default defineComponent({
               <input
                 class="hidden-radio"
                 name="rating"
-                onInvalid={this.onInvalid}
                 required={this.required}
                 type="radio"
                 value="3"
@@ -76,7 +77,6 @@ export default defineComponent({
               <input
                 class="hidden-radio"
                 name="rating"
-                onInvalid={this.onInvalid}
                 required={this.required}
                 type="radio"
                 value="4"
@@ -89,7 +89,6 @@ export default defineComponent({
               <input
                 class="hidden-radio"
                 name="rating"
-                onInvalid={this.onInvalid}
                 required={this.required}
                 type="radio"
                 value="5"
