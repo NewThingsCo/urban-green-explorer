@@ -2,7 +2,8 @@ import type { LocationLink } from '@/types';
 import { computed, VNode, defineComponent } from 'vue';
 import { useI18n } from 'vue-i18n';
 import ChevronRight from '@/assets/icons/chevron-right.svg?component';
-import UserLock from '@/assets/icons/user-lock.svg?component';
+import CommentIcon from '@/assets/icons/comment.svg?component';
+import UserLockIcon from '@/assets/icons/user-lock.svg?component';
 import AppFooter from '@/components/AppFooter';
 import AppHeader from '@/components/AppHeader';
 import AppMain from '@/components/AppMain';
@@ -16,7 +17,15 @@ export default defineComponent({
     const links = computed<LocationLink[]>(() => [
       {
         alert: '',
-        iconLeft: UserLock,
+        iconLeft: CommentIcon,
+        iconRight: ChevronRight,
+        title: t('feedback'),
+        to: { name: 'feedback', params: { from: 'info' } },
+        type: 'router-link',
+      },
+      {
+        alert: '',
+        iconLeft: UserLockIcon,
         iconRight: ChevronRight,
         title: t('termsOfUse'),
         to: { name: 'terms-of-use', params: { from: 'info' } },
