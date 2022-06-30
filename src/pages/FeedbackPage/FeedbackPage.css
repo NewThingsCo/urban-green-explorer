@@ -1,0 +1,15 @@
+.main-feedback {
+  .ingress {
+    @apply text-lg;
+  }
+
+  .ingress,
+  .title {
+    @apply my-6;
+  }
+
+  .title {
+    @apply font-bold;
+    @apply text-2xl;
+  }
+}

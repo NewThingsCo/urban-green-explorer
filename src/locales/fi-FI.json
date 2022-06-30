@@ -45,7 +45,11 @@
   },
   "digitalService": "Green Urban Explorer Digital Service",
   "downloadIosApp": "Lataa iOS-sovellus",
+  "email": "Sähköposti",
+  "emailSubject": "Palaute Urban Green Explorer -palvelusta",
   "enableGeolocation": "Ota sijainti käyttöön selaimesta",
+  "feedback": "Palaute",
+  "feedbackDescription": "Haluaisimme kuulla sinun palautteesi ja kehitysehdotuksesi parantaaksemme käyttäjäkokemusta.",
   "financier": "Rahoittaja",
   "homePath": "/",
   "implementation": "Toteutus",
@@ -170,15 +174,27 @@
     }
   },
   "locationsTitle": "Kohteet kierroksella",
+  "message": "Viesti",
   "moreInfo": "Lisätietoja",
+  "name": "Nimi",
+  "optional": "(vaihtoehtoinen)",
   "producer": "Tuottaja",
+  "rating": "Arvosana",
+  "ratingDescription": "Millainen tunne jäi sovelluksesta noin yleisesti?",
   "routes": {
     "index": "Alkuun",
     "info": "Info",
     "locations": "Kohteet",
     "map": "Kartta"
   },
+  "selectSubject": "Valitse aihe",
+  "sendFeedback": "Lähetä palaute",
   "showOnMap": "Näytä kartalla",
+  "subject": "Aihe",
   "termsOfUse": "Käyttöehdot ja tietosuojakäytäntö",
-  "title": "Urban Green Explorer"
+  "title": "Urban Green Explorer",
+  "topicBug": "Löysin bugin",
+  "topicFeature": "Parannusehdotus / Idea",
+  "topicOther": "Muu",
+  "topicPrivacy": "Yksityisyys / GDPR"
 }

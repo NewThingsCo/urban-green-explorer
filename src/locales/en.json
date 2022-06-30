@@ -45,7 +45,11 @@
   },
   "digitalService": "Green Urban Explorer Digital Service",
   "downloadIosApp": "Download iOS application",
+  "email": "Email",
+  "emailSubject": "Feedback from Urban Green Explorer",
   "enableGeolocation": "Enable location from your browser",
+  "feedback": "Feedback",
+  "feedbackDescription": "We would like to hear your feedback and development suggestions to improve the user experience.",
   "financier": "Financier",
   "homePath": "/",
   "implementation": "Implementation",
@@ -170,15 +174,27 @@
     }
   },
   "locationsTitle": "Locations on tour",
+  "message": "Message",
   "moreInfo": "More info",
+  "name": "Name",
+  "optional": "(optional)",
   "producer": "Producer",
+  "rating": "Rating",
+  "ratingDescription": "How did you like the overall experience?",
   "routes": {
     "index": "Home",
     "info": "Info",
     "locations": "Locations",
     "map": "Map"
   },
+  "selectSubject": "Select a subject",
+  "sendFeedback": "Send feedback",
   "showOnMap": "Show on map",
+  "subject": "Subject",
   "termsOfUse": "Terms of use and privacy policy",
-  "title": "Urban Green Explorer"
+  "title": "Urban Green Explorer",
+  "topicBug": "Found a bug",
+  "topicFeature": "Feature request / Idea",
+  "topicOther": "Other",
+  "topicPrivacy": "Privacy / GDPR"
 }

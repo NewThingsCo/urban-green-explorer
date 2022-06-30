@@ -11,7 +11,6 @@
   @apply transition ease-in-out duration-200;
 
   animation: pop 0.35s ease-out;
-  letter-spacing: 0.05rem;
 
   &:active:hover,
   &:active:focus {
@@ -37,6 +36,12 @@
   &:focus-visible {
     outline: 2px solid hsl(var(--nf));
     outline-offset: 2px;
+  }
+}
+
+.button-link {
+  &:hover {
+    @apply underline;
   }
 }
 

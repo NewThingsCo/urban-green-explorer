@@ -5,7 +5,7 @@
     "baseUrl": ".",
     "esModuleInterop": true,
     "jsx": "preserve",
-    "lib": ["ESNext", "DOM", "WebWorker"],
+    "lib": ["ESNext", "DOM", "DOM.Iterable", "WebWorker"],
     "module": "ESNext",
     "moduleResolution": "Node",
     "noImplicitAny": true,

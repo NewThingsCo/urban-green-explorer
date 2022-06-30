@@ -14,11 +14,15 @@ export default defineComponent({
       switch (route.params?.from) {
         case 'index':
           return (
-            <RouterLink to={{ name: 'index' }}>{t('backToStart')}</RouterLink>
+            <RouterLink class="button button-link" to={{ name: 'index' }}>
+              {t('backToStart')}
+            </RouterLink>
           );
         default:
           return (
-            <RouterLink to={{ name: 'info' }}>{t('backToInfo')}</RouterLink>
+            <RouterLink class="button button-link" to={{ name: 'info' }}>
+              {t('backToInfo')}
+            </RouterLink>
           );
       }
     });
