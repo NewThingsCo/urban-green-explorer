@@ -11,6 +11,7 @@ export default defineComponent({
   setup() {
     const { t } = useI18n();
     const feedbackForm = ref<HTMLFormElement | undefined>();
+    const formName = 'feedback';
 
     /** Handles error messages when the user has not chosen a rating for the app. */
     function handleInvalidRating(event: Event): void {
@@ -37,7 +38,7 @@ export default defineComponent({
         .catch(console.error);
     }
 
-    return { feedbackForm, handleInvalidRating, handleSubmit };
+    return { feedbackForm, formName, handleInvalidRating, handleSubmit };
   },
   render(): VNode {
     return (
@@ -46,7 +47,7 @@ export default defineComponent({
         data-netlify-recaptcha="true"
         data-netlify="true"
         method="POST"
-        name="feedback"
+        name={this.formName}
         onSubmit={this.handleSubmit}
         ref="feedbackForm"
       >
@@ -102,6 +103,7 @@ export default defineComponent({
             {this.$t('sendFeedback')}
           </Button>
         </p>
+        <input name="form-name" type="hidden" value={this.formName} />
         <input name="subject" type="hidden" value={this.$t('emailSubject')} />
       </form>
     );
