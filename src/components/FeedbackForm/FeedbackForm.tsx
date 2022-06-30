@@ -81,7 +81,7 @@ export default defineComponent({
               'optional'
             )}`}</span>
             <SelectMenu
-              selectName="subject"
+              selectName="category"
               selectOptions={{
                 bug: this.$t('topicBug'),
                 idea: this.$t('topicFeature'),
