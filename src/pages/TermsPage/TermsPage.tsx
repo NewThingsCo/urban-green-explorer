@@ -18,12 +18,12 @@ export default defineComponent({
         case 'en':
           return `<h1 class="page-title" id="terms-of-use-and-privacy-policy">Terms of use and privacy policy</h1>
           <h2 id="controller">Controller</h2>
-          <p><pre class="font-sans">Forum Virium Helsinki Oy (“Forum Virium Helsinki”, “FVH”)
+          <p><pre class="info">Forum Virium Helsinki Oy (“Forum Virium Helsinki”, “FVH”)
 Business ID: FI21700292
 Unioninkatu 24, 6th floor, 00130 Helsinki, Finland
 Email: info@forumvirium.fi</pre></p>
           <h2 id="data-processor">Data processor</h2>
-          <p><pre class="font-sans">New Things Company Oy (“New Things Co”, “NTC”)
+          <p><pre class="info">New Things Company Oy (“New Things Co”, “NTC”)
 Business ID: 2806288-7
 Lönnrotinkatu 20, 5th floor, 00120 Helsinki, Finland
 Email: sales@newthings.co
@@ -186,12 +186,12 @@ Tel. +358 50 326 7292</pre></p>
           Käyttöehdot ja tietosuojakäytäntö
         </h1>
         <h2 id="rekisterinpitäjä">Rekisterinpitäjä</h2>
-        <p><pre class="font-sans">Forum Virium Helsinki Oy (“Forum Virium Helsinki”, “FVH”)
+        <p><pre class="info">Forum Virium Helsinki Oy (“Forum Virium Helsinki”, “FVH”)
 Y-tunnus: FI21700292
 Osoite: Unioninkatu 24, 6th floor, 00130 Helsinki, Suomi
 Sähköposti: info@forumvirium.fi</pre></p>
         <h2 id="käsittelijä">Käsittelijä</h2>
-        <p><pre class="font-sans">New Things Company Oy (“New Things Co”, “NTC”)
+        <p><pre class="info">New Things Company Oy (“New Things Co”, “NTC”)
 Y-tunnus: 2806288-7
 Osoite: Lönnrotinkatu 20, 5th floor, 00120 Helsinki, Suomi
 Sähköposti: sales@newthings.co

@@ -22,4 +22,9 @@
   h4 {
     @apply text-sm;
   }
+
+  .info {
+    @apply font-sans;
+    @apply whitespace-pre-wrap;
+  }
 }
