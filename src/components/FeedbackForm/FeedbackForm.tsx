@@ -44,13 +44,15 @@ export default defineComponent({
     return (
       <form
         class="feedback-form"
-        data-netlify-recaptcha="true"
+        data-netlify-honeypot="bot-field"
         data-netlify="true"
         method="POST"
         name={this.formName}
         onSubmit={this.handleSubmit}
         ref="feedbackForm"
       >
+        <input name="form-name" type="hidden" value={this.formName} />
+        <input name="subject" type="hidden" value={this.$t('emailSubject')} />
         <RatingEmojis
           fieldsetTitle={this.$t('rating')}
           legendText={this.$t('ratingDescription')}
@@ -103,8 +105,6 @@ export default defineComponent({
             {this.$t('sendFeedback')}
           </Button>
         </p>
-        <input name="form-name" type="hidden" value={this.formName} />
-        <input name="subject" type="hidden" value={this.$t('emailSubject')} />
       </form>
     );
   },
