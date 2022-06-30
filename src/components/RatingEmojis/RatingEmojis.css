@@ -1,0 +1,9 @@
+.back-link {
+  @apply flex;
+  @apply items-center;
+  @apply my-6;
+
+  .icon {
+    @apply h-4 mr-3;
+  }
+}

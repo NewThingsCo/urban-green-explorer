@@ -1,12 +1,8 @@
 import type { VNode } from 'vue';
 import { defineComponent, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
-import AngryIcon from '@/assets/icons/angry.svg?component';
-import FrownIcon from '@/assets/icons/frown.svg?component';
-import GrinIcon from '@/assets/icons/grin.svg?component';
-import MehIcon from '@/assets/icons/meh.svg?component';
-import SmileIcon from '@/assets/icons/smile.svg?component';
 import Button from '@/components/Button';
+import RatingEmojis from '@/components/RatingEmojis';
 import SelectMenu from '@/components/SelectMenu';
 import './FeedbackForm.css';
 
@@ -54,76 +50,12 @@ export default defineComponent({
         onSubmit={this.handleSubmit}
         ref="feedbackForm"
       >
-        <fieldset class="rating" title={this.$t('rating')}>
-          <legend class="legend">{this.$t('ratingDescription')}</legend>
-          <ul class="flex justify-center">
-            <li>
-              <label class="label">
-                <input
-                  class="hidden-radio"
-                  name="rating"
-                  onInvalid={this.handleInvalidRating}
-                  required
-                  type="radio"
-                  value="1"
-                />
-                <AngryIcon class="icon" />
-              </label>
-            </li>
-            <li>
-              <label class="label">
-                <input
-                  class="hidden-radio"
-                  name="rating"
-                  onInvalid={this.handleInvalidRating}
-                  required
-                  type="radio"
-                  value="2"
-                />
-                <FrownIcon class="icon" />
-              </label>
-            </li>
-            <li>
-              <label class="label">
-                <input
-                  class="hidden-radio"
-                  name="rating"
-                  onInvalid={this.handleInvalidRating}
-                  required
-                  type="radio"
-                  value="3"
-                />
-                <MehIcon class="icon" />
-              </label>
-            </li>
-            <li>
-              <label class="label">
-                <input
-                  class="hidden-radio"
-                  name="rating"
-                  onInvalid={this.handleInvalidRating}
-                  required
-                  type="radio"
-                  value="4"
-                />
-                <SmileIcon class="icon" />
-              </label>
-            </li>
-            <li>
-              <label class="label">
-                <input
-                  class="hidden-radio"
-                  name="rating"
-                  onInvalid={this.handleInvalidRating}
-                  required
-                  type="radio"
-                  value="5"
-                />
-                <GrinIcon class="icon" />
-              </label>
-            </li>
-          </ul>
-        </fieldset>
+        <RatingEmojis
+          fieldsetTitle={this.$t('rating')}
+          legendText={this.$t('ratingDescription')}
+          onInvalid={this.handleInvalidRating}
+          required={true}
+        />
         <p class="input-group">
           <label class="label">
             <span class="label-text">{`${this.$t('name')} ${this.$t(
