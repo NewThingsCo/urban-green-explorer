@@ -21,12 +21,6 @@
     @apply mt-4;
   }
 
-  .legend {
-    @apply font-bold;
-    @apply p-0;
-    @apply my-6;
-  }
-
   .input,
   .textarea {
     @apply border border-gray-400;
@@ -39,6 +33,12 @@
   .rating,
   .textarea {
     @apply w-full;
+  }
+
+  .legend {
+    @apply font-bold;
+    @apply p-0;
+    @apply my-6;
   }
 
   .rating {
