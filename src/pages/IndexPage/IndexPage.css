@@ -21,4 +21,9 @@
     @apply my-6;
     @apply w-full;
   }
+
+  .terms {
+    @apply mt-3;
+    @apply text-center;
+  }
 }
