@@ -39,7 +39,7 @@ As a rule, FVH has the copyright for all content on the service. UGE and all con
 
 ### Feedback form
 
-NTC collects voluntary feedback from the info page, which may contain your name and email should you choose to disclose this information as those fields are optional. Please note that any information or material sent to NTC through the App will be deemed not to be confidential and may be forwarded to FVH, unless otherwise stated in the feedback message.
+NTC collects voluntary feedback from the info page, which may contain your name and email should you choose to disclose this information as those fields are optional. In addition to the fields in the feedback form, Netlify stores the feedback provider's IP address and browser version. Please note that information sent to NTC via the App may be forwarded to FVH, unless otherwise stated in the feedback message.
 
 By sending any information or material through the App, you grant FVH and NTC an unrestricted, irrevocable license to copy, reproduce, publish, upload, post, transmit, distribute, publicly display, perform, modify, create derivative works from, and otherwise freely use, those materials or information. You also agree that FVH and NTC are free to use any ideas, concepts, know-how, or techniques that you send them for any purpose. Personally-identifiable information that you submit through the feedback form will be handled in accordance with our privacy policy. We comply with EU General Data Processing Regulations for data protection and privacy for individuals within the European Union. We also comply with all applicable EU and local regulations.
 
