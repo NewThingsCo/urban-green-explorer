@@ -38,6 +38,7 @@ export default defineComponent({
     return (
       <form
         class="feedback-form"
+        data-netlify-recaptcha="true"
         data-netlify="true"
         method="POST"
         name="feedback"
@@ -48,7 +49,7 @@ export default defineComponent({
           <legend class="legend">{this.$t('ratingDescription')}</legend>
           <ul class="flex justify-center">
             <li>
-              <label>
+              <label class="label">
                 <input
                   class="hidden-radio"
                   name="rating"
@@ -60,7 +61,7 @@ export default defineComponent({
               </label>
             </li>
             <li>
-              <label>
+              <label class="label">
                 <input
                   class="hidden-radio"
                   name="rating"
@@ -72,7 +73,7 @@ export default defineComponent({
               </label>
             </li>
             <li>
-              <label>
+              <label class="label">
                 <input
                   class="hidden-radio"
                   name="rating"
@@ -84,7 +85,7 @@ export default defineComponent({
               </label>
             </li>
             <li>
-              <label>
+              <label class="label">
                 <input
                   class="hidden-radio"
                   name="rating"
@@ -96,7 +97,7 @@ export default defineComponent({
               </label>
             </li>
             <li>
-              <label>
+              <label class="label">
                 <input
                   class="hidden-radio"
                   name="rating"
@@ -149,6 +150,7 @@ export default defineComponent({
             <textarea class="textarea" name="message"></textarea>
           </label>
         </p>
+        <div data-netlify-recaptcha="true"></div>
         <p class="input-group">
           <Button class="button-primary" type="submit">
             {this.$t('sendFeedback')}
