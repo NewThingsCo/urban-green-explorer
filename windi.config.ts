@@ -29,7 +29,7 @@ export default defineConfig({
         '1/3': '33.3vh',
       },
       screens: {
-        sm: '490px',
+        sm: '410px',
         md: '768px',
         lg: '1024px',
         xl: '1280px',
