@@ -2,11 +2,10 @@
 import type { VNode } from 'vue';
 import { computed, defineComponent } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { RouterLink } from 'vue-router';
-import ChevronLeft from '@/assets/icons/chevron-left.svg?component';
-import AppMain from '@/components/AppMain';
-import AppHeader from '@/components/AppHeader';
 import AppFooter from '@/components/AppFooter';
+import AppHeader from '@/components/AppHeader';
+import AppMain from '@/components/AppMain';
+import BackLink from '@/components/BackLink';
 import './TermsPage.css';
 
 export default defineComponent({
@@ -366,12 +365,7 @@ Puh. +358 50 326 7292</pre></p>
       <>
         <AppHeader />
         <AppMain class="main-terms main-wrapper">
-          <p class="back-link">
-            <ChevronLeft class="icon" />
-            <RouterLink to={{ name: 'info' }}>
-              {this.$t('backToInfo')}
-            </RouterLink>
-          </p>
+          <BackLink />
           <div v-html={this.currentTerms} />
         </AppMain>
         <AppFooter />
