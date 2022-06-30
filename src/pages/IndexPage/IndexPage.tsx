@@ -46,9 +46,16 @@ export default defineComponent({
           <p class="copyright">&copy; 2022 B.Green project</p>
           <p class="additional-links">
             <RouterLink
+              class="button button-link"
               to={{ name: 'terms-of-use', params: { from: 'index' } }}
             >
               {this.$t('termsOfUse')}
+            </RouterLink>
+            <RouterLink
+              class="button button-link"
+              to={{ name: 'feedback', params: { from: 'index' } }}
+            >
+              {this.$t('feedback')}
             </RouterLink>
           </p>
         </AppMain>

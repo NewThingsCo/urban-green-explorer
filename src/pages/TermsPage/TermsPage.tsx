@@ -16,7 +16,7 @@ export default defineComponent({
       switch (locale.value) {
         case 'en-US':
         case 'en':
-          return `<h1 id="terms-of-use-and-privacy-policy">Terms of use and privacy policy</h1>
+          return `<h1 class="page-title" id="terms-of-use-and-privacy-policy">Terms of use and privacy policy</h1>
           <h2 id="controller">Controller</h2>
           <p><pre class="font-sans">Forum Virium Helsinki Oy (“Forum Virium Helsinki”, “FVH”)
 Business ID: FI21700292
@@ -182,7 +182,7 @@ Tel. +358 50 326 7292</pre></p>
           <p>FVH or NTC do not guarantee the availability or functionality of UGE.</p>
           `;
         default:
-          return `<h1 id="käyttöehdot-ja-tietosuojakäytäntö">
+          return `<h1 class="page-title" id="käyttöehdot-ja-tietosuojakäytäntö">
           Käyttöehdot ja tietosuojakäytäntö
         </h1>
         <h2 id="rekisterinpitäjä">Rekisterinpitäjä</h2>

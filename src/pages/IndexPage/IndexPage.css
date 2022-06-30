@@ -1,7 +1,10 @@
 .main-index {
   .additional-links {
-    @apply mt-3;
+    @apply flex items-center justify-center;
+    @apply mt-6;
+    @apply gap-6;
     @apply text-center;
+    @apply w-full;
   }
 
   .copyright {
