@@ -42,6 +42,20 @@
   </head>
   <body>
     <div id="app"></div>
+    <form
+      data-netlify-honeypot="bot-field"
+      data-netlify="true"
+      method="POST"
+      name="feedback"
+      hidden
+    >
+      <input name="form-name" type="hidden" value="feedback" />
+      <input
+        name="subject"
+        type="hidden"
+        value="Feedback from Urban Green Explorer"
+      />
+    </form>
     <script src="/src/main.ts" type="module"></script>
   </body>
 </html>
