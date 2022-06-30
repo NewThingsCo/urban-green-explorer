@@ -51,6 +51,7 @@ export default defineComponent({
     /**
      * Handles form submission.
      * @link https://docs.netlify.com/forms/setup/
+     * @todo Deal with responses that fail to throw an error (i.e. 404)
      */
     async function handleSubmit(event: Event): Promise<void> {
       event.preventDefault();
@@ -154,7 +155,7 @@ export default defineComponent({
             {this.$t('sendFeedback')}
           </Button>
         </p>
-        {!this.hasError && (
+        {this.hasError && (
           <p class="mt-3 text-gray-400">{this.$t('errorFeedback')}</p>
         )}
       </form>
