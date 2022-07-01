@@ -87,10 +87,12 @@ const workbox: Partial<GenerateSWOptions> = {
 
 const vitePWAOptions: Partial<VitePWAOptions> = {
   devOptions,
+  filename: 'sw.ts',
   includeAssets,
   manifest,
   registerType: 'autoUpdate',
   srcDir: 'src',
+  strategies: 'injectManifest',
   useCredentials: false,
   workbox,
 };
