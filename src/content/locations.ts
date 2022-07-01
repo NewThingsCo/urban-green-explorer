@@ -28,7 +28,7 @@ export const locations: Location[] = [
         iconLeft: Website,
         iconRight: ArrowUpRight,
         title: 'locations.parkly.additionalLinks[0].label',
-        to: { path: 'locations.parkly.additionalLinks[0].href' },
+        to: 'locations.parkly.additionalLinks[0].href',
         type: 'external',
       },
     ],
