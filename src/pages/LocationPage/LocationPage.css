@@ -1,5 +1,5 @@
 .main-location {
-  @apply pb-16rem;
+  @apply pb-16rem !important;
 
   p + p {
     @apply mt-3;

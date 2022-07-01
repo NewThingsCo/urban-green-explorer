@@ -1,6 +1,4 @@
 .main-locations {
-  @apply pb-34;
-
   .category {
     @apply text-gray-500;
     @apply text-xs sm:text-sm;
