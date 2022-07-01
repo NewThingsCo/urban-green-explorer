@@ -17,34 +17,39 @@ import {
 
 /** @link https://schema.org/BreadcrumbList */
 const BREADCRUMBS: Breadcrumb = {
-  '@id': 'https://urban-green-explorer.netlify.app/#breadcrumb',
+  '@id': '#breadcrumb',
   '@type': 'BreadcrumbList',
   itemListElement: [
     {
+      '@id': '#start',
       '@type': 'ListItem',
       item: 'https://urban-green-explorer.netlify.app/',
       name: 'Alku / Start',
       position: 1,
     },
     {
+      '@id': '#locations',
       '@type': 'ListItem',
       item: 'https://urban-green-explorer.netlify.app/locations',
       name: 'Kohteet / Locations',
       position: 2,
     },
     {
+      '@id': '#map',
       '@type': 'ListItem',
       item: 'https://urban-green-explorer.netlify.app/map',
       name: 'Kartta / Map',
       position: 3,
     },
     {
+      '@id': '#info',
       '@type': 'ListItem',
       item: 'https://urban-green-explorer.netlify.app/info',
       name: 'Yhteystiedot / Info',
       position: 4,
     },
     {
+      '@id': '#terms-of-use',
       '@type': 'ListItem',
       item: 'https://urban-green-explorer.netlify.app/terms-of-use',
       name: 'Käyttöehdot / Terms of  use',
@@ -58,10 +63,9 @@ const PRIMARY_IMAGE: Image = {
   '@id': '#primaryImage',
   '@type': 'ImageObject',
   caption: 'Urban Green Explorer',
-  contentUrl:
-    'https://urban-green-explorer.netlify.app/assets/cover-images/urban-green-explorer-09.jpg',
+  contentUrl: 'https://urban-green-explorer.netlify.app/share-image.jpg',
   height: 1233,
-  url: '/assets/cover-images/urban-green-explorer-09.jpg',
+  url: '/share-image.jpg',
   width: 1600,
 };
 
@@ -84,20 +88,14 @@ const PUBLISHER: Organization = {
 
 /** @link https://schema.org/WebPage */
 const WEB_PAGE: WebPage = {
-  '@id': 'https://urban-green-explorer.netlify.app/#webpage',
+  '@id': '#webpage',
   '@type': 'WebPage',
   breadcrumb: BREADCRUMBS,
   inLanguage: 'fi-FI',
   isPartOf: {
-    '@id': 'https://urban-green-explorer.netlify.app/#website',
+    '@id': '#website',
   },
   name: 'Urban Green Digital Development tour guide. B.Green project 2020-2022. Sompasaari, Kalasatama-District, City of Helsinki, Finland.',
-  potentialAction: [
-    {
-      '@type': 'ReadAction',
-      target: ['https://urban-green-explorer.netlify.app/'],
-    },
-  ],
   primaryImageOfPage: {
     '@id': '#primaryImage',
   },
@@ -106,20 +104,11 @@ const WEB_PAGE: WebPage = {
 
 /** @link https://schema.org/WebSite */
 const WEB_SITE: WebSite = {
-  '@id': 'https://urban-green-explorer.netlify.app/#website',
+  '@id': '#website',
   '@type': 'WebSite',
   description: '',
   inLanguage: 'fi-FI',
   name: 'Urban Green Explorer',
-  potentialAction: [
-    {
-      '@type': 'MoveAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: 'https://urban-green-explorer.netlify.app/map',
-      },
-    },
-  ],
   publisher: {
     '@id': '#publisher',
   },
