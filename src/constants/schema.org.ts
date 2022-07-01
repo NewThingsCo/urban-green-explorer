@@ -27,7 +27,7 @@ const PRIMARY_IMAGE: Image = {
 
 const PUBLISHER: Organization = {
   '@id': '#publisher',
-  '@type': 'Organizaiton',
+  '@type': 'Organization',
   address: {
     addressCountry: 'FI',
     addressLocality: 'Helsinki',
