@@ -13,13 +13,19 @@ export default defineComponent({
   name: 'Navigation',
   setup() {
     const route = useRoute();
-    const locationsActive = computed(() =>
+    const isInfoActive = computed(
+      () =>
+        Boolean(route.name?.toString().startsWith('feedback')) ||
+        Boolean(route.name?.toString().startsWith('info')) ||
+        Boolean(route.name?.toString().startsWith('terms-of-use'))
+    );
+    const isLocationsActive = computed(() =>
       Boolean(route.name?.toString().startsWith('location'))
     );
-    const mapActive = computed(() =>
+    const isMapActive = computed(() =>
       Boolean(route.name?.toString().startsWith('map'))
     );
-    return { locationsActive, mapActive };
+    return { isInfoActive, isLocationsActive, isMapActive };
   },
   render(): VNode {
     return (
@@ -41,7 +47,7 @@ export default defineComponent({
                 </Button>
               );
             case 'locations':
-              if (this.locationsActive) classes.push('router-link-active');
+              if (this.isLocationsActive) classes.push('router-link-active');
               return (
                 <Button
                   class={classes.join(' ')}
@@ -55,7 +61,7 @@ export default defineComponent({
                 </Button>
               );
             case 'map':
-              if (this.mapActive) classes.push('router-link-active');
+              if (this.isMapActive) classes.push('router-link-active');
               return (
                 <Button
                   class={classes.join(' ')}
@@ -69,6 +75,7 @@ export default defineComponent({
                 </Button>
               );
             case 'info':
+              if (this.isInfoActive) classes.push('router-link-active');
               return (
                 <Button
                   class={classes.join(' ')}
