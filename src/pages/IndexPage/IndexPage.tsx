@@ -27,7 +27,7 @@ export default defineComponent({
             <h1 class="title">{this.$t('introduction.title')}</h1>
             <div class="content" v-html={this.$t('introduction.content')} />
             <Button
-              class="button button-primary"
+              class="button-primary"
               to={{ name: 'locations' }}
               type="router-link"
             >

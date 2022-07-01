@@ -410,7 +410,7 @@ export default defineComponent({
       <form class="check-in" onSubmit={this.handleCheckIn}>
         <Button
           aria-describedby={this.ariaDescribedby}
-          class="button button-primary"
+          class="button-primary"
           disabled={this.isButtonDisabled}
           hidden={this.isButtonHidden}
           type="submit"
