@@ -1,5 +1,6 @@
 import type {
   Arrayable,
+  Breadcrumb,
   Image,
   Organization,
   SchemaOrgOptions,
@@ -14,6 +15,45 @@ import {
   defineWebSite,
 } from '@vueuse/schema-org';
 
+/** @link https://schema.org/BreadcrumbList */
+const BREADCRUMBS: Breadcrumb = {
+  '@id': 'https://urban-green-explorer.netlify.app/#breadcrumb',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      item: 'https://urban-green-explorer.netlify.app/',
+      name: 'Alku / Start',
+      position: 1,
+    },
+    {
+      '@type': 'ListItem',
+      item: 'https://urban-green-explorer.netlify.app/locations',
+      name: 'Kohteet / Locations',
+      position: 2,
+    },
+    {
+      '@type': 'ListItem',
+      item: 'https://urban-green-explorer.netlify.app/map',
+      name: 'Kartta / Map',
+      position: 3,
+    },
+    {
+      '@type': 'ListItem',
+      item: 'https://urban-green-explorer.netlify.app/info',
+      name: 'Yhteystiedot / Info',
+      position: 4,
+    },
+    {
+      '@type': 'ListItem',
+      item: 'https://urban-green-explorer.netlify.app/terms-of-use',
+      name: 'Käyttöehdot / Terms of  use',
+      position: 5,
+    },
+  ],
+};
+
+/** @link https://schema.org/ImageObject */
 const PRIMARY_IMAGE: Image = {
   '@id': '#primaryImage',
   '@type': 'ImageObject',
@@ -25,6 +65,7 @@ const PRIMARY_IMAGE: Image = {
   width: 1600,
 };
 
+/** @link https://schema.org/publisher */
 const PUBLISHER: Organization = {
   '@id': '#publisher',
   '@type': 'Organization',
@@ -41,6 +82,29 @@ const PUBLISHER: Organization = {
   url: 'https://forumvirium.fi/',
 };
 
+/** @link https://schema.org/WebPage */
+const WEB_PAGE: WebPage = {
+  '@id': 'https://urban-green-explorer.netlify.app/#webpage',
+  '@type': 'WebPage',
+  breadcrumb: BREADCRUMBS,
+  inLanguage: 'fi-FI',
+  isPartOf: {
+    '@id': 'https://urban-green-explorer.netlify.app/#website',
+  },
+  name: 'Urban Green Digital Development tour guide. B.Green project 2020-2022. Sompasaari, Kalasatama-District, City of Helsinki, Finland.',
+  potentialAction: [
+    {
+      '@type': 'ReadAction',
+      target: ['https://urban-green-explorer.netlify.app/'],
+    },
+  ],
+  primaryImageOfPage: {
+    '@id': '#primaryImage',
+  },
+  url: 'https://urban-green-explorer.netlify.app/',
+};
+
+/** @link https://schema.org/WebSite */
 const WEB_SITE: WebSite = {
   '@id': 'https://urban-green-explorer.netlify.app/#website',
   '@type': 'WebSite',
@@ -58,29 +122,6 @@ const WEB_SITE: WebSite = {
   ],
   publisher: {
     '@id': '#publisher',
-  },
-  url: 'https://urban-green-explorer.netlify.app/',
-};
-
-const WEB_PAGE: WebPage = {
-  '@id': 'https://urban-green-explorer.netlify.app/#webpage',
-  '@type': 'WebPage',
-  breadcrumb: {
-    '@id': 'https://urban-green-explorer.netlify.app/#breadcrumb',
-  },
-  inLanguage: 'fi-FI',
-  isPartOf: {
-    '@id': 'https://urban-green-explorer.netlify.app/#website',
-  },
-  name: 'Urban Green Digital Development tour guide. B.Green project 2020-2022. Sompasaari, Kalasatama-District, City of Helsinki, Finland.',
-  potentialAction: [
-    {
-      '@type': 'ReadAction',
-      target: ['https://urban-green-explorer.netlify.app/'],
-    },
-  ],
-  primaryImageOfPage: {
-    '@id': '#primaryImage',
   },
   url: 'https://urban-green-explorer.netlify.app/',
 };
