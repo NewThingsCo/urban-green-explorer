@@ -29,7 +29,7 @@ export const locations: Location[] = [
         iconRight: ArrowUpRight,
         title: 'locations.parkly.additionalLinks[0].label',
         to: { path: 'locations.parkly.additionalLinks[0].href' },
-        type: 'router-link',
+        type: 'external',
       },
     ],
     categories: ['meetingPoint'],
@@ -206,6 +206,7 @@ export const locations: Location[] = [
     categories: ['tramStop'],
     coordinates: { lat: 60.18101, lng: 24.97858 },
     description: 'locations.greenTramStop.description',
+    image: GreenTramStopImage,
     images: [
       {
         alt: 'locations.greenTramStop.images[0].alt',
@@ -228,7 +229,6 @@ export const locations: Location[] = [
         type: 'router-link',
       },
     ],
-    image: GreenTramStopImage,
     minDistance: 0.03,
     slug: 'green-tram-stop',
     subtitle: 'locations.greenTramStop.subtitle',
