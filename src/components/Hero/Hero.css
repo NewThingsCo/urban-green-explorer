@@ -18,6 +18,10 @@
     @apply text-center;
     @apply text-white;
     @apply z-1;
+
+    > *:last-child {
+      @apply mb-0;
+    }
   }
 
   .overlay {
