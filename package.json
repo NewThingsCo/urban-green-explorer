@@ -132,7 +132,9 @@
     "vite-svg-loader": "^3.4.0",
     "vue-i18n": "^9.1.10",
     "vue-tsc": "^0.38.2",
-    "windicss": "^3.5.5"
+    "windicss": "^3.5.5",
+    "workbox-core": "^6.5.3",
+    "workbox-precaching": "^6.5.3"
   },
   "engines": {
     "node": "16.x"
