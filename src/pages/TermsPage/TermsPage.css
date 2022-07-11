@@ -23,6 +23,10 @@
     @apply text-sm;
   }
 
+  p + p {
+    @apply mt-3;
+  }
+
   .info {
     @apply font-sans;
     @apply whitespace-pre-wrap;
