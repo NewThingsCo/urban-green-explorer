@@ -19,7 +19,11 @@ import LoviseholmPark1 from '@/assets/images/loviseholm-park/loviseholm-park-1.j
 import LoviseholmParkImage from '@/assets/images/cover-images/loviseholm-park.jpg?url';
 import ParklyImage from '@/assets/images/cover-images/parkly.jpg?url';
 
-export const locations: Location[] = [
+/**
+ * Array of location data, which includes translation keys and shared content such as
+ * GPS Coordinates, icons and images used to create a localized version of each location.
+ */
+const LOCATIONS: Location[] = [
   {
     additionalContent: 'locations.parkly.additionalContent',
     additionalLinks: [
@@ -235,3 +239,5 @@ export const locations: Location[] = [
     title: 'locations.greenTramStop.title',
   },
 ];
+
+export { LOCATIONS };

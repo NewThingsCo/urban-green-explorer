@@ -6,7 +6,7 @@ import AppFooter from '@/components/AppFooter';
 import AppHeader from '@/components/AppHeader';
 import AppMain from '@/components/AppMain';
 import CategoryList from '@/components/CategoryList';
-import { locations } from '@/content/locations';
+import { LOCATIONS } from '@/constants';
 import './LocationsPage.css';
 
 export default defineComponent({
@@ -20,7 +20,7 @@ export default defineComponent({
             {this.$t('locationsTitle')}
           </h1>
           <ul aria-label={this.$t('locationList')} class="location-list">
-            {locations.map((location, index) => (
+            {LOCATIONS.map((location, index) => (
               <li class="location">
                 <RouterLink
                   class="location-link"

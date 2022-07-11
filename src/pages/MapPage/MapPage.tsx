@@ -28,8 +28,11 @@ import MapMarkerAltIcon from '@/assets/icons/map-marker-alt.svg?raw';
 import AppFooter from '@/components/AppFooter';
 import AppHeader from '@/components/AppHeader';
 import AppMain from '@/components/AppMain';
-import { locations } from '@/content/locations';
-import { DEFAULT_MAP_COORDINATES, LIGHT_MAP_THEME } from '@/constants';
+import {
+  DEFAULT_MAP_COORDINATES,
+  LIGHT_MAP_THEME,
+  LOCATIONS,
+} from '@/constants';
 import './MapPage.css';
 
 export default defineComponent({
@@ -53,23 +56,23 @@ export default defineComponent({
 
     /** Latitude and longitudes for Ant Path. */
     const antPathCoordinates: Coordinates[] = [
-      locations[0].coordinates,
+      LOCATIONS[0].coordinates,
       { lat: 60.1813, lng: 24.97726 },
       { lat: 60.18142, lng: 24.97726 },
-      locations[1].coordinates,
+      LOCATIONS[1].coordinates,
       { lat: 60.1816, lng: 24.97709 },
       { lat: 60.1813, lng: 24.9772 },
       { lat: 60.18072, lng: 24.97698 },
       { lat: 60.18069, lng: 24.97729 },
       { lat: 60.18084, lng: 24.97737 },
-      locations[2].coordinates,
+      LOCATIONS[2].coordinates,
       { lat: 60.18084, lng: 24.97784 },
-      locations[3].coordinates,
+      LOCATIONS[3].coordinates,
       { lat: 60.1805, lng: 24.97836 },
       { lat: 60.18055, lng: 24.97844 },
       { lat: 60.18095, lng: 24.97862 },
-      locations[4].coordinates,
-      locations[0].coordinates,
+      LOCATIONS[4].coordinates,
+      LOCATIONS[0].coordinates,
     ];
 
     /** Ant Path options. */
@@ -98,7 +101,7 @@ export default defineComponent({
 
     /** Current location based on slug value. */
     const currentLocation = slug.value
-      ? locations.find((location) => location.slug === slug.value)
+      ? LOCATIONS.find((location) => location.slug === slug.value)
       : null;
 
     /** Invalidates map size. */
@@ -124,7 +127,7 @@ export default defineComponent({
     function handleLocaleChange(): void {
       console.info('Locale change detected.');
       resetMap();
-      locations.map(createLocationMarker);
+      LOCATIONS.map(createLocationMarker);
     }
 
     /** Handles route changes based on the `href` value of a link. */
@@ -224,7 +227,7 @@ export default defineComponent({
         .addTo(mapInstance.value as Map);
 
       // Add location markers
-      Promise.all(locations.map(createLocationMarker));
+      Promise.all(LOCATIONS.map(createLocationMarker));
 
       // Invalidate map on window resize
       resizeObserver.observe(map.value.$el);

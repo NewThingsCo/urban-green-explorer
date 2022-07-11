@@ -13,7 +13,7 @@ import { RouterLink, useRoute } from 'vue-router';
 import { getCheckIn, getCheckIns } from './utils';
 import LocateIcon from '@/assets/icons/locate.svg?component';
 import Button from '@/components/Button';
-import { locations } from '@/content/locations';
+import { LOCATIONS } from '@/constants';
 import './CheckIn.css';
 
 export default defineComponent({
@@ -72,7 +72,7 @@ export default defineComponent({
     );
 
     /** Current location. */
-    const location = locations.find(
+    const location = LOCATIONS.find(
       (location) => location.slug === locationSlug
     ) as Location;
 
@@ -81,12 +81,12 @@ export default defineComponent({
     }
 
     /** Location index used to determine next location. */
-    const locationIndex = locations.findIndex(
+    const locationIndex = LOCATIONS.findIndex(
       (location) => location.slug === locationSlug
     );
 
     /** Contains the next location if available. */
-    const nextLocation = locations[locationIndex + 1];
+    const nextLocation = LOCATIONS[locationIndex + 1];
     console.debug('Next location:', nextLocation);
 
     /**

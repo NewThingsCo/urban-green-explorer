@@ -10,7 +10,7 @@ import CategoryList from '@/components/CategoryList';
 import CheckInComponent, { getCheckIn } from '@/components/CheckIn';
 import LinkList from '@/components/LinkList';
 import ImageList from '@/components/ImageList';
-import { locations } from '@/content/locations';
+import { LOCATIONS } from '@/constants';
 import './LocationPage.css';
 
 export default defineComponent({
@@ -24,7 +24,7 @@ export default defineComponent({
 
     /** Current location. */
     const currentLocation: Location | null =
-      locations.find((l) => l.slug === routeSlug) || null;
+      LOCATIONS.find((l) => l.slug === routeSlug) || null;
 
     console.debug('Current locaxtion', currentLocation);
 
@@ -33,7 +33,7 @@ export default defineComponent({
 
     /** Index number of current location. */
     const locationIndex: ComputedRef<number> = computed(() =>
-      locations.findIndex(
+      LOCATIONS.findIndex(
         (location) => location.title === currentLocation.title
       )
     );
