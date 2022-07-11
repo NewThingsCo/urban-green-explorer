@@ -47,8 +47,25 @@ const manifest: Partial<ManifestOptions> = {
       type: 'image/x-icon',
     },
     {
+      sizes: '180x180',
+      src: 'apple-touch-icon.png',
+      type: 'image/png',
+    },
+    {
       sizes: '512x512',
       src: 'favicon.png',
+      type: 'image/png',
+    },
+    {
+      purpose: 'maskable',
+      sizes: '192x192',
+      src: 'maskable_icon_x512',
+      type: 'image/png',
+    },
+    {
+      purpose: 'maskable',
+      sizes: '512x512',
+      src: 'maskable_icon_x512.png',
       type: 'image/png',
     },
   ],
@@ -63,6 +80,7 @@ const manifest: Partial<ManifestOptions> = {
     },
   ],
   short_name: 'UGE',
+  start_url: '.',
   theme_color: '#42b883',
 };
 
