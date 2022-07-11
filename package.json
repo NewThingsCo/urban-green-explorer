@@ -125,6 +125,7 @@
     "typescript": "^4.7.4",
     "vite-jest": "^0.1.4",
     "vite-plugin-eslint": "^1.6.1",
+    "vite-plugin-markdown": "^2.0.2",
     "vite-plugin-mkcert": "^1.7.2",
     "vite-plugin-pwa": "^0.12.3",
     "vite-plugin-stylelint": "^2.3.1",
