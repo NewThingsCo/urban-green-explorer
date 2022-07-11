@@ -4,24 +4,22 @@ name: Käyttöehdot ja tietosuojakäytäntö
 
 # Käyttöehdot ja tietosuojakäytäntö
 
-## Rekisterinpitäjä
+<dl itemscope itemtype="https://schema.org/Organization">
+<dt class="subtitle">Rekisterinpitäjä</dt>
+<dd><span itemprop="name">Forum Virium Helsinki Oy</span> (“Forum Virium Helsinki”, “FVH”)</dd>
+<dd>Y-tunnus: <span itemprop="taxID">2170029-2</span></dd>
+<dd itemprop="address">Osoite: <span itemprop="streetAddress">Unioninkatu 24, 6. krs.</span>, <span itemprop="postalCode">00130</span> <span itemprop="addressLocality">Helsinki</span>, <span itemprop="country">Suomi</span></dd>
+<dd>Sähköposti: <a href="mailto:info@forumvirium.fi" itemprop="email">info@forumvirium.fi</a></dd>
+</dl>
 
-```
-Forum Virium Helsinki Oy (“Forum Virium Helsinki”, “FVH”)
-Y-tunnus: FI21700292
-Osoite: Unioninkatu 24, 6th floor, 00130 Helsinki, Suomi
-Sähköposti: info@forumvirium.fi
-```
-
-## Käsittelijä
-
-```
-New Things Company Oy (“New Things Co”, “NTC”)
-Y-tunnus: 2806288-7
-Osoite: Lönnrotinkatu 20, 5th floor, 00120 Helsinki, Suomi
-Sähköposti: info@newthings.co
-Puh. +358 50 326 7292
-```
+<dl itemscope itemtype="https://schema.org/Organization">
+<dt class="subtitle">Käsittelijä</dt>
+<dd><span itemprop="name">New Things Company Oy</span> (“New Things Co”, “NTC”)</dd>
+<dd>Y-tunnus: <span itemprop="taxID">2806288-7</span></dd>
+<dd itemprop="address">Osoite: <span itemprop="streetAddress">Lönnrotinkatu 20, 5th floor</span>, <span itemprop="postalCode">00120</span> <span itemprop="addressLocality">Helsinki</span>, <span itemprop="country">Suomi</span></dd>
+<dd>Sähköposti: <a href="mailto:info@newthings.co" itemprop="email">info@newthings.co</a></dd>
+<dd>Puh.<a href="tel:+358503267292" itemprop="telephone">+358 50 326 7292</a></dd>
+</dl>
 
 ## Urban Green Explorer -verkkopalvelun käyttöehdot
 

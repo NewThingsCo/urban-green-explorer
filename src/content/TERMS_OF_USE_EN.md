@@ -6,24 +6,22 @@ name: Terms of use and privacy policy
 
 > Please note: the English translation is provided as an aid only. In case of discrepancies, the Finnish version is legally binding.
 
-## Controller
+<dl itemscope itemtype="https://schema.org/Organization">
+<dt class="subtitle">Controller</dt>
+<dd><span itemprop="name">Forum Virium Helsinki Oy</span> (“Forum Virium Helsinki”, “FVH”)</dd>
+<dd>Business ID: <span itemprop="taxID">FI21700292</span></dd>
+<dd itemprop="address">Address: <span itemprop="streetAddress">Unioninkatu 24, 6th floor</span>, <span itemprop="postalCode">00130</span> <span itemprop="addressLocality">Helsinki</span>, <span itemprop="country">Finland</span></dd>
+<dd>Email: <a href="mailto:info@forumvirium.fi" itemprop="email">info@forumvirium.fi</a></dd>
+</dl>
 
-```
-Forum Virium Helsinki Oy (“Forum Virium Helsinki”, “FVH”)
-Business ID: FI21700292
-Unioninkatu 24, 6th floor, 00130 Helsinki, Finland
-Email: info@forumvirium.fi
-```
-
-## Data processor
-
-```
-New Things Company Oy (“New Things Co”, “NTC”)
-Business ID: 2806288-7
-Lönnrotinkatu 20, 5th floor, 00120 Helsinki, Finland
-Email: info@newthings.co
-Tel. +358 50 326 7292
-```
+<dl itemscope itemtype="https://schema.org/Organization">
+<dt class="subtitle">Data processor</dt>
+<dd><span itemprop="name">New Things Company Oy</span> (“New Things Co”, “NTC”)</dd>
+<dd>Business ID: <span itemprop="taxID">FI28062887</span></dd>
+<dd itemprop="address">Address: <span itemprop="streetAddress">Lönnrotinkatu 20, 5th floor</span>, <span itemprop="postalCode">00120</span> <span itemprop="addressLocality">Helsinki</span>, <span itemprop="country">Finland</span></dd>
+<dd>Email: <a href="mailto:info@newthings.co" itemprop="email">info@newthings.co</a></dd>
+<dd>Tel. <a href="tel:+358503267292" itemprop="telephone">+358 50 326 7292</a></dd>
+</dl>
 
 ## Terms of Use of the Urban Green Explorer web application
 

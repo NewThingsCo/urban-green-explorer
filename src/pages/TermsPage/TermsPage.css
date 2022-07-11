@@ -1,34 +1,11 @@
 .main-terms {
-  h1,
-  h2,
-  h3,
-  h4 {
-    @apply font-bold;
-    @apply my-6;
-  }
-
-  h1 {
-    @apply text-2xl;
-  }
-
-  h2 {
-    @apply text-xl;
-  }
-
-  h3 {
-    @apply text-base;
-  }
-
-  h4 {
-    @apply text-sm;
-  }
-
-  p + p {
-    @apply mt-3;
-  }
-
   .info {
     @apply font-sans;
     @apply whitespace-pre-wrap;
+  }
+
+  .subtitle {
+    @apply mb-6;
+    @apply font-bold;
   }
 }
