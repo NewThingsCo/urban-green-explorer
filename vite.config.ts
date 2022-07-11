@@ -1,7 +1,8 @@
-import VueI18n from '@intlify/vite-plugin-vue-i18n';
-import VueJsx from '@vitejs/plugin-vue-jsx';
 import { defineConfig } from 'vite';
 import ESLintPlugin from 'vite-plugin-eslint';
+import VueJsx from '@vitejs/plugin-vue-jsx';
+import VueI18n from '@intlify/vite-plugin-vue-i18n';
+import Markdown, { Mode } from 'vite-plugin-markdown';
 import MKCert from 'vite-plugin-mkcert';
 import { VitePWA } from 'vite-plugin-pwa';
 import StylelintPlugin from 'vite-plugin-stylelint';
@@ -31,6 +32,9 @@ export default defineConfig({
       cache: true,
       fix: true,
       include: ['src/**/*.ts', 'src/**/*.tsx'],
+    }),
+    Markdown({
+      mode: [Mode.HTML],
     }),
     MKCert(),
     StylelintPlugin({
