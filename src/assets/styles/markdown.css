@@ -1,0 +1,52 @@
+.markdown {
+  blockquote {
+    @apply bg-light-400;
+    @apply inline-flex;
+    @apply m-0;
+    @apply p-3;
+    @apply rounded-lg;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-bold;
+    @apply my-6;
+  }
+
+  h1 {
+    @apply text-2xl;
+  }
+
+  h2,
+  .subtitle {
+    @apply text-xl;
+  }
+
+  h3 {
+    @apply text-lg;
+  }
+
+  h4 {
+    @apply text-base;
+  }
+
+  dl {
+    @apply mt-6;
+  }
+
+  p + p {
+    @apply mt-3;
+  }
+
+  ul {
+    @apply my-3;
+    @apply list-disc;
+
+    li {
+      @apply ml-7;
+      @apply pl-1;
+    }
+  }
+}
