@@ -2,8 +2,8 @@
 import type { VNode } from 'vue';
 import { computed, defineComponent } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { html as TermsOfUseEnglish } from '@/content/TERMS_OF_USE_EN.md';
-import { html as TermsOfUseFinnish } from '@/content/TERMS_OF_USE_FI.md';
+import TermsOfUseEnglish from '@/content/TERMS_OF_USE_EN.md';
+import TermsOfUseFinnish from '@/content/TERMS_OF_USE_FI.md';
 import AppFooter from '@/components/AppFooter';
 import AppHeader from '@/components/AppHeader';
 import AppMain from '@/components/AppMain';
@@ -31,7 +31,7 @@ export default defineComponent({
         <AppHeader />
         <AppMain class="main-terms main-wrapper">
           <BackLink />
-          <div class="markdown" v-html={this.terms} />
+          {this.terms.render ? this.terms.render() : null}
         </AppMain>
         <AppFooter />
       </>

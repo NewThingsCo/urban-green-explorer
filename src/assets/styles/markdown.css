@@ -1,4 +1,4 @@
-.markdown {
+.markdown-body {
   blockquote {
     @apply bg-light-400;
     @apply inline-flex;
@@ -16,7 +16,8 @@
   }
 
   h1 {
-    @apply text-2xl;
+    @apply heading-1;
+    @apply my-6 md:my-8;
   }
 
   h2,

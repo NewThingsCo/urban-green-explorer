@@ -1,7 +1,3 @@
----
-name: Terms of use and privacy policy
----
-
 # Terms of use and privacy policy
 
 > Please note: the English translation is provided as an aid only. In case of discrepancies, the Finnish version is legally binding.

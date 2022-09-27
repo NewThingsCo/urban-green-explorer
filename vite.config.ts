@@ -1,8 +1,11 @@
+import type MarkdownIt from 'markdown-it';
 import VueI18n from '@intlify/vite-plugin-vue-i18n';
+import Vue from '@vitejs/plugin-vue';
 import VueJsx from '@vitejs/plugin-vue-jsx';
 import { defineConfig } from 'vite';
 import ESLintPlugin from 'vite-plugin-eslint';
-import Markdown, { Mode } from 'vite-plugin-markdown';
+import Markdown, { link } from 'vite-plugin-md';
+import MarkdownAnchor from 'markdown-it-anchor';
 import MKCert from 'vite-plugin-mkcert';
 import { VitePWA } from 'vite-plugin-pwa';
 import StylelintPlugin from 'vite-plugin-stylelint';
@@ -34,7 +37,25 @@ export default defineConfig({
       include: ['src/**/*.ts', 'src/**/*.tsx'],
     }),
     Markdown({
-      mode: [Mode.HTML],
+      headEnabled: false,
+      markdownItOptions: {
+        html: true,
+        linkify: true,
+        typographer: true,
+      },
+      builders: [link()],
+      markdownItSetup(md: MarkdownIt) {
+        md.use(MarkdownAnchor, {
+          level: [2, 3],
+          permalink: MarkdownAnchor.permalink.linkInsideHeader({
+            ariaHidden: true,
+            placement: 'before',
+            renderHref: (slug) => `#${slug}`,
+            symbol: '#',
+          }),
+          tabIndex: 0,
+        });
+      },
     }),
     MKCert(),
     StylelintPlugin({
@@ -46,6 +67,9 @@ export default defineConfig({
     VitePWA(vitePWAOptions),
     VueI18n({
       include: path.resolve(__dirname, './src/locales/**'),
+    }),
+    Vue({
+      include: [/\.md$/, /\.vue$/],
     }),
     VueJsx({
       mergeProps: true,

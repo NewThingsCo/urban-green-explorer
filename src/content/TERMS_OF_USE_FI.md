@@ -1,7 +1,3 @@
----
-name: Käyttöehdot ja tietosuojakäytäntö
----
-
 # Käyttöehdot ja tietosuojakäytäntö
 
 <dl itemscope itemtype="https://schema.org/Organization">
