@@ -26,7 +26,7 @@ export default defineComponent({
     const currentLocation: Location | null =
       locations.find((l) => l.slug === routeSlug) || null;
 
-    console.debug('Current locaxtion', currentLocation);
+    console.debug('Current location', currentLocation);
 
     if (!currentLocation)
       throw new Error(`No location found for slug: ${routeSlug}`);
@@ -129,7 +129,7 @@ export default defineComponent({
             <CategoryList categories={this.categories} />
             {this.subtitle && <h2 class="page-subtitle">{this.subtitle}</h2>}
             {this.description && (
-              <p class="description">{this.$t(this.description)}</p>
+              <div class="description" v-html={this.$t(this.description)} />
             )}
             {this.additionalContent && (
               <div
