@@ -32,6 +32,12 @@ a {
   @apply text-primary;
 }
 
+ul:not([class]) {
+  @apply list-disc;
+  @apply my-4;
+  @apply pl-4;
+}
+
 [hidden] {
   @apply hidden !important;
 }
