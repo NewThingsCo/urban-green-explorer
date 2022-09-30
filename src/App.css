@@ -32,7 +32,7 @@ a {
   @apply text-primary;
 }
 
-ul {
+ul:not(.feedback-options) {
   @apply list-disc;
   @apply my-4;
   @apply pl-4;

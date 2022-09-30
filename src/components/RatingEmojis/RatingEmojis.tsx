@@ -35,7 +35,7 @@ export default defineComponent({
         title={this.$t('rating')}
       >
         {this.legendText && <legend class="legend">{this.legendText}</legend>}
-        <ul class="flex justify-center">
+        <ul class="flex feedback-options justify-center">
           <li>
             <label class="label">
               <input
