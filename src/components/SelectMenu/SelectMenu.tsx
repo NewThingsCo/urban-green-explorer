@@ -18,9 +18,10 @@ export default defineComponent({
     return (
       <select class="select-menu" name={this.selectName}>
         <option value="">{this.$t('selectSubject')}</option>
-        {Object.keys(this.selectOptions).map((key) => (
-          <option value={key}>{this.selectOptions[key]}</option>
-        ))}
+        {this.selectOptions &&
+          Object.keys(this.selectOptions).map((key) => (
+            <option value={key}>{this.selectOptions[key]}</option>
+          ))}
       </select>
     );
   },

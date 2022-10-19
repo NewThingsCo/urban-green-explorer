@@ -14,4 +14,4 @@ function goBack(): void {
   router.go(-1);
 }
 
-export { router, goBack };
+export { goBack, router };
