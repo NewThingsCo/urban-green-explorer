@@ -339,6 +339,7 @@
     "dev:host": "vite --host",
     "lint": "npm run lint:client && npm run lint:styles",
     "lint:client": "eslint --ignore-path .gitignore .",
+    "lint:fix": "npm run lint:fix:client && npm run lint:fix:styles",
     "lint:fix:client": "eslint --fix --ignore-path .gitignore .",
     "lint:fix:styles": "stylelint --fix src/**/*.css",
     "lint:styles": "stylelint src/**/*.css",
