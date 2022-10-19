@@ -6,9 +6,6 @@ import LineClamp from 'windicss/plugin/line-clamp';
 
 export default defineConfig({
   darkMode: 'class',
-  daisyui: {
-    themes: false,
-  },
   extract: {
     include: ['index.html', 'src/**/*.{html,css,tsx}'],
   },
