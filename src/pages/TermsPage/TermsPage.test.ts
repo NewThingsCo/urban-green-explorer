@@ -21,7 +21,7 @@ describe(Component.name, () => {
   });
   it('should display the correct text in the main heading', () => {
     expect(wrapper.find('.page-title').text()).toEqual(
-      I18N_DEFAULT_MESSAGES.info.title
+      I18N_DEFAULT_MESSAGES.termsOfUse
     );
   });
 });

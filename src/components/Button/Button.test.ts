@@ -24,7 +24,7 @@ const wrapper = mount(Component, {
   },
 });
 
-describe(Component, () => {
+describe(Component.name, () => {
   it('renders the component', () => {
     expect(wrapper.exists()).toBeTruthy();
   });
