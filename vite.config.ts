@@ -2,7 +2,7 @@ import VueI18n from '@intlify/vite-plugin-vue-i18n';
 import VueJsx from '@vitejs/plugin-vue-jsx';
 import { SchemaOrg } from '@vueuse/schema-org-vite';
 import { defineConfig } from 'vite';
-import ESLintPlugin from 'vite-plugin-eslint';
+import { default as ESLintPlugin } from 'vite-plugin-eslint';
 import MKCert from 'vite-plugin-mkcert';
 import { VitePWA } from 'vite-plugin-pwa';
 import StylelintPlugin from 'vite-plugin-stylelint';

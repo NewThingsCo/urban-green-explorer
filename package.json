@@ -124,8 +124,7 @@
     "svgo": "^2.8.0",
     "ts-jest": "^27.1.5",
     "typescript": "^4.8.4",
-    "vite-jest": "^0.1.4",
-    "vite-plugin-eslint": "1.6.1",
+    "vite-plugin-eslint": "1.8.1",
     "vite-plugin-mkcert": "1.10.1",
     "vite-plugin-pwa": "0.13.1",
     "vite-plugin-stylelint": "^3.0.8",
@@ -274,7 +273,7 @@
       "^@/(.*)$": "<rootDir>/src/$1",
       "^~/(.*)$": "<rootDir>/$1"
     },
-    "preset": "vite-jest",
+    "preset": "ts-jest",
     "setupFiles": [
       "<rootDir>/tests/unit/setupTests.js"
     ],
@@ -345,9 +344,10 @@
     "lint:styles": "stylelint src/**/*.css",
     "postinstall": "scripts/postinstall.sh",
     "prepare": "husky install",
+    "pretest": "npm run build",
     "prettier": "prettier --ignore-path .gitignore --write .",
     "start": "vite preview",
-    "test": "npm run build && npm run test:e2e",
+    "test": "npm run test:e2e",
     "test:e2e": "playwright test --config=tests/e2e/playwright.config.ts",
     "test:e2e:record": "playwright test --config=tests/e2e/playwright.record.config.ts",
     "test:unit": "node --experimental-vm-modules --no-warnings node_modules/jest/bin/jest.js --detectOpenHandles"
