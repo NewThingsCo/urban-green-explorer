@@ -1,6 +1,7 @@
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll": true,
+    "source.fixAll.eslint": true,
+    "source.fixAll.sortJSON": false,
     "source.organizeImports": false
   },
   "i18n-ally.localesPaths": ["src/locales"],
