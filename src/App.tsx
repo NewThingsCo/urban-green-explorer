@@ -1,9 +1,9 @@
 import type { VNode } from 'vue';
-import { useSchemaOrg } from '@vueuse/schema-org';
-import { defineComponent, KeepAlive, onMounted } from 'vue';
+import { defineComponent, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { useSchemaOrg } from '#vueuse/schema-org/runtime';
 import './App.css';
-import { SCHEMA_ORG } from './constants';
+import { GLOBAL_SCHEMA_ORG } from '@/constants';
 
 export default defineComponent({
   name: 'App',
@@ -22,13 +22,9 @@ export default defineComponent({
       }
     }
     onMounted(initializeApp);
-    useSchemaOrg(SCHEMA_ORG);
+    useSchemaOrg(GLOBAL_SCHEMA_ORG);
   },
   render(): VNode {
-    return (
-      <KeepAlive>
-        <router-view />
-      </KeepAlive>
-    );
+    return <router-view />;
   },
 });

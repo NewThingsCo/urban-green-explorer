@@ -1,22 +1,20 @@
+import type { UserConfig } from '@vueuse/schema-org';
 import type {
-  Arrayable,
-  Breadcrumb,
-  Image,
+  BreadcrumbList,
+  ImageObject,
   Organization,
-  SchemaOrgOptions,
-  UseSchemaOrgInput,
   WebPage,
   WebSite,
-} from '@vueuse/schema-org';
+} from 'schema-dts';
 import {
   defineImage,
   defineOrganization,
   defineWebPage,
   defineWebSite,
-} from '@vueuse/schema-org';
+} from '#vueuse/schema-org/provider';
 
 /** @link https://schema.org/BreadcrumbList */
-const BREADCRUMBS: Breadcrumb = {
+const BREADCRUMBS: BreadcrumbList = {
   '@id': '#breadcrumb',
   '@type': 'BreadcrumbList',
   itemListElement: [
@@ -58,22 +56,12 @@ const BREADCRUMBS: Breadcrumb = {
   ],
 };
 
-/** @link https://schema.org/ImageObject */
-const PRIMARY_IMAGE: Image = {
-  '@id': '#primaryImage',
-  '@type': 'ImageObject',
-  caption: 'Urban Green Explorer',
-  contentUrl: 'https://urban-green-explorer.netlify.app/share-image.jpg',
-  height: 1233,
-  url: '/share-image.jpg',
-  width: 1600,
-};
-
 /** @link https://schema.org/publisher */
 const PUBLISHER: Organization = {
   '@id': '#publisher',
   '@type': 'Organization',
   address: {
+    '@type': 'PostalAddress',
     addressCountry: 'FI',
     addressLocality: 'Helsinki',
     addressRegion: 'Uusimaa',
@@ -86,12 +74,25 @@ const PUBLISHER: Organization = {
   url: 'https://forumvirium.fi/',
 };
 
+/** @link https://schema.org/ImageObject */
+const PRIMARY_IMAGE: ImageObject = {
+  '@id': '#primaryImage',
+  '@type': 'ImageObject',
+  author: PUBLISHER,
+  caption: 'Urban Green Explorer',
+  contentUrl: 'https://urban-green-explorer.netlify.app/share-image.jpg',
+  height: { '@type': 'QuantitativeValue', unitCode: 'E37', value: 1233 },
+  name: 'Urban Green Explorer',
+  url: '/share-image.jpg',
+  width: { '@type': 'QuantitativeValue', unitCode: 'E37', value: 1600 },
+};
+
 /** @link https://schema.org/WebPage */
 const WEB_PAGE: WebPage = {
   '@id': '#webpage',
   '@type': 'WebPage',
   breadcrumb: BREADCRUMBS,
-  inLanguage: 'fi-FI',
+  inLanguage: 'en-US',
   isPartOf: {
     '@id': '#website',
   },
@@ -107,7 +108,7 @@ const WEB_SITE: WebSite = {
   '@id': '#website',
   '@type': 'WebSite',
   description: '',
-  inLanguage: 'fi-FI',
+  inLanguage: 'en-US',
   name: 'Urban Green Explorer',
   publisher: {
     '@id': '#publisher',
@@ -115,14 +116,14 @@ const WEB_SITE: WebSite = {
   url: 'https://urban-green-explorer.netlify.app/',
 };
 
-const SCHEMA_ORG: Arrayable<UseSchemaOrgInput> = [
+const GLOBAL_SCHEMA_ORG = [
   defineImage(PRIMARY_IMAGE),
   defineOrganization(PUBLISHER),
   defineWebSite(WEB_SITE),
   defineWebPage(WEB_PAGE),
 ];
 
-const SCHEMA_ORG_OPTIONS: SchemaOrgOptions = {
+const SCHEMA_ORG_USER_CONFIG: UserConfig = {
   canonicalHost: 'https://urban-green-explorer.netlify.app/',
   defaultCurrency: 'EUR',
   defaultLanguage: 'fi-FI',
@@ -131,8 +132,8 @@ const SCHEMA_ORG_OPTIONS: SchemaOrgOptions = {
 export {
   PRIMARY_IMAGE,
   PUBLISHER,
-  SCHEMA_ORG,
-  SCHEMA_ORG_OPTIONS,
+  GLOBAL_SCHEMA_ORG,
+  SCHEMA_ORG_USER_CONFIG,
   WEB_PAGE,
   WEB_SITE,
 };

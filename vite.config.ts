@@ -1,5 +1,6 @@
 import VueI18n from '@intlify/vite-plugin-vue-i18n';
 import VueJsx from '@vitejs/plugin-vue-jsx';
+import { SchemaOrg } from '@vueuse/schema-org-vite';
 import { defineConfig } from 'vite';
 import ESLintPlugin from 'vite-plugin-eslint';
 import MKCert from 'vite-plugin-mkcert';
@@ -24,7 +25,6 @@ export default defineConfig({
     drop: ['console', 'debugger'],
     jsxFactory: 'h',
     jsxFragment: 'Fragment',
-    minify: true,
   },
   plugins: [
     ESLintPlugin({
@@ -33,6 +33,11 @@ export default defineConfig({
       include: ['src/**/*.ts', 'src/**/*.tsx'],
     }),
     MKCert(),
+    SchemaOrg({
+      dts: true,
+      full: true,
+      mock: false,
+    }),
     StylelintPlugin({
       cache: true,
       fix: true,

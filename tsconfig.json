@@ -12,8 +12,14 @@
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "paths": {
+      "~/*": ["./*"],
       "@/*": ["./src/*"],
-      "~/*": ["./*"]
+      "#vueuse/schema-org/provider": [
+        "./node_modules/@vueuse/schema-org/dist/providers/full"
+      ],
+      "#vueuse/schema-org/runtime": [
+        "./node_modules/@vueuse/schema-org/dist/runtime/index"
+      ]
     },
     "resolveJsonModule": true,
     "skipLibCheck": true,
@@ -22,12 +28,13 @@
     "target": "ESNext",
     "types": [
       "@intlify/vite-plugin-vue-i18n/client",
+      "@vueuse/schema-org",
+      "@vueuse/schema-org-vite",
       "jest",
       "leaflet",
       "node",
-      "vite/client",
       "vite-plugin-pwa/client",
-      "./src/types"
+      "vite/client"
     ],
     "useDefineForClassFields": true
   },
